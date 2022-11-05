@@ -11,6 +11,9 @@ module.exports = {
         heading: ["Raleway"],
         body: ["Manrope"],
       },
+      backgroundImage: {
+        hero: "url('/images/bg-hero.jpg')",
+      },
     },
   },
   plugins: [],
