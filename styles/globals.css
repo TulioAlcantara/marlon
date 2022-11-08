@@ -3,3 +3,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .container-content {
+    @apply container max-w-screen-2xl mx-auto px-8 md:px-16 2xl:px-0;
+  }
+
+  .card {
+    @apply relative w-full md:w-[440px] 2xl:w-[620px] z-20;
+  }
+
+  .card-title {
+    @apply max-w-fit mb-12 font-heading font-extralight text-4xl md:text-5xl 2xl:text-6xl;
+  }
+
+  .card-body {
+    @apply max-w-fit mb-12 font-body font-light text-sm md:text-base;
+  }
+
+  .card-cta {
+    @apply max-w-fit text-base font-body font-normal;
+  }
+
+  .bg-gradient-1 {
+    background: linear-gradient(0deg, #868e96 0.48%, #343a40 42.83%);
+  }
+}

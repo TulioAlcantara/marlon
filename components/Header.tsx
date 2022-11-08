@@ -1,8 +1,8 @@
 export default function Header() {
   return (
     <>
-      <header className="fixed top-0 w-full">
-        <div className="flex justify-between container mx-auto py-5">
+      <header className="fixed top-0 w-full z-30 bg-[#fffcf205] backdrop-blur-md">
+        <div className="container-content flex justify-between py-5">
           <h3 className="text-2xl text-white font-extralight">
             MARLON ANDRADE
           </h3>
