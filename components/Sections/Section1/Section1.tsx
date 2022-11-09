@@ -3,9 +3,14 @@ import { motion } from "framer-motion";
 export default function Section1() {
   return (
     <>
-      <section className="h-[900px] xl:h-[1744px] bg-gradient-1">
+      <section className="h-[900px] md:h-[1144px] xl:h-[1744px] bg-gradient-1">
         <div className="container-screen pb-16">
-          <div className="card pt-[540px] xl:pt-[755px] 2xl:pt-[653px] xl:sticky xl:top-8">
+          <div
+            className="card
+              w-full xl:w-[434px] 2xl:w-[620px]
+              pt-[540px] md:pt-[812px] xl:pt-[755px] 2xl:pt-[653px] 
+              xl:sticky xl:top-8"
+          >
             <motion.h2
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -41,9 +46,9 @@ export default function Section1() {
 
           <motion.img
             className="absolute right-0 z-0 object-cover
-              top-[93px] xl:top-[464px] 2xl:top-[380px]
-              w-[200px] xl:w-[679px] 2xl:w-[985px]
-              h-[360px] xl:h-[864px] 2xl:h-[1080px]"
+              top-[93px] md:top-[125px] xl:top-[464px] 2xl:top-[380px]
+              w-[200px] md:w-[392px] xl:w-[679px] 2xl:w-[985px]
+              h-[360px] md:h-[655px] xl:h-[864px] 2xl:h-[1080px]"
             src="/images/img-01.png"
             initial={{ opacity: 0, scale: 0.2 }}
             whileInView={{ opacity: 1, scale: 1 }}

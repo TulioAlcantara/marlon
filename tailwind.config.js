@@ -14,7 +14,13 @@ module.exports = {
       backgroundImage: {
         hero: "url('/images/bg-hero.jpg')",
       },
+      fluidTypography: {},
     },
   },
-  plugins: [require("tailwindcss"), require("precss"), require("autoprefixer")],
+  plugins: [
+    require("tailwindcss"),
+    require("precss"),
+    require("autoprefixer"),
+    require("tailwind-fluid-typography"),
+  ],
 };

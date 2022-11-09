@@ -27,37 +27,41 @@
     }
 
     .card {
-      @apply relative w-full xl:w-[434px] 2xl:w-[620px] z-20;
+      @apply z-20;
 
       &__title {
-        @apply max-w-fit mb-12 font-extralight text-4xl xl:text-5xl 2xl:text-6xl;
+        @apply max-w-fit mb-12 fluid-2xl;
       }
 
       &__body {
-        @apply max-w-fit mb-12  font-light text-xs xl:text-sm 2xl:text-base;
+        @apply max-w-fit mb-12 fluid-base;
       }
 
       &__cta {
-        @apply max-w-fit font-normal text-base 2xl:text-2xl;
+        @apply max-w-fit fluid-lg;
       }
     }
 
     .card-hero {
-      @apply flex flex-col gap-11 w-full xl:w-[1033px] 2xl:w-[1251px];
+      @apply flex flex-col gap-4 md:gap-11 w-full xl:w-[1033px] 2xl:w-[1251px];
 
       &__title {
-        @apply text-white text-5xl xl:text-7xl 2xl:text-8xl uppercase;
+        @apply text-white fluid-5xl uppercase;
       }
 
       &__body {
-        @apply text-white text-base xl:text-2xl;
+        @apply text-white fluid-lg;
       }
 
       &__cta {
-        @apply flex items-center gap-2 text-white text-base xl:text-2xl;
+        @apply flex items-center gap-2 text-white fluid-lg;
       }
     }
   }
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(0deg, #2c3238 0%, rgba(52, 58, 64, 0) 21.81%);
 }
 
 .bg-gradient-1 {
@@ -75,4 +79,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.card-backdrop {
+  background: rgba(33, 37, 41, 0.49);
+  backdrop-filter: blur(14.5px);
 }
