@@ -7,7 +7,7 @@ interface Props {
   handleMenuClose: () => any;
 }
 
-export default function ({ menuOpen, handleMenuClose }: Props) {
+export default function Menu({ menuOpen, handleMenuClose }: Props) {
   // const menuAnimation = {
   //   hidden: { opacity: 0 },
   //   show: {
