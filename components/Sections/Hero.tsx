@@ -2,7 +2,7 @@ import { BsArrowRight } from "react-icons/bs";
 export default function Hero() {
   return (
     <>
-      <section className="flex items-center h-screen bg-hero bg-cover bg-fixed">
+      <section className="flex items-center h-screen bg-hero bg-cover bg-fixed bg-center">
         <div className="container-screen">
           <div className="card-hero">
             <h1 className="card-hero__title">
