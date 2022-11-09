@@ -55,10 +55,10 @@ export default function Section1() {
             transition={{ duration: 1.5 }}
             viewport={{ once: true }}
           ></motion.img>
-          {/* 
-          <motion.span
+
+          {/* <motion.span
             className="section-number section-number-background
-            2xl:top-[173px]
+            2xl:top-[px]
             2xl:left-[373px]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

@@ -23,7 +23,7 @@
     @apply w-full max-w-[1920px] relative mx-auto px-8 xl:px-16 2xl:px-44;
 
     .section-number {
-      @apply text-white absolute font-heading text-[300px] xl:text-[500px] 2xl:text-[700px];
+      @apply text-white absolute font-heading text-[300px] md:text-[400px] xl:text-[500px] 2xl:text-[700px];
     }
 
     .card {

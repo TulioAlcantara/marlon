@@ -3,7 +3,7 @@ export default function Hero() {
   return (
     <>
       <section className=" h-screen pt-16 bg-hero bg-cover bg-fixed bg-center ">
-        <div className="bg-hero-gradient flex items-center">
+        <div className="bg-hero-gradient flex items-center h-full">
           <div className="container-screen">
             <div className="card-hero">
               <h1 className="card-hero__title ">
