@@ -20,25 +20,25 @@
 
 @layer components {
   .container-screen {
-    @apply w-full max-w-[1920px] relative mx-auto px-8 xl:px-16 2xl:px-44;
+    @apply w-full max-w-screen-2xl relative h-full mx-auto px-8 xl:px-16;
 
     .section-number {
-      @apply text-white absolute font-heading text-[300px] md:text-[400px] xl:text-[500px] 2xl:text-[700px];
+      @apply text-white absolute font-heading text-[300px] md:text-[400px] xl:text-[500px];
     }
 
     .card {
       @apply z-20;
 
       &__title {
-        @apply max-w-fit mb-12 fluid-2xl;
+        @apply max-w-fit mb-12 fluid-2xl text-white;
       }
 
       &__body {
-        @apply max-w-fit mb-12 fluid-base;
+        @apply max-w-fit mb-12 fluid-base text-white;
       }
 
       &__cta {
-        @apply max-w-fit fluid-lg;
+        @apply flex items-center max-w-fit fluid-lg text-white;
       }
     }
 

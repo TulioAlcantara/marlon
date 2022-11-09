@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
+import { BsArrowRight } from "react-icons/bs";
 
 export default function Section1() {
   return (
     <>
       <section className="h-[900px] md:h-[1144px] xl:h-[1744px] bg-gradient-1">
-        <div className="container-screen pb-16">
+        <div className="container-screen  pb-16">
           <div
             className="card
-              w-full xl:w-[434px] 2xl:w-[620px]
-              pt-[540px] md:pt-[812px] xl:pt-[755px] 2xl:pt-[653px] 
-              xl:sticky xl:top-8"
+              w-full xl:w-[620px] 
+              pt-[540px] md:pt-[812px] xl:pt-[755px]"
           >
             <motion.h2
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5 }}
               viewport={{ once: true }}
-              className="card__title text-white"
+              className="card__title"
             >
               Devo fazer terapia?
             </motion.h2>
             <motion.p
-              className="card__body text-white"
+              className="card__body"
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 2, delay: 1 }}
@@ -33,22 +33,22 @@ export default function Section1() {
             </motion.p>
 
             <motion.p
-              className="card__cta text-white "
+              className="card__cta"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 2, delay: 1 }}
               viewport={{ once: true }}
             >
-              <img className="float-left mr-4" src="/icons/arrow.svg"></img>
+              <BsArrowRight className="mr-2"></BsArrowRight>
               Explore como funciona o processo terapêutico
             </motion.p>
           </div>
 
           <motion.img
-            className="absolute right-0 z-0 object-cover
-              top-[93px] md:top-[125px] xl:top-[464px] 2xl:top-[380px]
-              w-[200px] md:w-[392px] xl:w-[679px] 2xl:w-[985px]
-              h-[360px] md:h-[655px] xl:h-[864px] 2xl:h-[1080px]"
+            className="absolute right-0 z-10 object-cover
+              top-[93px] md:top-[125px] xl:top-[464px]
+              w-[200px] md:w-[392px] xl:w-[679px] 
+              h-[360px] md:h-[655px] xl:h-[864px]"
             src="/images/img-01.png"
             initial={{ opacity: 0, scale: 0.2 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -57,9 +57,9 @@ export default function Section1() {
           ></motion.img>
 
           {/* <motion.span
-            className="section-number section-number-background
-            2xl:top-[px]
-            2xl:left-[373px]"
+            className="section-number section-number-background z-0
+            xl:top-[0px]
+            xl:left-[400px]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 2 }}

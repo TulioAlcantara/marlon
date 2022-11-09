@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <>
-      <Menu handleMenuClose={toggleMenu} menuOpen={menuOpen}></Menu>
+      <Menu onClickOutside={toggleMenu} menuOpen={menuOpen}></Menu>
       {/* <motion.div
         ref={backdrop}
         className="transition-all ease-linear duration-500"
