@@ -27,9 +27,11 @@ export default function Section1() {
               transition={{ duration: 2, delay: 1 }}
               viewport={{ once: true }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in
-              feugiat erat, sed ullamcorper urna. Sed imperdiet nunc sit amet
-              felis pulvinar bibendum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
             </motion.p>
 
             <motion.p
@@ -40,7 +42,7 @@ export default function Section1() {
               viewport={{ once: true }}
             >
               <BsArrowRight className="mr-2"></BsArrowRight>
-              Explore como funciona o processo terapêutico
+              Explore o processo terapêutico
             </motion.p>
           </div>
 

@@ -16,6 +16,14 @@ module.exports = {
       },
       fluidTypography: {},
     },
+
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      white: "#F8F9FA",
+      black: "#212529",
+      gray: "#868E96",
+    },
   },
   plugins: [
     require("tailwindcss"),

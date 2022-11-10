@@ -16,29 +16,33 @@
   * {
     @apply font-body;
   }
+
+  html {
+    @apply scroll-smooth;
+  }
 }
 
 @layer components {
   .container-screen {
-    @apply w-full max-w-screen-2xl relative h-full mx-auto px-8 xl:px-16;
+    @apply w-full max-w-screen-2xl relative h-full mx-auto px-8 md:px-16 xl:px-16;
 
     .section-number {
       @apply text-white absolute font-heading text-[300px] md:text-[400px] xl:text-[500px];
     }
 
     .card {
-      @apply z-20;
+      @apply z-20 xl:max-w-[500px] 2xl:max-w-[600px];
 
       &__title {
-        @apply max-w-fit mb-12 fluid-2xl text-white;
+        @apply max-w-fit  mb-5 md:mb-8 fluid-4xl text-white;
       }
 
       &__body {
-        @apply max-w-fit mb-12 fluid-base text-white;
+        @apply max-w-fit  mb-5 md:mb-8 fluid-base text-white;
       }
 
       &__cta {
-        @apply flex items-center max-w-fit fluid-lg text-white;
+        @apply flex items-center max-w-fit fluid-base text-white;
       }
     }
 
