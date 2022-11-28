@@ -37,7 +37,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
     <>
       {menuOpen && (
         <motion.div
-          className="flex flex-col justify-between fixed w-full md:w-1/2 h-screen p-8 bg-white text-black z-50"
+          className="menu"
           initial={{ right: "-100vw" }}
           animate={{ right: 0 }}
           exit={{ right: "-100vw" }}
@@ -65,28 +65,28 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
           </motion.h2>
 
           <motion.ul
-            className="flex flex-col gap-8"
+            className="menu-list"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <li className="flex justify-between pb-1 fluid-lg 2xl:fluid-xl border-solid border-b-[1px] border-b-gray text-gray">
+            <li className="menu-list__item">
               <span>Devo fazer terapia?</span>
               <span>01</span>
             </li>
-            <li className="flex justify-between pb-1 fluid-lg 2xl:fluid-xl border-solid border-b-[1px] border-b-gray text-gray">
+            <li className="menu-list__item">
               <span>Ansiedade e depressão</span>
               <span>02</span>
             </li>
-            <li className="flex justify-between pb-1 fluid-lg 2xl:fluid-xl border-solid border-b-[1px] border-b-gray text-gray">
+            <li className="menu-list__item">
               <span>Sobre mim</span>
               <span>03</span>
             </li>
-            <li className="flex justify-between pb-1 fluid-lg 2xl:fluid-xl border-solid border-b-[1px] border-b-gray text-gray">
+            <li className="menu-list__item">
               <span>Por que comigo?</span>
               <span>04</span>
             </li>
-            <li className="flex justify-between pb-1 fluid-lg 2xl:fluid-xl border-solid border-b-[1px] border-b-gray text-gray">
+            <li className="menu-list__item">
               <span>As minhas sessões</span>
               <span>05</span>
             </li>

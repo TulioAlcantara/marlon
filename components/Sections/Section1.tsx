@@ -45,7 +45,7 @@ export default function Section1() {
               Explore o processo terapêutico
             </motion.p>
           </div>
-
+          {/* 
           <motion.img
             className="absolute right-0 z-10 object-cover
               top-[93px] md:top-[125px] xl:top-[464px]
@@ -56,7 +56,34 @@ export default function Section1() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5 }}
             viewport={{ once: true }}
-          ></motion.img>
+          ></motion.img> */}
+
+          <motion.picture
+            className="absolute right-0 z-10
+            top-[93px] md:top-[125px] xl:top-[464px]"
+            initial={{ opacity: 0, scale: 0.2 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5 }}
+            viewport={{ once: true }}
+          >
+            <source
+              srcSet="/images/section1/section-01-mobile.png"
+              media="(max-width:767px)"
+            ></source>
+            <source
+              srcSet="/images/section1/section-01-tablet.png"
+              media="(min-width:768px) and (max-width:1279px)"
+            ></source>
+            <source
+              srcSet="/images/section1/section-01-desktop.png"
+              media="(min-width:1280px)"
+            ></source>
+
+            <img
+              alt="Devo fazer terapia?"
+              srcSet="/images/section1/section-01-desktop.png"
+            ></img>
+          </motion.picture>
 
           {/* <motion.span
             className="section-number section-number-background z-0

@@ -67,15 +67,19 @@ export default function Section2() {
               top-[93px] md:top-[125px] xl:top-[200px] "
           >
             <source
-              srcSet="images/img-02-tablet.png"
-              media="(min-width: 768px)"
+              srcSet="/images/section2/section-02-mobile.png"
+              media="(max-width:767px)"
             ></source>
             <source
-              srcSet="images/img-02-hd.png"
+              srcSet="/images/section2/section-02-tablet.png"
+              media="(min-width:768px) and (max-width:1279px)"
+            ></source>
+            <source
+              srcSet="/images/section2/section-02-hd.png"
               media="(min-width: 1280px)"
             ></source>
 
-            <img srcSet="/images/img-02-mobile.png"></img>
+            <img srcSet="/images/section2/section-02-hd.png"></img>
           </picture>
         </div>
       </section>

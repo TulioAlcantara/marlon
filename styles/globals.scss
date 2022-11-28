@@ -23,6 +23,18 @@
 }
 
 @layer components {
+  .menu {
+    @apply flex flex-col justify-between fixed w-full md:w-1/2 h-screen p-8 bg-white text-black z-50;
+
+    &-list {
+      @apply flex flex-col gap-8;
+
+      &__item {
+        @apply flex justify-between pb-1 fluid-lg 2xl:fluid-xl border-solid border-b-[1px] border-b-gray text-gray;
+      }
+    }
+  }
+
   .container-screen {
     @apply w-full max-w-screen-2xl relative h-full mx-auto px-8 md:px-16 xl:px-16;
 

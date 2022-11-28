@@ -15,18 +15,24 @@ export default function Header({ handleMenuToggle }: Props) {
           </h3>
           <ul className="flex items-center gap-6 text-white ">
             <li>
-              <BsInstagram className="hidden xl:block text-2xl"></BsInstagram>
+              <button className="hidden xl:block text-2xl">
+                <BsInstagram></BsInstagram>
+              </button>
             </li>
             <li>
-              <BsWhatsapp className="hidden xl:block text-2xl"></BsWhatsapp>
+              <button className="hidden xl:block text-2xl">
+                <BsWhatsapp></BsWhatsapp>
+              </button>
             </li>
             <li>
-              <FiMenu
+              <button
                 className="text-2xl"
                 onClick={() => {
                   handleMenuToggle();
                 }}
-              ></FiMenu>
+              >
+                <FiMenu></FiMenu>
+              </button>
             </li>
           </ul>
         </div>
