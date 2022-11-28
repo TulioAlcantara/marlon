@@ -4,7 +4,10 @@ import { BsArrowRight } from "react-icons/bs";
 export default function Section2() {
   return (
     <>
-      <section className="h-[1128px] md:h-[1328px] xl:h-[1516px] bg-gradient-1">
+      <section
+        id="section2"
+        className="h-[1128px] md:h-[1328px] xl:h-[1516px] bg-gradient-1"
+      >
         <div className="container-screen pb-16">
           <div
             className="card-backdrop absolute right-0 z-20

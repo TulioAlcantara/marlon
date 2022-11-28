@@ -30,7 +30,7 @@
       @apply flex flex-col gap-8;
 
       &__item {
-        @apply flex justify-between pb-1 fluid-lg 2xl:fluid-xl border-solid border-b-[1px] border-b-gray text-gray;
+        @apply flex justify-between w-full pb-1 fluid-lg 2xl:fluid-xl border-solid border-b-[1px] border-b-gray text-gray;
       }
     }
   }
@@ -46,7 +46,7 @@
       @apply z-20 xl:max-w-[500px] 2xl:max-w-[600px];
 
       &__title {
-        @apply max-w-fit  mb-5 md:mb-8 fluid-4xl text-white;
+        @apply max-w-fit  mb-5 md:mb-8 fluid-3xl text-white;
       }
 
       &__body {

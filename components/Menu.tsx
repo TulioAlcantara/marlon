@@ -4,22 +4,19 @@ import { BsWhatsapp, BsInstagram, BsX } from "react-icons/bs";
 
 interface Props {
   menuOpen: boolean;
-  onCloseMenu: () => any;
+  onCloseMenu: (scroll?: string) => any;
 }
 
 export default function Menu({ menuOpen, onCloseMenu }: Props) {
-  // const menuAnimation = {
-  //   hidden: { right: "-100vw" },
-  //   show: {
-  //     right: 0,
-  //     transition: {
-  //       ease: "linear",
-  //     },
-  //   },
-  //   exit: { right: "-100vw" },
-  // };
-
   const refMenu = useRef<HTMLDivElement>(null);
+
+  const sections = [
+    { name: "Devo fazer terapia?", id: "section1" },
+    { name: "Ansiedade e depressão", id: "section2" },
+    { name: "Sobre mim", id: "section1" },
+    { name: "Por que comigo?", id: "section1" },
+    { name: "As minhas sessões", id: "section1" },
+  ];
 
   useEffect(() => {
     const handleClickOutside = (event: any) => {
@@ -41,25 +38,36 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
           initial={{ right: "-100vw" }}
           animate={{ right: 0 }}
           exit={{ right: "-100vw" }}
-          transition={{ duration: 0.5, ease: "linear" }}
+          transition={{ duration: 0.3, ease: "linear" }}
           ref={refMenu}
         >
           <div className="flex items-center justify-between text-gray">
-            <motion.h2 className="fluid-2xl xl:fluid-3xl">Navegação</motion.h2>
-            <button
+            <motion.h2
+              className="fluid-2xl xl:fluid-3xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              Navegação
+            </motion.h2>
+            <motion.button
+              whileHover={{
+                color: "#000",
+                transition: { duration: 0.3 },
+              }}
               className="text-3xl 2xl:text-5xl"
               aria-label="Close menu"
               onClick={() => onCloseMenu()}
             >
               <BsX></BsX>
-            </button>
+            </motion.button>
           </div>
 
           <motion.h2
             className="fluid-2xl 2xl:text-6xl hidden md:block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
           >
             "O paradoxo curioso é que quando eu me aceito, então eu mudo."
           </motion.h2>
@@ -68,43 +76,54 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
             className="menu-list"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <li className="menu-list__item">
-              <span>Devo fazer terapia?</span>
-              <span>01</span>
-            </li>
-            <li className="menu-list__item">
-              <span>Ansiedade e depressão</span>
-              <span>02</span>
-            </li>
-            <li className="menu-list__item">
-              <span>Sobre mim</span>
-              <span>03</span>
-            </li>
-            <li className="menu-list__item">
-              <span>Por que comigo?</span>
-              <span>04</span>
-            </li>
-            <li className="menu-list__item">
-              <span>As minhas sessões</span>
-              <span>05</span>
-            </li>
+            {sections.map((section, index) => {
+              return (
+                <li>
+                  <motion.button
+                    className="menu-list__item"
+                    whileHover={{
+                      color: "#000",
+                      transition: { duration: 0.3 },
+                    }}
+                    onClick={() => onCloseMenu(section.id)}
+                  >
+                    <span>{section.name}</span>
+                    <span>0{index + 1}</span>
+                  </motion.button>
+                </li>
+              );
+            })}
           </motion.ul>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
           >
             <p className="fluid-lg mb-6">Agende uma consulta:</p>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between lg:justify-start gap-8">
-              <p className="fluid-lg flex  items-center text-gray">
+              <motion.a
+                whileHover={{
+                  color: "#000",
+                  transition: { duration: 0.3 },
+                }}
+                href="https://instagram.com"
+                className="fluid-lg flex  items-center text-gray"
+              >
                 <BsInstagram className="mr-2"></BsInstagram>Instagram
-              </p>
-              <p className="fluid-lg flex items-center text-gray">
+              </motion.a>
+              <motion.a
+                whileHover={{
+                  color: "#000",
+                  transition: { duration: 0.3 },
+                }}
+                href="https://whatsapp.com"
+                className="fluid-lg flex items-center text-gray"
+              >
                 <BsWhatsapp className="mr-2"></BsWhatsapp>Whatsapp
-              </p>
+              </motion.a>
             </div>
           </motion.div>
         </motion.div>
