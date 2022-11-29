@@ -13,6 +13,8 @@ module.exports = {
       },
       backgroundImage: {
         hero: "url('/images/bg-hero.jpg')",
+        mobileSection3: "url('/images/section3/section-03-mobile.png')",
+        tabletSection3: "url('/images/section3/section-03-tablet.png')",
       },
       fluidTypography: {},
     },

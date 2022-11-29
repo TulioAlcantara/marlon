@@ -6,6 +6,7 @@ import Menu from "../components/Menu";
 import Hero from "../components/Sections/Hero";
 import Section1 from "../components/Sections/Section1";
 import Section2 from "../components/Sections/Section2";
+import Section3 from "../components/Sections/Section3";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,6 +50,7 @@ export default function Home() {
       <Hero></Hero>
       <Section1></Section1>
       <Section2></Section2>
+      <Section3></Section3>
     </>
   );
 }

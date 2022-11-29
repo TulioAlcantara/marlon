@@ -78,11 +78,11 @@ export default function Section2() {
               media="(min-width:768px) and (max-width:1279px)"
             ></source>
             <source
-              srcSet="/images/section2/section-02-hd.png"
+              srcSet="/images/section2/section-02-desktop.png"
               media="(min-width: 1280px)"
             ></source>
 
-            <img srcSet="/images/section2/section-02-hd.png"></img>
+            <img srcSet="/images/section2/section-02-desktop.png"></img>
           </picture>
         </div>
       </section>

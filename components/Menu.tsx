@@ -64,7 +64,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
           </div>
 
           <motion.h2
-            className="fluid-2xl 2xl:text-6xl hidden md:block"
+            className="fluid-xl 2xl:text-6xl hidden md:block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
