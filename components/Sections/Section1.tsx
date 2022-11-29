@@ -39,8 +39,8 @@ export default function Section1() {
 
             <motion.p
               className="card__cta"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 2, delay: 1 }}
               viewport={{ once: true }}
             >
@@ -75,6 +75,18 @@ export default function Section1() {
               srcSet="/images/section1/section-01-desktop.png"
             ></img>
           </motion.picture>
+
+          <motion.img
+            initial={{ opacity: 0, scale: 0.2 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5 }}
+            viewport={{ once: true }}
+            className="absolute 
+            w-[250px] md:w-[373px] xl:w-fit
+            top-[300px] md:top-[500px] xl:top-[173px] 
+            left-[-50px] md:left-[53px] xl:left-[72px]"
+            srcSet="/images/section1/section-01-number.png"
+          ></motion.img>
           {/* 
           <motion.span
             className="section-number section-number-background z-0

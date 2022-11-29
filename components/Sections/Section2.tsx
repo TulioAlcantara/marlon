@@ -42,8 +42,8 @@ export default function Section2() {
 
               <motion.p
                 className="card__cta "
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 2, delay: 1 }}
                 viewport={{ once: true }}
               >
@@ -65,7 +65,10 @@ export default function Section2() {
             viewport={{ once: true }}
           ></motion.img> */}
 
-          <picture
+          <motion.picture
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5 }}
             className="absolute left-0 z-0
               top-[93px] md:top-[125px] xl:top-[200px] "
           >
@@ -83,7 +86,7 @@ export default function Section2() {
             ></source>
 
             <img srcSet="/images/section2/section-02-desktop.png"></img>
-          </picture>
+          </motion.picture>
         </div>
       </section>
     </>
