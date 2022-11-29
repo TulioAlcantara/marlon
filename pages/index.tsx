@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
 import Hero from "../components/Sections/Hero";
@@ -51,6 +52,7 @@ export default function Home() {
       <Section1></Section1>
       <Section2></Section2>
       <Section3></Section3>
+      <Footer></Footer>
     </>
   );
 }

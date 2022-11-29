@@ -13,7 +13,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
   const sections = [
     { name: "Devo fazer terapia?", id: "section1" },
     { name: "Ansiedade e depressão", id: "section2" },
-    { name: "Sobre mim", id: "section1" },
+    { name: "Sobre mim", id: "section3" },
     { name: "Por que comigo?", id: "section1" },
     { name: "As minhas sessões", id: "section1" },
   ];
