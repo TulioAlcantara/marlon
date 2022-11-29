@@ -7,7 +7,7 @@ export default function Section2() {
       <section id="section2" className="h-[1128px] md:h-[1328px] xl:h-[1516px]">
         <div className="container-screen pb-16">
           <div
-            className="card-backdrop absolute right-0 z-20
+            className="card-backdrop text-white absolute right-0 z-20
               w-[259px] md:w-[475px] xl:w-[775px] 
               mt-[567px] md:mt-[687px] xl:mt-[735px] 
               pr-[35px] md:pr-[70px] xl:pr-[216px] 
@@ -21,12 +21,12 @@ export default function Section2() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.5 }}
                 viewport={{ once: true }}
-                className="card__title text-white"
+                className="card__title "
               >
                 Ansiedade e depressão
               </motion.h2>
               <motion.p
-                className="card__body text-white"
+                className="card__body "
                 initial={{ opacity: 0, y: -50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 2, delay: 1 }}

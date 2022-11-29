@@ -10,7 +10,7 @@ export default function Section3() {
       >
         <div className="container-screen  pb-16">
           <div
-            className="card absolute
+            className="card absolute text-white xl:text-black
               max-w-[200px] md:max-w-[380px] 
               pt-[200px] md:pt-[538px] xl:pt-[907px]"
           >
@@ -19,12 +19,12 @@ export default function Section3() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5 }}
               viewport={{ once: true }}
-              className="card__title text-black"
+              className="card__title "
             >
               Frase bonita e charmosa de impacto aqui
             </motion.h2>
             <motion.p
-              className="card__body text-black"
+              className="card__body "
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 2, delay: 1 }}

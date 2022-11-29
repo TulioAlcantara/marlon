@@ -8,6 +8,7 @@ export default function Section1() {
         <div className="container-screen  pb-16">
           <div
             className="card
+            text-white
               w-full xl:w-[620px] 
               pt-[540px] md:pt-[812px] xl:pt-[755px]"
           >
@@ -16,12 +17,12 @@ export default function Section1() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5 }}
               viewport={{ once: true }}
-              className="card__title text-white"
+              className="card__title"
             >
               Devo fazer terapia?
             </motion.h2>
             <motion.p
-              className="card__body text-white"
+              className="card__body"
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 2, delay: 1 }}
@@ -79,9 +80,9 @@ export default function Section1() {
             transition={{ duration: 1.5 }}
             viewport={{ once: true }}
             className="absolute 
-            w-[250px] md:w-[373px] xl:w-fit
-            top-[300px] md:top-[500px] xl:top-[173px] 
-            left-[-50px] md:left-[53px] xl:left-[72px]"
+            w-[270px] md:w-[373px] xl:w-fit
+            top-[282px] md:top-[500px] xl:top-[173px] 
+            left-[-49px] md:left-[53px] xl:left-[72px]"
             srcSet="/images/section1/section-01-number.png"
           ></motion.img>
         </div>
