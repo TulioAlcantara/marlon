@@ -4,10 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 export default function Section2() {
   return (
     <>
-      <section
-        id="section2"
-        className="h-[1128px] md:h-[1328px] xl:h-[1516px] bg-gradient-1"
-      >
+      <section id="section2" className="h-[1128px] md:h-[1328px] xl:h-[1516px]">
         <div className="container-screen pb-16">
           <div
             className="card-backdrop absolute right-0 z-20
@@ -24,12 +21,12 @@ export default function Section2() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.5 }}
                 viewport={{ once: true }}
-                className="card__title"
+                className="card__title text-white"
               >
                 Ansiedade e depressão
               </motion.h2>
               <motion.p
-                className="card__body"
+                className="card__body text-white"
                 initial={{ opacity: 0, y: -50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 2, delay: 1 }}
@@ -40,8 +37,8 @@ export default function Section2() {
                 felis pulvinar bibendum.
               </motion.p>
 
-              <motion.p
-                className="card__cta "
+              {/* <motion.p
+                className="card__cta text-white"
                 initial={{ opacity: 0, y: -50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 2, delay: 1 }}
@@ -49,25 +46,13 @@ export default function Section2() {
               >
                 <BsArrowRight className="mr-2"></BsArrowRight>
                 Conheça mais
-              </motion.p>
+              </motion.p> */}
             </div>
           </div>
 
-          {/* <motion.img
-            className="absolute left-0 z-0 object-cover
-              top-[93px] md:top-[125px] xl:top-[200px] 
-              w-[304px] md:w-[671px] xl:w-[940px] 
-              h-[806px] md:h-[880px] xl:h-[1054px] "
-            src="/images/img-02.png"
-            initial={{ opacity: 0, scale: 0.2 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5 }}
-            viewport={{ once: true }}
-          ></motion.img> */}
-
           <motion.picture
-            initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
             className="absolute left-0 z-0
               top-[93px] md:top-[125px] xl:top-[200px] "

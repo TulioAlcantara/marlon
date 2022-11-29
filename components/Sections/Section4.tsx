@@ -1,75 +1,72 @@
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 
-export default function Section1() {
+const Section4 = () => {
   return (
     <>
-      <section id="section1" className="h-[900px] md:h-[1144px] xl:h-[1744px]">
+      <section id="section4" className="h-[1008px] md:h-[1352px] xl:h-[1919px]">
         <div className="container-screen  pb-16">
           <div
-            className="card
-              w-full xl:w-[620px] 
-              pt-[540px] md:pt-[812px] xl:pt-[755px]"
+            className="card  text-black absolute
+            max-w-[200px] md:max-w-[380px] 
+              pt-[492px] md:pt-[1050px] xl:pt-[463px]"
           >
             <motion.h2
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5 }}
               viewport={{ once: true }}
-              className="card__title text-white"
+              className="card__title "
             >
-              Devo fazer terapia?
+              Encontre um caminho
             </motion.h2>
             <motion.p
-              className="card__body text-white"
+              className="card__body "
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 2, delay: 1 }}
               viewport={{ once: true }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </motion.p>
 
             {/* <motion.p
-              className="card__cta text-white"
+              className="card__cta "
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 2, delay: 1 }}
               viewport={{ once: true }}
             >
               <BsArrowRight className="mr-2"></BsArrowRight>
-              Explore o processo terapêutico
+              Explore como funciona o processo terapêutico
             </motion.p> */}
           </div>
 
           <motion.picture
             className="absolute right-0 z-10
-            top-[93px] md:top-[125px] xl:top-[464px]"
+            top-[321px] md:top-[256px] xl:top-[368px]"
             initial={{ opacity: 0, scale: 0.2 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5 }}
             viewport={{ once: true }}
           >
             <source
-              srcSet="/images/section1/section-01-mobile.png"
+              srcSet="/images/section4/section-04-mobile.png"
               media="(max-width:767px)"
             ></source>
             <source
-              srcSet="/images/section1/section-01-tablet.png"
+              srcSet="/images/section4/section-04-tablet.png"
               media="(min-width:768px) and (max-width:1279px)"
             ></source>
             <source
-              srcSet="/images/section1/section-01-desktop.png"
+              srcSet="/images/section4/section-04-desktop.png"
               media="(min-width:1280px)"
             ></source>
 
             <img
               alt="Devo fazer terapia?"
-              srcSet="/images/section1/section-01-desktop.png"
+              srcSet="/images/section4/section-04-desktop.png"
             ></img>
           </motion.picture>
 
@@ -80,12 +77,14 @@ export default function Section1() {
             viewport={{ once: true }}
             className="absolute 
             w-[250px] md:w-[373px] xl:w-fit
-            top-[300px] md:top-[500px] xl:top-[173px] 
-            left-[-50px] md:left-[53px] xl:left-[72px]"
-            srcSet="/images/section1/section-01-number.png"
+            top-[77px] md:top-[694px] xl:top-[332px] 
+            left-[-50px] md:left-[112px] xl:left-[-187px]"
+            srcSet="/images/section4/section-04-number.png"
           ></motion.img>
         </div>
       </section>
     </>
   );
-}
+};
+
+export default Section4;

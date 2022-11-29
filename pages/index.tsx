@@ -8,11 +8,13 @@ import Hero from "../components/Sections/Hero";
 import Section1 from "../components/Sections/Section1";
 import Section2 from "../components/Sections/Section2";
 import Section3 from "../components/Sections/Section3";
+import Section4 from "../components/Sections/Section4";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const backdrop = useRef<HTMLDivElement>(null);
   const test = useRef<HTMLDivElement>(null);
+  const sectionContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     changeBackdrop();
@@ -47,11 +49,19 @@ export default function Home() {
         animate={{ right: 0 }}
       >
       </motion.div> */}
-      <Header handleMenuToggle={toggleMenu}></Header>
+
+      <Header
+        handleMenuToggle={toggleMenu}
+        sectionContainerRef={sectionContainerRef}
+      ></Header>
       <Hero></Hero>
-      <Section1></Section1>
-      <Section2></Section2>
-      <Section3></Section3>
+      <div ref={sectionContainerRef} className="gradient-background">
+        <Section1></Section1>
+        <Section2></Section2>
+        <Section3></Section3>
+        <Section4></Section4>
+      </div>
+
       <Footer></Footer>
     </>
   );

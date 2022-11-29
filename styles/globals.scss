@@ -43,18 +43,18 @@
     }
 
     .card {
-      @apply z-20 xl:max-w-[500px] 2xl:max-w-[600px];
+      @apply z-20 xl:max-w-[400px] 2xl:max-w-[600px];
 
       &__title {
-        @apply max-w-fit  mb-5 md:mb-8 fluid-3xl text-white;
+        @apply max-w-fit  mb-5 md:mb-8 fluid-3xl;
       }
 
       &__body {
-        @apply max-w-fit  mb-5 md:mb-8 fluid-base text-white;
+        @apply max-w-fit  mb-5 md:mb-8 fluid-base;
       }
 
       &__cta {
-        @apply flex items-center max-w-fit fluid-base text-white;
+        @apply flex items-center max-w-fit fluid-base;
       }
     }
 
@@ -74,6 +74,10 @@
       }
     }
   }
+}
+
+.gradient-background {
+  background: linear-gradient(0deg, #ffffff 22.92%, #2d3238 100%);
 }
 
 .bg-hero-gradient {

@@ -6,7 +6,7 @@ export default function Section3() {
     <>
       <section
         id="section3"
-        className="h-[667px] md:h-[1024px] xl:h-[1747px] bg-mobileSection3 md:bg-tabletSection3 xl:bg-black xl:bg-none bg-cover bg-bottom"
+        className="h-[667px] md:h-[1024px] xl:h-[1747px] bg-mobileSection3 md:bg-tabletSection3 xl:bg-none bg-cover bg-bottom"
       >
         <div className="container-screen  pb-16">
           <div
@@ -19,12 +19,12 @@ export default function Section3() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5 }}
               viewport={{ once: true }}
-              className="card__title"
+              className="card__title text-black"
             >
               Frase bonita e charmosa de impacto aqui
             </motion.h2>
             <motion.p
-              className="card__body"
+              className="card__body text-black"
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 2, delay: 1 }}
@@ -34,8 +34,8 @@ export default function Section3() {
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </motion.p>
 
-            <motion.p
-              className="card__cta"
+            {/* <motion.p
+              className="card__cta text-black"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 2, delay: 1 }}
@@ -43,7 +43,7 @@ export default function Section3() {
             >
               <BsArrowRight className="mr-2"></BsArrowRight>
               Conheça mais
-            </motion.p>
+            </motion.p> */}
           </div>
 
           <motion.img
@@ -57,18 +57,18 @@ export default function Section3() {
             src="/images/section3/section-03-desktop.png"
           ></motion.img>
 
-          {/* 
-          <motion.span
-            className="section-number section-number-background z-0
-            xl:top-[0px]
-            xl:left-[400px]"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 2 }}
+          <motion.img
+            initial={{ opacity: 0, scale: 0.2 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5 }}
             viewport={{ once: true }}
-          >
-            01
-          </motion.span> */}
+            className="absolute 
+            hidden xl:block
+            w-fit z-30
+            top-[200px] 
+            left-[-100px]"
+            srcSet="/images/section3/section-03-number.png"
+          ></motion.img>
         </div>
       </section>
     </>
