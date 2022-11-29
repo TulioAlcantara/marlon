@@ -27,7 +27,7 @@ export default function Footer() {
           >
             {sections.map((section, index) => {
               return (
-                <li>
+                <li key={index}>
                   <motion.button
                     className="menu-list__item"
                     whileHover={{

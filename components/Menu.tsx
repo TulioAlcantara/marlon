@@ -69,7 +69,8 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            "O paradoxo curioso é que quando eu me aceito, então eu mudo."
+            `&quot;`O paradoxo curioso é que quando eu me aceito, então eu
+            mudo.`&quot;`
           </motion.h2>
 
           <motion.ul
@@ -80,7 +81,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
           >
             {sections.map((section, index) => {
               return (
-                <li>
+                <li key={index}>
                   <motion.button
                     className="menu-list__item"
                     whileHover={{
