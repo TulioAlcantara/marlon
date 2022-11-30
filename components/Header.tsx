@@ -15,7 +15,10 @@ export default function Header({
 
   useEffect(() => {
     window.onscroll = () => {
-      if (window.pageYOffset > sectionContainerRef!.current!.scrollHeight / 2) {
+      if (
+        window.pageYOffset >
+        sectionContainerRef!.current!.scrollHeight * 0.8
+      ) {
         headerRef.current?.classList.remove("text-white");
         headerRef.current?.classList.add("text-black");
       } else {

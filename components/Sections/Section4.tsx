@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 const Section4 = () => {
   return (
     <>
-      <section id="section4" className="h-[1008px] md:h-[1352px] xl:h-[1919px]">
+      <section id="section4" className="h-[1250px] md:h-[1902px] xl:h-[1919px]">
         <div className="container-screen  pb-16">
           <div
             className="card  text-black absolute
@@ -45,7 +45,7 @@ const Section4 = () => {
 
           <motion.picture
             className="absolute right-0 z-10
-            top-[321px] md:top-[256px] xl:top-[368px]"
+            top-[321px] md:top-[538px] xl:top-[368px]"
             initial={{ opacity: 0, scale: 0.2 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5 }}
@@ -76,7 +76,7 @@ const Section4 = () => {
             transition={{ duration: 1.5 }}
             viewport={{ once: true }}
             className="absolute 
-            w-[250px] md:w-[373px] xl:w-fit
+            w-[307px] md:w-[428px] xl:w-fit
             top-[77px] md:top-[694px] xl:top-[332px] 
             left-[-50px] md:left-[112px] xl:left-[-187px]"
             srcSet="/images/section4/section-04-number.png"

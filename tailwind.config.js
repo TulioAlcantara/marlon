@@ -15,6 +15,9 @@ module.exports = {
         hero: "url('/images/bg-hero.jpg')",
         mobileSection3: "url('/images/section3/section-03-mobile.png')",
         tabletSection3: "url('/images/section3/section-03-tablet.png')",
+
+        mobileSection5: "url('/images/section5/section-05-mobile.png')",
+        tabletSection5: "url('/images/section5/section-05-tablet.png')",
       },
       fluidTypography: {},
     },
