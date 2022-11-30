@@ -17,7 +17,7 @@ export default function Header({
     window.onscroll = () => {
       if (
         window.pageYOffset >
-        sectionContainerRef!.current!.scrollHeight * 0.8
+        sectionContainerRef!.current!.scrollHeight * 0.7
       ) {
         headerRef.current?.classList.remove("text-white");
         headerRef.current?.classList.add("text-black");
