@@ -7,7 +7,7 @@ export default function Section2() {
       <section id="section2" className="h-[1128px] md:h-[1328px] xl:h-[1516px]">
         <div className="container-screen pb-16">
           <div
-            className="card-backdrop text-white absolute right-0 z-20
+            className="card-backdrop-dark text-white absolute right-0 z-20
               w-[259px] md:w-[475px] xl:w-[775px] 
               mt-[567px] md:mt-[687px] xl:mt-[735px] 
               pr-[35px] md:pr-[70px] xl:pr-[216px] 

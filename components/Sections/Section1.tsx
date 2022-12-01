@@ -1,16 +1,37 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { BsArrowRight } from "react-icons/bs";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Section1() {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    gsap.to(cardRef.current, {
+      scrollTrigger: {
+        trigger: cardRef.current,
+        start: "top center",
+        markers: true,
+        scrub: true,
+        toggleActions: "start none none pause",
+      },
+      y: 300,
+    });
+  }, []);
+
   return (
     <>
       <section id="section1" className="h-[900px] md:h-[1144px] xl:h-[1744px]">
-        <div className="container-screen  pb-16">
+        <div className="container-screen pb-16">
           <div
+            ref={cardRef}
             className="card
+            absolute
             text-white
               w-full xl:w-[620px] 
-              pt-[540px] md:pt-[812px] xl:pt-[755px]"
+              top-[540px] md:top-[812px] xl:top-[755px]"
           >
             <motion.h2
               initial={{ opacity: 0, y: -50 }}
@@ -28,16 +49,9 @@ export default function Section1() {
               transition={{ duration: 2, delay: 1 }}
               viewport={{ once: true }}
             >
-              Terapia é pra quem quer mudança. Todos nós já passamos ou
-              passaremos, em algum momento, por uma sensação de necessidade de
-              mudança, seja essa mudança interna ou externa. Geralmente,
-              a necessidade de mudança surge quando estamos lutando contra as
-              incógnitas da vida, por exemplo: deixo meu relacionamento, mudo
-              minha carreira, mudo de casa ou simplesmente deixo de lado o que
-              não está me servindo mais?  Eu pergunto isso porque sou muito a
-              favor de mudanças, de novas perspectivas e, inclusive, incentivo
-              muito isso aos meus pacientes. Mas eu sou a favor das mudanças
-              concretas.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in
+              feugiat erat, sed ullamcorper urna. Sed imperdiet nunc sit amet
+              felis pulvinar bibendum.
             </motion.p>
 
             {/* <motion.p
@@ -58,7 +72,6 @@ export default function Section1() {
             initial={{ opacity: 0, scale: 0.2 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5 }}
-            viewport={{ once: true }}
           >
             <source
               srcSet="/images/section1/section-01-mobile.png"
@@ -75,7 +88,7 @@ export default function Section1() {
 
             <img
               alt="Devo fazer terapia?"
-              srcSet="/images/section1/section-01-desktop.png"
+              src="/images/section1/section-01-desktop.png"
             ></img>
           </motion.picture>
 
@@ -83,7 +96,6 @@ export default function Section1() {
             initial={{ opacity: 0, scale: 0.2 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5 }}
-            viewport={{ once: true }}
             className="absolute 
             w-[270px] md:w-[373px] xl:w-fit
             top-[282px] md:top-[500px] xl:top-[173px] 

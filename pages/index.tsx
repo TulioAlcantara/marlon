@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Head from "next/head";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
@@ -42,6 +43,10 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Marlon</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Menu onCloseMenu={toggleMenu} menuOpen={menuOpen}></Menu>
       <Header
         handleMenuToggle={toggleMenu}

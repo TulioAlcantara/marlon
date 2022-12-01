@@ -11,7 +11,7 @@ export default function Section5() {
         <div className="container-screen  pb-16">
           <div
             className="card absolute text-black
-            card-backdrop-5 xl:bg-transparent
+            card-backdrop-white xl:bg-transparent
               max-w-[250px] md:max-w-[458px] 
               mt-[273px] md:mt-[500px] xl:mt-[758px]
               mx-auto right-0 left-0 xl:left-auto xl:mr-16
