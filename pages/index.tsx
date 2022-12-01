@@ -32,39 +32,37 @@ export default function Home() {
 
   const changeBackdrop = () => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
-    // backdrop.current!.style.filter = menuOpen
-    //   ? "brightness(50%)"
-    //   : "brightness(100%)";
-    // backdrop.current!.style.transform = menuOpen
-    //   ? "translateX(-50%)"
-    //   : "translateX(0)";
+    backdrop.current!.style.filter = menuOpen
+      ? "brightness(50%)"
+      : "brightness(100%)";
+    backdrop.current!.style.transform = menuOpen
+      ? "translateX(-50%)"
+      : "translateX(0)";
   };
 
   return (
     <>
       <Menu onCloseMenu={toggleMenu} menuOpen={menuOpen}></Menu>
-      {/* <motion.div
+      <Header
+        handleMenuToggle={toggleMenu}
+        sectionContainerRef={sectionContainerRef}
+      ></Header>
+      <motion.div
         ref={backdrop}
         className="transition-all ease-linear duration-300"
         initial={{ right: "-100vw" }}
         animate={{ right: 0 }}
       >
-      </motion.div> */}
-
-      <Header
-        handleMenuToggle={toggleMenu}
-        sectionContainerRef={sectionContainerRef}
-      ></Header>
-      <Hero></Hero>
-      <div ref={sectionContainerRef} className="gradient-background">
-        <Section1></Section1>
-        <Section2></Section2>
-        <Section3></Section3>
-        <Section4></Section4>
-        <Section5></Section5>
-      </div>
-
-      <Footer></Footer>
+        <Hero></Hero>
+        <div ref={sectionContainerRef} className="gradient-background">
+          <Section1></Section1>
+          <Section2></Section2>
+          <Section3></Section3>
+          <Section4></Section4>
+          <Section5></Section5>
+        </div>
+        <Footer></Footer>
+      </motion.div>
     </>
   );
 }

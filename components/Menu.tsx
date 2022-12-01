@@ -14,8 +14,8 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
     { name: "Devo fazer terapia?", id: "section1" },
     { name: "Ansiedade e depressão", id: "section2" },
     { name: "Sobre mim", id: "section3" },
-    { name: "Por que comigo?", id: "section1" },
-    { name: "As minhas sessões", id: "section1" },
+    { name: "Por que comigo?", id: "section4" },
+    { name: "As minhas sessões", id: "section5" },
   ];
 
   useEffect(() => {
@@ -64,7 +64,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
           </div>
 
           <motion.h2
-            className="fluid-xl 2xl:text-6xl hidden md:block"
+            className="fluid-xl 2xl:text-5xl hidden md:block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}

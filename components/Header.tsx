@@ -28,6 +28,10 @@ export default function Header({
     };
   }, []);
 
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <header
@@ -35,9 +39,12 @@ export default function Header({
         className="fixed top-0 w-full z-40 bg-[#fffcf205] backdrop-blur-md text-white transition-all ease-linear duration-300"
       >
         <div className="container-screen flex justify-between py-5">
-          <h3 className="text-sm xl:text-2xl  font-extralight">
+          <button
+            className="font-heading text-sm xl:text-2xl  font-extralight"
+            onClick={() => scrollTop()}
+          >
             MARLON ANDRADE
-          </h3>
+          </button>
           <ul className="flex items-center gap-6  ">
             <li>
               <button className="hidden xl:block text-2xl">

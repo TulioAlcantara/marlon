@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { BsInstagram, BsWhatsapp } from "react-icons/bs";
 
 export default function Footer() {
   const sections = [
@@ -46,8 +47,34 @@ export default function Footer() {
         </div>
 
         <div className="w-full">
-          <h2 className="fluid-2xl text-white mb-16">Agende uma consulta</h2>
-          <h2 className="fluid-2xl text-white mb-16">Localização</h2>
+          <h2 className="fluid-2xl text-white mb-14">Agende uma consulta</h2>
+          <div className="flex flex-col md:flex-row justify-start gap-8">
+            <motion.a
+              whileHover={{
+                color: "#F8F9FA",
+                transition: { duration: 0.3 },
+              }}
+              href="https://instagram.com"
+              className="fluid-lg flex  items-center text-gray"
+            >
+              <BsInstagram className="mr-2"></BsInstagram>Instagram
+            </motion.a>
+            <motion.a
+              whileHover={{
+                color: "#F8F9FA",
+                transition: { duration: 0.3 },
+              }}
+              href="https://whatsapp.com"
+              className="fluid-lg flex items-center text-gray"
+            >
+              <BsWhatsapp className="mr-2"></BsWhatsapp>Whatsapp
+            </motion.a>
+          </div>
+          <h2 className="fluid-2xl text-white my-14">Localização</h2>
+          <p className="fluid-xl text-gray">
+            Setor Bela Vista, Rua T64-A, Nº 136, Ed. Monte Verde, Ap 104 -
+            Goiânia, Goiás
+          </p>
         </div>
       </div>
     </footer>
