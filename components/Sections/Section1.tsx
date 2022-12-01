@@ -6,18 +6,20 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Section1() {
   const cardRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
 
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
-    gsap.to(cardRef.current, {
-      scrollTrigger: {
-        trigger: cardRef.current,
-        start: "top center",
-        markers: true,
-        scrub: true,
-        toggleActions: "start none none pause",
-      },
-      y: 300,
+    gsap.matchMedia().add("(min-width: 1280px)", () => {
+      gsap.to(cardRef.current, {
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top center",
+          scrub: true,
+          toggleActions: "start none none pause",
+        },
+        y: 300,
+      });
     });
   }, []);
 
@@ -28,15 +30,15 @@ export default function Section1() {
           <div
             ref={cardRef}
             className="card
-            absolute
+            relative xl:absolute
             text-white
-              w-full xl:w-[620px] 
-              top-[540px] md:top-[812px] xl:top-[755px]"
+            w-full
+            pt-[540px] md:pt-[812px] xl:top-[755px] xl:pt-0"
           >
             <motion.h2
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5 }}
+              transition={{ duration: 1 }}
               viewport={{ once: true }}
               className="card__title"
             >
@@ -69,9 +71,9 @@ export default function Section1() {
           <motion.picture
             className="absolute right-0 z-10
             top-[93px] md:top-[125px] xl:top-[464px]"
-            initial={{ opacity: 0, scale: 0.2 }}
+            initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1 }}
           >
             <source
               srcSet="/images/section1/section-01-mobile.png"
@@ -93,9 +95,10 @@ export default function Section1() {
           </motion.picture>
 
           <motion.img
-            initial={{ opacity: 0, scale: 0.2 }}
+            ref={imageRef}
+            initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1 }}
             className="absolute 
             w-[270px] md:w-[373px] xl:w-fit
             top-[282px] md:top-[500px] xl:top-[173px] 
