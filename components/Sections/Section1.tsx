@@ -51,9 +51,16 @@ export default function Section1() {
               transition={{ duration: 2, delay: 1 }}
               viewport={{ once: true }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in
-              feugiat erat, sed ullamcorper urna. Sed imperdiet nunc sit amet
-              felis pulvinar bibendum.
+              Terapia é pra quem quer mudança. <br></br> Todos nós já passamos
+              ou passaremos, em algum momento, por uma sensação de necessidade
+              de mudança, seja essa mudança interna ou externa. Geralmente,
+              a necessidade de mudança surge quando estamos lutando contra as
+              incógnitas da vida, por exemplo: deixo meu relacionamento, mudo
+              minha carreira, mudo de casa ou simplesmente deixo de lado o que
+              não está me servindo mais? <br></br> Eu pergunto isso porque sou
+              muito a favor de mudanças, de novas perspectivas e, inclusive,
+              incentivo muito isso aos meus pacientes. Mas eu sou a favor das
+              mudanças concretas.
             </motion.p>
 
             {/* <motion.p

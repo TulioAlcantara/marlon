@@ -1,11 +1,17 @@
+import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 export default function Hero() {
   return (
     <>
-      <section className=" h-screen pt-16 bg-hero bg-cover bg-fixed bg-center ">
+      <section className=" h-screen pt-16 bg-hero bg-cover bg-center ">
         <div className="bg-hero-gradient h-full">
           <div className="container-screen flex items-center ">
-            <div className="card-hero">
+            <motion.div
+              className="card-hero"
+              initial={{ opacity: 0, y: 300 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
               <h1 className="card-hero__title ">
                 Entre em consenso com seu corpo e mente
               </h1>
@@ -18,7 +24,7 @@ export default function Hero() {
                 <BsArrowRight></BsArrowRight>
                 Explore o processo terapêutico
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
