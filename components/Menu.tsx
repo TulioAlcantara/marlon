@@ -103,15 +103,17 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <p className="fluid-lg mb-6">Agende uma consulta:</p>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between lg:justify-start gap-8">
+            <p className="fluid-lg 2xl:fluid-xl mb-6 text-gray">
+              Agende sua consulta:
+            </p>
+            <div className="flex flex-row items-center justify-between lg:justify-start gap-8 xl:gap-10">
               <motion.a
                 whileHover={{
                   color: "#000",
                   transition: { duration: 0.3 },
                 }}
                 href="https://instagram.com"
-                className="fluid-lg flex  items-center text-gray"
+                className="fluid-lg flex  items-center text-black 2xl:fluid-xl "
               >
                 <BsInstagram className="mr-2"></BsInstagram>Instagram
               </motion.a>
@@ -121,7 +123,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
                   transition: { duration: 0.3 },
                 }}
                 href="https://whatsapp.com"
-                className="fluid-lg flex items-center text-gray"
+                className="fluid-lg flex items-center text-black 2xl:fluid-xl "
               >
                 <BsWhatsapp className="mr-2"></BsWhatsapp>Whatsapp
               </motion.a>

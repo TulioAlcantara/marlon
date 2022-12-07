@@ -48,7 +48,7 @@ export default function Section1() {
               className="card__body"
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 2, delay: 1 }}
+              transition={{ duration: 1, delay: 1 }}
               viewport={{ once: true }}
             >
               Terapia é pra quem quer mudança. <br></br> Todos nós já passamos
@@ -81,6 +81,7 @@ export default function Section1() {
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
+            viewport={{ once: true }}
           >
             <source
               srcSet="/images/section1/section-01-mobile.png"
@@ -106,12 +107,14 @@ export default function Section1() {
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
+            viewport={{ once: true }}
             className="absolute 
             w-[270px] md:w-[373px] xl:w-fit
             top-[282px] md:top-[500px] xl:top-[173px] 
             left-[-49px] md:left-[53px] xl:left-[72px]"
             srcSet="/images/section1/section-01-number.png"
           ></motion.img>
+          <button></button>
         </div>
       </section>
     </>
