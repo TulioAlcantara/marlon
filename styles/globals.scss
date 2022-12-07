@@ -62,15 +62,15 @@
       @apply flex flex-col gap-4 md:gap-11 w-full xl:w-[1033px] 2xl:w-[1251px];
 
       &__title {
-        @apply text-white fluid-5xl uppercase;
+        @apply text-white fluid-6xl leading-none;
       }
 
       &__body {
-        @apply text-white fluid-lg md:max-w-2xl;
+        @apply text-white fluid-xl md:max-w-2xl;
       }
 
       &__cta {
-        @apply flex items-center gap-2 text-white fluid-lg;
+        @apply flex items-center gap-2 text-white fluid-xl;
       }
     }
   }
