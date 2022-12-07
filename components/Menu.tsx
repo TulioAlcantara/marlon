@@ -86,6 +86,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
                     className="menu-list__item"
                     whileHover={{
                       color: "#000",
+                      borderBottom: "5px solid #000",
                       transition: { duration: 0.3 },
                     }}
                     onClick={() => onCloseMenu(section.id)}

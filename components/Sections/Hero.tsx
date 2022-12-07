@@ -31,12 +31,15 @@ export default function Hero() {
 
       <section className="h-screen">
         <video className="h-screen w-full object-cover" autoPlay loop muted>
-          <source type="video/mp4" src="/videos/test.mp4" />
+          <source type="video/mp4" src="/videos/bg-hero.mp4" />
         </video>
 
         <div
           className="absolute top-0 h-screen w-full"
-          style={{ background: "rgba(0,0,0,0.8)" }}
+          style={{
+            background:
+              " linear-gradient(0deg, #1C1C1C 4.17%, rgba(28, 28, 28, 0.6) 22.92%);",
+          }}
         >
           <div
             className="container-screen flex flex-col items-start justify-center gap-10
