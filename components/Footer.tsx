@@ -28,18 +28,15 @@ export default function Footer() {
           >
             {sections.map((section, index) => {
               return (
-                <li key={index}>
-                  <motion.button
-                    className="menu-list__item"
-                    whileHover={{
-                      color: "#F8F9FA",
-                      transition: { duration: 0.3 },
-                    }}
+                <li className="relative" key={index}>
+                  <button
+                    className="menu-list__item
+                    hover:text-white before:border-b-white"
                     onClick={() => scrollTo(section.id)}
                   >
                     <span>{section.name}</span>
                     <span>0{index + 1}</span>
-                  </motion.button>
+                  </button>
                 </li>
               );
             })}
