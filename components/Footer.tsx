@@ -55,7 +55,7 @@ export default function Footer() {
                 transition: { duration: 0.3 },
               }}
               href="https://instagram.com"
-              className="fluid-lg flex  items-center text-gray"
+              className="fluid-xl flex  items-center text-gray"
             >
               <BsInstagram className="mr-2"></BsInstagram>Instagram
             </motion.a>
@@ -65,7 +65,7 @@ export default function Footer() {
                 transition: { duration: 0.3 },
               }}
               href="https://whatsapp.com"
-              className="fluid-lg flex items-center text-gray"
+              className="fluid-xl flex items-center text-gray"
             >
               <BsWhatsapp className="mr-2"></BsWhatsapp>Whatsapp
             </motion.a>

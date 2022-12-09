@@ -15,7 +15,6 @@ import Section5 from "../components/Sections/Section5";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const backdrop = useRef<HTMLDivElement>(null);
-  const test = useRef<HTMLDivElement>(null);
   const sectionContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -24,11 +23,14 @@ export default function Home() {
 
   const toggleMenu = (scroll?: string) => {
     setMenuOpen(!menuOpen);
-    console.log(scroll);
     if (scroll) {
-      const element = document.getElementById(scroll);
-      element?.scrollIntoView({ behavior: "smooth" });
+      scrollToSection(scroll);
     }
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: "smooth" });
   };
 
   const changeBackdrop = () => {

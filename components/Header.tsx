@@ -1,6 +1,7 @@
 import { FiMenu } from "react-icons/fi";
 import { BsWhatsapp, BsInstagram } from "react-icons/bs";
 import { RefObject, useEffect, useRef } from "react";
+import { useAnimationControls } from "framer-motion";
 
 interface Props {
   handleMenuToggle: () => any;
@@ -12,21 +13,34 @@ export default function Header({
   sectionContainerRef,
 }: Props) {
   const headerRef = useRef<HTMLDivElement>(null);
+  const controls = useAnimationControls();
 
   useEffect(() => {
     window.onscroll = () => {
-      if (
-        window.pageYOffset >
-        sectionContainerRef!.current!.scrollHeight * 0.7
-      ) {
-        headerRef.current?.classList.remove("text-white");
-        headerRef.current?.classList.add("text-black");
-      } else {
-        headerRef.current?.classList.remove("text-black");
-        headerRef.current?.classList.add("text-white");
-      }
+      changeHeaderColor();
+      toggleHeaderVisibility();
     };
   }, []);
+
+  const changeHeaderColor = () => {
+    if (window.pageYOffset > sectionContainerRef!.current!.scrollHeight * 0.7) {
+      headerRef.current?.classList.remove("text-white");
+      headerRef.current?.classList.add("text-black");
+      return;
+    }
+    headerRef.current?.classList.remove("text-black");
+    headerRef.current?.classList.add("text-white");
+  };
+
+  const toggleHeaderVisibility = () => {
+    if (window.pageYOffset > sectionContainerRef!.current!.offsetTop) {
+      headerRef.current?.classList.remove("opacity-0");
+      headerRef.current?.classList.add("opacity-100");
+      return;
+    }
+    headerRef.current?.classList.remove("opacity-100");
+    headerRef.current?.classList.add("opacity-0");
+  };
 
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -36,11 +50,12 @@ export default function Header({
     <>
       <header
         ref={headerRef}
-        className="fixed top-0 w-full z-40 bg-[#fffcf205] backdrop-blur-md text-white transition-all ease-linear duration-300"
+        className="fixed opacity-0 top-0 w-full z-40 bg-[#fffcf205]
+         backdrop-blur-md text-white transition-all ease-linear duration-300"
       >
         <div className="container-screen flex justify-between py-5">
           <button
-            className="font-heading text-sm xl:text-2xl  font-extralight"
+            className="font-heading fluid-xl font-extralight"
             onClick={() => scrollTop()}
           >
             MARLON ANDRADE

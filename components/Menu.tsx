@@ -43,7 +43,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
         >
           <div className="flex items-center justify-between text-gray">
             <motion.h2
-              className="fluid-2xl xl:fluid-3xl"
+              className="fluid-xl uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
@@ -55,7 +55,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
                 color: "#000",
                 transition: { duration: 0.3 },
               }}
-              className="text-3xl 2xl:text-5xl"
+              className="fluid-2xl"
               aria-label="Close menu"
               onClick={() => onCloseMenu()}
             >
@@ -64,7 +64,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
           </div>
 
           <motion.h2
-            className="fluid-xl 2xl:text-5xl hidden md:block"
+            className="fluid-2xl min-[1920px]:fluid-3xl hidden md:block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
@@ -86,7 +86,6 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
                     className="menu-list__item"
                     whileHover={{
                       color: "#000",
-                      borderBottom: "5px solid #000",
                       transition: { duration: 0.3 },
                     }}
                     onClick={() => onCloseMenu(section.id)}
@@ -104,7 +103,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <p className="fluid-lg 2xl:fluid-xl mb-6 text-gray">
+            <p className="fluid-xl font-heading mb-6 text-gray">
               Agende sua consulta:
             </p>
             <div className="flex flex-row items-center justify-between lg:justify-start gap-8 xl:gap-10">
@@ -114,7 +113,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
                   transition: { duration: 0.3 },
                 }}
                 href="https://instagram.com"
-                className="fluid-lg flex  items-center text-black 2xl:fluid-xl "
+                className="fluid-xl flex  items-center text-black"
               >
                 <BsInstagram className="mr-2"></BsInstagram>Instagram
               </motion.a>
@@ -124,7 +123,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
                   transition: { duration: 0.3 },
                 }}
                 href="https://whatsapp.com"
-                className="fluid-lg flex items-center text-black 2xl:fluid-xl "
+                className="fluid-xl flex items-center text-black"
               >
                 <BsWhatsapp className="mr-2"></BsWhatsapp>Whatsapp
               </motion.a>
