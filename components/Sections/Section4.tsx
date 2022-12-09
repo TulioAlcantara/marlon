@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 const Section4 = () => {
   return (
     <>
-      <section id="section4" className="h-[1250px] md:h-[1902px] xl:h-[1919px]">
+      <section id="section4" className="h-[1000px] md:h-[1902px] xl:h-[1500px]">
         <div className="container-screen  pb-16">
           <div
             className="card  text-black absolute
@@ -27,8 +27,12 @@ const Section4 = () => {
               transition={{ duration: 2, delay: 1 }}
               viewport={{ once: true }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Em regra geral, o processo terapêutico acontece presencialmente,
+              com duração de 50 a 60 minutos e frequência semanal.
+              <br></br>
+              <br></br>
+              Estes acordos podem ser alterados, de acordo com cada necessidade
+              individual do paciente.
             </motion.p>
 
             {/* <motion.p

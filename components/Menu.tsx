@@ -63,72 +63,75 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
             </motion.button>
           </div>
 
-          <motion.h2
-            className="fluid-2xl min-[1920px]:fluid-3xl hidden md:block"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            &quot;O paradoxo curioso é que quando eu me aceito, então eu
-            mudo.&quot;
-          </motion.h2>
+          <div className="flex flex-col justify-around h-full">
+            <motion.ul
+              className="menu-list"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              {sections.map((section, index) => {
+                return (
+                  <li key={index}>
+                    <motion.button
+                      className="menu-list__item"
+                      whileHover={{
+                        color: "#000",
+                        transition: { duration: 0.3 },
+                      }}
+                      onClick={() => onCloseMenu(section.id)}
+                    >
+                      <span>{section.name}</span>
+                      <span>0{index + 1}</span>
+                    </motion.button>
+                  </li>
+                );
+              })}
+            </motion.ul>
 
-          <motion.ul
-            className="menu-list"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            {sections.map((section, index) => {
-              return (
-                <li key={index}>
-                  <motion.button
-                    className="menu-list__item"
-                    whileHover={{
-                      color: "#000",
-                      transition: { duration: 0.3 },
-                    }}
-                    onClick={() => onCloseMenu(section.id)}
-                  >
-                    <span>{section.name}</span>
-                    <span>0{index + 1}</span>
-                  </motion.button>
-                </li>
-              );
-            })}
-          </motion.ul>
+            <motion.h2
+              className="fluid-2xl min-[1920px]:fluid-3xl hidden md:block"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              &quot;O paradoxo curioso é que quando eu me aceito, então eu
+              mudo.&quot;
+            </motion.h2>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            <p className="fluid-xl font-heading mb-6 text-gray">
-              Agende sua consulta:
-            </p>
-            <div className="flex flex-row items-center justify-between lg:justify-start gap-8 xl:gap-10">
-              <motion.a
-                whileHover={{
-                  color: "#000",
-                  transition: { duration: 0.3 },
-                }}
-                href="https://instagram.com"
-                className="fluid-xl flex  items-center text-black"
-              >
-                <BsInstagram className="mr-2"></BsInstagram>Instagram
-              </motion.a>
-              <motion.a
-                whileHover={{
-                  color: "#000",
-                  transition: { duration: 0.3 },
-                }}
-                href="https://whatsapp.com"
-                className="fluid-xl flex items-center text-black"
-              >
-                <BsWhatsapp className="mr-2"></BsWhatsapp>Whatsapp
-              </motion.a>
-            </div>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="block md:hidden"
+            >
+              <p className="fluid-xl font-heading mb-6 text-gray">
+                Agende sua consulta:
+              </p>
+              <div className="flex flex-row items-center justify-between lg:justify-start gap-8 xl:gap-10">
+                <motion.a
+                  whileHover={{
+                    color: "#000",
+                    transition: { duration: 0.3 },
+                  }}
+                  href="https://instagram.com"
+                  className="fluid-xl flex  items-center text-black"
+                >
+                  <BsInstagram className="mr-2"></BsInstagram>Instagram
+                </motion.a>
+                <motion.a
+                  whileHover={{
+                    color: "#000",
+                    transition: { duration: 0.3 },
+                  }}
+                  href="https://whatsapp.com"
+                  className="fluid-xl flex items-center text-black"
+                >
+                  <BsWhatsapp className="mr-2"></BsWhatsapp>Whatsapp
+                </motion.a>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       )}
     </>

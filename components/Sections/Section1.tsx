@@ -51,12 +51,16 @@ export default function Section1() {
               transition={{ duration: 1, delay: 1 }}
               viewport={{ once: true }}
             >
-              Todos nós já passamos ou passaremos, em algum momento, por uma
-              sensação de necessidade de mudança, seja essa mudança interna ou
-              externa. Geralmente, a necessidade de mudança surge quando estamos
-              lutando contra as incógnitas da vida, por exemplo: deixo meu
-              relacionamento, mudo minha carreira, mudo de casa ou simplesmente
-              deixo de lado o que não está me servindo mais? 
+              Terapia é pra quem quer <b>mudança</b>.<br></br>
+              <br></br>A necessidade de mudança surge quando estamos lutando com
+              as incógnitas da vida:{" "}
+              <b>
+                Será que termino meu relacionamento? Mudo minha carreira? Como
+                paro de ter tanta ansiedade?
+              </b>
+              <br></br>
+              <br></br>A terapia proporciona, através do autoconhecimento,
+              mudanças concretas no seu comportamento e na sua vida.
             </motion.p>
 
             {/* <motion.p

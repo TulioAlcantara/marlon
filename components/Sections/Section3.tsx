@@ -6,13 +6,13 @@ export default function Section3() {
     <>
       <section
         id="section3"
-        className="h-[667px] md:h-[1024px] xl:h-[1747px] bg-mobileSection3 md:bg-tabletSection3 xl:bg-none bg-cover"
+        className="h-[1250px] md:h-[1200px] xl:h-[1747px] bg-mobileSection3 md:bg-tabletSection3 xl:bg-none bg-cover"
       >
         <div className="container-screen  pb-16">
           <div
             className="card absolute text-white xl:text-black
               max-w-[200px] md:max-w-[380px] 
-              pt-[262px] md:pt-[538px] xl:pt-[907px]"
+              pt-[400px] md:pt-[660px] xl:pt-[907px]"
           >
             <motion.h2
               initial={{ opacity: 0, y: -50 }}
@@ -21,7 +21,8 @@ export default function Section3() {
               viewport={{ once: true }}
               className="card__title "
             >
-              Frase bonita e charmosa de impacto aqui
+              O paradoxo curioso é que quando aceito como sou,{" "}
+              <b>me transformo</b>
             </motion.h2>
             <motion.p
               className="card__body "
@@ -30,8 +31,18 @@ export default function Section3() {
               transition={{ duration: 2, delay: 1 }}
               viewport={{ once: true }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Olá, tudo bem? Meu nome é <b>Marlon Andrade</b>. Sou graduado em
+              psicologia pela PUC-Goiás. Trabalho com a abordagem TCC e
+              atendimento clínico a crianças, adolescentes e adultos.
+              <br></br>
+              <br></br>
+              Meu objetivo como psicólogo é promover a{" "}
+              <b>mudança de pensamentos, sentimentos e comportamentos</b> que
+              estejam te impedindo de alcançar seus objetivos ou trazendo
+              sofrimento, em qualquer área de sua vida.
+              <br></br>
+              <br></br>
+              CRP 1235678
             </motion.p>
 
             {/* <motion.p

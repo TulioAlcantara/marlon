@@ -2,34 +2,15 @@ import { motion } from "framer-motion";
 import { BsInstagram, BsMouse, BsWhatsapp } from "react-icons/bs";
 import { RxCaretDown } from "react-icons/rx";
 export default function Hero() {
+  const scrollToFirstSection = () => {
+    window.scrollTo({
+      top: document.getElementById("section1")!.offsetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
-      {/* <section className=" h-screen pt-16 bg-hero bg-cover bg-center ">
-        <div className="bg-hero-gradient h-full">
-          <div className="container-screen flex items-center ">
-            <motion.div
-              className="card-hero"
-              initial={{ opacity: 0, y: 300 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <h1 className="card-hero__title ">
-                Entre em consenso com seu corpo e mente
-              </h1>
-              <p className="card-hero__body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in
-                feugiat erat, sed ullamcorper urna. Sed imperdiet nunc sit amet
-                felis pulvinar bibendum.
-              </p>
-              <p className="card-hero__cta">
-                <BsArrowRight></BsArrowRight>
-                Explore o processo terapêutico
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section> */}
-
       <section className="h-screen" style={{ height: "100dvh" }}>
         <video
           className="h-screen w-full object-cover"
@@ -69,7 +50,12 @@ export default function Hero() {
                 <BsWhatsapp></BsWhatsapp>
               </div>
             </div>
-            <div className="fluid-2xl mx-auto">
+            <button
+              className="fluid-2xl mx-auto"
+              onClick={() => {
+                scrollToFirstSection();
+              }}
+            >
               <BsMouse></BsMouse>
               <motion.span
                 initial={{ opacity: 0 }}
@@ -83,7 +69,7 @@ export default function Hero() {
               >
                 <RxCaretDown></RxCaretDown>
               </motion.span>
-            </div>
+            </button>
           </div>
         </div>
       </section>

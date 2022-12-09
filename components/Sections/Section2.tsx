@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 export default function Section2() {
   return (
     <>
-      <section id="section2" className="h-[1128px] md:h-[1328px] xl:h-[1516px]">
+      <section id="section2" className="h-[1300px] md:h-[1328px] xl:h-[1516px]">
         <div className="container-screen pb-16">
           <div
             className="card-backdrop-dark text-white absolute right-0 z-20
@@ -32,9 +32,10 @@ export default function Section2() {
                 transition={{ duration: 2, delay: 1 }}
                 viewport={{ once: true }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in
-                feugiat erat, sed ullamcorper urna. Sed imperdiet nunc sit amet
-                felis pulvinar bibendum.
+                O tratamento para ansiedade ocorre em duas etapas. No primeiro
+                momento, ensino ao paciente o <b>controle corporal</b> dos
+                sintomas. Depois, trabalhamos com suas crenças cognitivas
+                negativas e crenças de catastrofização da realidade.
               </motion.p>
 
               {/* <motion.p
