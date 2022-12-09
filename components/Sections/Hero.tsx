@@ -30,8 +30,14 @@ export default function Hero() {
         </div>
       </section> */}
 
-      <section className="h-screen">
-        <video className="h-screen w-full object-cover" autoPlay loop muted>
+      <section className="h-screen" style={{ height: "100dvh" }}>
+        <video
+          className="h-screen w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
           <source type="video/mp4" src="/videos/bg-hero.mp4" />
         </video>
 
