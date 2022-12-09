@@ -72,18 +72,14 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
             >
               {sections.map((section, index) => {
                 return (
-                  <li key={index}>
-                    <motion.button
+                  <li className="relative" key={index}>
+                    <button
                       className="menu-list__item"
-                      whileHover={{
-                        color: "#000",
-                        transition: { duration: 0.3 },
-                      }}
                       onClick={() => onCloseMenu(section.id)}
                     >
                       <span>{section.name}</span>
                       <span>0{index + 1}</span>
-                    </motion.button>
+                    </button>
                   </li>
                 );
               })}

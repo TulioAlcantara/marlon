@@ -34,7 +34,13 @@
       @apply flex flex-col gap-8;
 
       &__item {
-        @apply flex justify-between w-full pb-1 fluid-lg  border-solid border-b-[1px] border-b-gray text-gray;
+        @apply flex justify-between w-full pb-1 fluid-lg text-gray
+        border-solid border-b-[1px] border-b-gray
+        hover:text-black transition-colors duration-300
+        before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-0
+        before:border-b-black before:border-b-2 before:border-solid
+        before:transition-all before:duration-300
+        hover:before:w-full;
       }
     }
   }
