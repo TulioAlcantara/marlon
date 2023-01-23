@@ -11,31 +11,17 @@ const Section4 = () => {
             max-w-[200px] md:max-w-[380px] 
               pt-[492px] md:pt-[1050px] xl:pt-[463px]"
           >
-            <motion.h2
-              initial={{ opacity: 0, y: -50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5 }}
-              viewport={{ once: true }}
-              className="card__title "
-            >
-              Encontre um caminho
-            </motion.h2>
-            <motion.p
-              className="card__body "
-              initial={{ opacity: 0, y: -50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 2, delay: 1 }}
-              viewport={{ once: true }}
-            >
+            <h2 className="card__title ">Encontre um caminho</h2>
+            <p className="card__body ">
               Em regra geral, o processo terapêutico acontece presencialmente,
               com duração de 50 a 60 minutos e frequência semanal.
               <br></br>
               <br></br>
               Estes acordos podem ser alterados, de acordo com cada necessidade
               individual do paciente.
-            </motion.p>
+            </p>
 
-            {/* <motion.p
+            {/* <p
               className="card__cta "
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -44,16 +30,12 @@ const Section4 = () => {
             >
               <BsArrowRight className="mr-2"></BsArrowRight>
               Explore como funciona o processo terapêutico
-            </motion.p> */}
+            </p> */}
           </div>
 
-          <motion.picture
+          <picture
             className="absolute right-0 z-10
             top-[321px] md:top-[538px] xl:top-[368px]"
-            initial={{ opacity: 0, scale: 0.2 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5 }}
-            viewport={{ once: true }}
           >
             <source
               srcSet="/images/section4/section-04-mobile.png"
@@ -72,19 +54,15 @@ const Section4 = () => {
               alt="Devo fazer terapia?"
               srcSet="/images/section4/section-04-desktop.png"
             ></img>
-          </motion.picture>
+          </picture>
 
-          <motion.img
-            initial={{ opacity: 0, scale: 0.2 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5 }}
-            viewport={{ once: true }}
+          <img
             className="absolute 
             w-[307px] md:w-[428px] xl:w-fit
             top-[77px] md:top-[694px] xl:top-[332px] 
             left-[-50px] md:left-[112px] xl:left-[-187px]"
             srcSet="/images/section4/section-04-number.png"
-          ></motion.img>
+          ></img>
         </div>
       </section>
     </>

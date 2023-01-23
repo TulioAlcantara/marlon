@@ -7,21 +7,32 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 export default function Section1() {
   const cardRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
+  const numberRef = useRef<HTMLImageElement>(null);
 
-  gsap.registerPlugin(ScrollTrigger);
-  useEffect(() => {
-    gsap.matchMedia().add("(min-width: 1280px)", () => {
-      gsap.to(cardRef.current, {
-        scrollTrigger: {
-          trigger: cardRef.current,
-          start: "top center",
-          scrub: true,
-          toggleActions: "start none none pause",
-        },
-        y: 300,
-      });
-    });
-  }, []);
+  // gsap.registerPlugin(ScrollTrigger);
+  // useEffect(() => {
+  //   gsap.matchMedia().add("(min-width: 1280px)", () => {
+  //     gsap.to(cardRef.current, {
+  //       scrollTrigger: {
+  //         trigger: cardRef.current,
+  //         start: "top center",
+  //         scrub: true,
+  //         toggleActions: "start none none pause",
+  //       },
+  //       y: 300,
+  //     });
+
+  //     gsap.to(imageRef.current, {
+  //       scrollTrigger: {
+  //         trigger: cardRef.current,
+  //         start: "top center",
+  //         scrub: true,
+  //         toggleActions: "start none none pause",
+  //       },
+  //       y: 10,
+  //     });
+  //   });
+  // }, []);
 
   return (
     <>
@@ -35,22 +46,8 @@ export default function Section1() {
             w-full
             pt-[540px] md:pt-[812px] xl:top-[755px] xl:pt-0"
           >
-            <motion.h2
-              initial={{ opacity: 0, y: -50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-              className="card__title"
-            >
-              Devo fazer terapia?
-            </motion.h2>
-            <motion.p
-              className="card__body"
-              initial={{ opacity: 0, y: -50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1 }}
-              viewport={{ once: true }}
-            >
+            <h2 className="card__title">Devo fazer terapia?</h2>
+            <p className="card__body">
               Terapia é pra quem quer <b>mudança</b>.<br></br>
               <br></br>A necessidade de mudança surge quando estamos lutando com
               as incógnitas da vida:{" "}
@@ -61,27 +58,13 @@ export default function Section1() {
               <br></br>
               <br></br>A terapia proporciona, através do autoconhecimento,
               mudanças concretas no seu comportamento e na sua vida.
-            </motion.p>
-
-            {/* <motion.p
-              className="card__cta text-white"
-              initial={{ opacity: 0, y: -50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 2, delay: 1 }}
-              viewport={{ once: true }}
-            >
-              <BsArrowRight className="mr-2"></BsArrowRight>
-              Explore o processo terapêutico
-            </motion.p> */}
+            </p>
           </div>
 
-          <motion.picture
+          <picture
+            ref={imageRef}
             className="absolute right-0 z-10
             top-[93px] md:top-[125px] xl:top-[464px]"
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
           >
             <source
               srcSet="/images/section1/section-01-mobile.png"
@@ -100,20 +83,16 @@ export default function Section1() {
               alt="Devo fazer terapia?"
               src="/images/section1/section-01-desktop.png"
             ></img>
-          </motion.picture>
+          </picture>
 
-          <motion.img
-            ref={imageRef}
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
+          <img
+            ref={numberRef}
             className="absolute 
             w-[270px] md:w-[373px] xl:w-fit
             top-[282px] md:top-[500px] xl:top-[173px] 
             left-[-49px] md:left-[53px] xl:left-[72px]"
             srcSet="/images/section1/section-01-number.png"
-          ></motion.img>
+          ></img>
           <button></button>
         </div>
       </section>

@@ -16,45 +16,17 @@ export default function Section2() {
               "
           >
             <div className="card">
-              <motion.h2
-                initial={{ opacity: 0, y: -50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.5 }}
-                viewport={{ once: true }}
-                className="card__title "
-              >
-                Ansiedade e depressão
-              </motion.h2>
-              <motion.p
-                className="card__body "
-                initial={{ opacity: 0, y: -50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 2, delay: 1 }}
-                viewport={{ once: true }}
-              >
+              <h2 className="card__title ">Ansiedade e depressão</h2>
+              <p className="card__body ">
                 O tratamento para ansiedade ocorre em duas etapas. No primeiro
                 momento, ensino ao paciente o <b>controle corporal</b> dos
                 sintomas. Depois, trabalhamos com suas crenças cognitivas
                 negativas e crenças de catastrofização da realidade.
-              </motion.p>
-
-              {/* <motion.p
-                className="card__cta text-white"
-                initial={{ opacity: 0, y: -50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 2, delay: 1 }}
-                viewport={{ once: true }}
-              >
-                <BsArrowRight className="mr-2"></BsArrowRight>
-                Conheça mais
-              </motion.p> */}
+              </p>
             </div>
           </div>
 
-          <motion.picture
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.5 }}
+          <picture
             className="absolute left-0 z-0
               top-[93px] md:top-[125px] xl:top-[200px] "
           >
@@ -72,7 +44,7 @@ export default function Section2() {
             ></source>
 
             <img srcSet="/images/section2/section-02-desktop.png"></img>
-          </motion.picture>
+          </picture>
         </div>
       </section>
     </>
