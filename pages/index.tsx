@@ -61,7 +61,10 @@ export default function Home() {
         animate={{ right: 0 }}
       >
         <Hero></Hero>
-        <div ref={sectionContainerRef} className="gradient-background">
+        <div
+          ref={sectionContainerRef}
+          className="gradient-background space-y-96"
+        >
           <Section1></Section1>
           <Section2></Section2>
           <Section3></Section3>

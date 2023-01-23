@@ -11,7 +11,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="h-screen" style={{ height: "100dvh" }}>
+      <section className="h-section">
         <video
           className="h-screen w-full object-cover"
           autoPlay
@@ -26,7 +26,7 @@ export default function Hero() {
           className="absolute top-0 h-screen w-full"
           style={{
             background:
-              " linear-gradient(0deg, #1C1C1C 4.17%, rgba(28, 28, 28, 0.6) 22.92%);",
+              " linear-gradient(0deg, #1C1C1C 4.17%, rgba(28, 28, 28, 0.6) 22.92%)",
           }}
         >
           <div className="container-screen flex flex-col justify-around text-white gap-10">

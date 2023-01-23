@@ -6,7 +6,7 @@ export default function Section3() {
     <>
       <section
         id="section3"
-        className="h-[1250px] md:h-[1200px] xl:h-[1747px] bg-mobileSection3 md:bg-tabletSection3 xl:bg-none bg-cover"
+        className="h-section bg-mobileSection3 md:bg-tabletSection3 xl:bg-none bg-cover"
       >
         <div className="container-screen  pb-16">
           <div
