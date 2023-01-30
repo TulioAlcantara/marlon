@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { gsap } from "gsap";
@@ -8,6 +8,9 @@ export default function Section1() {
   const cardRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const numberRef = useRef<HTMLImageElement>(null);
+
+  // let { scrollY } = useScroll();
+  // let y = useTransform(scrollY, [0, 6000], [0, 100]);
 
   // gsap.registerPlugin(ScrollTrigger);
   // useEffect(() => {
@@ -61,7 +64,8 @@ export default function Section1() {
             </p>
           </div>
 
-          <picture
+          <motion.picture
+            // style={{ y }}
             ref={imageRef}
             className="absolute right-0 z-10
             top-[93px] md:top-[125px] xl:top-[464px]"
@@ -83,7 +87,7 @@ export default function Section1() {
               alt="Devo fazer terapia?"
               src="/images/section1/section-01-desktop.png"
             ></img>
-          </picture>
+          </motion.picture>
 
           <img
             ref={numberRef}

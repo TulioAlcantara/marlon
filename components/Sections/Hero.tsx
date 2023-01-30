@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { BsInstagram, BsMouse, BsWhatsapp } from "react-icons/bs";
 import { RxCaretDown } from "react-icons/rx";
 export default function Hero() {
@@ -46,8 +47,12 @@ export default function Hero() {
               </h3>
               <div className="flex items-center gap-6">
                 <h3 className="font-light">MARLON ANDRADE</h3>
-                <BsInstagram></BsInstagram>
-                <BsWhatsapp></BsWhatsapp>
+                <Link href="#">
+                  <BsInstagram></BsInstagram>
+                </Link>
+                <Link href="#">
+                  <BsWhatsapp></BsWhatsapp>
+                </Link>
               </div>
             </div>
             <button
@@ -55,6 +60,7 @@ export default function Hero() {
               onClick={() => {
                 scrollToFirstSection();
               }}
+              aria-
             >
               <BsMouse></BsMouse>
               <motion.span

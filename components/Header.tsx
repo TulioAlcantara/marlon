@@ -33,7 +33,7 @@ export default function Header({
   };
 
   const toggleHeaderVisibility = () => {
-    if (window.pageYOffset > sectionContainerRef!.current!.offsetTop) {
+    if (window.pageYOffset >= sectionContainerRef!.current!.offsetTop) {
       headerRef.current?.classList.remove("opacity-0");
       headerRef.current?.classList.add("opacity-100");
       return;
