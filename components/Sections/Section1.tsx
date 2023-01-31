@@ -39,7 +39,7 @@ export default function Section1() {
 
   return (
     <>
-      <section id="section1" className="h-section">
+      <section id="section1" className="h-[900px] md:h-[1144px] xl:h-[1744px]">
         <div className="container-screen pb-16">
           <div
             ref={cardRef}

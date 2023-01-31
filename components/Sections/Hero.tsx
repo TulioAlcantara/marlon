@@ -60,7 +60,6 @@ export default function Hero() {
               onClick={() => {
                 scrollToFirstSection();
               }}
-              aria-
             >
               <BsMouse></BsMouse>
               <motion.span
