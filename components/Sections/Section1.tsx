@@ -8,40 +8,22 @@ export default function Section1() {
   const cardRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const numberRef = useRef<HTMLImageElement>(null);
+  const ref = useRef(null);
 
-  // let { scrollY } = useScroll();
-  // let y = useTransform(scrollY, [0, 6000], [0, 100]);
-
-  // gsap.registerPlugin(ScrollTrigger);
-  // useEffect(() => {
-  //   gsap.matchMedia().add("(min-width: 1280px)", () => {
-  //     gsap.to(cardRef.current, {
-  //       scrollTrigger: {
-  //         trigger: cardRef.current,
-  //         start: "top center",
-  //         scrub: true,
-  //         toggleActions: "start none none pause",
-  //       },
-  //       y: 300,
-  //     });
-
-  //     gsap.to(imageRef.current, {
-  //       scrollTrigger: {
-  //         trigger: cardRef.current,
-  //         start: "top center",
-  //         scrub: true,
-  //         toggleActions: "start none none pause",
-  //       },
-  //       y: 10,
-  //     });
-  //   });
-  // }, []);
+  let { scrollYProgress } = useScroll({ target: ref });
+  let imageY = useTransform(scrollYProgress, [0, 1], [300, 0]);
+  let cardY = useTransform(scrollYProgress, [0, 1], [0, 300]);
 
   return (
     <>
-      <section id="section1" className="h-[900px] md:h-[1144px] xl:h-[1744px]">
+      <section
+        ref={ref}
+        id="section1"
+        className="h-[900px] md:h-[1144px] xl:h-[1744px]"
+      >
         <div className="container-screen pb-16">
-          <div
+          <motion.div
+            style={{ y: cardY }}
             ref={cardRef}
             className="card
             relative xl:absolute
@@ -62,10 +44,10 @@ export default function Section1() {
               <br></br>A terapia proporciona, através do autoconhecimento,
               mudanças concretas no seu comportamento e na sua vida.
             </p>
-          </div>
+          </motion.div>
 
           <motion.picture
-            // style={{ y }}
+            style={{ y: imageY }}
             ref={imageRef}
             className="absolute right-0 z-10
             top-[93px] md:top-[125px] xl:top-[464px]"
