@@ -21,7 +21,7 @@ export default function Section3() {
             <img
               className="block xl:hidden my-5 w-screen"
               alt="Devo fazer terapia?"
-              src="/images/section3/section-03-mobile.svg"
+              src="/images/section3/section-03-mobile.png"
             ></img>
             <p className="card__body ">
               Olá, tudo bem? Meu nome é <b>Marlon Andrade</b>. Sou graduado em

@@ -13,7 +13,6 @@ export default function Header({
   sectionContainerRef,
 }: Props) {
   const headerRef = useRef<HTMLDivElement>(null);
-  const controls = useAnimationControls();
 
   useEffect(() => {
     window.onscroll = () => {

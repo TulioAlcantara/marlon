@@ -22,7 +22,7 @@
   }
 
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth w-full;
   }
 }
 
@@ -46,7 +46,7 @@
   }
 
   .container-screen {
-    @apply w-full max-w-screen-2xl relative h-full mx-auto px-8 md:px-16 xl:px-16;
+    @apply max-w-screen-2xl relative h-full mx-auto px-8 md:px-16 xl:px-16;
     .card {
       @apply z-20 xl:max-w-[400px] 2xl:max-w-[620px];
 
@@ -85,3 +85,5 @@
 .card-backdrop-white {
   background: rgba(255, 255, 255, 0.62);
 }
+
+
