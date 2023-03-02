@@ -10,20 +10,20 @@ export default function Section1() {
   const numberRef = useRef<HTMLImageElement>(null);
   const ref = useRef(null);
 
-  let { scrollYProgress } = useScroll({ target: ref });
-  let imageY = useTransform(scrollYProgress, [0, 1], [300, 0]);
-  let cardY = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  // let { scrollYProgress } = useScroll({ target: ref });
+  // let imageY = useTransform(scrollYProgress, [0, 1], [300, 0]);
+  // let cardY = useTransform(scrollYProgress, [0, 1], [0, 300]);
 
   return (
     <>
       <section
         ref={ref}
         id="section1"
-        className="h-[900px] md:h-[1144px] xl:h-[1744px]"
+        className="h-[900px] md:h-[1144px] xl:h-[1400px]"
       >
         <div className="container-screen pb-16">
           <motion.div
-            style={{ y: cardY }}
+            // style={{ y: cardY }}
             ref={cardRef}
             className="card
             relative xl:absolute
@@ -47,7 +47,7 @@ export default function Section1() {
           </motion.div>
 
           <motion.picture
-            style={{ y: imageY }}
+            // style={{ y: imageY }}
             ref={imageRef}
             className="absolute right-0 z-10
             top-[93px] md:top-[125px] xl:top-[464px]"

@@ -4,12 +4,12 @@ import { BsArrowRight } from "react-icons/bs";
 const Section4 = () => {
   return (
     <>
-      <section id="section4" className="h-[1000px] md:h-[1902px] xl:h-[1500px]">
+      <section id="section4" className="h-[1000px] md:h-[1302px] xl:h-[1000px]">
         <div className="container-screen  pb-16">
           <div
             className="card  text-black absolute
             max-w-[200px] md:max-w-[380px] 
-              pt-[492px] md:pt-[1050px] xl:pt-[463px]"
+              pt-[492px] md:pt-[650px] xl:pt-[263px]"
           >
             <h2 className="card__title ">Encontre um caminho</h2>
             <p className="card__body ">
@@ -35,7 +35,7 @@ const Section4 = () => {
 
           <picture
             className="absolute right-0 z-10
-            top-[321px] md:top-[538px] xl:top-[368px]"
+            top-[321px] md:top-[138px] xl:top-[168px]"
           >
             <source
               srcSet="/images/section4/section-04-mobile.png"
@@ -59,7 +59,7 @@ const Section4 = () => {
           <img
             className="absolute 
             w-[307px] md:w-[428px] xl:w-fit
-            top-[77px] md:top-[694px] xl:top-[332px] 
+            top-[77px] md:top-[294px] xl:top-[132px] 
             left-[-50px] md:left-[112px] xl:left-[-187px]"
             srcSet="/images/section4/section-04-number.png"
           ></img>

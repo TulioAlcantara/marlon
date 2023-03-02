@@ -6,18 +6,23 @@ export default function Section3() {
     <>
       <section
         id="section3"
-        className="h-[1250px] md:h-[1200px] xl:h-[1747px] bg-mobileSection3 md:bg-tabletSection3 xl:bg-none bg-cover"
+        className="h-[700px] md:h-[1000px] xl:h-[1747px]"
       >
         <div className="container-screen  pb-16">
           <div
-            className="card absolute text-white xl:text-black
-              max-w-[200px] md:max-w-[380px] 
-              pt-[400px] md:pt-[660px] xl:pt-[907px]"
+            className="card relative xl:absolute text-black
+            xl:max-w-[380px] z-20
+              pt-0 md:pt-[200px] xl:pt-[907px]"
           >
-            <h2 className="card__title ">
+            <h2 className="card__title">
               O paradoxo curioso é que quando aceito como sou,{" "}
               <b>me transformo</b>
             </h2>
+            <img
+              className="block xl:hidden my-5 w-screen"
+              alt="Devo fazer terapia?"
+              src="/images/section3/section-03-mobile.svg"
+            ></img>
             <p className="card__body ">
               Olá, tudo bem? Meu nome é <b>Marlon Andrade</b>. Sou graduado em
               psicologia pela PUC-Goiás. Trabalho com a abordagem TCC e
@@ -30,7 +35,6 @@ export default function Section3() {
               sofrimento, em qualquer área de sua vida.
               <br></br>
               <br></br>
-              CRP 1235678
             </p>
           </div>
 
@@ -41,14 +45,21 @@ export default function Section3() {
             src="/images/section3/section-03-desktop.png"
           ></img>
 
-          <img
+          <picture
             className="absolute 
-            hidden xl:block
-            w-fit z-30
-            top-[200px] 
-            left-[-100px]"
-            srcSet="/images/section3/section-03-number.png"
-          ></img>
+            w-[310px] xl:w-fit z-10 xl:z-30
+            top-0 xl:top-[200px] 
+            right-[-15px] xl:left-[-100px]"          >
+            <source
+              srcSet="/images/section3/section-03-number.png"
+              media="(min-width:1280px)"
+            ></source>
+
+            <img
+              alt="Devo fazer terapia?"
+              srcSet="/images/section3/section-03-number-mobile.svg"
+            ></img>
+          </picture>
         </div>
       </section>
     </>
