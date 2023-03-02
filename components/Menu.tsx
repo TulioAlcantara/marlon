@@ -99,7 +99,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="block md:hidden"
+              className="block"
             >
               <p className="fluid-xl font-heading mb-6 text-gray">
                 Agende sua consulta:
@@ -111,7 +111,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
                     transition: { duration: 0.3 },
                   }}
                   href="https://instagram.com"
-                  className="fluid-xl flex  items-center text-black"
+                  className="fluid-lg md:fluid-xl flex  items-center text-black"
                 >
                   <BsInstagram className="mr-2"></BsInstagram>Instagram
                 </motion.a>
@@ -121,7 +121,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
                     transition: { duration: 0.3 },
                   }}
                   href="https://whatsapp.com"
-                  className="fluid-xl flex items-center text-black"
+                  className="fluid-lg md:fluid-xl flex items-center text-black"
                 >
                   <BsWhatsapp className="mr-2"></BsWhatsapp>Whatsapp
                 </motion.a>

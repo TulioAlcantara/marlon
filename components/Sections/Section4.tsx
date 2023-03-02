@@ -13,12 +13,7 @@ const Section4 = () => {
           >
             <h2 className="card__title ">Encontre um caminho</h2>
             <p className="card__body ">
-              Em regra geral, o processo terapêutico acontece presencialmente,
-              com duração de 50 a 60 minutos e frequência semanal.
-              <br></br>
-              <br></br>
-              Estes acordos podem ser alterados, de acordo com cada necessidade
-              individual do paciente.
+              Ipsum Lorem
             </p>
 
             {/* <p
@@ -35,7 +30,7 @@ const Section4 = () => {
 
           <picture
             className="absolute right-0 z-10
-            top-[321px] md:top-[138px] xl:top-[168px]"
+            top-[221px] md:top-[138px] xl:top-[168px]"
           >
             <source
               srcSet="/images/section4/section-04-mobile.png"

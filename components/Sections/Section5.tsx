@@ -12,15 +12,14 @@ export default function Section5() {
           <div
             className="card absolute text-black
             card-backdrop-white xl:bg-transparent
-              max-w-[250px] md:max-w-[458px] 
-              mt-[273px] md:mt-[500px] xl:mt-[758px]
+              max-w-full md:max-w-[458px] 
+              mt-[330px] md:mt-[500px] xl:mt-[758px]
               mx-auto right-0 left-0 xl:left-auto xl:mr-16
               p-6 xl:p-0"
           >
             <h2 className="card__title ">Conheça as etapas do processo</h2>
             <p className="card__body ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental. As três etapas do processo psicoterapêutico são
             </p>
           </div>
 
