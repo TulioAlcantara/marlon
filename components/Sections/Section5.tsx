@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsArrowLeft, } from "react-icons/bs";
+import Details from "../Details";
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot, DotGroup } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export default function Section5() {
   return (
@@ -17,12 +20,41 @@ export default function Section5() {
               mx-auto right-0 left-0 xl:left-auto xl:mr-16
               p-6 xl:p-0"
           >
-            <h2 className="card__title ">Conheça as etapas do processo</h2>
-            <p className="card__body ">
-              Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental. As três etapas do processo psicoterapêutico são
-            </p>
-          </div>
+            <div className="hidden xl:block">
+              <h2 className="card__title ">Conheça as etapas do processo</h2>
+              <p className="card__body ">
+                Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental. As três etapas do processo psicoterapêutico são
+              </p>
 
+              <div className="hidden xl:block space-y-4">
+                <Details summary="Avaliacao" text="Ipsum Lorem"></Details>
+                <Details summary="Intervencao" text="Ipsum Lorem"></Details>
+                <Details summary="Manutencao" text="Ipsum Lorem"></Details>
+              </div>
+            </div>
+
+            <CarouselProvider
+              naturalSlideWidth={100}
+              naturalSlideHeight={50}
+              totalSlides={4}
+              className="block xl:hidden"
+            >
+              <Slider >
+                <Slide index={0}>
+                  <h2 className="fluid-lg mb-4">Conheça as etapas do processo</h2>
+                  Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental. As três etapas do processo psicoterapêutico são
+                </Slide>
+                <Slide index={1}>I am the second Slide.</Slide>
+                <Slide index={2}>I am the third Slide.</Slide>
+                <Slide index={3}>I am the third Slide.</Slide>
+              </Slider>
+              <div className="flex justify-center items-center gap-4">
+                <ButtonBack><BsArrowLeft></BsArrowLeft></ButtonBack>
+                <DotGroup dotNumbers={true} />
+                <ButtonNext><BsArrowRight></BsArrowRight></ButtonNext>
+              </div>
+            </CarouselProvider>
+          </div>
           <img
             className="hidden xl:block absolute left-0 z-10
             top-0 xl:top-[334px]"
