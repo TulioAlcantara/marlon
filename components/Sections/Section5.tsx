@@ -16,41 +16,57 @@ export default function Section5() {
             className="card absolute text-black
             card-backdrop-white xl:bg-transparent
               max-w-full md:max-w-[458px] 
-              mt-[330px] md:mt-[500px] xl:mt-[758px]
+              mt-[310px] md:mt-[500px] xl:mt-[400px]
               mx-auto right-0 left-0 xl:left-auto xl:mr-16
               p-6 xl:p-0"
           >
             <div className="hidden xl:block">
               <h2 className="card__title ">Conheça as etapas do processo</h2>
               <p className="card__body ">
-                Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental. As três etapas do processo psicoterapêutico são
+                Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
+                As três etapas do processo psicoterapêutico são
               </p>
 
               <div className="hidden xl:block space-y-4">
-                <Details summary="Avaliacao" text="Ipsum Lorem"></Details>
-                <Details summary="Intervencao" text="Ipsum Lorem"></Details>
-                <Details summary="Manutencao" text="Ipsum Lorem"></Details>
+                <Details summary="Avaliação" text="Juntos, vamos identificar seus problemas atuais e definir seus objetivos terapêuticos, para que possamos desenvolver um plano de tratamento personalizado para você."></Details>
+                <Details summary="Intervenção" text="Iremos trabalhar juntos para implementar o plano criado na avaliação, alcançar seus objetivos e promover seu bem-estar emocional e psicológico.\n A intervenção ajuda a mudar seus padrões de pensamento e comportamento para superar o problema."></Details>
+                <Details summary="Manutenção" text="É importante garantir que as mudanças positivas sejam mantidas a longo prazo.\n Por isso, na última etapa, trabalharemos juntos para desenvolver estratégias para evitar possíveis recaídas e manter o progresso alcançado na terapia.\n Além disso, você continuará a desenvolver e praticar as habilidades aprendidas durante a terapia, a fim de continuar a crescer e melhorar em sua vida."></Details>
               </div>
             </div>
 
             <CarouselProvider
               naturalSlideWidth={100}
-              naturalSlideHeight={50}
+              naturalSlideHeight={80}
               totalSlides={4}
+              infinite={true}
+
               className="block xl:hidden"
             >
-              <Slider >
+              <Slider>
                 <Slide index={0}>
                   <h2 className="fluid-lg mb-4">Conheça as etapas do processo</h2>
-                  Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental. As três etapas do processo psicoterapêutico são
+                  Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
+                  As três etapas do processo psicoterapêutico são
                 </Slide>
-                <Slide index={1}>I am the second Slide.</Slide>
-                <Slide index={2}>I am the third Slide.</Slide>
-                <Slide index={3}>I am the third Slide.</Slide>
+                <Slide index={1}>
+                  <h2 className="fluid-lg mb-4">Avaliação</h2>
+                  Juntos, vamos identificar seus problemas atuais e definir seus objetivos terapêuticos, para que possamos desenvolver um plano de tratamento personalizado para você.
+                </Slide>
+                <Slide index={2}>
+                  <h2 className="fluid-lg mb-4">Intervenção</h2>
+                  Iremos trabalhar juntos para implementar o plano criado na avaliação, alcançar seus objetivos e promover seu bem-estar emocional e psicológico.<br />
+                  A intervenção ajuda a mudar seus padrões de pensamento e comportamento para superar o problema.
+                </Slide>
+                <Slide index={3}>
+                  <h2 className="fluid-lg mb-4">Manutenção</h2>
+                  É importante garantir que as mudanças positivas sejam mantidas a longo prazo.<br />
+                  Por isso, na última etapa, trabalharemos juntos para desenvolver estratégias para evitar possíveis recaídas e manter o progresso alcançado na terapia.<br />
+                  Além disso, você continuará a desenvolver e praticar as habilidades aprendidas durante a terapia, a fim de continuar a crescer e melhorar em sua vida.
+                </Slide>
               </Slider>
               <div className="flex justify-center items-center gap-4">
                 <ButtonBack><BsArrowLeft></BsArrowLeft></ButtonBack>
-                <DotGroup dotNumbers={true} />
+                {/* <DotGroup totalSlides={4} visibleSlides={1} /> */}
                 <ButtonNext><BsArrowRight></BsArrowRight></ButtonNext>
               </div>
             </CarouselProvider>

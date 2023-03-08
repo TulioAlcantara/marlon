@@ -9,11 +9,11 @@ const Section4 = () => {
           <div
             className="card  text-black absolute
             max-w-[200px] md:max-w-[380px] 
-              pt-[492px] md:pt-[650px] xl:pt-[263px]"
+              pt-[290px] md:pt-[650px] xl:pt-[263px]"
           >
             <h2 className="card__title ">Encontre um caminho</h2>
             <p className="card__body ">
-              Ipsum Lorem
+              Encontrar um caminho pode ser desafiador e muitas vezes doloroso.<br /> A terapia oferece um espaço seguro para você explorar seus sentimentos, pensamentos e comportamentos, ajudando a identificar padrões que podem estar impedindo você de seguir em frente.<br /> Juntos, podemos trabalhar para que você se sinta mais seguro e confiante em suas escolhas, desenvolvendo habilidades e estratégias para enfrentar desafios e alcançar seus objetivos.
             </p>
 
             {/* <p
@@ -30,7 +30,7 @@ const Section4 = () => {
 
           <picture
             className="absolute right-0 z-10
-            top-[221px] md:top-[138px] xl:top-[168px]"
+            top-[221px] md:top-[138px] xl:top-0"
           >
             <source
               srcSet="/images/section4/section-04-mobile.png"
@@ -54,7 +54,7 @@ const Section4 = () => {
           <img
             className="absolute 
             w-[307px] md:w-[428px] xl:w-fit
-            top-[77px] md:top-[294px] xl:top-[132px] 
+            top-[77px] md:top-[294px] xl:top-0
             left-[-50px] md:left-[112px] xl:left-[-187px]"
             srcSet="/images/section4/section-04-number.png"
           ></img>

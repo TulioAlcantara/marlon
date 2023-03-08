@@ -6,7 +6,7 @@ export default function Section3() {
     <>
       <section
         id="section3"
-        className="h-[700px] md:h-[1100px] xl:h-[1747px]"
+        className="h-[700px] md:h-[900px] xl:h-[1747px]"
       >
         <div className="container-screen  pb-16">
           <div
@@ -24,17 +24,7 @@ export default function Section3() {
               src="/images/section3/section-03-mobile.png"
             ></img>
             <p className="card__body ">
-              Olá, tudo bem? Meu nome é <b>Marlon Andrade</b>. Sou graduado em
-              psicologia pela PUC-Goiás. Trabalho com a abordagem TCC e
-              atendimento clínico a crianças, adolescentes e adultos.
-              <br></br>
-              <br></br>
-              Meu objetivo como psicólogo é promover a{" "}
-              <b>mudança de pensamentos, sentimentos e comportamentos</b> que
-              estejam te impedindo de alcançar seus objetivos ou trazendo
-              sofrimento, em qualquer área de sua vida.
-              <br></br>
-              <br></br>
+              Olá! Eu sou Marlon Andrade, psicólogo especializado em terapia cognitivo-comportamental para adolescentes e adultos.<br /> Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.
             </p>
           </div>
 

@@ -19,7 +19,7 @@ export default function Section1() {
       <section
         ref={ref}
         id="section1"
-        className="h-[900px] md:h-[1144px] xl:h-[1400px]"
+        className="h-[1000px] md:h-[1144px] xl:h-[1400px]"
       >
         <div className="container-screen pb-16">
           <motion.div
@@ -33,16 +33,10 @@ export default function Section1() {
           >
             <h2 className="card__title">Devo fazer terapia?</h2>
             <p className="card__body">
-              Terapia é pra quem quer <b>mudança</b>.<br></br>
-              <br></br>A necessidade de mudança surge quando estamos lutando com
-              as incógnitas da vida:{" "}
-              <b>
-                Será que termino meu relacionamento? Mudo minha carreira? Como
-                paro de ter tanta ansiedade?
-              </b>
-              <br></br>
-              <br></br>A terapia proporciona, através do autoconhecimento,
-              mudanças concretas no seu comportamento e na sua vida.
+              Se você está enfrentando desafios emocionais, mentais ou comportamentais, eu estou aqui para ajudar.<br />
+              Como psicólogo especializado em terapia cognitivo-comportamental, eu posso te oferecer as ferramentas necessárias para te ajudar a superar seus problemas e encontrar um caminho para uma vida mais satisfatória.<br />
+              Juntos, podemos trabalhar para identificar e modificar padrões de pensamentos, sentimentos e comportamentos que estão te impedindo de alcançar seus objetivos ou trazendo sofrimento.<br />
+              Não hesite em marcar uma consulta comigo e começar essa jornada de mudança e transformação.
             </p>
           </motion.div>
 

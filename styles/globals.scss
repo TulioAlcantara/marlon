@@ -65,6 +65,11 @@
   }
 }
 
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .h-section {
   height: 100dvh;
 }
