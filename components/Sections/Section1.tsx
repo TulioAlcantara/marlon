@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Cta from "../Cta";
 
 export default function Section1() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -19,7 +20,7 @@ export default function Section1() {
       <section
         ref={ref}
         id="section1"
-        className="h-[1000px] md:h-[1144px] xl:h-[1400px]"
+        className="h-[1200px] md:h-[1300px] xl:h-[1400px]"
       >
         <div className="container-screen pb-16">
           <motion.div
@@ -38,10 +39,10 @@ export default function Section1() {
               Juntos, podemos trabalhar para identificar e modificar padrões de pensamentos, sentimentos e comportamentos que estão te impedindo de alcançar seus objetivos ou trazendo sofrimento.<br />
               Não hesite em marcar uma consulta comigo e começar essa jornada de mudança e transformação.
             </p>
+            <Cta label="Conheca mais" url="#"></Cta>
           </motion.div>
 
           <motion.picture
-            // style={{ y: imageY }}
             ref={imageRef}
             className="absolute right-0 z-10
             top-[93px] md:top-[125px] xl:top-[464px]"

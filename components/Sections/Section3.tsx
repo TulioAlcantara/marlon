@@ -18,11 +18,16 @@ export default function Section3() {
               O paradoxo curioso é que quando aceito como sou,{" "}
               <b>me transformo</b>
             </h2>
-            <img
-              className="block xl:hidden my-5 w-screen"
-              alt="Devo fazer terapia?"
-              src="/images/section3/section-03-mobile.png"
-            ></img>
+            <picture className="block xl:hidden my-5 w-full"
+            >
+              <source srcSet="/images/section3/section-03-tablet.png" media="(min-width:768px)">
+              </source>
+              <img
+                alt="Devo fazer terapia?"
+                src="/images/section3/section-03-mobile.png"
+              ></img>
+            </picture>
+
             <p className="card__body ">
               Olá! Eu sou Marlon Andrade, psicólogo especializado em terapia cognitivo-comportamental para adolescentes e adultos.<br /> Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.
             </p>
