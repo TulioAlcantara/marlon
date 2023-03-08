@@ -6,8 +6,8 @@ export default function Footer() {
     { name: "Devo fazer terapia?", id: "section1" },
     { name: "Ansiedade e depressão", id: "section2" },
     { name: "Sobre mim", id: "section3" },
-    { name: "Por que comigo?", id: "section1" },
-    { name: "As minhas sessões", id: "section1" },
+    { name: "Encontre um caminho", id: "section4" },
+    { name: "Etapas do processo", id: "section5" },
   ];
 
   const scrollTo = (sectionId: string) => {
