@@ -48,7 +48,7 @@
   .container-screen {
     @apply max-w-screen-2xl relative h-full mx-auto px-8 md:px-16 xl:px-16;
     .card {
-      @apply z-20 xl:max-w-[400px] 2xl:max-w-[620px];
+      @apply z-20 xl:max-w-[550px] 2xl:max-w-[700px];
 
       &__title {
         @apply max-w-fit  mb-5 md:mb-8 fluid-3xl  xl:fluid-4xl;
