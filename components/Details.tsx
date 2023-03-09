@@ -20,7 +20,7 @@ export default function Details({ details }: Props) {
   }
 
   return <>
-    <div className="flex gap-4">
+    <div className="flex gap-8">
       <ul className="space-y-4">
         {details.map((detail, index) =>
           <li key={index}>

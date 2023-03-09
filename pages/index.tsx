@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Marlon</title>
+        <title>Marlon Psicologo</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Menu onCloseMenu={toggleMenu} menuOpen={menuOpen}></Menu>
