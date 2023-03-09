@@ -49,21 +49,23 @@ export default function Section5() {
 
             <CarouselProvider
               naturalSlideWidth={100}
-              naturalSlideHeight={80}
+              naturalSlideHeight={75}
               totalSlides={4}
               infinite={true}
+              isPlaying={true}
+              interval={10000}
 
-              className="block xl:hidden"
+              className="block xl:hidden text-sm"
             >
               <Slider>
                 <Slide index={0}>
-                  <h2 className="fluid-lg mb-4">Conheça as etapas do processo</h2>
+                  <h2 className="fluid-xl mb-4">Conheça as etapas do processo</h2>
                   Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
                   As três etapas do processo psicoterapêutico são
                 </Slide>
                 {details.map((detail, index) => {
                   return (<Slide index={index + 1}>
-                    <h2 className="fluid-lg mb-4">{detail.summary}</h2>
+                    <h2 className="fluid-xl mb-4">{detail.summary}</h2>
                     {detail.text}
                   </Slide>
                   )

@@ -38,7 +38,7 @@ const Section4 = () => {
             <img
               alt="Devo fazer terapia?"
               srcSet="/images/section4/section-04-desktop.png"
-              className="w-full md:w-fit max-h-[470px] md:max-h-fit"
+              className="img-04-mask w-full md:w-fit max-h-[470px] md:max-h-fit"
             ></img>
           </picture>
 

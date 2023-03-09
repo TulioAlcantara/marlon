@@ -44,7 +44,7 @@ export default function Section3() {
             className="absolute 
             w-[310px] xl:w-fit z-10 xl:z-30
             top-0 xl:top-[200px] 
-            right-[-15px] xl:left-[-100px]"          >
+            right-0 xl:left-[-100px]"          >
             <source
               srcSet="/images/section3/section-03-number.png"
               media="(min-width:1280px)"
