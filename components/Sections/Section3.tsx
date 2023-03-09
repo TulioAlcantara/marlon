@@ -53,6 +53,7 @@ export default function Section3() {
             <img
               alt="Devo fazer terapia?"
               srcSet="/images/section3/section-03-number-mobile.svg"
+              className="w-full"
             ></img>
           </picture>
         </div>

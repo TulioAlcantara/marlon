@@ -64,7 +64,7 @@ export default function Section5() {
                   As três etapas do processo psicoterapêutico são
                 </Slide>
                 {details.map((detail, index) => {
-                  return (<Slide index={index + 1}>
+                  return (<Slide index={index + 1} key={index + 1}>
                     <h2 className="fluid-xl mb-4">{detail.summary}</h2>
                     {detail.text}
                   </Slide>
