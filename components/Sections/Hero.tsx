@@ -47,10 +47,10 @@ export default function Hero() {
               </h3>
               <div className="flex items-center gap-6">
                 <h3 className="font-light">MARLON ANDRADE</h3>
-                <Link href="#">
+                <Link href="#" className="hover:scale-110 duration-100">
                   <BsInstagram></BsInstagram>
                 </Link>
-                <Link href="#">
+                <Link href="#" className="hover:scale-110 duration-100">
                   <BsWhatsapp></BsWhatsapp>
                 </Link>
               </div>

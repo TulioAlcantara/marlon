@@ -111,7 +111,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
                     transition: { duration: 0.3 },
                   }}
                   href="https://instagram.com"
-                  className="fluid-lg md:fluid-xl flex  items-center text-black"
+                  className="fluid-lg md:fluid-xl flex  items-center text-black xl:text-gray"
                 >
                   <BsInstagram className="mr-2"></BsInstagram>Instagram
                 </motion.a>
@@ -121,7 +121,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
                     transition: { duration: 0.3 },
                   }}
                   href="https://whatsapp.com"
-                  className="fluid-lg md:fluid-xl flex items-center text-black"
+                  className="fluid-lg md:fluid-xl flex items-center text-black xl:text-gray"
                 >
                   <BsWhatsapp className="mr-2"></BsWhatsapp>Whatsapp
                 </motion.a>

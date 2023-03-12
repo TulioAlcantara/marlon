@@ -61,18 +61,18 @@ export default function Header({
           </button>
           <ul className="flex items-center gap-6  ">
             <li>
-              <button className="hidden xl:block text-2xl hover:scale-110">
+              <button className="hidden xl:block text-2xl hover:scale-110 duration-100">
                 <BsInstagram></BsInstagram>
               </button>
             </li>
             <li>
-              <button className="hidden xl:block text-2xl hover:scale-110">
+              <button className="hidden xl:block text-2xl hover:scale-110 duration-100">
                 <BsWhatsapp></BsWhatsapp>
               </button>
             </li>
             <li className="h-6">
               <button
-                className="text-2xl hover:scale-110"
+                className="text-2xl hover:scale-110 duration-100"
                 onClick={() => {
                   handleMenuToggle();
                 }}
