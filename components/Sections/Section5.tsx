@@ -33,13 +33,13 @@ export default function Section5() {
               max-w-full md:max-w-[458px] 
               mt-[310px] md:mt-[500px] xl:mt-[370px]
               mx-auto right-0 left-0 xl:left-auto xl:mr-16
-              p-6 xl:p-0"
+              p-8 xl:p-0"
           >
             <div className="hidden xl:block">
               <h2 className="card__title ">Conheça as etapas do processo</h2>
               <p className="card__body ">
                 Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
-                As três etapas do processo psicoterapêutico são
+                As três etapas do processo psicoterapêutico são:
               </p>
 
               <div className="hidden xl:block space-y-4">
@@ -61,7 +61,12 @@ export default function Section5() {
                 <Slide index={0}>
                   <h2 className="fluid-xl mb-4">Conheça as etapas do processo</h2>
                   Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
-                  As três etapas do processo psicoterapêutico são
+                  As três etapas do processo psicoterapêutico são:
+                  {/* <ul> */}
+                  {/*   <li className="font-bold">Avaliação</li> */}
+                  {/*   <li className="font-bold">Intervenção</li> */}
+                  {/*   <li className="font-bold">Manutenção</li> */}
+                  {/* </ul> */}
                 </Slide>
                 {details.map((detail, index) => {
                   return (<Slide index={index + 1} key={index + 1}>

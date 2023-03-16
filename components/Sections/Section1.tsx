@@ -20,7 +20,7 @@ export default function Section1() {
       <section
         ref={ref}
         id="section1"
-        className="h-[1200px] md:h-[1300px] xl:h-[1400px]"
+        className="h-[1150px] md:h-[1300px] xl:h-[1400px]"
       >
         <div className="container-screen pb-16">
           <motion.div
