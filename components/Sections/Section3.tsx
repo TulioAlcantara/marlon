@@ -1,16 +1,17 @@
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
+import Cta from "../Cta";
 
 export default function Section3() {
   return (
     <>
       <section
         id="section3"
-        className="h-[700px] md:h-[900px] xl:h-[1747px]"
+        className="h-[750px] md:h-[1050px] xl:h-[1600px]"
       >
         <div className="container-screen  pb-16">
           <div
-            className="card relative xl:absolute text-black
+            className="card relative xl:absolute text-white
             xl:max-w-[380px] z-20
               pt-0 md:pt-[200px] xl:pt-[907px]"
           >
@@ -31,6 +32,8 @@ export default function Section3() {
             <p className="card__body ">
               Olá! Eu sou Marlon Andrade, psicólogo especializado em terapia cognitivo-comportamental para adolescentes e adultos.<br /> Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.
             </p>
+
+            <Cta label="Conheca mais" url="#"></Cta>
           </div>
 
           <img

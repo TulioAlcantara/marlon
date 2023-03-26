@@ -28,7 +28,7 @@ export default function Section1() {
             ref={cardRef}
             className="card
             relative xl:absolute
-            text-white
+            text-black
             w-full
             pt-[540px] md:pt-[812px] xl:top-[755px] xl:pt-0"
           >

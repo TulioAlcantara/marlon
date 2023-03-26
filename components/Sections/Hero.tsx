@@ -12,7 +12,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="h-section">
+      <section className="h-screen">
         <video
           className="h-screen w-full object-cover"
           autoPlay

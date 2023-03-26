@@ -51,11 +51,11 @@
       @apply z-20 xl:max-w-[480px] 2xl:max-w-[700px];
 
       &__title {
-        @apply max-w-fit  mb-5 md:mb-8 fluid-3xl  xl:fluid-4xl;
+        @apply max-w-fit mb-5 md:mb-8 fluid-3xl  xl:fluid-4xl;
       }
 
       &__body {
-        @apply max-w-fit  mb-5 md:mb-8 fluid-base xl:fluid-lg;
+        @apply max-w-fit mb-5 md:mb-8 fluid-base xl:fluid-lg;
       }
 
       &__cta {
@@ -68,10 +68,6 @@
 body {
   width: 100%;
   overflow-x: hidden;
-}
-
-.h-section {
-  height: 100dvh;
 }
 
 .gradient-background {

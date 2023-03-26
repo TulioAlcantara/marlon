@@ -6,18 +6,6 @@ interface Props {
 
 export default function Details({ details }: Props) {
   const [selectedItem, setSelectedItem] = useState(details[0])
-  useEffect(() => {
-    // loopDetails()
-  }, [])
-
-  const loopDetails = () => {
-    setTimeout(() => {
-      const nextIndex = (details.indexOf(selectedItem) + 1) % details.length
-      setSelectedItem(details[nextIndex])
-      loopDetails()
-    }, 1000)
-
-  }
 
   return <>
     <div className="flex gap-8">
@@ -25,7 +13,7 @@ export default function Details({ details }: Props) {
         {details.map((detail, index) =>
           <li key={index}>
             <button
-              className={`text-2xl font-bold text-gray duration-300 ${selectedItem === detail ? 'text-black' : 'text-gray'}`}
+              className={`text-2xl font-bold duration-300 ${selectedItem === detail ? 'text-white' : 'text-lightGray'}`}
               onClick={() => setSelectedItem(detail)}>
               {detail.summary}
             </button>
