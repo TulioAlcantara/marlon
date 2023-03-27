@@ -1,105 +1,60 @@
 import { motion } from "framer-motion";
-import { BsArrowRight, BsArrowLeft, } from "react-icons/bs";
-import Details from "../Details";
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot, DotGroup } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
+import { BsArrowRight } from "react-icons/bs";
+import Cta from "../Cta";
 
-export default function Section5() {
-  const details = [
-    {
-      summary: "Avaliação",
-      text: "Juntos, vamos identificar seus problemas atuais e definir seus objetivos terapêuticos, para que possamos desenvolver um plano de tratamento personalizado para você.",
-    },
-    {
-      summary: "Intervenção",
-      text: "Iremos trabalhar juntos para implementar o plano criado na avaliação, alcançar seus objetivos e promover seu bem-estar emocional e psicológico.\n A intervenção ajuda a mudar seus padrões de pensamento e comportamento para superar o problema.",
-    },
-    {
-      summary: "Manutenção",
-      text: "É importante garantir que as mudanças positivas sejam mantidas a longo prazo.\n Por isso, na última etapa, trabalharemos juntos para desenvolver estratégias para evitar possíveis recaídas e manter o progresso alcançado na terapia.\n Além disso, você continuará a desenvolver e praticar as habilidades aprendidas durante a terapia, a fim de continuar a crescer e melhorar em sua vida.",
-    }
-  ]
-
+const Section5 = () => {
   return (
     <>
-      <section
-        id="section5"
-        className="h-[668px] md:h-[1016px] xl:h-[1300px] bg-mobileSection5 md:bg-tabletSection5 xl:bg-none bg-cover"
-      >
+      <section id="section5" className="h-[1200px] md:h-[1302px] xl:h-[1000px]">
         <div className="container-screen  pb-16">
           <div
-            className="card absolute text-black xl:text-white
-            card-backdrop-white xl:bg-transparent
-              max-w-full md:max-w-[458px] 
-              mt-[310px] md:mt-[500px] xl:mt-[600px]
-              mx-auto right-0 left-0 xl:left-auto xl:mr-16
-              p-8 xl:p-0"
+            className="card  text-black relative md:absolute
+            max-w-fit md:max-w-[380px] 
+              pt-[290px] md:pt-[650px] xl:pt-[263px]"
           >
-            <div className="hidden xl:block">
-              <h2 className="card__title ">Conheça as etapas do processo</h2>
-              <p className="card__body ">
-                Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
-                As três etapas do processo psicoterapêutico são:
-              </p>
-
-              <div className="hidden xl:block space-y-4">
-                <Details details={details}></Details>
-              </div>
-            </div>
-
-            <CarouselProvider
-              naturalSlideWidth={100}
-              naturalSlideHeight={75}
-              totalSlides={4}
-              infinite={true}
-              isPlaying={true}
-              interval={10000}
-
-              className="block xl:hidden text-sm"
-            >
-              <Slider>
-                <Slide index={0}>
-                  <h2 className="fluid-xl mb-4">Conheça as etapas do processo</h2>
-                  Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
-                  As três etapas do processo psicoterapêutico são:
-                  <ul>
-                    <li className="font-bold">Avaliação</li>
-                    <li className="font-bold">Intervenção</li>
-                    <li className="font-bold">Manutenção</li>
-                  </ul>
-                </Slide>
-                {details.map((detail, index) => {
-                  return (<Slide index={index + 1} key={index + 1}>
-                    <h2 className="fluid-xl mb-4">{detail.summary}</h2>
-                    {detail.text}
-                  </Slide>
-                  )
-                })}
-              </Slider>
-              <div className="flex justify-center items-center gap-4">
-                <ButtonBack><BsArrowLeft></BsArrowLeft></ButtonBack>
-                {/* <DotGroup totalSlides={4} visibleSlides={1} /> */}
-                <ButtonNext><BsArrowRight></BsArrowRight></ButtonNext>
-              </div>
-            </CarouselProvider>
+            <h2 className="card__title ">Encontre um caminho</h2>
+            <p className="card__body ">
+              Encontrar um caminho pode ser desafiador e muitas vezes doloroso.<br /> A terapia oferece um espaço seguro para você explorar seus sentimentos, pensamentos e comportamentos, ajudando a identificar padrões que podem estar impedindo você de seguir em frente.<br /> Juntos, podemos trabalhar para que você se sinta mais seguro e confiante em suas escolhas, desenvolvendo habilidades e estratégias para enfrentar desafios e alcançar seus objetivos.
+            </p>
+            <Cta label="Conheca mais" url="#"></Cta>
           </div>
-          <img
-            className="hidden xl:block absolute left-0 z-10
-            top-0 xl:top-[134px]"
-            alt="Devo fazer terapia?"
-            src="/images/section5/section-05-desktop.png"
-          ></img>
+
+          <picture
+            className="absolute right-0 z-10
+            top-[700px] md:top-[138px] xl:top-0
+            w-full md:w-fit"
+          >
+            <source
+              srcSet="/images/section5/section-05-mobile.png"
+              media="(max-width:767px)"
+            ></source>
+            <source
+              srcSet="/images/section5/section-05-tablet.png"
+              media="(min-width:768px) and (max-width:1279px)"
+            ></source>
+            <source
+              srcSet="/images/section5/section-05-desktop.png"
+              media="(min-width:1280px)"
+            ></source>
+
+            <img
+              alt="Devo fazer terapia?"
+              srcSet="/images/section5/section-05-mobile.png"
+              className="img-04-mask w-full md:w-fit max-h-[470px] md:max-h-fit"
+            ></img>
+          </picture>
 
           <img
             className="absolute 
-            block md:hidden xl:block
-            w-[308px] xl:w-fit z-0
-            top-[85px] xl:top-[200px] 
-            left-[20px] xl:left-[592px]"
-            srcSet="/images/section5/section-05-number.svg"
+            w-[307px] md:w-[428px] xl:w-fit
+            top-[77px] md:top-[294px] xl:top-0
+            left-[-50px] md:left-[112px] xl:left-[-187px]"
+            srcSet="/images/section5/section-05-number.png"
           ></img>
         </div>
       </section>
     </>
   );
-}
+};
+
+export default Section5;

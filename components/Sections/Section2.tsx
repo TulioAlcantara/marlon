@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BsArrowRight, BsArrowLeft, } from "react-icons/bs";
+import Details from "../Details";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot, DotGroup } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
@@ -21,23 +22,29 @@ export default function Section2() {
 
   return (
     <>
-      <section id="section2" className="h-[1050px] md:h-[1290px] xl:h-[1416px]">
-        <div className="container-screen pb-16">
+      <section
+        id="section2"
+        className="h-[668px] md:h-[1016px] xl:h-[1300px] bg-mobileSection5 md:bg-tabletSection5 xl:bg-none bg-cover"
+      >
+        <div className="container-screen  pb-16">
           <div
-            className="card card-backdrop-dark text-white absolute right-0 z-20
-              w-full md:w-[475px] xl:w-[775px] 
-              mt-[567px] md:mt-[687px] xl:mt-[735px] 
-              p-8 md:p-16
-              rounded-3xl md:rounded-none"
+            className="card absolute text-black xl:text-white
+            card-backdrop-white xl:bg-transparent
+              max-w-full md:max-w-[458px] 
+              mt-[310px] md:mt-[500px] xl:mt-[600px]
+              mx-auto right-0 left-0 xl:left-auto xl:mr-16
+              p-8 xl:p-0"
           >
-            <div className="hidden md:block">
-              <h2 className="card__title ">Ansiedade e depressão</h2>
+            <div className="hidden xl:block">
+              <h2 className="card__title ">Conheça as etapas do processo</h2>
               <p className="card__body ">
-                O tratamento para ansiedade ocorre em duas etapas. No primeiro
-                momento, ensino ao paciente o <b>controle corporal</b> dos
-                sintomas. Depois, trabalhamos com suas crenças cognitivas
-                negativas e crenças de catastrofização da realidade.
+                Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
+                As três etapas do processo psicoterapêutico são:
               </p>
+
+              <div className="hidden xl:block space-y-4">
+                <Details details={details}></Details>
+              </div>
             </div>
 
             <CarouselProvider
@@ -48,7 +55,7 @@ export default function Section2() {
               isPlaying={true}
               interval={10000}
 
-              className="block md:hidden text-sm"
+              className="block xl:hidden text-sm"
             >
               <Slider>
                 <Slide index={0}>
@@ -75,29 +82,22 @@ export default function Section2() {
                 <ButtonNext><BsArrowRight></BsArrowRight></ButtonNext>
               </div>
             </CarouselProvider>
-
           </div>
+          <img
+            className="hidden xl:block absolute left-0 z-10
+            top-0 xl:top-[134px]"
+            alt="Devo fazer terapia?"
+            src="/images/section2/section-02-desktop.png"
+          ></img>
 
-          <picture
-            className="absolute left-0 z-0
-              top-[93px] md:top-[125px] xl:top-[200px] 
-              w-full md:w-fit"
-          >
-            <source
-              srcSet="/images/section2/section-02-mobile.png"
-              media="(max-width:767px)"
-            ></source>
-            <source
-              srcSet="/images/section2/section-02-tablet.png"
-              media="(min-width:768px) and (max-width:1279px)"
-            ></source>
-            <source
-              srcSet="/images/section2/section-02-desktop.png"
-              media="(min-width: 1280px)"
-            ></source>
-
-            <img className="w-full md:w-fit" srcSet="/images/section2/section-02-mobile.png"></img>
-          </picture>
+          <img
+            className="absolute 
+            block md:hidden xl:block
+            w-[308px] xl:w-fit z-0
+            top-[85px] xl:top-[200px] 
+            left-[20px] xl:left-[592px]"
+            srcSet="/images/section2/section-02-number.png"
+          ></img>
         </div>
       </section>
     </>

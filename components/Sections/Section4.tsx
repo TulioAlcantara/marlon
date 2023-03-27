@@ -1,28 +1,87 @@
 import { motion } from "framer-motion";
-import { BsArrowRight } from "react-icons/bs";
-import Cta from "../Cta";
+import { BsArrowRight, BsArrowLeft, } from "react-icons/bs";
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot, DotGroup } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
-const Section4 = () => {
+export default function Section4() {
+  const details = [
+    {
+      summary: "Avaliação",
+      text: "Juntos, vamos identificar seus problemas atuais e definir seus objetivos terapêuticos, para que possamos desenvolver um plano de tratamento personalizado para você.",
+    },
+    {
+      summary: "Intervenção",
+      text: "Iremos trabalhar juntos para implementar o plano criado na avaliação, alcançar seus objetivos e promover seu bem-estar emocional e psicológico.\n A intervenção ajuda a mudar seus padrões de pensamento e comportamento para superar o problema.",
+    },
+    {
+      summary: "Manutenção",
+      text: "É importante garantir que as mudanças positivas sejam mantidas a longo prazo.\n Por isso, na última etapa, trabalharemos juntos para desenvolver estratégias para evitar possíveis recaídas e manter o progresso alcançado na terapia.\n Além disso, você continuará a desenvolver e praticar as habilidades aprendidas durante a terapia, a fim de continuar a crescer e melhorar em sua vida.",
+    }
+  ]
+
   return (
     <>
-      <section id="section4" className="h-[1200px] md:h-[1302px] xl:h-[1000px]">
-        <div className="container-screen  pb-16">
+      <section id="section4" className="h-[1050px] md:h-[1290px] xl:h-[1416px]">
+        <div className="container-screen pb-16">
           <div
-            className="card  text-black relative md:absolute
-            max-w-fit md:max-w-[380px] 
-              pt-[290px] md:pt-[650px] xl:pt-[263px]"
+            className="card card-backdrop-dark text-white absolute right-0 z-20
+              w-full md:w-[475px] xl:w-[775px] 
+              mt-[567px] md:mt-[687px] xl:mt-[735px] 
+              p-8 md:p-16
+              rounded-3xl md:rounded-none"
           >
-            <h2 className="card__title ">Encontre um caminho</h2>
-            <p className="card__body ">
-              Encontrar um caminho pode ser desafiador e muitas vezes doloroso.<br /> A terapia oferece um espaço seguro para você explorar seus sentimentos, pensamentos e comportamentos, ajudando a identificar padrões que podem estar impedindo você de seguir em frente.<br /> Juntos, podemos trabalhar para que você se sinta mais seguro e confiante em suas escolhas, desenvolvendo habilidades e estratégias para enfrentar desafios e alcançar seus objetivos.
-            </p>
-            <Cta label="Conheca mais" url="#"></Cta>
+            <div className="hidden md:block">
+              <h2 className="card__title ">Ansiedade e depressão</h2>
+              <p className="card__body ">
+                O tratamento para ansiedade ocorre em duas etapas. No primeiro
+                momento, ensino ao paciente o <b>controle corporal</b> dos
+                sintomas. Depois, trabalhamos com suas crenças cognitivas
+                negativas e crenças de catastrofização da realidade.
+              </p>
+            </div>
+
+            <CarouselProvider
+              naturalSlideWidth={100}
+              naturalSlideHeight={75}
+              totalSlides={4}
+              infinite={true}
+              isPlaying={true}
+              interval={10000}
+
+              className="block md:hidden text-sm"
+            >
+              <Slider>
+                <Slide index={0}>
+                  <h2 className="fluid-xl mb-4">Conheça as etapas do processo</h2>
+                  Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
+                  As três etapas do processo psicoterapêutico são:
+                  <ul>
+                    <li className="font-bold">Avaliação</li>
+                    <li className="font-bold">Intervenção</li>
+                    <li className="font-bold">Manutenção</li>
+                  </ul>
+                </Slide>
+                {details.map((detail, index) => {
+                  return (<Slide index={index + 1} key={index + 1}>
+                    <h2 className="fluid-xl mb-4">{detail.summary}</h2>
+                    {detail.text}
+                  </Slide>
+                  )
+                })}
+              </Slider>
+              <div className="flex justify-center items-center gap-4">
+                <ButtonBack><BsArrowLeft></BsArrowLeft></ButtonBack>
+                {/* <DotGroup totalSlides={4} visibleSlides={1} /> */}
+                <ButtonNext><BsArrowRight></BsArrowRight></ButtonNext>
+              </div>
+            </CarouselProvider>
+
           </div>
 
           <picture
-            className="absolute right-0 z-10
-            top-[700px] md:top-[138px] xl:top-0
-            w-full md:w-fit"
+            className="absolute left-0 z-0
+              top-[93px] md:top-[125px] xl:top-[200px] 
+              w-full md:w-fit"
           >
             <source
               srcSet="/images/section4/section-04-mobile.png"
@@ -34,27 +93,13 @@ const Section4 = () => {
             ></source>
             <source
               srcSet="/images/section4/section-04-desktop.png"
-              media="(min-width:1280px)"
+              media="(min-width: 1280px)"
             ></source>
 
-            <img
-              alt="Devo fazer terapia?"
-              srcSet="/images/section4/section-04-mobile.png"
-              className="img-04-mask w-full md:w-fit max-h-[470px] md:max-h-fit"
-            ></img>
+            <img className="w-full md:w-fit" srcSet="/images/section4/section-04-mobile.png"></img>
           </picture>
-
-          <img
-            className="absolute 
-            w-[307px] md:w-[428px] xl:w-fit
-            top-[77px] md:top-[294px] xl:top-0
-            left-[-50px] md:left-[112px] xl:left-[-187px]"
-            srcSet="/images/section4/section-04-number.png"
-          ></img>
         </div>
       </section>
     </>
   );
-};
-
-export default Section4;
+}

@@ -65,11 +65,11 @@ export default function Home() {
           ref={sectionContainerRef}
           className="gradient-background"
         >
-          <Section3></Section3>
-          <Section5></Section5>
           <Section1></Section1>
           <Section2></Section2>
+          <Section3></Section3>
           <Section4></Section4>
+          <Section5></Section5>
         </div>
         <Footer></Footer>
       </motion.div>

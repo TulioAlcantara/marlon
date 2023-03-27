@@ -1,64 +1,76 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { BsArrowRight } from "react-icons/bs";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Cta from "../Cta";
 
 export default function Section3() {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const numberRef = useRef<HTMLImageElement>(null);
+  const ref = useRef(null);
+
   return (
     <>
       <section
+        ref={ref}
         id="section3"
-        className="h-[750px] md:h-[1050px] xl:h-[1600px]"
+        className="h-[1150px] md:h-[1300px] xl:h-[1400px]"
       >
-        <div className="container-screen  pb-16">
-          <div
-            className="card relative xl:absolute text-white
-            xl:max-w-[380px] z-20
-              pt-0 md:pt-[200px] xl:pt-[907px]"
+        <div className="container-screen pb-16">
+          <motion.div
+            // style={{ y: cardY }}
+            ref={cardRef}
+            className="card
+            relative xl:absolute
+            text-black
+            w-full
+            pt-[540px] md:pt-[812px] xl:top-[755px] xl:pt-0"
           >
-            <h2 className="card__title">
-              O paradoxo curioso é que quando aceito como sou,{" "}
-              <b>me transformo</b>
-            </h2>
-            <picture className="block xl:hidden my-5 w-full"
-            >
-              <source srcSet="/images/section3/section-03-tablet.png" media="(min-width:768px)">
-              </source>
-              <img
-                alt="Devo fazer terapia?"
-                src="/images/section3/section-03-mobile.png"
-              ></img>
-            </picture>
-
-            <p className="card__body ">
-              Olá! Eu sou Marlon Andrade, psicólogo especializado em terapia cognitivo-comportamental para adolescentes e adultos.<br /> Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.
+            <h2 className="card__title">Devo fazer terapia?</h2>
+            <p className="card__body">
+              Se você está enfrentando desafios emocionais, mentais ou comportamentais, eu estou aqui para ajudar.<br />
+              Como psicólogo especializado em terapia cognitivo-comportamental, eu posso te oferecer as ferramentas necessárias para te ajudar a superar seus problemas e encontrar um caminho para uma vida mais satisfatória.<br />
+              Juntos, podemos trabalhar para identificar e modificar padrões de pensamentos, sentimentos e comportamentos que estão te impedindo de alcançar seus objetivos ou trazendo sofrimento.<br />
+              Não hesite em marcar uma consulta comigo e começar essa jornada de mudança e transformação.
             </p>
-
             <Cta label="Conheca mais" url="#"></Cta>
-          </div>
+          </motion.div>
 
-          <img
-            className="hidden xl:block absolute right-0 z-10
-            top-0 xl:top-[552px]"
-            alt="Devo fazer terapia?"
-            src="/images/section3/section-03-desktop.png"
-          ></img>
-
-          <picture
-            className="absolute 
-            w-[310px] xl:w-fit z-10 xl:z-30
-            top-0 xl:top-[200px] 
-            right-0 xl:left-[-100px]"          >
+          <motion.picture
+            ref={imageRef}
+            className="absolute right-0 z-10
+            top-[93px] md:top-[125px] xl:top-[464px]"
+          >
             <source
-              srcSet="/images/section3/section-03-number.png"
+              srcSet="/images/section3/section-03-mobile.png"
+              media="(max-width:767px)"
+            ></source>
+            <source
+              srcSet="/images/section3/section-03-tablet.png"
+              media="(min-width:768px) and (max-width:1279px)"
+            ></source>
+            <source
+              srcSet="/images/section3/section-03-desktop.png"
               media="(min-width:1280px)"
             ></source>
 
             <img
               alt="Devo fazer terapia?"
-              srcSet="/images/section3/section-03-number-mobile.svg"
-              className="w-full"
+              src="/images/section3/section-03-desktop.png"
             ></img>
-          </picture>
+          </motion.picture>
+
+          <img
+            ref={numberRef}
+            className="absolute 
+            w-[270px] md:w-[373px] xl:w-fit
+            top-[282px] md:top-[500px] xl:top-[173px] 
+            left-[-49px] md:left-[53px] xl:left-[72px]"
+            srcSet="/images/section3/section-03-number.png"
+          ></img>
+          <button></button>
         </div>
       </section>
     </>
