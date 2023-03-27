@@ -11,11 +11,11 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
   const refMenu = useRef<HTMLDivElement>(null);
 
   const sections = [
-    { name: "Devo fazer terapia?", id: "section1" },
-    { name: "Ansiedade e depressão", id: "section2" },
-    { name: "Sobre mim", id: "section3" },
-    { name: "Encontre um caminho", id: "section4" },
-    { name: "Etapas do processo", id: "section5" },
+    { name: "Sobre mim", id: "section1" },
+    { name: "Etapas do processo", id: "section2" },
+    { name: "Devo fazer terapia?", id: "section3" },
+    { name: "Ansiedade e depressão", id: "section4" },
+    { name: "Encontre um caminho", id: "section5" },
   ];
 
   useEffect(() => {

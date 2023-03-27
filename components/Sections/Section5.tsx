@@ -10,7 +10,7 @@ const Section5 = () => {
           <div
             className="card  text-black relative md:absolute
             max-w-fit md:max-w-[380px] 
-              pt-[290px] md:pt-[650px] xl:pt-[263px]"
+              pt-[290px] md:pt-[500px] xl:pt-[400px]"
           >
             <h2 className="card__title ">Encontre um caminho</h2>
             <p className="card__body ">
@@ -38,19 +38,31 @@ const Section5 = () => {
             ></source>
 
             <img
-              alt="Devo fazer terapia?"
+              alt="Encontre um caminho"
               srcSet="/images/section5/section-05-mobile.png"
-              className="img-04-mask w-full md:w-fit max-h-[470px] md:max-h-fit"
+              className="img-05-mask w-full md:w-fit max-h-[470px] md:max-h-fit"
             ></img>
           </picture>
 
-          <img
-            className="absolute 
-            w-[307px] md:w-[428px] xl:w-fit
-            top-[77px] md:top-[294px] xl:top-0
-            left-[-50px] md:left-[112px] xl:left-[-187px]"
-            srcSet="/images/section5/section-05-number.png"
-          ></img>
+          <picture className="absolute 
+          top-[77px] md:top-[200px] xl:top-0
+          left-[-50px] md:left-[112px] xl:left-[250px]"
+          >
+            <source
+              srcSet="/images/section5/mobile-number.png"
+              media="(max-width:767px)"
+            ></source>
+
+            <source
+              srcSet="/images/section5/tablet-number.png"
+              media="(min-width:768px) and (max-width:1279px)"
+            ></source>
+
+            <img
+              srcSet="/images/section5/desktop-number.png"
+            ></img>
+          </picture>
+
         </div>
       </section>
     </>

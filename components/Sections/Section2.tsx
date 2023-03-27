@@ -24,7 +24,7 @@ export default function Section2() {
     <>
       <section
         id="section2"
-        className="h-[668px] md:h-[1016px] xl:h-[1300px] bg-mobileSection5 md:bg-tabletSection5 xl:bg-none bg-cover"
+        className="h-[668px] md:h-[1016px] xl:h-[1300px] bg-mobileSection2 md:bg-tabletSection2 xl:bg-none bg-cover"
       >
         <div className="container-screen  pb-16">
           <div
@@ -92,10 +92,10 @@ export default function Section2() {
 
           <img
             className="absolute 
-            block md:hidden xl:block
-            w-[308px] xl:w-fit z-0
-            top-[85px] xl:top-[200px] 
-            left-[20px] xl:left-[592px]"
+            hidden xl:block
+            w-fit z-0
+            top-[200px] 
+            left-[592px]"
             srcSet="/images/section2/section-02-number.png"
           ></img>
         </div>

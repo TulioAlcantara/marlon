@@ -6,27 +6,20 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Cta from "../Cta";
 
 export default function Section3() {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
-  const numberRef = useRef<HTMLImageElement>(null);
-  const ref = useRef(null);
 
   return (
     <>
       <section
-        ref={ref}
         id="section3"
-        className="h-[1150px] md:h-[1300px] xl:h-[1400px]"
+        className="h-[1150px] md:h-[1300px] xl:h-[1200px]"
       >
         <div className="container-screen pb-16">
           <motion.div
-            // style={{ y: cardY }}
-            ref={cardRef}
             className="card
             relative xl:absolute
             text-black
             w-full
-            pt-[540px] md:pt-[812px] xl:top-[755px] xl:pt-0"
+            pt-[540px] md:pt-[812px] xl:top-[555px] xl:pt-0"
           >
             <h2 className="card__title">Devo fazer terapia?</h2>
             <p className="card__body">
@@ -39,9 +32,8 @@ export default function Section3() {
           </motion.div>
 
           <motion.picture
-            ref={imageRef}
             className="absolute right-0 z-10
-            top-[93px] md:top-[125px] xl:top-[464px]"
+            top-[93px] md:top-[125px] xl:top-[264px]"
           >
             <source
               srcSet="/images/section3/section-03-mobile.png"
@@ -62,15 +54,25 @@ export default function Section3() {
             ></img>
           </motion.picture>
 
-          <img
-            ref={numberRef}
-            className="absolute 
-            w-[270px] md:w-[373px] xl:w-fit
-            top-[282px] md:top-[500px] xl:top-[173px] 
-            left-[-49px] md:left-[53px] xl:left-[72px]"
-            srcSet="/images/section3/section-03-number.png"
-          ></img>
-          <button></button>
+
+          <picture className="absolute 
+              top-[282px] md:top-[500px] xl:top-[160px] 
+              left-[-49px] md:left-[53px] xl:left-[60px]"
+          >
+            <source
+              srcSet="/images/section3/mobile-number.png"
+              media="(max-width:767px)"
+            ></source>
+
+            <source
+              srcSet="/images/section3/tablet-number.png"
+              media="(min-width:768px) and (max-width:1279px)"
+            ></source>
+
+            <img
+              srcSet="/images/section3/desktop-number.png"
+            ></img>
+          </picture>
         </div>
       </section>
     </>

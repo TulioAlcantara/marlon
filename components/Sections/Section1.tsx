@@ -21,7 +21,7 @@ export default function Section1() {
             </h2>
             <picture className="block xl:hidden my-5 w-full"
             >
-              <source srcSet="/images/section1/section-03-tablet.png" media="(min-width:768px)">
+              <source srcSet="/images/section1/section-01-tablet.png" media="(min-width:768px)">
               </source>
               <img
                 alt="Devo fazer terapia?"
@@ -45,18 +45,22 @@ export default function Section1() {
 
           <picture
             className="absolute 
-            w-[310px] xl:w-fit z-10 xl:z-30
-            top-0 xl:top-[200px] 
-            right-0 xl:left-[-100px]"          >
+            top-0 xl:top-[500px] 
+            right-0 xl:left-[80px]"
+          >
             <source
-              srcSet="/images/section1/section-01-number.png"
-              media="(min-width:1280px)"
+              srcSet="/images/section1/mobile-number.png"
+              media="(max-width:767px)"
+            ></source>
+
+            <source
+              srcSet="/images/section1/tablet-number.png"
+              media="(min-width:768px) and (max-width:1279px)"
             ></source>
 
             <img
-              alt="Devo fazer terapia?"
-              srcSet="/images/section1/section-01-number-mobile.svg"
-              className="w-full"
+              alt="Sobre mim"
+              srcSet="/images/section1/desktop-number.png"
             ></img>
           </picture>
         </div>
