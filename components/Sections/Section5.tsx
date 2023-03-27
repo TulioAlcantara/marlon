@@ -5,12 +5,12 @@ import Cta from "../Cta";
 const Section5 = () => {
   return (
     <>
-      <section id="section5" className="h-[1200px] md:h-[1302px] xl:h-[1000px]">
+      <section id="section5" className="h-[1200px] md:h-[1200px] xl:h-[1100px]">
         <div className="container-screen  pb-16">
           <div
             className="card  text-black relative md:absolute
             max-w-fit md:max-w-[380px] 
-              pt-[290px] md:pt-[500px] xl:pt-[400px]"
+              pt-[290px] md:pt-[500px] xl:pt-[500px]"
           >
             <h2 className="card__title ">Encontre um caminho</h2>
             <p className="card__body ">
@@ -21,7 +21,7 @@ const Section5 = () => {
 
           <picture
             className="absolute right-0 z-10
-            top-[700px] md:top-[138px] xl:top-0
+            top-[700px] md:top-[138px] xl:top-[100px]
             w-full md:w-fit"
           >
             <source
@@ -45,7 +45,7 @@ const Section5 = () => {
           </picture>
 
           <picture className="absolute 
-          top-[77px] md:top-[200px] xl:top-0
+          top-[77px] md:top-[200px] xl:top-[100px]
           left-[-50px] md:left-[112px] xl:left-[250px]"
           >
             <source

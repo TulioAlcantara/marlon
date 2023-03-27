@@ -6,14 +6,14 @@ export default function Section1() {
   return (
     <>
       <section
-        id="section3"
-        className="h-[750px] md:h-[1050px] xl:h-[1600px]"
+        id="section1"
+        className="h-[750px] md:h-[1050px] xl:h-[1200px]"
       >
         <div className="container-screen  pb-16">
           <div
             className="card relative xl:absolute text-white
             xl:max-w-[380px] z-20
-              pt-0 md:pt-[200px] xl:pt-[907px]"
+              pt-0 md:pt-[200px] xl:pt-[500px]"
           >
             <h2 className="card__title">
               O paradoxo curioso é que quando aceito como sou,{" "}
@@ -38,14 +38,14 @@ export default function Section1() {
 
           <img
             className="hidden xl:block absolute right-0 z-10
-            top-0 xl:top-[552px]"
+            top-0 xl:top-[152px]"
             alt="Devo fazer terapia?"
             src="/images/section1/section-01-desktop.png"
           ></img>
 
           <picture
             className="absolute 
-            top-0 xl:top-[500px] 
+            top-0 xl:top-[100px] 
             right-0 xl:left-[80px]"
           >
             <source

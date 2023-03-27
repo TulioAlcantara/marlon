@@ -36,7 +36,7 @@ export default function Section2() {
               p-8 xl:p-0"
           >
             <div className="hidden xl:block">
-              <h2 className="card__title ">Conheça as etapas do processo</h2>
+              <h2 className="card__title ">Conheça as <b>etapas do processo</b></h2>
               <p className="card__body ">
                 Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
                 As três etapas do processo psicoterapêutico são:

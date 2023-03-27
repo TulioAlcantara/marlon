@@ -17,7 +17,7 @@ export default function Section3() {
           <motion.div
             className="card
             relative xl:absolute
-            text-black
+            text-white
             w-full
             pt-[540px] md:pt-[812px] xl:top-[555px] xl:pt-0"
           >
