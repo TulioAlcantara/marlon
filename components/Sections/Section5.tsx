@@ -5,23 +5,25 @@ import Cta from "../Cta";
 const Section5 = () => {
   return (
     <>
-      <section id="section5" className="h-[1200px] md:h-[1200px] xl:h-[1100px]">
+      <section id="section5" className="h-[1200px] md:h-[1200px] xl:h-[1200px] 2xl:h-[1100px]">
         <div className="container-screen  pb-16">
           <div
             className="card  text-black relative md:absolute
             max-w-fit md:max-w-[380px] 
-              pt-[290px] md:pt-[500px] xl:pt-[500px]"
+              pt-[290px] md:pt-[500px] xl:pt-[350px] 2xl:pt-[500px]"
           >
-            <h2 className="card__title ">Encontre um caminho</h2>
+            <h2 className="card__title ">Encontre um <b>caminho</b></h2>
             <p className="card__body ">
-              Encontrar um caminho pode ser desafiador e muitas vezes doloroso.<br /> A terapia oferece um espaço seguro para você explorar seus sentimentos, pensamentos e comportamentos, ajudando a identificar padrões que podem estar impedindo você de seguir em frente.<br /> Juntos, podemos trabalhar para que você se sinta mais seguro e confiante em suas escolhas, desenvolvendo habilidades e estratégias para enfrentar desafios e alcançar seus objetivos.
+              Encontrar um caminho pode ser desafiador e muitas vezes doloroso.<br /><br />
+              A terapia oferece um espaço seguro para você explorar seus sentimentos, pensamentos e comportamentos, ajudando a identificar padrões que podem estar impedindo você de seguir em frente.<br /><br />
+              Juntos, podemos trabalhar para que você se sinta mais seguro e confiante em suas escolhas, desenvolvendo habilidades e estratégias para enfrentar desafios e alcançar seus objetivos.
             </p>
             <Cta label="Conheca mais" url="#"></Cta>
           </div>
 
           <picture
             className="absolute right-0 z-10
-            top-[700px] md:top-[138px] xl:top-[100px]
+            top-[750px] md:top-[138px] xl:top-[100px]
             w-full md:w-fit"
           >
             <source

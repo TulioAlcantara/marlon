@@ -21,7 +21,7 @@ export default function Section4() {
 
   return (
     <>
-      <section id="section4" className="h-[950px] md:h-[1200px] xl:h-[1416px]">
+      <section id="section4" className="h-[890px] md:h-[1200px] xl:h-[1416px]">
         <div className="container-screen pb-16">
           <div
             className="card card-backdrop-dark text-white absolute right-0 z-20

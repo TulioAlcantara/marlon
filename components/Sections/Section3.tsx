@@ -11,7 +11,7 @@ export default function Section3() {
     <>
       <section
         id="section3"
-        className="h-[1150px] md:h-[1300px] xl:h-[1200px]"
+        className="h-[1200px] md:h-[1300px] xl:h-[1200px]"
       >
         <div className="container-screen pb-16">
           <motion.div
@@ -19,13 +19,13 @@ export default function Section3() {
             relative xl:absolute
             text-white
             w-full
-            pt-[540px] md:pt-[812px] xl:top-[555px] xl:pt-0"
+            pt-[540px] md:pt-[812px] xl:top-[420px] 2xl:top-[555px] xl:pt-0"
           >
-            <h2 className="card__title">Devo fazer terapia?</h2>
+            <h2 className="card__title">Devo fazer <b>terapia?</b></h2>
             <p className="card__body">
-              Se você está enfrentando desafios emocionais, mentais ou comportamentais, eu estou aqui para ajudar.<br />
-              Como psicólogo especializado em terapia cognitivo-comportamental, eu posso te oferecer as ferramentas necessárias para te ajudar a superar seus problemas e encontrar um caminho para uma vida mais satisfatória.<br />
-              Juntos, podemos trabalhar para identificar e modificar padrões de pensamentos, sentimentos e comportamentos que estão te impedindo de alcançar seus objetivos ou trazendo sofrimento.<br />
+              Se você está enfrentando desafios emocionais, mentais ou comportamentais, eu estou aqui para ajudar.<br /><br />
+              Como psicólogo especializado em terapia cognitivo-comportamental, eu posso te oferecer as ferramentas necessárias para te ajudar a superar seus problemas e encontrar um caminho para uma vida mais satisfatória.<br /><br />
+              Juntos, podemos trabalhar para identificar e modificar padrões de pensamentos, sentimentos e comportamentos que estão te impedindo de alcançar seus objetivos ou trazendo sofrimento.<br /><br />
               Não hesite em marcar uma consulta comigo e começar essa jornada de mudança e transformação.
             </p>
             <Cta label="Conheca mais" url="#"></Cta>
@@ -56,7 +56,7 @@ export default function Section3() {
 
 
           <picture className="absolute 
-              top-[282px] md:top-[500px] xl:top-[160px] 
+              top-[282px] md:top-[500px] xl:top-[50px] 2xl:top-[160px] 
               left-[-49px] md:left-[53px] xl:left-[60px]"
           >
             <source

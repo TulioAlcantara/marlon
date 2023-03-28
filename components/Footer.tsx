@@ -16,7 +16,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-28 w-full bg-black ">
+    <footer className="py-16 xl:py-28 w-full bg-black ">
       <div className="container-screen flex flex-col xl:flex-row justify-start gap-16">
         <div className="w-full">
           <h2 className="fluid-2xl text-white mb-16">Continue navegando</h2>

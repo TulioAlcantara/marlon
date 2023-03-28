@@ -4,11 +4,14 @@ import { BsArrowRight } from "react-icons/bs";
 interface Props {
   label: string,
   url: string,
+  white?: boolean
 }
 
-export default function Cta({ label, url }: Props) {
+export default function Cta({ label, url, white }: Props) {
   return <>
-    <a className="flex items-center w-fit gap-2 bg-black py-4 px-8 bg-black text-white text-lg xl:text-2xl rounded-full hover:bg-white hover:text-black duration-300"
+    <a className={`flex items-center w-fit gap-2 py-4 px-8 text-lg xl:text-2xl rounded-full
+      text-white bg-black hover:bg-white hover:text-black duration-300
+      ${white ? 'bg-white text-black hover:bg-black hover:text-white' : ''}`}
       href={url}><BsArrowRight></BsArrowRight>{label}
     </a>
   </>

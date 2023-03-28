@@ -33,12 +33,12 @@ export default function Section1() {
               Meu nome é Marlon Andrade, psicólogo especializado em terapia cognitivo-comportamental para adolescentes e adultos.<br /> Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.
             </p>
 
-            <Cta label="Conheca mais" url="#"></Cta>
+            <Cta label="Conheca mais" url="#" white={true}></Cta>
           </div>
 
           <img
             className="hidden xl:block absolute right-0 z-10
-            top-0 xl:top-[152px]"
+            top-0 xl:top-[152px] max-w-[800px] 2xl:max-w-fit"
             alt="Devo fazer terapia?"
             src="/images/section1/section-01-desktop.png"
           ></img>
