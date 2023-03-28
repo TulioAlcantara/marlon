@@ -30,7 +30,8 @@ export default function Section1() {
             </picture>
 
             <p className="card__body ">
-              Meu nome é Marlon Andrade, psicólogo especializado em terapia cognitivo-comportamental para adolescentes e adultos.<br /> Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.
+              Meu nome é Marlon Andrade, psicólogo especializado em terapia cognitivo-comportamental para adolescentes e adultos.<br /><br />
+              Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.
             </p>
 
             <Cta label="Conheca mais" url="#" white={true}></Cta>

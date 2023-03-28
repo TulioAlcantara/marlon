@@ -54,24 +54,20 @@ export default function Section2() {
               infinite={true}
               isPlaying={true}
               interval={10000}
-
               className="block xl:hidden text-sm"
             >
               <Slider>
                 <Slide index={0}>
-                  <h2 className="fluid-xl mb-4">Conheça as etapas do processo</h2>
-                  Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
-                  As três etapas do processo psicoterapêutico são:
-                  <ul>
-                    <li className="font-bold">Avaliação</li>
-                    <li className="font-bold">Intervenção</li>
-                    <li className="font-bold">Manutenção</li>
-                  </ul>
+                  <h2 className="card__title mb-4">Conheça as etapas do processo</h2>
+                  <p className="card__body">
+                    Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
+                    As três etapas do processo psicoterapêutico são:
+                  </p>
                 </Slide>
                 {details.map((detail, index) => {
                   return (<Slide index={index + 1} key={index + 1}>
-                    <h2 className="fluid-xl mb-4">{detail.summary}</h2>
-                    {detail.text}
+                    <h2 className="card__title mb-4">{detail.summary}</h2>
+                    <p className="card__body">{detail.text}</p>
                   </Slide>
                   )
                 })}
