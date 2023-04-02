@@ -91,8 +91,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              &quot;O paradoxo curioso é que quando eu me aceito, então eu
-              mudo.&quot;
+              &quot;O paradoxo curioso é que quando aceito como sou, <b>me transformo</b>.&quot;
             </motion.h2>
 
             <motion.div

@@ -7,9 +7,9 @@ export default function Section1() {
     <>
       <section
         id="section1"
-        className="h-[750px] md:h-[1050px] xl:h-[1200px]"
+        className="h-[900px] md:h-[1050px] xl:h-[1200px]"
       >
-        <div className="container-screen  pb-16">
+        <div className="container-screen pt-20 md:pt-0 pb-16">
           <div
             className="card relative xl:absolute text-white
             xl:max-w-[380px] z-20
@@ -46,7 +46,7 @@ export default function Section1() {
 
           <picture
             className="absolute 
-            top-0 xl:top-[100px] 
+            top-24 xl:top-[100px] 
             right-0 xl:left-[80px]"
           >
             <source

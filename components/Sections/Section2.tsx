@@ -1,24 +1,26 @@
 import { motion } from "framer-motion";
 import { BsArrowRight, BsArrowLeft, } from "react-icons/bs";
 import Details from "../Details";
-// import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot, DotGroup } from 'pure-react-carousel';
-// import 'pure-react-carousel/dist/react-carousel.es.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
 export default function Section2() {
   const details = [
     {
+      summary: "Conheça as etapas do processo",
+      text: "Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.\n\nAs três etapas do processo psicoterapêutico são: "
+    },
+    {
       summary: "Avaliação",
       text: "Juntos, vamos identificar seus problemas atuais e definir seus objetivos terapêuticos, para que possamos desenvolver um plano de tratamento personalizado para você.",
     },
     {
       summary: "Intervenção",
-      text: "Iremos trabalhar juntos para implementar o plano criado na avaliação, alcançar seus objetivos e promover seu bem-estar emocional e psicológico.\n A intervenção ajuda a mudar seus padrões de pensamento e comportamento para superar o problema.",
+      text: "Iremos trabalhar juntos para implementar o plano criado na avaliação, alcançar seus objetivos e promover seu bem-estar emocional e psicológico.\n\nA intervenção ajuda a mudar seus padrões de pensamento e comportamento para superar o problema.",
     },
     {
       summary: "Manutenção",
-      text: "É importante garantir que as mudanças positivas sejam mantidas a longo prazo.\n Por isso, na última etapa, trabalharemos juntos para desenvolver estratégias para evitar possíveis recaídas e manter o progresso alcançado na terapia.\n Além disso, você continuará a desenvolver e praticar as habilidades aprendidas durante a terapia, a fim de continuar a crescer e melhorar em sua vida.",
+      text: "É importante garantir que as mudanças positivas sejam mantidas a longo prazo.\n\nPor isso, na última etapa, trabalharemos juntos para desenvolver estratégias para evitar possíveis recaídas e manter o progresso alcançado na terapia.\n\nAlém disso, você continuará a desenvolver e praticar as habilidades aprendidas durante a terapia, a fim de continuar a crescer e melhorar em sua vida.",
     }
   ]
 
@@ -32,61 +34,30 @@ export default function Section2() {
           <div
             className="card absolute text-black xl:text-white
             card-backdrop-white xl:bg-transparent
-              max-w-full md:max-w-[600px] xl:max-w-[458px] 
-              mt-[200px] md:mt-[550px] xl:mt-[600px]
+              max-w-full md:max-w-[750px] xl:max-w-[458px] 
+              mt-[170px] md:mt-[550px] xl:mt-[600px]
               mx-auto right-0 left-0 xl:left-auto xl:mr-16
-              xl:p-0"
+              pb-8 xl:p-0"
           >
             <div className="hidden xl:block">
               <h2 className="card__title ">Conheça as <b>etapas do processo</b></h2>
-              <p className="card__body ">
+              <p className="card__body">
                 Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
                 As três etapas do processo psicoterapêutico são:
               </p>
 
               <div className="hidden xl:block space-y-4">
-                <Details details={details}></Details>
+                <Details details={details.slice(1)}></Details>
               </div>
             </div>
-            <Carousel className="block xl:hidden" showStatus={false} centerMode={false} showArrows={false} autoPlay={true} interval={20000} infiniteLoop={true}>
+            <Carousel className="block xl:hidden" showStatus={false} centerMode={false} showArrows={false} autoPlay={true} interval={20000} infiniteLoop={true} showThumbs={false}>
               {details.map((detail, index) => {
                 return (<div className="text-left p-8 md:p-16" key={index}>
-                  <h2 className="card__title mb-4">{detail.summary}</h2>
-                  <p className="card__body">{detail.text}</p>
+                  <h2 className="card__title mb-4"><b>{detail.summary}</b></h2>
+                  <p className="card__body whitespace-pre-line">{detail.text}</p>
                 </div>)
               })}
             </Carousel>
-
-            {/* <CarouselProvider */}
-            {/*   naturalSlideWidth={100} */}
-            {/*   naturalSlideHeight={75} */}
-            {/*   totalSlides={4} */}
-            {/*   infinite={true} */}
-            {/*   isPlaying={true} */}
-            {/*   interval={10000} */}
-            {/*   className="block xl:hidden text-sm" */}
-            {/* > */}
-            {/*   <Slider> */}
-            {/*     <Slide index={0}> */}
-            {/*       <h2 className="card__title mb-4">Conheça as etapas do processo</h2> */}
-            {/*       <p className="card__body"> */}
-            {/*         Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br /> */}
-            {/*         As três etapas do processo psicoterapêutico são: */}
-            {/*       </p> */}
-            {/*     </Slide> */}
-            {/*     {details.map((detail, index) => { */}
-            {/*       return (<Slide index={index + 1} key={index + 1}> */}
-            {/*         <h2 className="card__title mb-4">{detail.summary}</h2> */}
-            {/*         <p className="card__body">{detail.text}</p> */}
-            {/*       </Slide> */}
-            {/*       ) */}
-            {/*     })} */}
-            {/*   </Slider> */}
-            {/*   <div className="flex justify-center items-center gap-4"> */}
-            {/*     <ButtonBack><BsArrowLeft></BsArrowLeft></ButtonBack> */}
-            {/*     <ButtonNext><BsArrowRight></BsArrowRight></ButtonNext> */}
-            {/*   </div> */}
-            {/* </CarouselProvider> */}
           </div>
           <img
             className="hidden xl:block absolute left-0 z-10
