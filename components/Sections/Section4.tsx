@@ -29,8 +29,8 @@ export default function Section4() {
               rounded-3xl md:rounded-none"
           >
             <Carousel showStatus={false} centerMode={false} showArrows={false} autoPlay={true} interval={20000} infiniteLoop={true}>
-              {details.map((detail) => {
-                return (<div className="text-left p-8 md:p-16">
+              {details.map((detail, index) => {
+                return (<div className="text-left p-8 md:p-16" key={index}>
                   <h2 className="card__title mb-4">{detail.summary}</h2>
                   <p className="card__body">{detail.text}</p>
                 </div>)
