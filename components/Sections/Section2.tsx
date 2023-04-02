@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { BsArrowRight, BsArrowLeft, } from "react-icons/bs";
 import Details from "../Details";
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot, DotGroup } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
+// import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot, DotGroup } from 'pure-react-carousel';
+// import 'pure-react-carousel/dist/react-carousel.es.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 export default function Section2() {
   const details = [
@@ -30,10 +32,10 @@ export default function Section2() {
           <div
             className="card absolute text-black xl:text-white
             card-backdrop-white xl:bg-transparent
-              max-w-full md:max-w-[458px] 
-              mt-[310px] md:mt-[500px] xl:mt-[600px]
+              max-w-full md:max-w-[600px] xl:max-w-[458px] 
+              mt-[200px] md:mt-[550px] xl:mt-[600px]
               mx-auto right-0 left-0 xl:left-auto xl:mr-16
-              p-8 xl:p-0"
+              xl:p-0"
           >
             <div className="hidden xl:block">
               <h2 className="card__title ">Conheça as <b>etapas do processo</b></h2>
@@ -46,38 +48,45 @@ export default function Section2() {
                 <Details details={details}></Details>
               </div>
             </div>
+            <Carousel className="block xl:hidden" showStatus={false} centerMode={false} showArrows={false} autoPlay={true} interval={20000} infiniteLoop={true}>
+              {details.map((detail) => {
+                return (<div className="text-left p-8 md:p-16">
+                  <h2 className="card__title mb-4">{detail.summary}</h2>
+                  <p className="card__body">{detail.text}</p>
+                </div>)
+              })}
+            </Carousel>
 
-            <CarouselProvider
-              naturalSlideWidth={100}
-              naturalSlideHeight={75}
-              totalSlides={4}
-              infinite={true}
-              isPlaying={true}
-              interval={10000}
-              className="block xl:hidden text-sm"
-            >
-              <Slider>
-                <Slide index={0}>
-                  <h2 className="card__title mb-4">Conheça as etapas do processo</h2>
-                  <p className="card__body">
-                    Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br />
-                    As três etapas do processo psicoterapêutico são:
-                  </p>
-                </Slide>
-                {details.map((detail, index) => {
-                  return (<Slide index={index + 1} key={index + 1}>
-                    <h2 className="card__title mb-4">{detail.summary}</h2>
-                    <p className="card__body">{detail.text}</p>
-                  </Slide>
-                  )
-                })}
-              </Slider>
-              <div className="flex justify-center items-center gap-4">
-                <ButtonBack><BsArrowLeft></BsArrowLeft></ButtonBack>
-                {/* <DotGroup totalSlides={4} visibleSlides={1} /> */}
-                <ButtonNext><BsArrowRight></BsArrowRight></ButtonNext>
-              </div>
-            </CarouselProvider>
+            {/* <CarouselProvider */}
+            {/*   naturalSlideWidth={100} */}
+            {/*   naturalSlideHeight={75} */}
+            {/*   totalSlides={4} */}
+            {/*   infinite={true} */}
+            {/*   isPlaying={true} */}
+            {/*   interval={10000} */}
+            {/*   className="block xl:hidden text-sm" */}
+            {/* > */}
+            {/*   <Slider> */}
+            {/*     <Slide index={0}> */}
+            {/*       <h2 className="card__title mb-4">Conheça as etapas do processo</h2> */}
+            {/*       <p className="card__body"> */}
+            {/*         Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br /> */}
+            {/*         As três etapas do processo psicoterapêutico são: */}
+            {/*       </p> */}
+            {/*     </Slide> */}
+            {/*     {details.map((detail, index) => { */}
+            {/*       return (<Slide index={index + 1} key={index + 1}> */}
+            {/*         <h2 className="card__title mb-4">{detail.summary}</h2> */}
+            {/*         <p className="card__body">{detail.text}</p> */}
+            {/*       </Slide> */}
+            {/*       ) */}
+            {/*     })} */}
+            {/*   </Slider> */}
+            {/*   <div className="flex justify-center items-center gap-4"> */}
+            {/*     <ButtonBack><BsArrowLeft></BsArrowLeft></ButtonBack> */}
+            {/*     <ButtonNext><BsArrowRight></BsArrowRight></ButtonNext> */}
+            {/*   </div> */}
+            {/* </CarouselProvider> */}
           </div>
           <img
             className="hidden xl:block absolute left-0 z-10

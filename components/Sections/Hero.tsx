@@ -30,7 +30,7 @@ export default function Hero() {
               " linear-gradient(0deg, #1C1C1C 4.17%, rgba(28, 28, 28, 0.6) 22.92%)",
           }}
         >
-          <div className="container-screen flex flex-col justify-around text-white gap-10">
+          <div className="container-screen flex flex-col justify-around text-white gap-10 py-12 md:py-0">
             <motion.h1
               initial={{ opacity: 0, y: -300 }}
               animate={{ opacity: 1, y: 0 }}

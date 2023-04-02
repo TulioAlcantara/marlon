@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { BsArrowRight, BsArrowLeft, } from "react-icons/bs";
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot, DotGroup } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
+// import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot, DotGroup } from 'pure-react-carousel';
+// import 'pure-react-carousel/dist/react-carousel.es.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 export default function Section4() {
   const details = [
@@ -21,41 +23,19 @@ export default function Section4() {
         <div className="container-screen pb-16">
           <div
             className="card card-backdrop-dark text-white absolute right-0 z-20
-              w-full md:w-[575px] xl:w-[775px] 
+              w-full md:w-[575px] xl:w-[900px] 
               !max-w-none
-              h-[550px] md:h-[500px] xl:h-[600px]           
               mt-[320px] md:mt-[600px] xl:mt-[700px] 
-              p-8 md:p-16
               rounded-3xl md:rounded-none"
           >
-            <div>
-              <CarouselProvider
-                naturalSlideWidth={100}
-                naturalSlideHeight={70}
-                totalSlides={2}
-                infinite={true}
-                isPlaying={true}
-                playDirection="forward"
-                interval={20000}
-              // isIntrinsicHeight={true}
-              >
-                <Slider>
-                  {details.map((detail, index) => {
-                    return (<Slide index={index + 1} key={index + 1}>
-                      <h2 className="card__title mb-4">{detail.summary}</h2>
-                      <p className="card__body">{detail.text}</p>
-                    </Slide>
-                    )
-                  })}
-                </Slider>
-                <div className="flex justify-center items-center gap-4">
-                  <ButtonBack><BsArrowLeft></BsArrowLeft></ButtonBack>
-                  {/* <DotGroup totalSlides={4} visibleSlides={1} /> */}
-                  <ButtonNext><BsArrowRight></BsArrowRight></ButtonNext>
-                </div>
-              </CarouselProvider>
-
-            </div>
+            <Carousel showStatus={false} centerMode={false} showArrows={false} autoPlay={true} interval={20000} infiniteLoop={true}>
+              {details.map((detail) => {
+                return (<div className="text-left p-8 md:p-16">
+                  <h2 className="card__title mb-4">{detail.summary}</h2>
+                  <p className="card__body">{detail.text}</p>
+                </div>)
+              })}
+            </Carousel>
           </div>
 
           <picture
