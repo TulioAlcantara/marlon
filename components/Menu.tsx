@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { BsWhatsapp, BsInstagram, BsX } from "react-icons/bs";
 import { Urls } from "../constants/urls";
+import Link from "next/link";
 
 interface Props {
   menuOpen: boolean;

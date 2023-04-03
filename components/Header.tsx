@@ -3,6 +3,7 @@ import { BsWhatsapp, BsInstagram } from "react-icons/bs";
 import { RefObject, useEffect, useRef } from "react";
 import { useAnimationControls } from "framer-motion";
 import { Urls } from "../constants/urls";
+import Link from "next/link";
 
 interface Props {
   handleMenuToggle: () => any;
@@ -62,14 +63,14 @@ export default function Header({
           </button>
           <ul className="flex items-center gap-6  ">
             <li>
-              <a aria-label="Instagram" href={Urls.instagram} target="_blank" className="hidden xl:block text-2xl hover:scale-110 duration-100">
+              <Link aria-label="Instagram" href={Urls.instagram} target="_blank" className="hidden xl:block text-2xl hover:scale-110 duration-100">
                 <BsInstagram></BsInstagram>
-              </a>
+              </Link>
             </li>
             <li>
-              <a aria-label="Whatsapp" href={Urls.whatsapp} target="_blank" className="hidden xl:block text-2xl hover:scale-110 duration-100">
+              <Link aria-label="Whatsapp" href={Urls.whatsapp} target="_blank" className="hidden xl:block text-2xl hover:scale-110 duration-100">
                 <BsWhatsapp></BsWhatsapp>
-              </a>
+              </Link>
             </li>
             <li className="h-6">
               <button
