@@ -63,11 +63,12 @@ export default function Section2() {
           <img
             className="hidden xl:block absolute left-0 z-10
             top-0 xl:top-[134px] xl:w-[600px] 2xl:w-fit"
-            alt="Devo fazer terapia?"
+            alt="Conheça as etapas do processo"
             src="/images/section2/section-02-desktop.png"
           ></img>
 
           <img
+            alt="Segunda seção"
             className="absolute 
             hidden xl:block
             w-fit z-0

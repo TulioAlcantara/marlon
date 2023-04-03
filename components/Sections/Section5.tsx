@@ -62,6 +62,7 @@ const Section5 = () => {
             ></source>
 
             <img
+              alt="Quinta seção"
               srcSet="/images/section5/desktop-number.png"
             ></img>
           </picture>

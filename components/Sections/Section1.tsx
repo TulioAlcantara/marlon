@@ -25,7 +25,7 @@ export default function Section1() {
               <source srcSet="/images/section1/section-01-tablet.png" media="(min-width:768px)">
               </source>
               <img
-                alt="Devo fazer terapia?"
+                alt="Sobre mim"
                 src="/images/section1/section-01-mobile.png"
               ></img>
             </picture>
@@ -40,7 +40,7 @@ export default function Section1() {
           <img
             className="hidden xl:block absolute right-0 z-10
             top-0 xl:top-[152px] max-w-[800px] 2xl:max-w-fit"
-            alt="Devo fazer terapia?"
+            alt="Primeira seção"
             src="/images/section1/section-01-desktop.png"
           ></img>
 

@@ -71,6 +71,7 @@ export default function Section3() {
             ></source>
 
             <img
+              alt="Terceira seção"
               srcSet="/images/section3/desktop-number.png"
             ></img>
           </picture>

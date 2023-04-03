@@ -56,7 +56,9 @@ export default function Section4() {
               media="(min-width: 1280px)"
             ></source>
 
-            <img className="w-full md:w-fit" srcSet="/images/section4/section-04-mobile.png"></img>
+            <img
+              alt="Depressão e ansiedade"
+              className="w-full md:w-fit" srcSet="/images/section4/section-04-mobile.png"></img>
           </picture>
         </div>
       </section>
