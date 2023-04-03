@@ -49,10 +49,10 @@ export default function Hero() {
               </h3>
               <div className="flex items-center gap-6">
                 <h3 className="font-light">MARLON ANDRADE</h3>
-                <Link href={Urls.instagram} target="_blank" className="hover:scale-110 duration-100">
+                <Link aria-label="Instagram" href={Urls.instagram} target="_blank" className="hover:scale-110 duration-100">
                   <BsInstagram></BsInstagram>
                 </Link>
-                <Link href={Urls.whatsapp} target="_blank" className="hover:scale-110 duration-100">
+                <Link aria-label="Whatsapp" href={Urls.whatsapp} target="_blank" className="hover:scale-110 duration-100">
                   <BsWhatsapp></BsWhatsapp>
                 </Link>
               </div>
@@ -62,6 +62,7 @@ export default function Hero() {
               onClick={() => {
                 scrollToFirstSection();
               }}
+              aria-label="Ir a primeira seção"
             >
               <BsMouse></BsMouse>
               <motion.span

@@ -62,17 +62,18 @@ export default function Header({
           </button>
           <ul className="flex items-center gap-6  ">
             <li>
-              <a href={Urls.instagram} target="_blank" className="hidden xl:block text-2xl hover:scale-110 duration-100">
+              <a aria-label="Instagram" href={Urls.instagram} target="_blank" className="hidden xl:block text-2xl hover:scale-110 duration-100">
                 <BsInstagram></BsInstagram>
               </a>
             </li>
             <li>
-              <a href={Urls.whatsapp} target="_blank" className="hidden xl:block text-2xl hover:scale-110 duration-100">
+              <a aria-label="Whatsapp" href={Urls.whatsapp} target="_blank" className="hidden xl:block text-2xl hover:scale-110 duration-100">
                 <BsWhatsapp></BsWhatsapp>
               </a>
             </li>
             <li className="h-6">
               <button
+                aria-label="Menu"
                 className="text-2xl hover:scale-110 duration-100"
                 onClick={() => {
                   handleMenuToggle();
