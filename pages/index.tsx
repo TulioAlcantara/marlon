@@ -48,6 +48,7 @@ export default function Home() {
       <Head>
         <title>Marlon Psicologo</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Meu nome é Marlon Andrade, psicólogo especializado em terapia cognitivo-comportamental para adolescentes e adultos."></meta>
       </Head>
       <Menu onCloseMenu={toggleMenu} menuOpen={menuOpen}></Menu>
       <Header
