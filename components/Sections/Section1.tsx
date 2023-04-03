@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
+import { Urls } from "../../constants/urls";
 import Cta from "../Cta";
 
 export default function Section1() {
@@ -7,7 +8,7 @@ export default function Section1() {
     <>
       <section
         id="section1"
-        className="h-[900px] md:h-[1050px] xl:h-[1200px]"
+        className="h-[900px] md:h-[1050px] xl:h-[1320px] 2xl:h-[1200px]"
       >
         <div className="container-screen pt-20 md:pt-0 pb-16">
           <div
@@ -34,9 +35,8 @@ export default function Section1() {
               Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.
             </p>
 
-            <Cta label="Conheca mais" url="#" white={true}></Cta>
+            <Cta label="Fale comigo" url={Urls.whatsapp} white={true}></Cta>
           </div>
-
           <img
             className="hidden xl:block absolute right-0 z-10
             top-0 xl:top-[152px] max-w-[800px] 2xl:max-w-fit"

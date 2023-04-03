@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
+import { Urls } from "../../constants/urls";
 import Cta from "../Cta";
 
 const Section5 = () => {
@@ -18,7 +19,7 @@ const Section5 = () => {
               A terapia oferece um espaço seguro para você explorar seus sentimentos, pensamentos e comportamentos, ajudando a identificar padrões que podem estar impedindo você de seguir em frente.<br /><br />
               Juntos, podemos trabalhar para que você se sinta mais seguro e confiante em suas escolhas, desenvolvendo habilidades e estratégias para enfrentar desafios e alcançar seus objetivos.
             </p>
-            <Cta label="Conheca mais" url="#"></Cta>
+            <Cta label="Marque sua consulta" url={Urls.whatsapp}></Cta>
           </div>
 
           <picture

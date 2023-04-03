@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { Urls } from "../constants/urls";
 
 export default function Footer() {
   const sections = [
@@ -51,7 +52,8 @@ export default function Footer() {
                 color: "#F8F9FA",
                 transition: { duration: 0.3 },
               }}
-              href="https://instagram.com"
+              href={Urls.instagram}
+              target="_blank"
               className="fluid-xl flex  items-center text-gray"
             >
               <BsInstagram className="mr-2"></BsInstagram>Instagram
@@ -61,17 +63,25 @@ export default function Footer() {
                 color: "#F8F9FA",
                 transition: { duration: 0.3 },
               }}
-              href="https://whatsapp.com"
+              href={Urls.whatsapp}
+              target="_blank"
               className="fluid-xl flex items-center text-gray"
             >
               <BsWhatsapp className="mr-2"></BsWhatsapp>Whatsapp
             </motion.a>
           </div>
           <h2 className="fluid-2xl text-white my-14">Localização</h2>
-          <p className="fluid-xl text-gray">
+          <motion.a
+            whileHover={{
+              color: "#F8F9FA",
+              transition: { duration: 0.3 },
+            }}
+            href="https://www.google.com/maps/place/Ed.+Monte+Verde/@-16.7159705,-49.262213,17z/data=!3m1!4b1!4m6!3m5!1s0x935ef17c885653ff:0x69e33987265de5de!8m2!3d-16.7159705!4d-49.2600243!16s%2Fg%2F11hzxnzxdy"
+            target="_blank"
+            className="fluid-xl text-gray">
             Setor Bela Vista, Rua T64-A, Nº 136, Ed. Monte Verde, Ap 104 -
             Goiânia, Goiás
-          </p>
+          </motion.a>
         </div>
       </div>
     </footer>

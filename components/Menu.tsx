@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { BsWhatsapp, BsInstagram, BsX } from "react-icons/bs";
+import { Urls } from "../constants/urls";
 
 interface Props {
   menuOpen: boolean;
@@ -109,7 +110,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
                     color: "#000",
                     transition: { duration: 0.3 },
                   }}
-                  href="https://instagram.com"
+                  href={Urls.instagram} target="_blank"
                   className="fluid-lg md:fluid-xl flex  items-center text-black xl:text-gray"
                 >
                   <BsInstagram className="mr-2"></BsInstagram>Instagram
@@ -119,7 +120,7 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
                     color: "#000",
                     transition: { duration: 0.3 },
                   }}
-                  href="https://whatsapp.com"
+                  href={Urls.whatsapp} target="_blank"
                   className="fluid-lg md:fluid-xl flex items-center text-black xl:text-gray"
                 >
                   <BsWhatsapp className="mr-2"></BsWhatsapp>Whatsapp

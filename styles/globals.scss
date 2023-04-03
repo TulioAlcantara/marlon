@@ -48,7 +48,7 @@
   .container-screen {
     @apply max-w-screen-2xl relative h-full mx-auto px-8 md:px-16 xl:px-16;
     .card {
-      @apply z-20 xl:max-w-[480px] 2xl:max-w-[700px];
+      @apply z-20 xl:max-w-[550px] 2xl:max-w-[700px];
 
       &__title {
         @apply max-w-fit mb-5 md:mb-8 fluid-3xl  xl:fluid-4xl;
@@ -71,7 +71,7 @@ body {
 }
 
 .gradient-background {
-  background: linear-gradient(0deg, #ffffff 30%, #1c1c1c 50%);
+  background: linear-gradient(0deg, #ffffff 10%, #1c1c1c 50%);
 }
 
 .card-backdrop-dark {
@@ -92,6 +92,8 @@ body {
 }
 
 li.dot {
+  background: #212529 !important;
+  box-shadow: none !important;
   width: 15px !important;
   height: 15px !important;
 
@@ -99,4 +101,8 @@ li.dot {
     width: 20px !important;
     height: 20px !important;
   }
+}
+
+#section4 .dot{
+  background-color: white !important;
 }

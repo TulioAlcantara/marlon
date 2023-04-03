@@ -2,6 +2,7 @@ import { FiMenu } from "react-icons/fi";
 import { BsWhatsapp, BsInstagram } from "react-icons/bs";
 import { RefObject, useEffect, useRef } from "react";
 import { useAnimationControls } from "framer-motion";
+import { Urls } from "../constants/urls";
 
 interface Props {
   handleMenuToggle: () => any;
@@ -61,14 +62,14 @@ export default function Header({
           </button>
           <ul className="flex items-center gap-6  ">
             <li>
-              <button className="hidden xl:block text-2xl hover:scale-110 duration-100">
+              <a href={Urls.instagram} target="_blank" className="hidden xl:block text-2xl hover:scale-110 duration-100">
                 <BsInstagram></BsInstagram>
-              </button>
+              </a>
             </li>
             <li>
-              <button className="hidden xl:block text-2xl hover:scale-110 duration-100">
+              <a href={Urls.whatsapp} target="_blank" className="hidden xl:block text-2xl hover:scale-110 duration-100">
                 <BsWhatsapp></BsWhatsapp>
-              </button>
+              </a>
             </li>
             <li className="h-6">
               <button

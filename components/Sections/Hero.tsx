@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsInstagram, BsMouse, BsWhatsapp } from "react-icons/bs";
 import { RxCaretDown } from "react-icons/rx";
+import { Urls } from "../../constants/urls";
+
 export default function Hero() {
   const scrollToFirstSection = () => {
     window.scrollTo({
@@ -47,10 +49,10 @@ export default function Hero() {
               </h3>
               <div className="flex items-center gap-6">
                 <h3 className="font-light">MARLON ANDRADE</h3>
-                <Link href="#" className="hover:scale-110 duration-100">
+                <Link href={Urls.instagram} target="_blank" className="hover:scale-110 duration-100">
                   <BsInstagram></BsInstagram>
                 </Link>
-                <Link href="#" className="hover:scale-110 duration-100">
+                <Link href={Urls.whatsapp} target="_blank" className="hover:scale-110 duration-100">
                   <BsWhatsapp></BsWhatsapp>
                 </Link>
               </div>

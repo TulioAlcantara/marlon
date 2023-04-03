@@ -23,7 +23,7 @@ export default function Section4() {
         <div className="container-screen pb-16">
           <div
             className="card card-backdrop-dark text-white absolute right-0 z-20
-              w-full md:w-[575px] xl:w-[640px] 2xl:w-[830px] 
+              w-full md:w-[575px] xl:w-[700px] 2xl:w-[830px] 
               !max-w-none
               mt-[300px] md:mt-[600px] xl:mt-[640px] 
               rounded-3xl md:rounded-none pb-8"

@@ -4,6 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Cta from "../Cta";
+import { Urls } from "../../constants/urls";
 
 export default function Section3() {
 
@@ -28,7 +29,7 @@ export default function Section3() {
               Juntos, podemos trabalhar para identificar e modificar padrões de pensamentos, sentimentos e comportamentos que estão te impedindo de alcançar seus objetivos ou trazendo sofrimento.<br /><br />
               Não hesite em marcar uma consulta comigo e começar essa jornada de mudança e transformação.
             </p>
-            <Cta label="Conheca mais" url="#"></Cta>
+            <Cta label="Conheça mais" url={Urls.instagram} noBorder={true}></Cta>
           </motion.div>
 
           <motion.picture
