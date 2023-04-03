@@ -33,6 +33,7 @@ export default function Section2() {
         <div className="container-screen  pb-16">
           <div
             className="card absolute text-black xl:text-white
+              card-backdrop-white xl:bg-transparent xl:backdrop-filter-none
               max-w-full md:max-w-[750px] xl:max-w-[458px] 
               mt-[170px] md:mt-[550px] xl:mt-[300px] 2xl:mt-[500px]
               mx-auto right-0 left-0 xl:left-auto xl:mr-16
@@ -58,6 +59,7 @@ export default function Section2() {
               })}
             </Carousel>
           </div>
+
           <img
             className="hidden xl:block absolute left-0 z-10
             top-0 xl:top-[134px] xl:w-[600px] 2xl:w-fit"

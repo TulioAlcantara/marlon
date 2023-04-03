@@ -23,7 +23,7 @@ export default function Header({
   }, []);
 
   const changeHeaderColor = () => {
-    if (window.pageYOffset > sectionContainerRef!.current!.scrollHeight * 0.7) {
+    if (window.pageYOffset > sectionContainerRef!.current!.scrollHeight * 0.9) {
       headerRef.current?.classList.remove("text-white");
       headerRef.current?.classList.add("text-black");
       return;
