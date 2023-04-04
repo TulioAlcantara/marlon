@@ -43,29 +43,29 @@ export default function Menu({ menuOpen, onCloseMenu }: Props) {
           transition={{ duration: 0.3, ease: "linear" }}
           ref={refMenu}
         >
-          <div className="flex items-center justify-between text-gray">
-            <motion.h2
-              className="fluid-xl uppercase"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-            >
-              Navegação
-            </motion.h2>
-            <motion.button
-              whileHover={{
-                color: "#000",
-                transition: { duration: 0.3 },
-              }}
-              className="fluid-2xl"
-              aria-label="Close menu"
-              onClick={() => onCloseMenu()}
-            >
-              <BsX></BsX>
-            </motion.button>
-          </div>
+          <div className="flex flex-col justify-between h-full">
+            <div className="flex items-center justify-between text-gray">
+              <motion.h2
+                className="fluid-xl uppercase"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
+                Navegação
+              </motion.h2>
+              <motion.button
+                whileHover={{
+                  color: "#000",
+                  transition: { duration: 0.3 },
+                }}
+                className="fluid-2xl"
+                aria-label="Close menu"
+                onClick={() => onCloseMenu()}
+              >
+                <BsX></BsX>
+              </motion.button>
+            </div>
 
-          <div className="flex flex-col justify-around h-full">
             <motion.ul
               className="menu-list"
               initial={{ opacity: 0 }}

@@ -15,6 +15,7 @@ export default function Header({
   sectionContainerRef,
 }: Props) {
   const headerRef = useRef<HTMLDivElement>(null);
+  const section5Ref = document.querySelector("#section5") as HTMLElement
 
   useEffect(() => {
     window.onscroll = () => {
@@ -24,7 +25,7 @@ export default function Header({
   }, []);
 
   const changeHeaderColor = () => {
-    if (window.pageYOffset > sectionContainerRef!.current!.scrollHeight * 0.9) {
+    if (window.pageYOffset > section5Ref!.offsetTop) {
       headerRef.current?.classList.remove("text-white");
       headerRef.current?.classList.add("text-black");
       return;

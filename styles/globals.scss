@@ -28,7 +28,7 @@
 
 @layer components {
   .menu {
-    @apply flex flex-col fixed w-full md:w-1/2 h-screen py-5 px-10 bg-white text-black z-50;
+    @apply flex flex-col fixed w-full md:w-1/2 h-screen pt-5 pb-20 md:pb-8 px-10 bg-white text-black z-50;
 
     &-list {
       @apply flex flex-col gap-8;

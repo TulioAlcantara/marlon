@@ -76,11 +76,10 @@ export default function Footer() {
               color: "#F8F9FA",
               transition: { duration: 0.3 },
             }}
-            href="https://www.google.com/maps/place/Ed.+Monte+Verde/@-16.7159705,-49.262213,17z/data=!3m1!4b1!4m6!3m5!1s0x935ef17c885653ff:0x69e33987265de5de!8m2!3d-16.7159705!4d-49.2600243!16s%2Fg%2F11hzxnzxdy"
+            href="https://www.google.com/maps/place/Av.+T-9,+2310+-+Jardim+Am%C3%A9rica,+Goi%C3%A2nia+-+GO,+74255-220/data=!4m2!3m1!1s0x935ef132ef0c7a97:0xd93ee576992f6bb0?sa=X&ved=2ahUKEwi_3srh-47-AhWTKbkGHd5uAi0Q8gF6BAgiEAI"
             target="_blank"
             className="fluid-xl text-gray">
-            Setor Bela Vista, Rua T64-A, Nº 136, Ed. Monte Verde, Ap 104 -
-            Goiânia, Goiás
+            Av. T-9, Número 2310 - Qd.523 - Condomínio Comercial Inove Intelligent Place - Jardim América, Goiânia - GO, 74255-220
           </motion.a>
         </div>
       </div>
