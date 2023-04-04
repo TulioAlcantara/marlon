@@ -46,9 +46,16 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Marlon Psicologo</title>
+        <title>Psicólogo Marlon</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Meu nome é Marlon Andrade, psicólogo especializado em terapia cognitivo-comportamental para adolescentes e adultos."></meta>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"></link>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"></link>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></link>
+        <link rel="manifest" href="/site.webmanifest"></link>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"></link>
+        <meta name="msapplication-TileColor" content="#da532c"></meta>
+        <meta name="theme-color" content="#ffffff"></meta>
       </Head>
       <Menu onCloseMenu={toggleMenu} menuOpen={menuOpen}></Menu>
       <Header
