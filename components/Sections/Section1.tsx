@@ -4,6 +4,10 @@ import { Urls } from "../../constants/urls";
 import Cta from "../Cta";
 
 export default function Section1() {
+  // const variants = {
+  //   hidden: { opacity: 0 },
+  //   visible: { opacity: 1 },
+  // };
   return (
     <>
       <section
@@ -16,14 +20,20 @@ export default function Section1() {
             xl:max-w-[380px] z-20
               pt-0 md:pt-[200px] xl:pt-[500px]"
           >
-            <h2 className="card__title">
+            <motion.h2
+              // initial={{ y: 100, opacity: 0 }}
+              // whileInView={{ y: 0, opacity: 1 }}
+              // transition={{ duration: 1 }}
+              className="card__title"
+            >
               O paradoxo curioso é que quando aceito como sou,{" "}
               <b>me transformo</b>
-            </h2>
-            <picture className="block xl:hidden my-5 w-full"
-            >
-              <source srcSet="/images/section1/section-01-tablet.png" media="(min-width:768px)">
-              </source>
+            </motion.h2>
+            <picture className="block xl:hidden my-5 w-full">
+              <source
+                srcSet="/images/section1/section-01-tablet.png"
+                media="(min-width:768px)"
+              ></source>
               <img
                 alt="Sobre mim"
                 src="/images/section1/section-01-mobile.png"
@@ -31,8 +41,13 @@ export default function Section1() {
             </picture>
 
             <p className="card__body ">
-              Meu nome é Marlon Andrade, psicólogo especializado em terapia cognitivo-comportamental para adolescentes e adultos.<br /><br />
-              Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.
+              Meu nome é Marlon Andrade, psicólogo especializado em terapia
+              cognitivo-comportamental para adolescentes e adultos.
+              <br />
+              <br />
+              Acredito que a terapia é um processo de colaboração, onde eu estou
+              aqui para oferecer orientação, apoio e estratégias, e você é o
+              especialista em sua própria vida.
             </p>
 
             <Cta label="Fale comigo" url={Urls.whatsapp} white={true}></Cta>

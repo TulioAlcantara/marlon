@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
-import { BsArrowRight, BsArrowLeft, } from "react-icons/bs";
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import Details from "../Details";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import { Carousel } from "react-responsive-carousel";
 
 const details = [
   {
     summary: "Conheça as etapas do processo",
-    text: "Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.\n\nA terapia pode ocorrer de forma online ou presencial, visando concluir as três etapas do processo:"
+    text: "Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.\n\nA terapia pode ocorrer de forma online ou presencial, visando concluir as três etapas do processo:",
   },
   {
     summary: "Avaliação",
-    text: "Trabalharemos juntos para definir e avaliar seus problemas atuais e determinar os objetivos terapêuticos.\n\nVou coletar informações sobre seus pensamentos, sentimentos e comportamento, bem como sua história de vida e outras questões relevantes.\n\nIsso irá nos ajudar a desenvolver um plano de tratamento personalizado para você.\n\nAs sessões acontecem uma vez por semana."
+    text: "Trabalharemos juntos para definir e avaliar seus problemas atuais e determinar os objetivos terapêuticos.\n\nVou coletar informações sobre seus pensamentos, sentimentos e comportamento, bem como sua história de vida e outras questões relevantes.\n\nIsso irá nos ajudar a desenvolver um plano de tratamento personalizado para você.\n\nAs sessões acontecem uma vez por semana.",
   },
   {
     summary: "Intervenção",
-    text: "Nesta etapa, vamos implementar o plano de tratamento.\n\nIsso pode incluir várias técnicas terapêuticas, como modificação de padrões de pensamento desadaptativos, modificação de comportamentos desadaptativos e prática de habilidades sociais e de enfrentamento.\n\nVamos mudar seus padrões de pensamento e comportamento para superar o problema.\n\nAs sessões acontecem uma vez por semana."
+    text: "Nesta etapa, vamos implementar o plano de tratamento.\n\nIsso pode incluir várias técnicas terapêuticas, como modificação de padrões de pensamento desadaptativos, modificação de comportamentos desadaptativos e prática de habilidades sociais e de enfrentamento.\n\nVamos mudar seus padrões de pensamento e comportamento para superar o problema.\n\nAs sessões acontecem uma vez por semana.",
   },
   {
     summary: "Manutenção",
-    text: "O foco é manter as mudanças positivas alcançadas na segunda etapa.\n\nEu vou trabalhar com você para desenvolver estratégias para lidar com possíveis recaídas, bem como para continuar a desenvolver e praticar habilidades aprendidas na terapia.\n\nO objetivo é te ajudar manter as mudanças positivas a longo prazo.\n\nAs sessões acontecem a cada 15 dias, e posteriormente a cada 30 dias."
-  }
-]
+    text: "O foco é manter as mudanças positivas alcançadas na segunda etapa.\n\nEu vou trabalhar com você para desenvolver estratégias para lidar com possíveis recaídas, bem como para continuar a desenvolver e praticar habilidades aprendidas na terapia.\n\nO objetivo é te ajudar manter as mudanças positivas a longo prazo.\n\nAs sessões acontecem a cada 15 dias, e posteriormente a cada 30 dias.",
+  },
+];
 
 export default function Section2() {
   return (
@@ -40,22 +40,42 @@ export default function Section2() {
               pb-8 xl:p-0"
           >
             <div className="hidden xl:block">
-              <h2 className="card__title ">Conheça as <b>etapas do processo</b></h2>
+              <h2 className="card__title ">
+                Conheça as <b>etapas do processo</b>
+              </h2>
               <p className="card__body">
-                Visando identificar e modificar padrões de pensamento e comportamento prejudiciais à saúde mental.<br /><br />
-                A terapia pode ocorrer de forma <b>online</b> ou <b>presencial</b>, visando concluir as três etapas do processo:
+                Visando identificar e modificar padrões de pensamento e
+                comportamento prejudiciais à saúde mental.
+                <br />
+                <br />A terapia pode ocorrer de forma <b>online</b> ou{" "}
+                <b>presencial</b>, visando concluir as três etapas do processo:
               </p>
 
               <div className="hidden xl:block space-y-4">
                 <Details details={details.slice(1)}></Details>
               </div>
             </div>
-            <Carousel className="block xl:hidden" showStatus={false} centerMode={false} showArrows={false} autoPlay={true} interval={20000} infiniteLoop={true} showThumbs={false}>
+            <Carousel
+              className="block xl:hidden"
+              showStatus={false}
+              centerMode={false}
+              showArrows={false}
+              autoPlay={true}
+              interval={20000}
+              infiniteLoop={true}
+              showThumbs={false}
+            >
               {details.map((detail, index) => {
-                return (<div className="text-left p-8 md:p-16" key={index}>
-                  <h2 className="card__title mb-4"><b>{detail.summary}</b></h2>
-                  <p className="card__body whitespace-pre-line">{detail.text}</p>
-                </div>)
+                return (
+                  <div className="text-left p-8 md:p-16" key={index}>
+                    <h2 className="card__title mb-4">
+                      <b>{detail.summary}</b>
+                    </h2>
+                    <p className="card__body whitespace-pre-line">
+                      {detail.text}
+                    </p>
+                  </div>
+                );
               })}
             </Carousel>
           </div>
