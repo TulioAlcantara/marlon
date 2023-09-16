@@ -2,8 +2,16 @@ import "../styles/globals.scss";
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import Hotjar from '@hotjar/browser';
+import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    const siteId = 3436491;
+    const hotjarVersion = 6;
+    Hotjar.init(siteId, hotjarVersion);
+  }, [])
+
   return (
     <main>
       <Script
