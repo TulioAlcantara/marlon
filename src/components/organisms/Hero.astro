@@ -1,7 +1,6 @@
 ---
 import Button from '../atoms/Button.astro';
-const title =
-	'Psicólogo especializado em terapia cognitivo-comportamental para adolescentes e adultos.';
+
 const subtitle =
 	'Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.';
 const cta = {
@@ -27,7 +26,9 @@ const stats = [
 <section class="hero">
 	<div class="hero__title">
 		<h1>
-			{title}
+			Psicólogo especializado em
+			<span class="gradient">terapia cognitivo-comportamental </span>
+			para adolescentes e adultos.
 		</h1>
 	</div>
 	<p class="hero__subtitle">{subtitle}</p>
@@ -46,6 +47,8 @@ const stats = [
 
 <style lang="scss">
 	.hero {
+		padding-top: 45px;
+
 		&__title {
 			h1 {
 				color: var(--color-title);

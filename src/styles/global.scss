@@ -1,6 +1,11 @@
 :root {
 	--color-title: #495057;
 	--color-accent: #fc4f19;
+	--color-accent-gradient: linear-gradient(
+		90deg,
+		rgba(252, 79, 25, 1) 0%,
+		rgba(254, 200, 81, 1) 100%
+	);
 	--color-bg: #ffffff;
 	--color-copy: #868e96;
 	--color-white: #ffffff;
@@ -31,6 +36,13 @@ b,
 i {
 	margin: 0;
 	padding: 0;
+
+	.gradient {
+		background: var(--color-accent-gradient);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
 }
 
 section:not(.hero) {
