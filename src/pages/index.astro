@@ -1,13 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/organisms/Hero.astro';
+
+const title =
+	'Psicólogo especializado em terapia cognitivo-comportamental para adolescentes e adultos.';
+const subtitle =
+	'Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.';
+const button = {
+	text: 'Agende uma consulta',
+	link: '/contato',
+};
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		
+		<Hero />
 	</main>
 </Layout>
 
-<style>
-	
-</style>
+<style></style>
