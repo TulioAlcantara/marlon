@@ -5,26 +5,28 @@ import logo from '/logo.svg?raw';
 const items = [
 	{
 		name: 'Início',
-		link: '#',
+		link: '#inicio',
 	},
 	{
 		name: 'Como posso te ajudar',
-		link: '#',
+		link: '#ajuda',
 	},
 	{
 		name: 'O que é Terapia',
-		link: '#',
+		link: '#terapia',
 	},
 	{
 		name: 'O processo',
-		link: '#',
+		link: '#processo',
 	},
 ];
 
 const cta = {
 	text: 'Agendar uma consulta',
-	link: '#',
+	link: '#cta',
 };
+
+let activeLink = 'Início';
 ---
 
 <header class="header">
@@ -34,7 +36,10 @@ const cta = {
 	<div class="header-links">
 		{
 			items.map((item) => (
-				<a class="header-links__link" href={item.link}>
+				<a
+					class={`header-links__link ${activeLink == item.name && 'header-links__link--active'}`}
+					href={item.link}
+				>
 					{item.name}
 				</a>
 			))
@@ -54,6 +59,7 @@ const cta = {
 		padding: 32px;
 		margin-top: 32px;
 		border-radius: 20px;
+		backdrop-filter: blur(10px);
 		background-color: var(--color-header-bg);
 
 		@media (min-width: 1200px) {
@@ -77,6 +83,10 @@ const cta = {
 				font-size: 1rem;
 				font-weight: 600;
 				color: var(--color-title);
+
+				&--active {
+					color: var(--color-accent);
+				}
 			}
 		}
 	}

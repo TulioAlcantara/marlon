@@ -1,0 +1,63 @@
+:root {
+	--color-title: #495057;
+	--color-accent: #fc4f19;
+	--color-bg: #ffffff;
+	--color-copy: #868e96;
+	--color-white: #ffffff;
+	--color-header-bg: rgba(255, 255, 255, 0.7);
+	--color-card-bg: #f1f3f5;
+	--color-card-bg-hover: #212529;
+}
+
+html {
+	font-family: 'Archivo', sans-serif;
+	font-size: 16px;
+}
+
+body {
+	max-width: 1480px;
+	margin: auto;
+	padding: 0 32px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+strong,
+b,
+i {
+	margin: 0;
+	padding: 0;
+}
+
+section:not(.hero) {
+	padding: 80px 0;
+
+	@media (min-width: 1200px) {
+		padding: 120px 0;
+	}
+
+	.sectionTitle {
+		h2 {
+			color: var(--color-title);
+			font-size: 2rem;
+			margin-bottom: 16px;
+
+			@media (min-width: 1200px) {
+				font-size: 3rem;
+			}
+
+			.highlight {
+				color: var(--color-accent);
+			}
+		}
+
+		p {
+			color: var(--color-copy);
+			font-size: 1.25rem;
+		}
+	}
+}

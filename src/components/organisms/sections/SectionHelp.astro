@@ -1,0 +1,70 @@
+---
+import Card from '../../molecules/CardHelp.astro';
+const cards = [
+	{
+		title: 'ipsum 1',
+		description:
+			'IpLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit.',
+	},
+	{
+		title: 'ipsum 2',
+		description:
+			'IpLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit.',
+	},
+	{
+		title: 'ipsum 3',
+		description:
+			'IpLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit.',
+	},
+	{
+		title: 'ipsum 4',
+		description:
+			'IpLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit.',
+	},
+	{
+		title: 'ipsum 5',
+		description:
+			'IpLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit.',
+	},
+	{
+		title: 'ipsum 6',
+		description:
+			'IpLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit.',
+	},
+];
+---
+
+<section class="sectionHelp">
+	<div class="sectionTitle sectionHelp-title">
+		<h2>Como posso te <span class="highlight">ajudar?</span></h2>
+		<p>Você é prioridade.</p>
+	</div>
+	<div class="sectionHelp-cards">
+		{cards.map((card) => <Card title={card.title} description={card.description} />)}
+	</div>
+</section>
+
+<style lang="scss">
+	.sectionHelp {
+		&-title {
+			text-align: left;
+			margin-bottom: 56px;
+
+			@media (min-width: 1200px) {
+				margin-bottom: 72px;
+				text-align: center;
+			}
+		}
+
+		&-cards {
+			display: grid;
+			gap: 36px;
+			margin-top: 20px;
+			grid-template-columns: 1fr;
+
+			@media (min-width: 1200px) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+	}
+</style>
