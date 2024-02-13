@@ -20,6 +20,11 @@ const { title, description, icon } = Astro.props;
 		padding: 24px;
 		border-radius: 20px;
 		cursor: pointer;
+		width: 280px;
+
+		@media (min-width: 1200px) {
+			width: unset;
+		}
 
 		&:hover {
 			background: var(--color-card-bg-hover);

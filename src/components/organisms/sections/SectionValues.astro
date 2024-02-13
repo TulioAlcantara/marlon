@@ -1,0 +1,51 @@
+---
+import ValuesCarousel from '../../molecules/ValuesCarousel.vue';
+const values = [
+	{
+		cta: 'cta 1',
+		title: 'Title 1',
+		subtitle: 'Subtitle 1',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit. Praesent aliquam non massa nec aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac habitasse platea dictumst. Aenean ligula quam, aliquam ut diam a, efficitur molestie urna.',
+		img: 'https://via.placeholder.com/300x300',
+		imgAlt: 'Image 1',
+	},
+
+	{
+		cta: 'cta 2',
+		title: 'Title 2',
+		subtitle: 'Subtitle 2',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+		img: 'https://via.placeholder.com/300x300',
+	},
+];
+---
+
+<section class="sectionValues"></section>
+<section class="sectionValues--desktop">
+	<div class="sectionTitle sectionValues-title">
+		<h2>Meus <span class="gradient">valores</span></h2>
+		<p>E como eles te afetam.</p>
+	</div>
+
+	<ValuesCarousel values={values} client:load />
+</section>
+
+<style lang="scss">
+	.sectionValues {
+		display: block;
+
+		@media (min-width: 1200px) {
+			display: none;
+		}
+
+		&--desktop {
+			display: none;
+
+			@media (min-width: 1200px) {
+				display: block;
+			}
+		}
+	}
+</style>
