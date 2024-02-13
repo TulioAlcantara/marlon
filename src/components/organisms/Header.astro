@@ -1,7 +1,10 @@
 ---
+import Button from '../atoms/Button.astro';
+import logo from '/logo.svg?raw';
+
 const items = [
 	{
-		name: 'Inicio',
+		name: 'Início',
 		link: '#',
 	},
 	{
@@ -9,7 +12,7 @@ const items = [
 		link: '#',
 	},
 	{
-		name: 'O que e terapia',
+		name: 'O que é Terapia',
 		link: '#',
 	},
 	{
@@ -17,15 +20,64 @@ const items = [
 		link: '#',
 	},
 ];
+
+const cta = {
+	text: 'Agendar uma consulta',
+	link: '#',
+};
 ---
 
-<header>
-	<h1>Header</h1>
+<header class="header">
+	<div class="header__logo">
+		<Fragment set:html={logo} />
+	</div>
+	<div class="header-links">
+		{
+			items.map((item) => (
+				<a class="header-links__link" href={item.link}>
+					{item.name}
+				</a>
+			))
+		}
+	</div>
+	<Button text={cta.text} link={cta.link} isSmall={true} />
 </header>
 
 <style lang="scss">
-	header {
+	.header {
+		display: flex;
+		position: sticky;
+		justify-content: space-between;
+		align-items: center;
+		top: 0;
 		max-width: 1285px;
-		margin: 32px auto 0 32px;
+		padding: 32px;
+		margin-top: 32px;
+		border-radius: 20px;
+		background-color: var(--color-header-bg);
+
+		@media (min-width: 1200px) {
+			padding: 45px;
+		}
+
+		&__logo {
+			color: var(--color-title);
+		}
+
+		&-links {
+			display: none;
+			gap: 96px;
+
+			@media (min-width: 1200px) {
+				display: flex;
+			}
+
+			&__link {
+				text-decoration: none;
+				font-size: 1rem;
+				font-weight: 600;
+				color: var(--color-title);
+			}
+		}
 	}
 </style>

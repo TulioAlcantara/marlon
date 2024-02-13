@@ -1,12 +1,17 @@
 ---
-const { text, link } = Astro.props;
+interface Props {
+	text: string;
+	link: string;
+	isSmall?: boolean;
+}
+const { text, link, isSmall } = Astro.props;
 ---
 
-<a href={link} class="btn">
+<a href={link} class={`btn ${isSmall && 'btn--small'}`}>
 	{text}
 </a>
 
-<style>
+<style lang="scss">
 	.btn {
 		display: inline-block;
 		padding: 1rem;
@@ -19,6 +24,10 @@ const { text, link } = Astro.props;
 		@media (min-width: 1200px) {
 			font-size: 1.5rem;
 			padding: 24px 32px;
+		}
+
+		&--small {
+			font-size: 1rem;
 		}
 	}
 </style>
