@@ -7,7 +7,7 @@ const values = [
 		subtitle: 'Subtitle 1',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit. Praesent aliquam non massa nec aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac habitasse platea dictumst. Aenean ligula quam, aliquam ut diam a, efficitur molestie urna.',
-		img: 'https://via.placeholder.com/300x300',
+		img: 'https://via.placeholder.com/400x265',
 		imgAlt: 'Image 1',
 	},
 
@@ -17,34 +17,34 @@ const values = [
 		subtitle: 'Subtitle 2',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-		img: 'https://via.placeholder.com/300x300',
+		img: 'https://via.placeholder.com/400x265',
 	},
 ];
 ---
 
-<section class="sectionValues"></section>
-<section class="sectionValues--desktop">
+<section class="sectionValues">
 	<div class="sectionTitle sectionValues-title">
 		<h2>Meus <span class="gradient">valores</span></h2>
 		<p>E como eles te afetam.</p>
 	</div>
 
-	<ValuesCarousel values={values} client:load />
+	<ValuesCarousel values={values} client:visible />
 </section>
 
 <style lang="scss">
 	.sectionValues {
-		display: block;
+		padding-left: 32px;
+		padding-right: 32px;
 
-		@media (min-width: 1200px) {
-			display: none;
+		@media (max-width: 1200px) {
+			background-color: var(--color-section-values-bg);
 		}
 
-		&--desktop {
-			display: none;
-
-			@media (min-width: 1200px) {
-				display: block;
+		.sectionValues-title {
+			h2 {
+				@media (max-width: 1200px) {
+					color: var(--color-white);
+				}
 			}
 		}
 	}

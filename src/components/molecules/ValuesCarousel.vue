@@ -21,6 +21,31 @@
 			<img :src="values[activeIndex].img" :alt="values[activeIndex].imgAlt" />
 		</div>
 	</div>
+
+	<div class="valuesCarousel valuesCarousel--mobile">
+		<ul class="valuesCarousel-ctaList">
+			<li
+				class="valuesCarousel-ctaList__item"
+				:class="{ active: isItemActive(index) }"
+				v-for="(item, index) in values"
+				:key="item.cta"
+			>
+				<button @click="changeActiveIndex(index)">
+					{{ item.cta }}
+				</button>
+			</li>
+		</ul>
+		<div class="valuesCarousel-card">
+			<div class="valuesCarousel-card-titleContainer">
+				<img src="https://via.placeholder.com/72x72" />
+				<div>
+					<p class="valuesCarousel-card__subtitle">{{ values[activeIndex].subtitle }}</p>
+					<h3 class="valuesCarousel-card__title">{{ values[activeIndex].title }}</h3>
+				</div>
+			</div>
+			<p class="valuesCarousel-card__description">{{ values[activeIndex].description }}</p>
+		</div>
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -52,8 +77,14 @@ const isItemActive = (index: number) => {
 
 <style lang="scss" scoped>
 .valuesCarousel {
-	display: grid;
+	display: none;
 	grid-template-columns: 1fr 4fr;
+
+	@media (min-width: 1200px) {
+		display: grid;
+	}
+
+	$this: &;
 
 	&-ctaList {
 		display: flex;
@@ -88,7 +119,7 @@ const isItemActive = (index: number) => {
 		display: flex;
 
 		&__subtitle {
-			size: 1.5rem;
+			font-size: 1.5rem;
 			color: var(--color-title);
 		}
 
@@ -100,7 +131,7 @@ const isItemActive = (index: number) => {
 		}
 
 		&__description {
-			size: 1.5rem;
+			font-size: 1.5rem;
 			color: var(--color-copy);
 		}
 
@@ -109,6 +140,82 @@ const isItemActive = (index: number) => {
 			height: 265px;
 			flex: 1 0 auto;
 			transform: translateX(90px);
+		}
+	}
+
+	&--mobile {
+		display: block;
+
+		@media (min-width: 1200px) {
+			display: none;
+		}
+
+		#{$this}-ctaList {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			gap: 8px;
+			padding: 0;
+
+			&__item {
+				list-style: none;
+
+				button {
+					all: unset;
+					padding: 16px;
+					border-radius: 60px;
+					font-size: 0.875rem;
+					font-weight: 600;
+					color: var(--color-white);
+					background-color: #343a40;
+				}
+			}
+
+			.active {
+				button {
+					background-color: var(--color-accent);
+					color: var(--color-white);
+				}
+			}
+		}
+
+		#{$this}-card {
+			padding: 24px;
+			background-color: #343a40;
+			display: flex;
+			flex-direction: column;
+
+			&-titleContainer {
+				display: flex;
+				margin-bottom: 32px;
+				gap: 10px;
+				align-items: center;
+
+				img {
+					width: 72px;
+					height: 72px;
+					flex: unset;
+					transform: none;
+				}
+			}
+
+			&__subtitle {
+				font-size: 1rem;
+				color: var(--color-section-values-text);
+			}
+
+			&__title {
+				font-size: 1.5rem;
+				font-weight: 700;
+				margin-bottom: 0;
+				color: var(--color-accent);
+			}
+
+			&__description {
+				font-size: 1rem;
+				color: var(--color-section-values-text);
+			}
 		}
 	}
 }
