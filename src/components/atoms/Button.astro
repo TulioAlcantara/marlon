@@ -13,6 +13,7 @@ const { text, link, isSmall } = Astro.props;
 
 <style lang="scss">
 	.btn {
+		grid-area: cta;
 		display: inline-block;
 		padding: 1rem;
 		background-color: var(--color-accent);
@@ -20,10 +21,12 @@ const { text, link, isSmall } = Astro.props;
 		color: var(--color-white);
 		text-decoration: none;
 		font-weight: bold;
+		text-align: center;
 
 		@media (min-width: 1200px) {
 			font-size: 1.5rem;
 			padding: 24px 32px;
+			width: fit-content;
 		}
 
 		&--small {

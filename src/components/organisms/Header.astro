@@ -1,6 +1,7 @@
 ---
 import Button from '../atoms/Button.astro';
 import logo from '/logo.svg?raw';
+import hamb from '/hamb.svg?raw';
 
 const items = [
 	{
@@ -45,7 +46,14 @@ let activeLink = 'Início';
 			))
 		}
 	</div>
-	<Button text={cta.text} link={cta.link} isSmall={true} />
+	<div class="header__cta">
+		<Button text={cta.text} link={cta.link} isSmall={true} />
+	</div>
+	<div class="header__menu">
+		<button aria-label="Abrir menu">
+			<Fragment set:html={hamb} />
+		</button>
+	</div>
 </header>
 
 <style lang="scss">
@@ -54,15 +62,18 @@ let activeLink = 'Início';
 		position: sticky;
 		justify-content: space-between;
 		align-items: center;
+		z-index: 2;
 		top: 32px;
 		max-width: 1285px;
-		padding: 32px;
+		padding: 24px;
 		border-radius: 20px;
+		margin: 0 50px;
 		backdrop-filter: blur(10px);
 		background-color: var(--color-header-bg);
 
 		@media (min-width: 1200px) {
-			padding: 45px;
+			padding: 24px 45px;
+			margin-bottom: 90px;
 		}
 
 		&__logo {
@@ -86,6 +97,26 @@ let activeLink = 'Início';
 				&--active {
 					color: var(--color-accent);
 				}
+			}
+		}
+
+		&__cta {
+			display: none;
+
+			@media (min-width: 1200px) {
+				display: block;
+			}
+		}
+
+		&__menu {
+			display: block;
+
+			@media (min-width: 1200px) {
+				display: none;
+			}
+
+			button {
+				all: unset;
 			}
 		}
 	}

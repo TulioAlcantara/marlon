@@ -113,10 +113,10 @@ const isItemActive = (index: number) => {
 	}
 
 	&-card {
-		position: relative;
 		padding: 75px 65px;
 		background-color: var(--color-card-bg);
 		display: flex;
+		align-items: center;
 
 		&__subtitle {
 			font-size: 1.5rem;
@@ -188,9 +188,10 @@ const isItemActive = (index: number) => {
 
 			&-titleContainer {
 				display: flex;
-				margin-bottom: 32px;
-				gap: 10px;
 				align-items: center;
+				gap: 10px;
+				margin-bottom: 32px;
+				width: 100%;
 
 				img {
 					width: 72px;

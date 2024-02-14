@@ -4,6 +4,7 @@
 html {
 	font-family: 'Archivo', sans-serif;
 	font-size: 16px;
+	overflow-x: hidden;
 }
 
 body {
@@ -39,7 +40,7 @@ section:not(.hero) {
 	}
 
 	.sectionTitle {
-		margin-bottom: 56px;
+		margin-bottom: 40px;
 
 		@media (min-width: 1200px) {
 			margin-bottom: 72px;
@@ -52,10 +53,6 @@ section:not(.hero) {
 
 			@media (min-width: 1200px) {
 				font-size: 3rem;
-			}
-
-			.highlight {
-				color: var(--color-accent);
 			}
 		}
 

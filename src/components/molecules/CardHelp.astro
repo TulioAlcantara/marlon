@@ -9,7 +9,7 @@ const { title, description, icon } = Astro.props;
 ---
 
 <div class="helpCard">
-	{icon && <img src={icon} alt={title} />}
+	<img src="https://via.placeholder.com/72x72" />
 	<h2>{title}</h2>
 	<p>{description}</p>
 </div>
@@ -30,6 +30,10 @@ const { title, description, icon } = Astro.props;
 			background: var(--color-card-bg-hover);
 			box-shadow: 0px 0px 60px 20px var(--color-accent);
 			transition: all 0.5s ease;
+		}
+
+		img {
+			margin-bottom: 24px;
 		}
 
 		h2 {
