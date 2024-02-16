@@ -15,6 +15,8 @@ const { title, description, icon } = Astro.props;
 </div>
 
 <style lang="scss">
+	@import '../../styles/_mixins.scss';
+
 	.helpCard {
 		background: var(--color-card-bg);
 		padding: 24px;
@@ -22,7 +24,7 @@ const { title, description, icon } = Astro.props;
 		cursor: pointer;
 		width: 280px;
 
-		@media (min-width: 1200px) {
+		@include tablet {
 			width: unset;
 		}
 

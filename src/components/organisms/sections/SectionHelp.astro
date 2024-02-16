@@ -45,6 +45,8 @@ const cards = [
 </section>
 
 <style lang="scss">
+	@import '../../../styles/_mixins.scss';
+
 	.sectionHelp {
 		padding-left: 32px;
 		padding-right: 32px;
@@ -53,7 +55,7 @@ const cards = [
 			text-align: left;
 			margin-bottom: 56px;
 
-			@media (min-width: 1200px) {
+			@include desktop {
 				margin-bottom: 72px;
 				text-align: center;
 			}
@@ -65,7 +67,11 @@ const cards = [
 			margin-top: 20px;
 			grid-template-columns: 1fr;
 
-			@media (min-width: 1200px) {
+			@include tablet {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@include desktop {
 				grid-template-columns: repeat(3, 1fr);
 			}
 		}

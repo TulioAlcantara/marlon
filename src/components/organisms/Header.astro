@@ -57,6 +57,8 @@ let activeLink = 'Início';
 </header>
 
 <style lang="scss">
+	@import '../../styles/_mixins.scss';
+
 	.header {
 		display: flex;
 		position: sticky;
@@ -69,9 +71,9 @@ let activeLink = 'Início';
 		border-radius: 20px;
 		margin: 0 50px;
 		backdrop-filter: blur(10px);
-		background-color: var(--color-header-bg);
+		background-color: (--color-header-bg);
 
-		@media (min-width: 1200px) {
+		@include desktop {
 			padding: 24px 45px;
 			margin-bottom: 90px;
 		}
@@ -84,7 +86,7 @@ let activeLink = 'Início';
 			display: none;
 			gap: 96px;
 
-			@media (min-width: 1200px) {
+			@include desktop {
 				display: flex;
 			}
 
@@ -93,6 +95,10 @@ let activeLink = 'Início';
 				font-size: 1rem;
 				font-weight: 600;
 				color: var(--color-title);
+
+				&:hover {
+					color: var(--color-accent);
+				}
 
 				&--active {
 					color: var(--color-accent);
@@ -103,7 +109,7 @@ let activeLink = 'Início';
 		&__cta {
 			display: none;
 
-			@media (min-width: 1200px) {
+			@include tablet {
 				display: block;
 			}
 		}
@@ -111,7 +117,7 @@ let activeLink = 'Início';
 		&__menu {
 			display: block;
 
-			@media (min-width: 1200px) {
+			@include tablet {
 				display: none;
 			}
 

@@ -11,17 +11,43 @@ const stats = [
 	{
 		title: 'horas atendidas',
 		value: '4k+',
+		numericValue: 4,
 	},
 	{
 		title: 'paciente satisfeitos',
 		value: '200+',
+		numericValue: 200,
 	},
 	{
 		title: 'no Google Review',
 		value: '5.0',
+		numericValue: 5,
 	},
 ];
 ---
+
+<script>
+	const increment = (el: Element) => {
+		if (el instanceof HTMLElement) {
+			const target = Number(el.dataset.numeric);
+			console.log(target);
+			let count = 0;
+			const increment = Math.ceil(target / 10);
+			const interval = setInterval(() => {
+				count += increment;
+				el.textContent = count.toString();
+				if (count >= target) {
+					clearInterval(interval);
+				}
+			}, 50);
+		}
+	};
+
+	const stats = document.querySelectorAll('.hero-stats__value');
+	stats.forEach((stat) => {
+		increment(stat);
+	});
+</script>
 
 <section class="hero">
 	<div class="hero__title">
@@ -37,7 +63,9 @@ const stats = [
 		{
 			stats.map((stat) => (
 				<div>
-					<p class="hero-stats__value">{stat.value}</p>
+					<p class="hero-stats__value" data-numeric={stat.numericValue}>
+						{stat.value}
+					</p>
 					<p class="hero-stats__description">{stat.title}</p>
 				</div>
 			))

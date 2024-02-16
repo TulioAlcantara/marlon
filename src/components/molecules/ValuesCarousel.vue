@@ -76,11 +76,13 @@ const isItemActive = (index: number) => {
 </script>
 
 <style lang="scss" scoped>
+@import 'src/styles/_mixins.scss';
+
 .valuesCarousel {
 	display: none;
 	grid-template-columns: 1fr 4fr;
 
-	@media (min-width: 1200px) {
+	@include desktop {
 		display: grid;
 	}
 
@@ -113,6 +115,7 @@ const isItemActive = (index: number) => {
 	}
 
 	&-card {
+		border-radius: 20px;
 		padding: 75px 65px;
 		background-color: var(--color-card-bg);
 		display: flex;
@@ -146,7 +149,7 @@ const isItemActive = (index: number) => {
 	&--mobile {
 		display: block;
 
-		@media (min-width: 1200px) {
+		@include desktop {
 			display: none;
 		}
 
@@ -168,7 +171,6 @@ const isItemActive = (index: number) => {
 					font-size: 0.875rem;
 					font-weight: 600;
 					color: var(--color-white);
-					background-color: #343a40;
 				}
 			}
 
@@ -182,7 +184,6 @@ const isItemActive = (index: number) => {
 
 		#{$this}-card {
 			padding: 24px;
-			background-color: #343a40;
 			display: flex;
 			flex-direction: column;
 
@@ -203,7 +204,6 @@ const isItemActive = (index: number) => {
 
 			&__subtitle {
 				font-size: 1rem;
-				color: var(--color-section-values-text);
 			}
 
 			&__title {
@@ -215,7 +215,6 @@ const isItemActive = (index: number) => {
 
 			&__description {
 				font-size: 1rem;
-				color: var(--color-section-values-text);
 			}
 		}
 	}

@@ -1,0 +1,52 @@
+---
+import Card from '../../molecules/CardProcess.astro';
+
+const cards = [
+	{
+		title: 'Avaliação',
+		description:
+			'Trabalharemos juntos para definir e avaliar seus problemas atuais e determinar os objetivos terapêuticos. Vou coletar informações sobre seus pensamentos, sentimentos e comportamento, bem como sua história de vida e outras questões relevantes. Isso irá nos ajudar a desenvolver um plano de tratamento personalizado para você.',
+	},
+	{
+		title: 'Intervenção',
+		description:
+			'Isso pode incluir várias técnicas terapêuticas, como modificação de padrões de pensamento desadaptativos, modificação de comportamentos desadaptativos e prática de habilidades sociais e de enfrentamento. Vamos mudar seus padrões de pensamento e comportamento para superar o problema.',
+	},
+	{
+		title: 'Manutenção',
+		description:
+			'Trabalharemos juntos O foco é manter as mudanças positivas alcançadas na segunda etapa. Eu vou trabalhar com você para desenvolver estratégias para lidar com possíveis recaídas, bem como para continuar a desenvolver e praticar habilidades aprendidas na terapia. O objetivo é te ajudar manter as mudanças positivas a longo prazo. definir e avaliar seus problemas atuais e determinar os objetivos terapêuticos. Vou coletar informações sobre seus pensamentos, sentimentos e comportamento, bem como sua história de vida e outras questões relevantes. Isso irá nos ajudar a desenvolver um plano de tratamento personalizado para você.',
+	},
+];
+---
+
+<section class="sectionProcess">
+	<div class="sectionTitle sectionProcess-title">
+		<h2>Um <span class="gradient">Processo diferente</span></h2>
+		<p>Pra melhor te atender</p>
+	</div>
+
+	<div class="sectionProcess-cards">
+		{cards.map((card) => <Card title={card.title} description={card.description} />)}
+	</div>
+</section>
+
+<style lang="scss">
+	@import 'src/styles/_mixins.scss';
+
+	.sectionProcess {
+		padding-left: 32px;
+		padding-right: 32px;
+
+		@include desktop {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+
+		&-cards {
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+		}
+	}
+</style>

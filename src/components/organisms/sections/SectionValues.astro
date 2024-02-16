@@ -28,24 +28,12 @@ const values = [
 		<p>E como eles te afetam.</p>
 	</div>
 
-	<ValuesCarousel values={values} client:visible />
+	<ValuesCarousel values={values} client:load />
 </section>
 
 <style lang="scss">
 	.sectionValues {
 		padding-left: 32px;
 		padding-right: 32px;
-
-		@media (max-width: 1200px) {
-			background-color: var(--color-section-values-bg);
-		}
-
-		.sectionValues-title {
-			h2 {
-				@media (max-width: 1200px) {
-					color: var(--color-white);
-				}
-			}
-		}
 	}
 </style>
