@@ -58,7 +58,9 @@ const stats = [
 		</h1>
 	</div>
 	<p class="hero__subtitle">{subtitle}</p>
-	<Button text={cta.text} link={cta.link} />
+	<div class="hero__cta">
+		<Button text={cta.text} link={cta.link} />
+	</div>
 	<div class="hero-stats">
 		{
 			stats.map((stat) => (
@@ -76,6 +78,8 @@ const stats = [
 </section>
 
 <style lang="scss">
+	@import 'src/styles/_mixins.scss';
+
 	.hero {
 		padding-left: 32px;
 		padding-right: 32px;
@@ -85,9 +89,15 @@ const stats = [
 
 		grid-template-areas: 'title' 'stats' 'subtitle' 'cta';
 
-		@media (min-width: 1200px) {
+		@include tablet {
 			grid-template-areas: 'title' 'subtitle' 'cta' 'stats';
+			padding-top: 32px;
+			margin-top: 8px;
+		}
+
+		@include desktop {
 			padding-top: 142px;
+			margin-top: 45px;
 		}
 
 		&__title {
@@ -97,9 +107,14 @@ const stats = [
 			border-radius: 20px;
 			z-index: 1;
 
-			@media (min-width: 1200px) {
+			@include tablet {
+				width: 500px;
+				padding: 32px 32px 32px 0;
+			}
+
+			@include desktop {
 				width: 1000px;
-				padding: 24px 0;
+				padding: 24px 24px 24px 0;
 			}
 
 			h1 {
@@ -107,7 +122,11 @@ const stats = [
 				font-size: 2rem;
 				font-weight: bold;
 
-				@media (min-width: 1200px) {
+				@include tablet {
+					font-size: 2.5rem;
+				}
+
+				@include desktop {
 					font-size: 3.5rem;
 				}
 			}
@@ -120,12 +139,23 @@ const stats = [
 			margin-top: 60px;
 			margin-bottom: 40px;
 
-			@media (min-width: 1200px) {
+			@include tablet {
+				width: 400px;
+				font-size: 1.25rem;
+				margin-top: 16px;
+				margin-bottom: 40px;
+			}
+
+			@include desktop {
 				width: 646px;
 				font-size: 1.5rem;
 				margin-top: 24px;
 				margin-bottom: 68px;
 			}
+		}
+
+		&__cta {
+			grid-area: cta;
 		}
 
 		&-stats {
@@ -136,10 +166,14 @@ const stats = [
 			gap: 44px;
 			margin-top: 24px;
 
-			@media (min-width: 1200px) {
+			@include tablet {
 				flex-direction: row;
 				justify-content: center;
 				gap: 100px;
+				margin: 110px 0 30px;
+			}
+
+			@include desktop {
 				margin: 400px 0 300px;
 			}
 
@@ -151,10 +185,14 @@ const stats = [
 				padding-left: 8px;
 				color: var(--color-accent);
 
-				@media (min-width: 1200px) {
+				@include tablet {
 					text-align: center;
-					font-size: 3rem;
+					font-size: 2rem;
 					margin-bottom: 16px;
+				}
+
+				@include desktop {
+					font-size: 3rem;
 				}
 			}
 
@@ -164,8 +202,12 @@ const stats = [
 				font-size: 1rem;
 				color: var(--color-title);
 
-				@media (min-width: 1200px) {
+				@include tablet {
 					text-align: center;
+					font-size: 1rem;
+				}
+
+				@include desktop {
 					font-size: 2rem;
 				}
 			}
@@ -176,11 +218,16 @@ const stats = [
 			position: absolute;
 			top: 0;
 			right: 0;
-			width: 560px;
-			height: 800px;
 
-			@media (min-width: 1200px) {
+			@include tablet {
 				display: block;
+				width: 240px;
+				height: 340px;
+			}
+
+			@include desktop {
+				width: 560px;
+				height: 800px;
 			}
 		}
 
@@ -192,7 +239,7 @@ const stats = [
 			top: 0;
 			right: 0;
 
-			@media (min-width: 1200px) {
+			@include tablet {
 				display: none;
 			}
 		}

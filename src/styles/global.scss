@@ -36,14 +36,22 @@ i {
 section:not(.hero) {
 	padding: 80px 0;
 
-	@media (min-width: 1200px) {
+	@include tablet {
+		padding: 70px 0;
+	}
+
+	@include desktop {
 		padding: 120px 0;
 	}
 
 	.sectionTitle {
 		margin-bottom: 40px;
 
-		@media (min-width: 1200px) {
+		@include tablet {
+			margin-bottom: 48px;
+		}
+
+		@include desktop {
 			margin-bottom: 72px;
 		}
 
