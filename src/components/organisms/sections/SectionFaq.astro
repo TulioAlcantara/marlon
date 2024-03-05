@@ -1,0 +1,30 @@
+---
+
+---
+
+<section class="sectionFaq">
+	<div class="sectionTitle sectionFaq-title">
+		<h2>Explore algumas das <span class="gradient">Perguntas Frequentes</span></h2>
+		<p>Estou aqui para te dar respostas.</p>
+	</div>
+</section>
+
+<style lang="scss">
+	@import '../../../styles/_mixins.scss';
+
+	.sectionFaq {
+		padding-left: 32px;
+		padding-right: 32px;
+
+		.sectionFaq-title {
+			@include tablet {
+			}
+
+			@include desktop {
+				max-width: 550px;
+				text-align: center;
+				margin: auto;
+			}
+		}
+	}
+</style>

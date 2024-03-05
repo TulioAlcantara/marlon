@@ -11,16 +11,41 @@ const cta = {
 	text: 'Entrar em contato',
 	link: '#',
 };
+const links = [
+	{
+		img: 'https://via.placeholder.com/32x32',
+		alt: 'Instagram',
+		link: '#',
+	},
+	{
+		img: 'https://via.placeholder.com/32x32',
+		alt: 'Whatsapp',
+		link: '#',
+	},
+	{
+		img: 'https://via.placeholder.com/32x32',
+		alt: 'Linkedin',
+		link: '#',
+	},
+];
 ---
 
 <footer>
 	<div class="footer">
 		<h2 class="footer__title"><span class="gradient">{title.highlight}</span>{title.text}</h2>
 		<p class="footer__subtitle">{subtitle}</p>
-		<div class="footer__cta">
-			<Button text={cta.text} link={cta.link} />
-		</div>
-		<ul class="footer__links"></ul>
+		<Button text={cta.text} link={cta.link} />
+		<ul class="footer-links">
+			{
+				links.map((link) => (
+					<li>
+						<a href={link.link}>
+							<img src={link.img} alt={link.alt} />
+						</a>
+					</li>
+				))
+			}
+		</ul>
 	</div>
 </footer>
 
@@ -28,10 +53,13 @@ const cta = {
 	@import '../../styles/_mixins.scss';
 
 	footer {
-		width: 100vw;
-		position: absolute;
 		background: var(--color-footer-bg);
-		left: 0;
+
+		@include desktop {
+			width: 100vw;
+			position: absolute;
+			left: 0;
+		}
 
 		.footer {
 			margin: auto;
@@ -81,6 +109,22 @@ const cta = {
 					font-size: 1.5rem;
 					max-width: 580px;
 					margin-bottom: 74px;
+				}
+			}
+
+			&-links {
+				gap: 1rem;
+				list-style: none;
+				padding-left: 0;
+				display: none;
+
+				@include tablet {
+					margin-top: 200px;
+					display: flex;
+				}
+
+				@include desktop {
+					margin-top: 80px;
 				}
 			}
 		}
