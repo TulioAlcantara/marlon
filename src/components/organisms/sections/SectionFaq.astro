@@ -1,16 +1,35 @@
 ---
+import FaqCarousel from '../../molecules/FaqCarousel.vue';
 
+const title = {
+	highlight: 'Perguntas Frequentes',
+	text: 'Explore algumas das ',
+};
+const subtitle = 'Estou aqui para te dar respostas.';
+const faq = [
+	{
+		title: 'Ipsum Lorem',
+		items: [
+			{
+				summary: 'Ipsum Lorem',
+				text: 'Tulio Alcantara Magalhaes',
+			},
+		],
+	},
+];
 ---
 
 <section class="sectionFaq">
 	<div class="sectionTitle sectionFaq-title">
-		<h2>Explore algumas das <span class="gradient">Perguntas Frequentes</span></h2>
-		<p>Estou aqui para te dar respostas.</p>
+		<h2>{title.text} <span class="gradient">{title.highlight}</span></h2>
+		<p>{subtitle}</p>
 	</div>
+
+	<FaqCarousel faq={faq} client:load />
 </section>
 
 <style lang="scss">
-	@import '../../../styles/_mixins.scss';
+	@import 'src/styles/_mixins.scss';
 
 	.sectionFaq {
 		padding-left: 32px;
