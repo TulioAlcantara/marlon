@@ -1,0 +1,88 @@
+---
+import Button from '../atoms/Button.astro';
+
+const title = {
+	highlight: 'Se identificou ',
+	text: 'com algo que leu?',
+};
+const subtitle =
+	'Entre em contato, pois estarei à sua disposição. Perguntas e problemas não devem ser ignorados, por menores que você acha que sejam. ';
+const cta = {
+	text: 'Entrar em contato',
+	link: '#',
+};
+---
+
+<footer>
+	<div class="footer">
+		<h2 class="footer__title"><span class="gradient">{title.highlight}</span>{title.text}</h2>
+		<p class="footer__subtitle">{subtitle}</p>
+		<div class="footer__cta">
+			<Button text={cta.text} link={cta.link} />
+		</div>
+		<ul class="footer__links"></ul>
+	</div>
+</footer>
+
+<style lang="scss">
+	@import '../../styles/_mixins.scss';
+
+	footer {
+		width: 100vw;
+		position: absolute;
+		background: var(--color-footer-bg);
+		left: 0;
+
+		.footer {
+			margin: auto;
+			max-width: 1440px;
+			padding: 130px 32px 130px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			@include tablet {
+				padding: 230px 32px 70px;
+			}
+
+			@include desktop {
+				padding: 370px 32px 90px;
+			}
+
+			&__title {
+				text-align: center;
+				font-size: 3rem;
+				margin-bottom: 32px;
+
+				@include tablet {
+					font-size: 5.5rem;
+					margin-bottom: 48px;
+				}
+
+				@include desktop {
+					font-size: 7.5rem;
+					margin-bottom: 64px;
+				}
+			}
+
+			&__subtitle {
+				text-align: center;
+				font-size: 1rem;
+				margin-bottom: 56px;
+				color: var(--color-title);
+
+				@include tablet {
+					font-size: 1.5rem;
+					max-width: 580px;
+					margin-bottom: 80px;
+				}
+
+				@include desktop {
+					font-size: 1.5rem;
+					max-width: 580px;
+					margin-bottom: 74px;
+				}
+			}
+		}
+	}
+</style>

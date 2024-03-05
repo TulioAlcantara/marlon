@@ -49,9 +49,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
-defineProps<{
+const props = defineProps<{
 	values: [
 		{
 			title: string;
@@ -63,6 +63,16 @@ defineProps<{
 		},
 	];
 }>();
+
+onMounted(() => {
+	setInterval(() => {
+		if (activeIndex.value < props.values.length - 1) {
+			activeIndex.value++;
+		} else {
+			activeIndex.value = 0;
+		}
+	}, 20000);
+});
 
 let activeIndex = ref(0);
 
@@ -170,7 +180,8 @@ const isItemActive = (index: number) => {
 					border-radius: 60px;
 					font-size: 0.875rem;
 					font-weight: 600;
-					color: var(--color-white);
+					color: var(--color-copy);
+					background-color: var(--color-card-bg);
 				}
 			}
 

@@ -183,7 +183,10 @@ const stats = [
 				font-size: 2rem;
 				margin-bottom: 8px;
 				padding-left: 8px;
-				color: var(--color-accent);
+				background: var(--color-accent-gradient);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
 
 				@include tablet {
 					text-align: center;
