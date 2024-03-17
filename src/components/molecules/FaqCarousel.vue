@@ -12,8 +12,12 @@
 				</button>
 			</li>
 		</ul>
-		<ul class="faqCarousel-details">
-			<li v-for="item in faq[activeIndex].items" :key="item.summary">
+		<ul class="faqCarousel-detailsList">
+			<li
+				v-for="item in faq[activeIndex].items"
+				:key="item.summary"
+				class="faqCarousel-detailsList__item"
+			>
 				<details>
 					<summary>{{ item.summary }}</summary>
 					<p>{{ item.text }}</p>
@@ -21,21 +25,28 @@
 			</li>
 		</ul>
 	</div>
-	<!---->
-	<!-- <div class="faqCarousel--mobile"> -->
-	<!-- 	<ul class="faqCarousel-ctaList"> -->
-	<!-- 		<li class="faqCarousel-ctaList__item" v-for="item in faq" :key="item.title"> -->
-	<!-- 			<ul> -->
-	<!-- 				<li v-for="item in faq[activeIndex].items" :key="item.summary"> -->
-	<!-- 					<details> -->
-	<!-- 						<summary>{{ item.summary }}</summary> -->
-	<!-- 						<p>{{ item.text }}</p> -->
-	<!-- 					</details> -->
-	<!-- 				</li> -->
-	<!-- 			</ul> -->
-	<!-- 		</li> -->
-	<!-- 	</ul> -->
-	<!-- </div> -->
+
+	<div class="faqCarousel--mobile">
+		<ul class="faqCarousel-ctaList">
+			<li class="faqCarousel-ctaList__item" v-for="item in faq" :key="item.title">
+				<details>
+					<summary>{{ item.title }}</summary>
+					<ul class="faqCarousel-detailsList">
+						<li
+							v-for="item in faq[activeIndex].items"
+							:key="item.summary"
+							class="faqCarousel-detailsList__item"
+						>
+							<details>
+								<summary>{{ item.summary }}</summary>
+								<p>{{ item.text }}</p>
+							</details>
+						</li>
+					</ul>
+				</details>
+			</li>
+		</ul>
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -65,9 +76,17 @@ const isItemActive = (index: number) => {
 </script>
 
 <style lang="scss" scoped>
+@import 'src/styles/_mixins.scss';
+
 .faqCarousel {
-	display: flex;
-	justify-content: space-between;
+	display: none;
+
+	@include desktop {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	$this: &;
 
 	&-ctaList {
 		width: 50%;
@@ -75,6 +94,7 @@ const isItemActive = (index: number) => {
 		display: flex;
 		flex-direction: column;
 		gap: 48px;
+		padding-left: 0;
 
 		&__item {
 			color: var(--color-copy);
@@ -91,11 +111,11 @@ const isItemActive = (index: number) => {
 		}
 	}
 
-	&-details {
+	&-detailsList {
 		width: 50%;
 		list-style: none;
 
-		li {
+		&__item {
 			padding: 16px 8px;
 			border-bottom: 1px solid var(--color-accent);
 
@@ -110,6 +130,49 @@ const isItemActive = (index: number) => {
 					font-size: 1.5rem;
 					color: var(--color-copy);
 					margin-top: 16px;
+				}
+			}
+		}
+	}
+
+	&--mobile {
+		@include desktop {
+			display: none;
+		}
+
+		#{$this}-ctaList {
+			width: 100%;
+			gap: 16px;
+
+			&__item {
+				details {
+					summary {
+						list-style: none;
+						font-size: 1rem;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+
+		#{$this}-detailsList {
+			padding: 12px 0 36px;
+			width: 100%;
+
+			&__item {
+				padding: 16px 8px;
+
+				details {
+					summary {
+						list-style: none;
+						color: var(--color-title);
+					}
+
+					p {
+						font-size: 1rem;
+						color: var(--color-copy);
+						margin-top: 16px;
+					}
 				}
 			}
 		}
