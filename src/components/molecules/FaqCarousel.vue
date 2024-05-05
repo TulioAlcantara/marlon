@@ -28,9 +28,12 @@
 
 	<div class="faqCarousel--mobile">
 		<ul class="faqCarousel-ctaList">
-			<li class="faqCarousel-ctaList__item" v-for="item in faq" :key="item.title">
+			<li class="faqCarousel-ctaList__item" v-for="(item, index) in faq" :key="item.title">
 				<details>
-					<summary>{{ item.title }}</summary>
+					<summary>
+						<span>{{ item.title }}</span>
+						<img src="https://via.placeholder.com/16x16" />
+					</summary>
 					<ul class="faqCarousel-detailsList">
 						<li
 							v-for="item in faq[activeIndex].items"
@@ -38,7 +41,10 @@
 							class="faqCarousel-detailsList__item"
 						>
 							<details>
-								<summary>{{ item.summary }}</summary>
+								<summary>
+									{{ item.summary }}
+									<img src="https://via.placeholder.com/16x16" />
+								</summary>
 								<p>{{ item.text }}</p>
 							</details>
 						</li>
@@ -146,10 +152,19 @@ const isItemActive = (index: number) => {
 
 			&__item {
 				details {
+					&[open] {
+						summary {
+							span {
+								color: var(--color-accent);
+							}
+						}
+					}
 					summary {
 						list-style: none;
 						font-size: 1rem;
 						font-weight: 700;
+						display: flex;
+						justify-content: space-between;
 					}
 				}
 			}
@@ -164,6 +179,7 @@ const isItemActive = (index: number) => {
 
 				details {
 					summary {
+						font-weight: 400;
 						list-style: none;
 						color: var(--color-title);
 					}

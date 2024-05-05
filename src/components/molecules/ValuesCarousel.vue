@@ -131,6 +131,10 @@ const isItemActive = (index: number) => {
 		display: flex;
 		align-items: center;
 
+		@include desktop {
+			height: 350px;
+		}
+
 		&__subtitle {
 			font-size: 1.5rem;
 			color: var(--color-title);

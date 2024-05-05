@@ -1,25 +1,24 @@
 {
-  "name": "",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.5.3",
-    "@astrojs/vue": "^4.0.8",
-    "@fontsource/archivo": "^5.0.16",
-    "astro": "^4.3.6",
-    "sass": "^1.70.0",
-    "typescript": "^5.3.3",
-    "vue": "^3.4.19"
-  },
-  "devDependencies": {
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0"
-  }
+	"name": "",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"devDependencies": {
+		"@astrojs/check": "^0.5.10",
+		"@astrojs/vue": "^4.1.0",
+		"@fontsource/archivo": "^5.0.18",
+		"@vue/typescript-plugin": "^2.0.16",
+		"astro": "^4.7.1",
+		"prettier": "^3.2.5",
+		"prettier-plugin-astro": "^0.13.0",
+		"sass": "^1.76.0",
+		"typescript": "^5.4.5",
+		"vue": "^3.4.26"
+	}
 }
