@@ -34,18 +34,20 @@ let activeLink = 'Início';
 	<div class="header__logo">
 		<Fragment set:html={logo} />
 	</div>
-	<div class="header-links">
+	<ul class="header-links">
 		{
 			items.map((item) => (
-				<a
-					class={`header-links__link ${activeLink == item.name && 'header-links__link--active'}`}
-					href={item.link}
-				>
-					{item.name}
-				</a>
+				<li>
+					<a
+						class={`header-links__link ${activeLink == item.name && 'header-links__link--active'}`}
+						href={item.link}
+					>
+						{item.name}
+					</a>
+				</li>
 			))
 		}
-	</div>
+	</ul>
 	<div class="header__cta">
 		<Button text={cta.text} link={cta.link} isSmall={true} />
 	</div>

@@ -26,9 +26,15 @@ const cards = [
 		<p>Pra melhor te atender</p>
 	</div>
 
-	<div class="sectionProcess-cards">
-		{cards.map((card) => <Card title={card.title} description={card.description} />)}
-	</div>
+	<ul class="sectionProcess-cards">
+		{
+			cards.map((card) => (
+				<li>
+					<Card title={card.title} description={card.description} />
+				</li>
+			))
+		}
+	</ul>
 </section>
 
 <style lang="scss">

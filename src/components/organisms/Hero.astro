@@ -61,19 +61,21 @@ const stats = [
 	<div class="hero__cta">
 		<Button text={cta.text} link={cta.link} />
 	</div>
-	<div class="hero-stats">
+	<ul class="hero-stats">
 		{
 			stats.map((stat) => (
-				<div>
-					<p class="hero-stats__value" data-numeric={stat.numericValue}>
-						{stat.value}
-					</p>
-					<p class="hero-stats__description">{stat.title}</p>
-				</div>
+				<li>
+					<div>
+						<p class="hero-stats__value" data-numeric={stat.numericValue}>
+							{stat.value}
+						</p>
+						<p class="hero-stats__description">{stat.title}</p>
+					</div>
+				</li>
 			))
 		}
 		<img class="hero__imgMobile" src="https://via.placeholder.com/200x280" />
-	</div>
+	</ul>
 	<img class="hero__img" src="https://via.placeholder.com/560x800" />
 </section>
 
