@@ -1,0 +1,66 @@
+---
+import Card from '../../molecules/CardInstagram.astro';
+---
+
+<section class="sectionInstagram">
+	<div class="sectionTitle sectionInstagram-title">
+		<h2>Acompanhe o meu trabalho no <span class="gradient">Instagram</span></h2>
+		<p>Conheça mais sobre quem sou eu.</p>
+	</div>
+	<ul class="sectionInstagram-cards">
+		<li>
+			<Card />
+		</li>
+
+		<li>
+			<Card />
+		</li>
+
+		<li>
+			<Card />
+		</li>
+
+		<li>
+			<Card />
+		</li>
+
+		<li>
+			<Card />
+		</li>
+
+		<li>
+			<Card />
+		</li>
+
+		<li>
+			<Card />
+		</li>
+	</ul>
+</section>
+
+<style lang="scss">
+	@import 'src/styles/_mixins.scss';
+	.sectionInstagram {
+		&-title {
+			text-align: left;
+			padding-left: 32px;
+			padding-right: 32px;
+			max-width: 500px;
+		}
+
+		&-cards {
+			display: flex;
+			overflow: scroll;
+			gap: 33px;
+			scroll-snap-type: x mandatory;
+			scroll-behavior: smooth;
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+
+			&::-webkit-scrollbar {
+				background: transparent;
+				width: 0px;
+			}
+		}
+	}
+</style>

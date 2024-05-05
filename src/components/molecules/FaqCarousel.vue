@@ -19,7 +19,10 @@
 				class="faqCarousel-detailsList__item"
 			>
 				<details>
-					<summary>{{ item.summary }}</summary>
+					<summary>
+						{{ item.summary }}
+						<img src="https://via.placeholder.com/16x16" />
+					</summary>
 					<p>{{ item.text }}</p>
 				</details>
 			</li>
@@ -28,7 +31,7 @@
 
 	<div class="faqCarousel--mobile">
 		<ul class="faqCarousel-ctaList">
-			<li class="faqCarousel-ctaList__item" v-for="(item, index) in faq" :key="item.title">
+			<li class="faqCarousel-ctaList__item" v-for="item in faq" :key="item.title">
 				<details>
 					<summary>
 						<span>{{ item.title }}</span>
@@ -107,6 +110,7 @@ const isItemActive = (index: number) => {
 
 			&.active {
 				color: var(--color-accent);
+				font-weight: 700;
 			}
 
 			button {
@@ -130,6 +134,8 @@ const isItemActive = (index: number) => {
 					list-style: none;
 					cursor: pointer;
 					font-size: 1.5rem;
+					display: flex;
+					justify-content: space-between;
 				}
 
 				p {
