@@ -4,7 +4,6 @@
 html {
 	font-family: 'Archivo', sans-serif;
 	font-size: 16px;
-	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
 
@@ -31,6 +30,10 @@ i {
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
+}
+
+li {
+	list-style: none;
 }
 
 section:not(.hero) {

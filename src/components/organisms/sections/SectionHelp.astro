@@ -39,20 +39,30 @@ const cards = [
 		<h2>Como posso te <span class="gradient">ajudar?</span></h2>
 		<p>Você é prioridade.</p>
 	</div>
-	<div class="sectionHelp-cards">
-		{cards.map((card) => <Card title={card.title} description={card.description} />)}
-	</div>
+	<ul class="sectionHelp-cards">
+		{
+			cards.map((card) => (
+				<li>
+					<Card title={card.title} description={card.description} />
+				</li>
+			))
+		}
+	</ul>
 </section>
 
 <style lang="scss">
 	@import '../../../styles/_mixins.scss';
 
 	.sectionHelp {
-		padding-left: 32px;
-		padding-right: 32px;
+		@include tablet {
+			padding-left: 32px;
+			padding-right: 32px;
+		}
 
 		&-title {
 			text-align: left;
+			padding-left: 32px;
+			padding-right: 32px;
 
 			@include tablet {
 				text-align: center;
@@ -60,12 +70,25 @@ const cards = [
 		}
 
 		&-cards {
-			display: grid;
-			gap: 36px;
-			margin-top: 20px;
-			grid-template-columns: 1fr;
+			display: flex;
+			scroll-snap-type: x mandatory;
+			overflow-x: scroll;
+			scroll-behavior: smooth;
+			gap: 6px;
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+
+			&::-webkit-scrollbar {
+				background: transparent;
+				width: 0px;
+			}
 
 			@include tablet {
+				overflow-x: auto;
+				display: grid;
+				gap: 36px;
+				margin-top: 20px;
+				grid-template-columns: 1fr;
 				grid-template-columns: repeat(2, 1fr);
 			}
 
