@@ -44,9 +44,16 @@ const cards = [
 		padding-left: 32px;
 		padding-right: 32px;
 
+		@include tablet {
+			padding-left: 70px;
+			padding-right: 70px;
+		}
+
 		@include desktop {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
+			padding-left: 32px;
+			padding-right: 32px;
 		}
 
 		&-cards {

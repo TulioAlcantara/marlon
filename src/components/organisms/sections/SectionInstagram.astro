@@ -46,6 +46,14 @@ import Card from '../../molecules/CardInstagram.astro';
 			padding-left: 32px;
 			padding-right: 32px;
 			max-width: 500px;
+
+			@include tablet {
+				padding-left: 70px;
+			}
+
+			@include desktop {
+				padding-left: 32px;
+			}
 		}
 
 		&-cards {

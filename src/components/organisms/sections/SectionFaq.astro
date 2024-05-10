@@ -52,10 +52,17 @@ const faq = [
 		padding-left: 32px;
 		padding-right: 32px;
 
-		.sectionFaq-title {
-			@include tablet {
-			}
+		@include tablet {
+			padding-left: 70px;
+			padding-right: 70px;
+		}
 
+		@include desktop {
+			padding-left: 32px;
+			padding-right: 32px;
+		}
+
+		.sectionFaq-title {
 			@include desktop {
 				max-width: 550px;
 				text-align: center;

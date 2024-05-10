@@ -39,8 +39,20 @@ const values = [
 </section>
 
 <style lang="scss">
+	@import 'src/styles/_mixins.scss';
+
 	.sectionValues {
 		padding-left: 32px;
 		padding-right: 32px;
+
+		@include tablet {
+			padding-left: 70px;
+			padding-right: 70px;
+		}
+
+		@include desktop {
+			padding-left: 32px;
+			padding-right: 32px;
+		}
 	}
 </style>
