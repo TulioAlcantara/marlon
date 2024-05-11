@@ -117,6 +117,11 @@ const isItemActive = (index: number) => {
 				all: unset;
 				cursor: pointer;
 				font-size: 2rem;
+
+				&:hover {
+					color: var(--color-accent);
+					transition: 0.2s linear;
+				}
 			}
 		}
 	}

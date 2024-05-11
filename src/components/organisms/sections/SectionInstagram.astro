@@ -58,16 +58,26 @@ import Card from '../../molecules/CardInstagram.astro';
 			@include desktop {
 				padding-left: 32px;
 			}
+
+			h2 {
+				@include desktop {
+					width: 500px;
+				}
+			}
 		}
 
 		&-cards {
 			display: flex;
 			overflow: scroll;
-			gap: 33px;
+			gap: 12px;
 			scroll-snap-type: x mandatory;
 			scroll-behavior: smooth;
 			scrollbar-width: none;
 			-ms-overflow-style: none;
+
+			@include desktop {
+				gap: 32px;
+			}
 
 			&::-webkit-scrollbar {
 				background: transparent;

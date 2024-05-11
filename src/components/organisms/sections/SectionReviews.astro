@@ -3,7 +3,7 @@ import Card from '../../molecules/CardReview.astro';
 ---
 
 <script>
-	const sectionReviews = document.querySelectorAll('.sectionReviews-reviews');
+	const sectionReviews = document.querySelectorAll('.sectionReviews-container__reviews');
 	sectionReviews.forEach((element) => {
 		element.addEventListener('mouseover', () => {
 			element.style.animationPlayState = 'paused';
@@ -20,49 +20,55 @@ import Card from '../../molecules/CardReview.astro';
 		<p>E entenda como foram ajudados.</p>
 	</div>
 
-	<ul class="sectionReviews-reviews">
-		<li>
-			<Card />
-		</li>
-		<li>
-			<Card />
-		</li>
-		<li>
-			<Card />
-		</li>
-	</ul>
+	<div class="sectionReviews-container">
+		<ul class="sectionReviews-container__reviews">
+			<li>
+				<Card />
+			</li>
+			<li>
+				<Card />
+			</li>
+			<li>
+				<Card />
+			</li>
+		</ul>
+		<div class="sectionReviews-container__fade"></div>
+	</div>
 
-	<ul class="sectionReviews-reviews sectionReviews-reviews--reverse">
-		<li>
-			<Card />
-		</li>
-		<li>
-			<Card />
-		</li>
-		<li>
-			<Card />
-		</li>
-	</ul>
+	<div class="sectionReviews-container">
+		<ul class="sectionReviews-container__reviews sectionReviews-container__reviews--reverse">
+			<li>
+				<Card />
+			</li>
+			<li>
+				<Card />
+			</li>
+			<li>
+				<Card />
+			</li>
+		</ul>
+		<div class="sectionReviews-container__fade"></div>
+	</div>
 </section>
 
 <style lang="scss">
 	@import 'src/styles/_mixins.scss';
 
 	.sectionReviews {
-		padding-left: 32px;
-		padding-right: 32px;
+		padding-left: 0;
+		padding-right: 0;
 		padding-top: 0px;
 		padding-bottom: 0px;
 		display: grid;
-		grid-template-columns: 1fr;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 8px;
 		overflow: hidden;
 		margin-top: 80px;
 		margin-bottom: 80px;
 
 		@include tablet {
-			padding-left: 70px;
-			padding-right: 70px;
+			padding-left: 0;
+			padding-right: 0;
 			margin-top: 70px;
 			margin-bottom: 70px;
 		}
@@ -75,31 +81,87 @@ import Card from '../../molecules/CardReview.astro';
 			grid-template-columns: 1fr 1fr 1fr;
 			gap: 25px;
 			height: 830px;
+			align-items: center;
 		}
 
 		&-title {
+			padding-left: 32px;
+			padding-right: 32px;
+
+			@include tablet {
+				padding-left: 70px;
+				padding-right: 70px;
+			}
+
 			@include desktop {
+				padding-left: 0;
+				padding-right: 0;
 				width: 400px;
 				margin-bottom: 0px;
 			}
 		}
 
-		&-reviews {
-			display: flex;
-			flex-direction: row;
-			gap: 8px;
-			margin: 0;
+		&-container {
+			position: relative;
 
 			@include desktop {
-				flex-direction: column;
-				gap: 40px;
-				animation: 5s slideVertical infinite linear;
+				height: 830px;
 			}
 
-			&--reverse {
+			&__reviews {
+				display: flex;
+				flex-direction: row;
+				gap: 8px;
+				margin: 0;
+				animation: 20s slideHorizontal infinite linear;
+
 				@include desktop {
-					animation: 5s slideVerticalReverse infinite linear;
+					flex-direction: column;
+					gap: 40px;
+					animation: 20s slideVertical infinite linear;
 				}
+
+				&--reverse {
+					animation: 20s slideHorizontalReverse infinite linear;
+					@include desktop {
+						animation: 20s slideVerticalReverse infinite linear;
+					}
+				}
+
+				&--secondary {
+					@include desktop {
+						animation-delay: 10s;
+					}
+				}
+			}
+
+			&__fade {
+				pointer-events: none;
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(90deg, white, transparent 20%, transparent 80%, white);
+
+				@include desktop {
+					background: linear-gradient(180deg, white, transparent 20%, transparent 80%, white);
+				}
+			}
+		}
+
+		@keyframes slideHorizontal {
+			from {
+				transform: translateX(0);
+			}
+			to {
+				transform: translateX(-100%);
+			}
+		}
+
+		@keyframes slideHorizontalReverse {
+			from {
+				transform: translateX(-100%);
+			}
+			to {
+				transform: translateX(0);
 			}
 		}
 

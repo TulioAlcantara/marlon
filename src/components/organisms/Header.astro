@@ -64,13 +64,14 @@ let activeLink = 'Início';
 	@import '../../styles/_mixins.scss';
 
 	.header {
+		position: sticky;
+		z-index: 2;
+		top: 32px;
+
 		.headerContainer {
 			display: flex;
-			position: sticky;
 			justify-content: space-between;
 			align-items: center;
-			z-index: 2;
-			top: 32px;
 			max-width: 1285px;
 			padding: 24px;
 			border-radius: 20px;
