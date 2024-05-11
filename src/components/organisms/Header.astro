@@ -31,30 +31,32 @@ let activeLink = 'Início';
 ---
 
 <header class="header">
-	<div class="header__logo">
-		<Fragment set:html={logo} />
-	</div>
-	<ul class="header-links">
-		{
-			items.map((item) => (
-				<li>
-					<a
-						class={`header-links__link ${activeLink == item.name && 'header-links__link--active'}`}
-						href={item.link}
-					>
-						{item.name}
-					</a>
-				</li>
-			))
-		}
-	</ul>
-	<div class="header__cta">
-		<Button text={cta.text} link={cta.link} isSmall={true} />
-	</div>
-	<div class="header__menu">
-		<button aria-label="Abrir menu">
-			<Fragment set:html={hamb} />
-		</button>
+	<div class="headerContainer">
+		<div class="header__logo">
+			<Fragment set:html={logo} />
+		</div>
+		<ul class="header-links">
+			{
+				items.map((item) => (
+					<li>
+						<a
+							class={`header-links__link ${activeLink == item.name && 'header-links__link--active'}`}
+							href={item.link}
+						>
+							{item.name}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+		<div class="header__cta">
+			<Button text={cta.text} link={cta.link} isSmall={true} />
+		</div>
+		<div class="header__menu">
+			<button aria-label="Abrir menu">
+				<Fragment set:html={hamb} />
+			</button>
+		</div>
 	</div>
 </header>
 
@@ -62,21 +64,23 @@ let activeLink = 'Início';
 	@import '../../styles/_mixins.scss';
 
 	.header {
-		display: flex;
-		position: sticky;
-		justify-content: space-between;
-		align-items: center;
-		z-index: 2;
-		top: 32px;
-		max-width: 1285px;
-		padding: 24px;
-		border-radius: 20px;
-		margin: 32px 50px 0;
-		backdrop-filter: blur(10px);
-		background-color: (--color-header-bg);
+		.headerContainer {
+			display: flex;
+			position: sticky;
+			justify-content: space-between;
+			align-items: center;
+			z-index: 2;
+			top: 32px;
+			max-width: 1285px;
+			padding: 24px;
+			border-radius: 20px;
+			margin: 32px 50px 0;
+			backdrop-filter: blur(10px);
+			background-color: (--color-header-bg);
 
-		@include desktop {
-			padding: 24px 45px;
+			@include desktop {
+				padding: 24px 45px;
+			}
 		}
 
 		&__logo {

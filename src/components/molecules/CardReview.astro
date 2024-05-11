@@ -1,0 +1,57 @@
+---
+
+---
+
+<div class="cardReview">
+	<p class="cardReview_stars">⭐⭐⭐⭐⭐</p>
+	<p class="cardReview__name">Tulio Alcantara</p>
+	<p class="cardReview__icon">""</p>
+	<p class="cardReview__review">
+		Adoro as sessões com o Marlon, já tem muito tempo que faço e ainda saio com aquela sensação de
+		leveza. Ele tem abordagens muito claras e eficazes, no meu caso cognitivo comportamental é super
+		objetivo, todas as sessões tenho alguma tarefa a se fazer que geram reflexões e uma paz de
+		espírito impagável. De resto nem se fala, sobre o consultório e as sessões online, tem tudo
+		perfeito.
+	</p>
+</div>
+
+<style lang="scss">
+	@import 'src/styles/_mixins.scss';
+
+	.cardReview {
+		padding: 32px 24px;
+		border-radius: 20px;
+		background: var(--color-card-bg);
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		width: 280px;
+
+		@include tablet {
+			width: 518px;
+		}
+
+		@include desktop {
+			width: initial;
+		}
+
+		&__name {
+			font-size: 1rem;
+			font-weight: 600;
+			color: var(--color-title);
+
+			@include tablet {
+				font-size: 1.5rem;
+			}
+		}
+
+		&__review {
+			color: var(--color-copy);
+			font-size: 0.875rem;
+
+			@include tablet {
+				font-size: 1.5rem;
+			}
+		}
+	}
+</style>

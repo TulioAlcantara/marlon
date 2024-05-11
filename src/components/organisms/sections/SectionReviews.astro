@@ -1,0 +1,112 @@
+---
+import Card from '../../molecules/CardReview.astro';
+---
+
+<section class="sectionReviews">
+	<div class="sectionTitle sectionReviews-title">
+		<h2>Conheça os nossos <span class="gradient">Pacientes</span></h2>
+		<p>E entenda como foram ajudados.</p>
+	</div>
+
+	<ul class="sectionReviews-reviews">
+		<li>
+			<Card />
+		</li>
+		<li>
+			<Card />
+		</li>
+		<li>
+			<Card />
+		</li>
+	</ul>
+
+	<ul class="sectionReviews-reviews sectionReviews-reviews--reverse">
+		<li>
+			<Card />
+		</li>
+		<li>
+			<Card />
+		</li>
+		<li>
+			<Card />
+		</li>
+	</ul>
+</section>
+
+<style lang="scss">
+	@import 'src/styles/_mixins.scss';
+
+	.sectionReviews {
+		padding-left: 32px;
+		padding-right: 32px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 8px;
+		overflow: hidden;
+		margin-top: 80px;
+		margin-bottom: 80px;
+
+		@include tablet {
+			padding-left: 70px;
+			padding-right: 70px;
+			margin-top: 70px;
+			margin-bottom: 70px;
+		}
+
+		@include desktop {
+			padding-left: 32px;
+			padding-right: 32px;
+			margin-top: 120px;
+			margin-bottom: 120px;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 25px;
+			height: 830px;
+		}
+
+		&-title {
+			@include desktop {
+				width: 400px;
+				margin-bottom: 0px;
+			}
+		}
+
+		&-reviews {
+			display: flex;
+			flex-direction: row;
+			gap: 8px;
+			margin: 0;
+
+			@include desktop {
+				flex-direction: column;
+				gap: 40px;
+				animation: 5s slideVertical infinite linear;
+			}
+
+			&--reverse {
+				@include desktop {
+					animation: 5s slideVerticalReverse infinite linear;
+				}
+			}
+		}
+
+		@keyframes slideVertical {
+			from {
+				transform: translateY(0);
+			}
+			to {
+				transform: translateY(-100%);
+			}
+		}
+
+		@keyframes slideVerticalReverse {
+			from {
+				transform: translateY(-100%);
+			}
+			to {
+				transform: translateY(0);
+			}
+		}
+	}
+</style>

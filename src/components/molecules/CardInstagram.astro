@@ -9,11 +9,17 @@
 	@import 'src/styles/_mixins.scss';
 
 	.cardInstagram {
-		width: 450px;
-		height: 450px;
+		width: 250px;
+		height: 250px;
 		border-radius: 20px;
 		background-position: center;
+		background-size: cover;
 		flex-shrink: 0;
-		scroll-snap-align: start;
+		scroll-snap-align: center;
+
+		@include desktop {
+			width: 450px;
+			height: 450px;
+		}
 	}
 </style>

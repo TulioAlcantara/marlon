@@ -8,8 +8,6 @@ html {
 }
 
 body {
-	max-width: 1480px;
-	margin: auto;
 }
 
 h1,
@@ -78,4 +76,11 @@ section:not(.hero) {
 			font-size: 1.25rem;
 		}
 	}
+}
+
+section:not(.sectionInstagram),
+header {
+	max-width: 1480px;
+	margin-right: auto;
+	margin-left: auto;
 }
