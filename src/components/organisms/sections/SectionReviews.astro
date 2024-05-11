@@ -2,6 +2,18 @@
 import Card from '../../molecules/CardReview.astro';
 ---
 
+<script>
+	const sectionReviews = document.querySelectorAll('.sectionReviews-reviews');
+	sectionReviews.forEach((element) => {
+		element.addEventListener('mouseover', () => {
+			element.style.animationPlayState = 'paused';
+		});
+		element.addEventListener('mouseleave', () => {
+			element.style.animationPlayState = 'running';
+		});
+	});
+</script>
+
 <section class="sectionReviews">
 	<div class="sectionTitle sectionReviews-title">
 		<h2>Conheça os nossos <span class="gradient">Pacientes</span></h2>
