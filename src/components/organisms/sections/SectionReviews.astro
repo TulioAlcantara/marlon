@@ -120,24 +120,18 @@ import Card from '../../molecules/CardReview.astro';
 				flex-direction: row;
 				gap: 8px;
 				margin: 0;
-				animation: 20s slideHorizontal infinite linear;
+				animation: 40s slideHorizontal infinite linear;
 
 				@include desktop {
 					flex-direction: column;
 					gap: 40px;
-					animation: 20s slideVertical infinite linear;
+					animation: 40s slideVertical infinite linear;
 				}
 
 				&--reverse {
-					animation: 20s slideHorizontalReverse infinite linear;
+					animation: 40s slideHorizontalReverse infinite linear;
 					@include desktop {
-						animation: 20s slideVerticalReverse infinite linear;
-					}
-				}
-
-				&--secondary {
-					@include desktop {
-						animation-delay: 10s;
+						animation: 40s slideVerticalReverse infinite linear;
 					}
 				}
 			}
@@ -146,7 +140,7 @@ import Card from '../../molecules/CardReview.astro';
 				pointer-events: none;
 				position: absolute;
 				inset: 0;
-				background: linear-gradient(90deg, white, transparent 20%, transparent 80%, white);
+				background: linear-gradient(90deg, white, transparent 10%, transparent 90%, white);
 
 				@include desktop {
 					background: linear-gradient(180deg, white, transparent 20%, transparent 80%, white);
