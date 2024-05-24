@@ -77,6 +77,7 @@ const stats = [
 		<img class="hero__imgMobile" src="https://via.placeholder.com/200x280" />
 	</ul>
 	<img class="hero__img" src="https://via.placeholder.com/560x800" />
+	<div class="hero__shadow"></div>
 </section>
 
 <style lang="scss">
@@ -253,6 +254,24 @@ const stats = [
 			@include tablet {
 				right: 0;
 				display: none;
+			}
+		}
+
+		&__shadow {
+			display: none;
+
+			@include desktop {
+				display: block;
+				position: absolute;
+				width: 560px;
+				height: 800px;
+				opacity: 0.5;
+				border-radius: 50%;
+				filter: blur(100px);
+				background-color: rgba(252, 114, 71, 1);
+				z-index: -1;
+				right: 0;
+				top: 0;
 			}
 		}
 	}

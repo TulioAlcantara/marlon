@@ -19,6 +19,7 @@
 				<p class="valuesCarousel-card__description">{{ values[activeIndex].description }}</p>
 			</div>
 			<img :src="values[activeIndex].img" :alt="values[activeIndex].imgAlt" />
+			<div class="valuesCarousel-card__shadow"></div>
 		</div>
 	</div>
 
@@ -130,6 +131,7 @@ const isItemActive = (index: number) => {
 	}
 
 	&-card {
+		position: relative;
 		border-radius: 20px;
 		padding: 75px 65px;
 		background-color: var(--color-card-bg);
@@ -162,6 +164,25 @@ const isItemActive = (index: number) => {
 			height: 265px;
 			flex: 1 0 auto;
 			transform: translateX(90px);
+			z-index: 2;
+		}
+
+		&__shadow {
+			display: none;
+
+			@include desktop {
+				display: block;
+				position: absolute;
+				width: 400px;
+				height: 265px;
+				opacity: 0.8;
+				border-radius: 50%;
+				filter: blur(100px);
+				background-color: rgba(252, 114, 71, 1);
+				z-index: 1;
+				right: -25px;
+				top: 25%;
+			}
 		}
 	}
 
@@ -188,9 +209,14 @@ const isItemActive = (index: number) => {
 					padding: 16px;
 					border-radius: 60px;
 					font-size: 0.875rem;
-					font-weight: 600;
-					color: var(--color-copy);
-					background-color: var(--color-card-bg);
+					font-weight: 400;
+					color: white;
+					background-color: #343a40;
+
+					@include tablet {
+						color: var(--color-copy);
+						background-color: var(--color-card-bg);
+					}
 				}
 			}
 
@@ -206,6 +232,11 @@ const isItemActive = (index: number) => {
 			padding: 24px;
 			display: flex;
 			flex-direction: column;
+			background: #343a40;
+
+			@include tablet {
+				background: var(--color-card-bg);
+			}
 
 			&-titleContainer {
 				display: flex;
@@ -224,6 +255,12 @@ const isItemActive = (index: number) => {
 
 			&__subtitle {
 				font-size: 1rem;
+
+				color: #ced4da;
+
+				@include tablet {
+					color: var(--color-title);
+				}
 			}
 
 			&__title {
@@ -235,6 +272,11 @@ const isItemActive = (index: number) => {
 
 			&__description {
 				font-size: 1rem;
+				color: #ced4da;
+
+				@include tablet {
+					color: var(--color-copy);
+				}
 			}
 		}
 	}

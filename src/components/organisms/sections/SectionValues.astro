@@ -44,15 +44,35 @@ const values = [
 	.sectionValues {
 		padding-left: 32px;
 		padding-right: 32px;
+		background: #212529;
 
 		@include tablet {
 			padding-left: 70px;
 			padding-right: 70px;
+			background: initial;
 		}
 
 		@include desktop {
 			padding-left: 32px;
 			padding-right: 32px;
+		}
+
+		&-title {
+			p {
+				color: white;
+
+				@include tablet {
+					color: var(--color-copy);
+				}
+			}
+
+			h2 {
+				color: white;
+
+				@include tablet {
+					color: var(--color-title);
+				}
+			}
 		}
 	}
 </style>
