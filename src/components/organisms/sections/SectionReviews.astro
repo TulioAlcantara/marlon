@@ -31,12 +31,30 @@ import Card from '../../molecules/CardReview.astro';
 			<li>
 				<Card />
 			</li>
+			<li>
+				<Card />
+			</li>
+			<li>
+				<Card />
+			</li>
+			<li>
+				<Card />
+			</li>
 		</ul>
 		<div class="sectionReviews-container__fade"></div>
 	</div>
 
 	<div class="sectionReviews-container">
 		<ul class="sectionReviews-container__reviews sectionReviews-container__reviews--reverse">
+			<li>
+				<Card />
+			</li>
+			<li>
+				<Card />
+			</li>
+			<li>
+				<Card />
+			</li>
 			<li>
 				<Card />
 			</li>
@@ -121,6 +139,7 @@ import Card from '../../molecules/CardReview.astro';
 				gap: 8px;
 				margin: 0;
 				animation: 40s slideHorizontal infinite linear;
+				width: fit-content;
 
 				@include desktop {
 					flex-direction: column;
@@ -153,13 +172,13 @@ import Card from '../../molecules/CardReview.astro';
 				transform: translateX(0);
 			}
 			to {
-				transform: translateX(-100%);
+				transform: translateX(calc(-50% - 4px));
 			}
 		}
 
 		@keyframes slideHorizontalReverse {
 			from {
-				transform: translateX(-100%);
+				transform: translateX(calc(-50% - 4px));
 			}
 			to {
 				transform: translateX(0);
@@ -171,13 +190,13 @@ import Card from '../../molecules/CardReview.astro';
 				transform: translateY(0);
 			}
 			to {
-				transform: translateY(-100%);
+				transform: translateY(calc(-50% - 4px));
 			}
 		}
 
 		@keyframes slideVerticalReverse {
 			from {
-				transform: translateY(-100%);
+				transform: translateY(calc(-50% - 4px));
 			}
 			to {
 				transform: translateY(0);

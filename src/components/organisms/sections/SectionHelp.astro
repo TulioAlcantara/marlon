@@ -90,7 +90,7 @@ const cards = [
 			}
 
 			@include tablet {
-				overflow-x: auto;
+				overflow-x: visible;
 				display: grid;
 				gap: 36px;
 				margin-top: 20px;
@@ -100,7 +100,6 @@ const cards = [
 
 			@include desktop {
 				grid-template-columns: repeat(3, 1fr);
-				overflow: visible;
 			}
 		}
 	}

@@ -212,6 +212,7 @@ const isItemActive = (index: number) => {
 					font-weight: 400;
 					color: white;
 					background-color: #343a40;
+					cursor: pointer;
 
 					@include tablet {
 						color: var(--color-copy);
