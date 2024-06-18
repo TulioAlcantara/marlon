@@ -3,11 +3,12 @@ interface Props {
 	text: string;
 	link: string;
 	isSmall?: boolean;
+	fullWidth?: boolean;
 }
-const { text, link, isSmall } = Astro.props;
+const { text, link, isSmall, fullWidth } = Astro.props;
 ---
 
-<a href={link} class={`btn ${isSmall && 'btn--small'}`}>
+<a href={link} class={`btn ${isSmall && 'btn--small'} ${fullWidth && 'btn--full'}`}>
 	{text}
 </a>
 
@@ -30,6 +31,10 @@ const { text, link, isSmall } = Astro.props;
 
 		&--small {
 			font-size: 1rem;
+		}
+
+		&--full {
+			width: 100%;
 		}
 	}
 </style>

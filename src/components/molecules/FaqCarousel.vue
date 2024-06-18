@@ -141,6 +141,7 @@ const isItemActive = (index: number) => {
 					font-size: 1.5rem;
 					display: flex;
 					justify-content: space-between;
+					color: var(--color-title);
 				}
 
 				p {

@@ -87,6 +87,7 @@ const links = [
 				text-align: center;
 				font-size: 3rem;
 				margin-bottom: 32px;
+				color: var(--color-footer-title);
 
 				@include tablet {
 					font-size: 5.5rem;
@@ -137,12 +138,14 @@ const links = [
 			&__logo {
 				position: absolute;
 				color: var(--color-footer-icon);
-				left: 0;
-				bottom: 0;
-				width: 500px;
+				left: -10px;
+				bottom: -10px;
+				width: 620px;
 
 				@include tablet {
 					width: 1100px;
+					left: -15px;
+					bottom: -15px;
 				}
 
 				@include desktop {

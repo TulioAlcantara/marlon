@@ -1,0 +1,123 @@
+---
+import Button from '../atoms/Button.astro';
+
+const items = [
+	{
+		title: 'Início',
+		link: '/',
+	},
+	{
+		title: 'Resultados',
+		link: '/',
+	},
+	{
+		title: 'Terapia',
+		link: '/',
+	},
+	{
+		title: 'Processo',
+		link: '/',
+	},
+];
+
+const socials = [
+	{
+		img: 'https://via.placeholder.com/32x32',
+		alt: 'Instagram',
+		link: '#',
+	},
+	{
+		img: 'https://via.placeholder.com/32x32',
+		alt: 'Whatsapp',
+		link: '#',
+	},
+	{
+		img: 'https://via.placeholder.com/32x32',
+		alt: 'Linkedin',
+		link: '#',
+	},
+];
+
+const cta = {
+	text: 'Agendar consulta',
+	link: '/',
+};
+---
+
+<div class="menu">
+	<ul class="menu-links">
+		{
+			items.map((item) => (
+				<li>
+					<a class="menu-links__item" href={item.link}>
+						{item.title}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+
+	<div class="menu__cta">
+		<Button text={cta.text} link={cta.link} isSmall={true} />
+	</div>
+
+	<ul class="menu-socials">
+		{
+			socials.map((link) => (
+				<li>
+					<a href={link.link}>
+						<img src={link.img} alt={link.alt} />
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</div>
+
+<style lang="scss">
+	.menu {
+		display: none;
+		position: fixed;
+		top: 0;
+		width: 100vw;
+		height: 100dvh;
+		background: var(--color-menu-bg);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		z-index: 98;
+
+		&-links {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+
+			&__item {
+				color: var(--color-menu-text);
+				text-decoration: none;
+				font-size: 3.5rem;
+				font-weight: 700;
+			}
+		}
+
+		&__cta {
+			margin-top: 40px;
+			width: 280px;
+		}
+
+		&-socials {
+			display: flex;
+			gap: 16px;
+			margin-top: 64px;
+
+			li {
+				list-style: none;
+			}
+
+			img {
+				width: 32px;
+				height: 32px;
+			}
+		}
+	}
+</style>

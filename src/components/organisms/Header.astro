@@ -30,6 +30,19 @@ const cta = {
 let activeLink = 'Início';
 ---
 
+<script>
+	let isMenuOpen = false;
+	document.querySelector('.header__menu')!.addEventListener('click', () => {
+		if (isMenuOpen) {
+			document.querySelector('.menu').style.display = 'none';
+		} else {
+			document.querySelector('.menu').style.display = 'flex';
+		}
+
+		isMenuOpen = !isMenuOpen;
+	});
+</script>
+
 <header class="header">
 	<div class="headerContainer">
 		<div class="header__logo">
@@ -117,7 +130,7 @@ let activeLink = 'Início';
 		&__cta {
 			display: none;
 
-			@include tablet {
+			@include desktop {
 				display: block;
 			}
 		}
@@ -125,7 +138,7 @@ let activeLink = 'Início';
 		&__menu {
 			display: block;
 
-			@include tablet {
+			@include desktop {
 				display: none;
 			}
 

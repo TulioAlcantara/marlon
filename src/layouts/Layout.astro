@@ -2,6 +2,7 @@
 import '@fontsource/archivo';
 import '../styles/global.scss';
 import Header from '../components/organisms/Header.astro';
+import Menu from '../components/organisms/Menu.astro';
 
 interface Props {
 	title: string;
@@ -22,6 +23,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<Header />
+		<Menu />
 		<slot />
 	</body>
 </html>
