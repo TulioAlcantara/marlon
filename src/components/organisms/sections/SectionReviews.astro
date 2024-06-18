@@ -11,6 +11,13 @@ import Card from '../../molecules/CardReview.astro';
 		element.addEventListener('mouseleave', () => {
 			element.style.animationPlayState = 'running';
 		});
+
+		element.addEventListener('touchstart', () => {
+			element.style.animationPlayState = 'paused';
+		});
+		element.addEventListener('touchend', () => {
+			element.style.animationPlayState = 'running';
+		});
 	});
 </script>
 
@@ -44,7 +51,7 @@ import Card from '../../molecules/CardReview.astro';
 		<div class="sectionReviews-container__fade"></div>
 	</div>
 
-	<div class="sectionReviews-container">
+	<div class="sectionReviews-container show-desktop">
 		<ul class="sectionReviews-container__reviews sectionReviews-container__reviews--reverse">
 			<li>
 				<Card />
@@ -131,6 +138,14 @@ import Card from '../../molecules/CardReview.astro';
 
 			@include desktop {
 				height: 830px;
+			}
+
+			&.show-desktop {
+				display: none;
+
+				@include desktop {
+					display: block;
+				}
 			}
 
 			&__reviews {

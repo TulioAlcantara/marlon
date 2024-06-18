@@ -18,3 +18,24 @@
 	--color-footer-bg: #fef2d5;
 	--color-footer-icon: #ffdf97;
 }
+
+[data-theme='dark'] {
+	--color-title: #ffffff;
+	--color-accent: #fc4f19;
+	--color-accent-gradient: linear-gradient(
+		90deg,
+		rgba(252, 79, 25, 1) 0%,
+		rgba(254, 200, 81, 1) 100%
+	);
+	--color-bg: #212529;
+	--color-copy: #ced4da;
+	--color-white: #ffffff;
+
+	--color-header-bg: rgba(33, 37, 41, 0.66);
+
+	--color-card-bg: #343a40;
+	--color-card-bg-hover: #212529;
+
+	--color-footer-bg: #343a40;
+	--color-footer-icon: #212529;
+}
