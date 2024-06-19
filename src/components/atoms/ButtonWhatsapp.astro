@@ -1,0 +1,32 @@
+---
+import whatsapp from '/icons/whatsapp.svg?raw';
+---
+
+<a class="buttonWhatsapp" href="#" aria-label="whatsapp">
+	<fragment set:html={whatsapp} />
+</a>
+
+<style lang="scss">
+	@import 'src/styles/_mixins.scss';
+
+	.buttonWhatsapp {
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		z-index: 97;
+		background-color: var(--color-btn-whatsapp-bg);
+		color: var(--color-accent);
+		border-radius: 50%;
+		width: 60px;
+		height: 60px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+		transition: background-color 0.3s;
+
+		@include tablet {
+			display: none;
+		}
+	}
+</style>
