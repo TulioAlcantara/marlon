@@ -1,11 +1,20 @@
 ---
-
+import star from '/icons/star-gradient.svg?raw';
+import quotes from '/icons/quotes-gradient.svg?raw';
 ---
 
 <div class="cardReview">
-	<p class="cardReview_stars">⭐⭐⭐⭐⭐</p>
+	<p class="cardReview_stars">
+		<Fragment set:html={star} />
+		<Fragment set:html={star} />
+		<Fragment set:html={star} />
+		<Fragment set:html={star} />
+		<Fragment set:html={star} />
+	</p>
 	<p class="cardReview__name">Tulio Alcantara</p>
-	<p class="cardReview__icon">""</p>
+	<p class="cardReview__icon">
+		<Fragment set:html={quotes} />
+	</p>
 	<p class="cardReview__review">
 		Adoro as sessões com o Marlon, já tem muito tempo que faço e ainda saio com aquela sensação de
 		leveza. Ele tem abordagens muito claras e eficazes, no meu caso cognitivo comportamental é super

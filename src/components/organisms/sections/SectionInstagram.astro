@@ -1,9 +1,11 @@
 ---
 import Card from '../../molecules/CardInstagram.astro';
+import instagram from '/icons/instagram-gradient.svg?raw';
 ---
 
 <section class="sectionInstagram">
 	<div class="sectionTitle sectionInstagram-title">
+		<Fragment set:html={instagram} />
 		<h2>Acompanhe o meu trabalho no <span class="gradient">Instagram</span></h2>
 		<p>Conheça mais sobre quem sou eu.</p>
 	</div>
@@ -59,6 +61,8 @@ import Card from '../../molecules/CardInstagram.astro';
 			}
 
 			h2 {
+				margin-top: 24px;
+
 				@include desktop {
 					width: 500px;
 				}

@@ -17,9 +17,26 @@
 
 	--color-footer-bg: #fef2d5;
 	--color-footer-title: #212529;
+	--color-footer-text: #495057;
 	--color-footer-icon: #ffdf97;
 
 	--color-menu-bg: #c9c9c9;
+
+	--color-review-gradient-mobile: linear-gradient(
+		90deg,
+		#212529,
+		transparent 10%,
+		transparent 90%,
+		#212529
+	);
+	--color-review-gradient-tablet: linear-gradient(
+		90deg,
+		white,
+		transparent 20%,
+		transparent 80%,
+		white
+	);
+	--color-review-gradient: linear-gradient(180deg, white, transparent 20%, transparent 80%, white);
 }
 
 [data-theme='dark'] {
@@ -41,5 +58,28 @@
 
 	--color-footer-bg: #343a40;
 	--color-footer-title: #ffffff;
+	--color-footer-text: #adb5bd;
 	--color-footer-icon: #212529;
+
+	--color-review-gradient-mobile: linear-gradient(
+		90deg,
+		#212529,
+		transparent 10%,
+		transparent 90%,
+		#212529
+	);
+	--color-review-gradient-tablet: linear-gradient(
+		90deg,
+		#212529,
+		transparent 10%,
+		transparent 90%,
+		#212529
+	);
+	--color-review-gradient: linear-gradient(
+		180deg,
+		#212529,
+		transparent 20%,
+		transparent 80%,
+		#212529
+	);
 }

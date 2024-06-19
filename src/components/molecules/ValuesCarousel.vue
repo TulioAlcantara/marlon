@@ -1,6 +1,10 @@
 <template>
 	<div class="valuesCarousel">
 		<ul class="valuesCarousel-ctaList">
+			<li class="valuesCarousel-ctaList-controls">
+				<button @click="prevSlide()">Prev</button>
+				<button @click="nextSlide()">Next</button>
+			</li>
 			<li
 				class="valuesCarousel-ctaList__item"
 				:class="{ active: isItemActive(index) }"
@@ -83,6 +87,22 @@ const changeActiveIndex = (index: number) => {
 
 const isItemActive = (index: number) => {
 	return activeIndex.value === index;
+};
+
+const nextSlide = () => {
+	if (activeIndex.value < props.values.length - 1) {
+		activeIndex.value++;
+	} else {
+		activeIndex.value = 0;
+	}
+};
+
+const prevSlide = () => {
+	if (activeIndex.value > 0) {
+		activeIndex.value--;
+	} else {
+		activeIndex.value = props.values.length - 1;
+	}
 };
 </script>
 

@@ -9,21 +9,48 @@ const subtitle = 'E como eles te afetam.';
 
 const values = [
 	{
-		cta: 'Terapia eh X',
-		title: 'Title 1',
+		cta: 'Tratamento',
+		title: 'Tratamento baseado na ciência',
 		subtitle: 'Subtitle 1',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit. Praesent aliquam non massa nec aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac habitasse platea dictumst. Aenean ligula quam, aliquam ut diam a, efficitur molestie urna.',
+			'Ofereço tratamentos respaldados por pesquisas científicas, garantindo abordagens eficazes e comprovadas para seu progresso e bem-estar.',
 		img: 'https://via.placeholder.com/400x265',
 		imgAlt: 'Image 1',
 	},
 
 	{
-		cta: 'Terapia eh Y',
-		title: 'Title 2',
+		cta: 'Racionalização',
+		title: 'Racionalização e lógica',
 		subtitle: 'Subtitle 2',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+			'Abordo seus problemas de forma analítica e lógica, ajudando a identificar padrões de pensamento, emoção e comportamento que atrapalham sua vida. Faremos as perguntas certas.',
+		img: 'https://via.placeholder.com/400x265',
+	},
+
+	{
+		cta: 'Preocupação',
+		title: 'Preocupação Genuína com seus problemas',
+		subtitle: 'Subtitle 3',
+		description:
+			'Estou verdadeiramente comprometido em compreender e resolver seus desafios, oferecendo um espaço seguro para expressar suas preocupações.',
+		img: 'https://via.placeholder.com/400x265',
+	},
+
+	{
+		cta: 'Empatia',
+		title: 'Empatia e Humanização',
+		subtitle: 'Subtitle 4',
+		description:
+			'Valorizo sua experiência singular e incorporo a empatia em cada interação, honrando sua humanidade e acolhendo suas emoções com respeito e compreensão.',
+		img: 'https://via.placeholder.com/400x265',
+	},
+
+	{
+		cta: 'Compromisso',
+		title: 'Compromisso com a sua evolução',
+		subtitle: 'Subtitle 5',
+		description:
+			'Sou apaixonado pela evolução humana, estou dedicado a guiá-lo em seu processo de crescimento pessoal e emocional, apoiando-o em sua jornada de autoconhecimento e transformação.',
 		img: 'https://via.placeholder.com/400x265',
 	},
 ];
@@ -36,43 +63,43 @@ const values = [
 	</div>
 
 	<ValuesCarousel values={values} client:load />
-</section>
 
-<style lang="scss">
-	@import 'src/styles/_mixins.scss';
+	<style lang="scss">
+		@import 'src/styles/_mixins.scss';
 
-	.sectionValues {
-		padding-left: 32px;
-		padding-right: 32px;
-		background: #212529;
-
-		@include tablet {
-			padding-left: 70px;
-			padding-right: 70px;
-			background: initial;
-		}
-
-		@include desktop {
+		.sectionValues {
 			padding-left: 32px;
 			padding-right: 32px;
-		}
+			background: #212529;
 
-		&-title {
-			p {
-				color: white;
-
-				@include tablet {
-					color: var(--color-copy);
-				}
+			@include tablet {
+				padding-left: 70px;
+				padding-right: 70px;
+				background: initial;
 			}
 
-			h2 {
-				color: white;
+			@include desktop {
+				padding-left: 32px;
+				padding-right: 32px;
+			}
 
-				@include tablet {
-					color: var(--color-title);
+			&-title {
+				p {
+					color: white;
+
+					@include tablet {
+						color: var(--color-copy);
+					}
+				}
+
+				h2 {
+					color: white;
+
+					@include tablet {
+						color: var(--color-title);
+					}
 				}
 			}
 		}
-	}
-</style>
+	</style>
+</section>

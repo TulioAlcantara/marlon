@@ -174,10 +174,15 @@ import Card from '../../molecules/CardReview.astro';
 				pointer-events: none;
 				position: absolute;
 				inset: 0;
-				background: linear-gradient(90deg, white, transparent 10%, transparent 90%, white);
+
+				background: var(--color-review-gradient-mobile);
+
+				@include tablet {
+					background: var(--color-review-gradient-tablet);
+				}
 
 				@include desktop {
-					background: linear-gradient(180deg, white, transparent 20%, transparent 80%, white);
+					background: var(--color-review-gradient);
 				}
 			}
 		}
