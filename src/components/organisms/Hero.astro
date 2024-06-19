@@ -47,25 +47,10 @@ const stats = [
 	stats.forEach((stat) => {
 		increment(stat);
 	});
-
-	const changeTheme = () => {
-		const currentTheme = localStorage.getItem('theme');
-		if (currentTheme === 'dark') {
-			localStorage.setItem('theme', 'light');
-			document.documentElement.setAttribute('data-theme', 'light');
-			return;
-		}
-
-		localStorage.setItem('theme', 'dark');
-		document.documentElement.setAttribute('data-theme', 'dark');
-	};
-
-	const themeBtn = document.querySelector('.hero__themeBtn')!;
-	themeBtn.addEventListener('click', changeTheme);
 </script>
 
 <section class="hero">
-	<button class="hero__themeBtn" aria-label="Mudar tema">
+	<button class="hero__themeBtn changeThemeBtn" aria-label="Mudar tema">
 		<Fragment set:html={moon} />
 	</button>
 
@@ -128,10 +113,7 @@ const stats = [
 		}
 
 		&__themeBtn {
-			width: fit-content;
 			grid-area: theme;
-			all: unset;
-			cursor: pointer;
 			margin-bottom: 1rem;
 			display: none;
 

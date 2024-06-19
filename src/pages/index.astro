@@ -11,7 +11,23 @@ import Footer from '../components/organisms/Footer.astro';
 ---
 
 <script>
-	console.log('test');
+	const changeTheme = () => {
+		const currentTheme = localStorage.getItem('theme');
+
+		if (currentTheme === 'dark') {
+			localStorage.setItem('theme', 'light');
+			document.documentElement.setAttribute('data-theme', 'light');
+			return;
+		}
+
+		localStorage.setItem('theme', 'dark');
+		document.documentElement.setAttribute('data-theme', 'dark');
+	};
+
+	const themeBtns = document.querySelectorAll('.changeThemeBtn')!;
+	themeBtns.forEach((btn) => {
+		btn.addEventListener('click', changeTheme);
+	});
 </script>
 
 <Layout title="Psicologo Marlon">
@@ -26,5 +42,3 @@ import Footer from '../components/organisms/Footer.astro';
 		<Footer />
 	</main>
 </Layout>
-
-<style></style>

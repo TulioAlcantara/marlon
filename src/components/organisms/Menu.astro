@@ -1,5 +1,9 @@
 ---
 import Button from '../atoms/Button.astro';
+import moon from '/icons/moon-filled.svg?raw';
+import linkedin from '/icons/linkedin.svg?raw';
+import instagram from '/icons/instagram.svg?raw';
+import whatsapp from '/icons/whatsapp.svg?raw';
 
 const items = [
 	{
@@ -62,15 +66,26 @@ const cta = {
 	</div>
 
 	<ul class="menu-socials">
-		{
-			socials.map((link) => (
-				<li>
-					<a href={link.link}>
-						<img src={link.img} alt={link.alt} />
-					</a>
-				</li>
-			))
-		}
+		<li>
+			<a href="#" aria-label="linkedin">
+				<fragment set:html={linkedin} />
+			</a>
+		</li>
+		<li>
+			<a href="#" aria-label="instagram">
+				<fragment set:html={instagram} />
+			</a>
+		</li>
+		<li>
+			<a href="#" aria-label="whatsapp">
+				<fragment set:html={whatsapp} />
+			</a>
+		</li>
+		<li>
+			<button class="changeThemeBtn" aria-label="mudar tema">
+				<fragment set:html={moon} />
+			</button>
+		</li>
 	</ul>
 </div>
 
@@ -93,7 +108,7 @@ const cta = {
 			gap: 8px;
 
 			&__item {
-				color: var(--color-menu-text);
+				color: var(--color-menu-links);
 				text-decoration: none;
 				font-size: 3.5rem;
 				font-weight: 700;
@@ -112,11 +127,12 @@ const cta = {
 
 			li {
 				list-style: none;
-			}
+				color: var(--color-menu-links);
 
-			img {
-				width: 32px;
-				height: 32px;
+				a {
+					all: unset;
+					cursor: pointer;
+				}
 			}
 		}
 	}
