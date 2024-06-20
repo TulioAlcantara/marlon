@@ -2,6 +2,7 @@
 import Button from '../atoms/Button.astro';
 import logo from '/icons/logo.svg?raw';
 import hamb from '/icons/hamb.svg?raw';
+import x from '/icons/x.svg?raw';
 
 const items = [
 	{
@@ -35,8 +36,12 @@ let activeLink = 'Início';
 	document.querySelector('.header__menu')!.addEventListener('click', () => {
 		if (isMenuOpen) {
 			document.querySelector('.menu').style.display = 'none';
+			document.querySelector('.header__menu__open')!.style.display = 'block';
+			document.querySelector('.header__menu__close')!.style.display = 'none';
 		} else {
 			document.querySelector('.menu').style.display = 'flex';
+			document.querySelector('.header__menu__open')!.style.display = 'none';
+			document.querySelector('.header__menu__close')!.style.display = 'block';
 		}
 
 		isMenuOpen = !isMenuOpen;
@@ -67,7 +72,12 @@ let activeLink = 'Início';
 		</div>
 		<div class="header__menu">
 			<button aria-label="Abrir menu">
-				<Fragment set:html={hamb} />
+				<span class="header__menu__open">
+					<Fragment set:html={hamb} />
+				</span>
+				<span class="header__menu__close">
+					<Fragment set:html={x} />
+				</span>
 			</button>
 		</div>
 	</div>
@@ -144,6 +154,10 @@ let activeLink = 'Início';
 
 			button {
 				all: unset;
+			}
+
+			&__close {
+				display: none;
 			}
 		}
 	}
