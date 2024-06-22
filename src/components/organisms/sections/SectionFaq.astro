@@ -1,5 +1,5 @@
 ---
-import FaqCarousel from '../../molecules/FaqCarousel.vue';
+import CarouselFaq from '../../molecules/CarouselFaq.vue';
 
 const title = {
 	highlight: 'Perguntas Frequentes',
@@ -42,7 +42,7 @@ const faq = [
 		<p>{subtitle}</p>
 	</div>
 
-	<FaqCarousel faq={faq} client:load />
+	<CarouselFaq faq={faq} client:load />
 </section>
 
 <style lang="scss">

@@ -1,5 +1,5 @@
 ---
-import ValuesCarousel from '../../molecules/ValuesCarousel.vue';
+import CarouselValues from '../../molecules/CarouselValues.vue';
 
 const title = {
 	text: 'Meus ',
@@ -62,7 +62,7 @@ const values = [
 		<p>{subtitle}</p>
 	</div>
 
-	<ValuesCarousel values={values} client:load />
+	<CarouselValues values={values} client:load />
 
 	<style lang="scss">
 		@import 'src/styles/_mixins.scss';

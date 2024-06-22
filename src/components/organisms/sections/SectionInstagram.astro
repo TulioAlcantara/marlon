@@ -1,6 +1,38 @@
 ---
-import Card from '../../molecules/CardInstagram.astro';
 import instagram from '/icons/instagram-gradient.svg?raw';
+import CarouselInstagram from '../../molecules/CarouselInstagram.vue';
+
+const items = [
+	{
+		img: 'https://placehold.co/600x600/orange/white',
+		alt: 'Image 1',
+		link: 'https://www.instagram.com/',
+	},
+
+	{
+		img: 'https://placehold.co/600x600/blue/white',
+		alt: 'Image 2',
+		link: 'https://www.instagram.com/',
+	},
+
+	{
+		img: 'https://placehold.co/600x600/red/white',
+		alt: 'Image 3',
+		link: 'https://www.instagram.com/',
+	},
+
+	{
+		img: 'https://placehold.co/600x600/green/white',
+		alt: 'Image 4',
+		link: 'https://www.instagram.com/',
+	},
+
+	{
+		img: 'https://placehold.co/600x600/black/white',
+		alt: 'Image 5',
+		link: 'https://www.instagram.com/',
+	},
+];
 ---
 
 <section class="sectionInstagram">
@@ -9,47 +41,18 @@ import instagram from '/icons/instagram-gradient.svg?raw';
 		<h2>Acompanhe o meu trabalho no <span class="gradient">Instagram</span></h2>
 		<p>Conheça mais sobre quem sou eu.</p>
 	</div>
-	<ul class="sectionInstagram-cards">
-		<li>
-			<Card />
-		</li>
-
-		<li>
-			<Card />
-		</li>
-
-		<li>
-			<Card />
-		</li>
-
-		<li>
-			<Card />
-		</li>
-
-		<li>
-			<Card />
-		</li>
-
-		<li>
-			<Card />
-		</li>
-
-		<li>
-			<Card />
-		</li>
-	</ul>
+	<CarouselInstagram items={items} client:load />
 </section>
 
 <style lang="scss">
 	@import 'src/styles/_mixins.scss';
 	.sectionInstagram {
-		padding-left: 32px;
-		padding-right: 32px;
-		max-width: 1480px;
-		margin-right: auto;
-		margin-left: auto;
-
 		&-title {
+			padding-left: 32px;
+			padding-right: 32px;
+			max-width: 1480px;
+			margin-right: auto;
+			margin-left: auto;
 			text-align: left;
 
 			@include tablet {
@@ -66,25 +69,6 @@ import instagram from '/icons/instagram-gradient.svg?raw';
 				@include desktop {
 					width: 500px;
 				}
-			}
-		}
-
-		&-cards {
-			display: flex;
-			overflow: scroll;
-			gap: 12px;
-			scroll-snap-type: x mandatory;
-			scroll-behavior: smooth;
-			scrollbar-width: none;
-			-ms-overflow-style: none;
-
-			@include desktop {
-				gap: 32px;
-			}
-
-			&::-webkit-scrollbar {
-				background: transparent;
-				width: 0px;
 			}
 		}
 	}

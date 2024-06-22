@@ -40,6 +40,8 @@
 	--color-review-gradient: linear-gradient(180deg, white, transparent 20%, transparent 80%, white);
 
 	--color-btn-whatsapp-bg: #495057;
+
+	--color-btn-theme: #868e96;
 }
 
 [data-theme='dark'] {
@@ -90,4 +92,6 @@
 	);
 
 	--color-btn-whatsapp-bg: #212529;
+
+	--color-btn-theme: #ffffff;
 }

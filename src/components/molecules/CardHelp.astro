@@ -23,7 +23,7 @@ const { title, description, icon } = Astro.props;
 		border-radius: 20px;
 		cursor: pointer;
 		width: 282px;
-		height: 291px;
+		height: 445px;
 		gap: 8px;
 		flex-shrink: 0;
 		scroll-snap-align: center;
@@ -31,7 +31,11 @@ const { title, description, icon } = Astro.props;
 
 		@include tablet {
 			width: fit-content;
-			height: fit-content;
+			height: 475px;
+		}
+
+		@include desktop {
+			height: 340px;
 		}
 
 		&:hover {
