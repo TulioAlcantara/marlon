@@ -1,0 +1,164 @@
+---
+import chevron from '/icons/chevron-down.svg?raw';
+
+const details = [
+	{
+		title: 'Ipsum Lorem',
+		text: 'Olá, sou o Marlon Andrade, psicólogo especializado em Terapia Cognitivo-Comportamental (TCC). Desde que me formei em Psicologia pela Puc-Goiás, meu fascínio pelo comportamento humano tem sido uma constante inspiração em minha jornada profissional. Com mais de 4 mil sessões de psicoterapia realizadas, estou aqui para oferecer meu conhecimento e experiência em ajudá-lo a compreender e superar os desafios da vida.',
+	},
+	{
+		title: 'Ipsum Lorem',
+		text: 'Olá, sou o Marlon Andrade, psicólogo especializado em Terapia Cognitivo-Comportamental (TCC). Desde que me formei em Psicologia pela Puc-Goiás, meu fascínio pelo comportamento humano tem sido uma constante inspiração em minha jornada profissional. Com mais de 4 mil sessões de psicoterapia realizadas, estou aqui para oferecer meu conhecimento e experiência em ajudá-lo a compreender e superar os desafios da vida.',
+	},
+	{
+		title: 'Ipsum Lorem',
+		text: 'Olá, sou o Marlon Andrade, psicólogo especializado em Terapia Cognitivo-Comportamental (TCC). Desde que me formei em Psicologia pela Puc-Goiás, meu fascínio pelo comportamento humano tem sido uma constante inspiração em minha jornada profissional. Com mais de 4 mil sessões de psicoterapia realizadas, estou aqui para oferecer meu conhecimento e experiência em ajudá-lo a compreender e superar os desafios da vida.',
+	},
+];
+---
+
+<script>
+	document.querySelectorAll('.sectionAbout-content-details details').forEach((details) => {
+		details.addEventListener('toggle', (event) => {
+			if (event.target.open) {
+				document
+					.querySelectorAll('.sectionAbout-content-details details')
+					.forEach((otherDetails) => {
+						if (otherDetails !== details) {
+							otherDetails.removeAttribute('open');
+						}
+					});
+			}
+		});
+	});
+</script>
+
+<section class="sectionAbout">
+	<div class="sectionTitle">
+		<h2>Quem é <span class="gradient">Marlon Andrade?</span></h2>
+		<p>Apaixonado pelo desenvolvimento humano.</p>
+	</div>
+
+	<div class="sectionAbout-content">
+		<img class="sectionAbout-content__image" src="https://via.placeholder.com/430x530" />
+		<ul class="sectionAbout-content-details">
+			{
+				details.map((detail) => (
+					<li>
+						<details>
+							<summary>
+								<span>{detail.title}</span>
+								<span class="chevron">
+									<Fragment set:html={chevron} />
+								</span>
+							</summary>
+							<p>{detail.text}</p>
+						</details>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>
+
+<style lang="scss">
+	@import 'src/styles/_mixins.scss';
+
+	.sectionAbout {
+		padding-left: 32px;
+		padding-right: 32px;
+
+		@include tablet {
+			padding-left: 70px;
+			padding-right: 70px;
+		}
+
+		@include desktop {
+			padding-left: 32px;
+			padding-right: 32px;
+		}
+
+		&-content {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			@include desktop {
+				flex-direction: row;
+			}
+
+			&__image {
+				@include tablet {
+					height: 430px;
+					object-fit: cover;
+				}
+
+				@include desktop {
+					height: 530px;
+					border-top-left-radius: 20px;
+					border-bottom-left-radius: 20px;
+				}
+			}
+
+			&-details {
+				width: 100%;
+				margin: 0;
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+
+				li {
+					@include desktop {
+						&:nth-child(1) {
+							details {
+								border-top-right-radius: 20px;
+							}
+						}
+
+						&:nth-child(3) {
+							details {
+								border-bottom-right-radius: 20px;
+							}
+						}
+					}
+
+					details {
+						cursor: pointer;
+						font-size: 1.25rem;
+						font-weight: 700;
+						color: var(--color-copy);
+						list-style: none;
+						background: var(--color-card-bg);
+
+						summary {
+							list-style: none;
+							padding: 29px 36px;
+							display: flex;
+							justify-content: space-between;
+						}
+
+						&[open] {
+							summary {
+								color: var(--color-accent);
+
+								.chevron {
+									color: var(--color-accent);
+									transform: rotate(180deg);
+								}
+							}
+						}
+
+						p {
+							color: var(--color-copy);
+							font-size: 1.25rem;
+							font-weight: 400;
+							line-height: 25px;
+							text-align: left;
+							padding: 0 36px 29px;
+						}
+					}
+				}
+			}
+		}
+	}
+</style>
