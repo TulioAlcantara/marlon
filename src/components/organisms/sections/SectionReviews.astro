@@ -3,7 +3,9 @@ import Card from '../../molecules/CardReview.astro';
 ---
 
 <script>
-	const sectionReviews = document.querySelectorAll('.sectionReviews-container__reviews');
+	const sectionReviews = document.querySelectorAll<HTMLElement>(
+		'.sectionReviews-container__reviews'
+	);
 	sectionReviews.forEach((element) => {
 		element.addEventListener('mouseover', () => {
 			element.style.animationPlayState = 'paused';

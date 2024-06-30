@@ -20,5 +20,10 @@
 		"sass": "^1.76.0",
 		"typescript": "^5.4.5",
 		"vue": "^3.4.26"
+	},
+	"dependencies": {
+		"lenis": "^1.1.5",
+		"vanilla-tilt": "^1.8.1",
+		"vue-carousel-3d": "^1.0.1"
 	}
 }

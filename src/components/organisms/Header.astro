@@ -33,15 +33,15 @@ let activeLink = 'Início';
 
 <script>
 	let isMenuOpen = false;
-	document.querySelector('.header__menu')!.addEventListener('click', () => {
+	document.querySelector<HTMLElement>('.header__menu')!.addEventListener('click', () => {
 		if (isMenuOpen) {
-			document.querySelector('.menu').style.display = 'none';
-			document.querySelector('.header__menu__open')!.style.display = 'block';
-			document.querySelector('.header__menu__close')!.style.display = 'none';
+			document.querySelector<HTMLElement>('.menu')!.style.display = 'none';
+			document.querySelector<HTMLElement>('.header__menu__open')!.style.display = 'block';
+			document.querySelector<HTMLElement>('.header__menu__close')!.style.display = 'none';
 		} else {
-			document.querySelector('.menu').style.display = 'flex';
-			document.querySelector('.header__menu__open')!.style.display = 'none';
-			document.querySelector('.header__menu__close')!.style.display = 'block';
+			document.querySelector<HTMLElement>('.menu')!.style.display = 'flex';
+			document.querySelector<HTMLElement>('.header__menu__open')!.style.display = 'none';
+			document.querySelector<HTMLElement>('.header__menu__close')!.style.display = 'block';
 		}
 
 		isMenuOpen = !isMenuOpen;

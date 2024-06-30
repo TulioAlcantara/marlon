@@ -20,7 +20,7 @@ const details = [
 <script>
 	document.querySelectorAll('.sectionAbout-content-details details').forEach((details) => {
 		details.addEventListener('toggle', (event) => {
-			if (event.target.open) {
+			if ((event.target as HTMLDetailsElement).open) {
 				document
 					.querySelectorAll('.sectionAbout-content-details details')
 					.forEach((otherDetails) => {
@@ -32,7 +32,9 @@ const details = [
 		});
 	});
 
-	document.querySelector('.sectionAbout-content-details details').setAttribute('open', '');
+	document
+		.querySelector<HTMLElement>('.sectionAbout-content-details details')!
+		.setAttribute('open', '');
 </script>
 
 <section class="sectionAbout">
