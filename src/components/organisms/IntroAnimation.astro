@@ -1,0 +1,47 @@
+---
+import LottieAnimation from 'astro-integration-lottie/Lottie.astro';
+---
+
+<script>
+	//wait for animation to end and then hide it
+	setTimeout(() => {
+		document.querySelector('.animation').style.opacity = 0;
+		setTimeout(() => {
+			document.querySelector('.animation').style.display = 'none';
+		}, 1000);
+	}, 5000);
+</script>
+
+<div class="animation">
+	<div class="animation__container">
+		<LottieAnimation src="/animations/intro.json" autoplay="visible" player="full" loop={false} />
+	</div>
+</div>
+
+<style lang="scss">
+	@import 'src/styles/_mixins.scss';
+
+	.animation {
+		z-index: 9999;
+		width: 100dvw;
+		height: 100dvh;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		position: absolute;
+		top: 0;
+		background-color: white;
+		opacity: 1;
+		transition: opacity 1s ease;
+
+		&__container {
+			width: 500px;
+			height: 500px;
+
+			@include desktop {
+				width: 700px;
+				height: 700px;
+			}
+		}
+	}
+</style>

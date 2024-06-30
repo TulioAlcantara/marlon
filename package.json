@@ -22,7 +22,9 @@
 		"vue": "^3.4.26"
 	},
 	"dependencies": {
+		"astro-integration-lottie": "^0.3.0",
 		"lenis": "^1.1.5",
+		"lottie-web": "^5.12.2",
 		"vanilla-tilt": "^1.8.1",
 		"vue-carousel-3d": "^1.0.1"
 	}
