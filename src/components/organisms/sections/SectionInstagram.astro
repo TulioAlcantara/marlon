@@ -41,7 +41,7 @@ const items = [
 		<h2>Acompanhe o meu trabalho no <span class="gradient">Instagram</span></h2>
 		<p>Conheça mais sobre quem sou eu.</p>
 	</div>
-	<CarouselInstagram items={items} client:load />
+	<CarouselInstagram client:only="vue" />
 </section>
 
 <style lang="scss">
@@ -56,11 +56,13 @@ const items = [
 			text-align: left;
 
 			@include tablet {
-				padding-left: 38px;
+				padding-left: 70px;
+				padding-right: 70px;
 			}
 
 			@include desktop {
-				padding-left: 0;
+				padding-left: 32px;
+				padding-right: 32px;
 			}
 
 			h2 {
