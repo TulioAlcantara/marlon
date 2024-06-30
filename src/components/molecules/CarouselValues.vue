@@ -50,9 +50,9 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 
-const props = defineProps<{
+defineProps<{
 	values: [
 		{
 			title: string;
@@ -64,16 +64,6 @@ const props = defineProps<{
 		},
 	];
 }>();
-
-onMounted(() => {
-	setInterval(() => {
-		if (activeIndex.value < props.values.length - 1) {
-			activeIndex.value++;
-		} else {
-			activeIndex.value = 0;
-		}
-	}, 20000);
-});
 
 let activeIndex = ref(0);
 

@@ -34,7 +34,7 @@ const { title, description, icon } = Astro.props;
 		border-radius: 20px;
 		cursor: pointer;
 		width: 282px;
-		height: 445px;
+		height: 480px;
 		gap: 8px;
 		flex-shrink: 0;
 		scroll-snap-align: center;
@@ -49,10 +49,12 @@ const { title, description, icon } = Astro.props;
 			height: 340px;
 		}
 
-		&:hover {
-			background: var(--color-card-bg-hover);
-			box-shadow: 0px 0px 30px 5px var(--color-accent);
-			transition: all 0.5s ease;
+		@include desktop {
+			&:hover {
+				background: var(--color-card-bg-hover);
+				box-shadow: 0px 0px 30px 5px var(--color-accent);
+				transition: all 0.5s ease;
+			}
 		}
 
 		img {

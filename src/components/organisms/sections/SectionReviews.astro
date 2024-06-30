@@ -6,6 +6,7 @@ import Card from '../../molecules/CardReview.astro';
 	const sectionReviews = document.querySelectorAll<HTMLElement>(
 		'.sectionReviews-container__reviews'
 	);
+	let isPaused = false;
 	sectionReviews.forEach((element) => {
 		element.addEventListener('mouseover', () => {
 			element.style.animationPlayState = 'paused';
@@ -14,11 +15,14 @@ import Card from '../../molecules/CardReview.astro';
 			element.style.animationPlayState = 'running';
 		});
 
-		element.addEventListener('touchstart', () => {
-			element.style.animationPlayState = 'paused';
-		});
-		element.addEventListener('touchend', () => {
-			element.style.animationPlayState = 'running';
+		element.addEventListener('click', () => {
+			if (isPaused) {
+				element.style.animationPlayState = 'running';
+				isPaused = false;
+			} else {
+				element.style.animationPlayState = 'paused';
+				isPaused = true;
+			}
 		});
 	});
 </script>

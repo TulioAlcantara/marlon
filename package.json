@@ -23,6 +23,7 @@
 	},
 	"dependencies": {
 		"astro-integration-lottie": "^0.3.0",
+		"astro-tunnel": "^0.1.6",
 		"lenis": "^1.1.5",
 		"lottie-web": "^5.12.2",
 		"vanilla-tilt": "^1.8.1",
