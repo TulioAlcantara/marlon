@@ -10,9 +10,9 @@ const { title, description, icon } = Astro.props;
 
 <script>
 	import VanillaTilt from 'vanilla-tilt';
-	const cards = document.querySelectorAll('.helpCard');
-	VanillaTilt.init(cards, {
-		max: 10,
+	const cards = Array.from(document.querySelectorAll('.helpCard')!);
+	VanillaTilt.init(cards as HTMLElement[], {
+		max: 12,
 		speed: 300,
 		glare: true,
 		'max-glare': 0.2,

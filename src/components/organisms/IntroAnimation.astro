@@ -5,9 +5,9 @@ import LottieAnimation from 'astro-integration-lottie/Lottie.astro';
 <script>
 	//wait for animation to end and then hide it
 	setTimeout(() => {
-		document.querySelector('.animation').style.opacity = 0;
+		document.querySelector<HTMLElement>('.animation')!.style.opacity = '0';
 		setTimeout(() => {
-			document.querySelector('.animation').style.display = 'none';
+			document.querySelector<HTMLElement>('.animation')!.style.display = 'none';
 		}, 1000);
 	}, 5000);
 </script>

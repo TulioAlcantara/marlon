@@ -61,19 +61,17 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const props = defineProps<{
-	faq: [
-		{
-			title: string;
-			items: [
-				{
-					summary: string;
-					text: string;
-				},
-			];
-		},
-	];
-}>();
+interface Props {
+	faq: {
+		title: string;
+		items: {
+			summary: string;
+			text: string;
+		}[];
+	}[];
+}
+
+defineProps<Props>();
 
 const activeIndex = ref(0);
 const changeActiveIndex = (index: number) => {
