@@ -37,7 +37,9 @@ const items = [
 
 <script>
 	import Swiper from 'swiper';
+	import { Navigation } from 'swiper/modules';
 	import 'swiper/css';
+	import 'swiper/css/navigation';
 
 	const swiper = new Swiper('.swiper', {
 		loop: true,
@@ -45,13 +47,18 @@ const items = [
 		updateOnWindowResize: true,
 		grabCursor: false,
 		centeredSlides: true,
-		centeredSlidesBounds: true,
 		shortSwipes: false,
 		speed: 500,
 		breakpoints: {
 			1024: {
 				slidesPerView: 3,
 			},
+		},
+		modules: [Navigation],
+		// Navigation arrows
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
 		},
 	});
 </script>
@@ -67,12 +74,14 @@ const items = [
 		<div class="swiper-wrapper">
 			{
 				items.map((item) => (
-					<div class="swiper-slide">
+					<a class="swiper-slide" href={item.link}>
 						<img src={item.img} alt={item.alt} />
-					</div>
+					</a>
 				))
 			}
 		</div>
+		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev"></div>
 	</div>
 
 	<style lang="scss">
@@ -122,7 +131,7 @@ const items = [
 
 					&:not(.swiper-slide-active) {
 						transform: scale(0.9);
-						filter: brightness(0.2);
+						filter: brightness(0.1);
 						transition: all 0.5s;
 					}
 
@@ -132,6 +141,38 @@ const items = [
 						height: 100%;
 						object-fit: cover;
 						object-position: center;
+					}
+				}
+
+				.swiper-button-next {
+					color: var(--color-accent);
+					display: none;
+					right: 50px;
+					transition: all 0.5s;
+
+					@include desktop {
+						display: block;
+					}
+
+					&:hover {
+						transform: scale(1.2);
+						transition: all 0.5s;
+					}
+				}
+
+				.swiper-button-prev {
+					color: var(--color-accent);
+					display: none;
+					left: 50px;
+					transition: all 0.5s;
+
+					@include desktop {
+						display: block;
+					}
+
+					&:hover {
+						transform: scale(1.2);
+						transition: all 0.5s;
 					}
 				}
 			}
