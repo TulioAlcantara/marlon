@@ -1,6 +1,7 @@
 ---
 import Button from '../atoms/Button.astro';
 import moon from '/icons/moon.svg?raw';
+import star from '/icons/star-gradient.svg?raw';
 
 const subtitle =
 	'Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.';
@@ -8,46 +9,7 @@ const cta = {
 	text: 'Agende uma consulta',
 	link: '/contato',
 };
-const stats = [
-	{
-		title: 'horas atendidas',
-		value: '4k+',
-		numericValue: 4,
-	},
-	{
-		title: 'paciente satisfeitos',
-		value: '200+',
-		numericValue: 200,
-	},
-	{
-		title: 'no Google Review',
-		value: '5.0',
-		numericValue: 5,
-	},
-];
 ---
-
-<script>
-	const increment = (el: Element) => {
-		if (el instanceof HTMLElement) {
-			const target = Number(el.dataset.numeric);
-			let count = 0;
-			const increment = Math.ceil(target / 10);
-			const interval = setInterval(() => {
-				count += increment;
-				el.textContent = count.toString();
-				if (count >= target) {
-					clearInterval(interval);
-				}
-			}, 50);
-		}
-	};
-
-	const stats = document.querySelectorAll('.hero-stats__value');
-	stats.forEach((stat) => {
-		increment(stat);
-	});
-</script>
 
 <section class="hero">
 	<button class="hero__themeBtn changeThemeBtn" aria-label="Mudar tema">
@@ -66,18 +28,30 @@ const stats = [
 		<Button text={cta.text} link={cta.link} fullWidth={true} />
 	</div>
 	<ul class="hero-stats">
-		{
-			stats.map((stat) => (
-				<li>
-					<div>
-						<p class="hero-stats__value" data-numeric={stat.numericValue}>
-							{stat.value}
-						</p>
-						<p class="hero-stats__description">{stat.title}</p>
-					</div>
-				</li>
-			))
-		}
+		<li>
+			<div>
+				<p class="hero-stats__value">4k+</p>
+				<p class="hero-stats__description">horas atendidas</p>
+			</div>
+		</li>
+
+		<li>
+			<div>
+				<p class="hero-stats__value">200+</p>
+				<p class="hero-stats__description">pacientes satisfeitos</p>
+			</div>
+		</li>
+
+		<li>
+			<div>
+				<p class="hero-stats__value">
+					5.0
+
+					<Fragment set:html={star} />
+				</p>
+				<p class="hero-stats__description">no Google Review</p>
+			</div>
+		</li>
 		<img class="hero__imgMobile" src="https://via.placeholder.com/200x280" />
 	</ul>
 	<img class="hero__img" src="https://via.placeholder.com/560x800" />
