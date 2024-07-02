@@ -1,6 +1,6 @@
 ---
 import instagram from '/icons/instagram-gradient.svg?raw';
-import CarouselInstagram from '../../molecules/CarouselInstagram.vue';
+import arrow from '/icons/arrow-gradient.svg?raw';
 
 const items = [
 	{
@@ -37,9 +37,7 @@ const items = [
 
 <script>
 	import Swiper from 'swiper';
-	import { Navigation } from 'swiper/modules';
 	import 'swiper/css';
-	import 'swiper/css/navigation';
 
 	const swiper = new Swiper('.swiper', {
 		loop: true,
@@ -54,20 +52,36 @@ const items = [
 				slidesPerView: 3,
 			},
 		},
-		modules: [Navigation],
-		// Navigation arrows
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
 	});
+
+	document
+		.querySelector<HTMLElement>('.sectionInstagram-title-controls__prev')!
+		.addEventListener('click', () => {
+			swiper.slidePrev();
+		});
+
+	document
+		.querySelector<HTMLElement>('.sectionInstagram-title-controls__next')!
+		.addEventListener('click', () => {
+			swiper.slideNext();
+		});
 </script>
 
 <section class="sectionInstagram">
 	<div class="sectionTitle sectionInstagram-title">
-		<Fragment set:html={instagram} />
-		<h2>Acompanhe o meu trabalho no <span class="gradient">Instagram</span></h2>
-		<p>Conheça mais sobre quem sou eu.</p>
+		<div>
+			<Fragment set:html={instagram} />
+			<h2>Acompanhe o meu trabalho no <span class="gradient">Instagram</span></h2>
+			<p>Conheça mais sobre quem sou eu.</p>
+		</div>
+		<div class="sectionInstagram-title-controls">
+			<button class="sectionInstagram-title-controls__prev">
+				<Fragment set:html={arrow} />
+			</button>
+			<button class="sectionInstagram-title-controls__next">
+				<Fragment set:html={arrow} />
+			</button>
+		</div>
 	</div>
 
 	<div class="swiper">
@@ -80,8 +94,6 @@ const items = [
 				))
 			}
 		</div>
-		<div class="swiper-button-next"></div>
-		<div class="swiper-button-prev"></div>
 	</div>
 
 	<style lang="scss">
@@ -105,6 +117,29 @@ const items = [
 			}
 
 			&-title {
+				display: flex;
+				justify-content: space-between;
+				align-items: end;
+
+				&-controls {
+					display: none;
+
+					@include desktop {
+						display: flex;
+						gap: 50px;
+					}
+
+					button {
+						cursor: pointer;
+						background: none;
+						border: none;
+
+						&.sectionInstagram-title-controls__next {
+							transform: rotateY(180deg);
+						}
+					}
+				}
+
 				h2 {
 					margin-top: 24px;
 

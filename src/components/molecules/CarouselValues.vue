@@ -105,6 +105,7 @@ const isItemActive = (index: number) => {
 				font-size: 1.25rem;
 				font-weight: 600;
 				color: var(--color-copy);
+				transition: 0.2s linear;
 
 				&:hover {
 					color: var(--color-accent);
