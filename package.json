@@ -26,7 +26,7 @@
 		"astro-tunnel": "^0.1.6",
 		"lenis": "^1.1.5",
 		"lottie-web": "^5.12.2",
-		"vanilla-tilt": "^1.8.1",
-		"vue-carousel-3d": "^1.0.1"
+		"swiper": "^11.1.4",
+		"vanilla-tilt": "^1.8.1"
 	}
 }

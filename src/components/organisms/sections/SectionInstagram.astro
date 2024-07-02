@@ -35,19 +35,49 @@ const items = [
 ];
 ---
 
+<script>
+	import Swiper from 'swiper';
+	import 'swiper/css';
+
+	const swiper = new Swiper('.swiper', {
+		loop: true,
+		slidesPerView: 1.5,
+		updateOnWindowResize: true,
+		grabCursor: false,
+		centeredSlides: true,
+		centeredSlidesBounds: true,
+		shortSwipes: false,
+		speed: 500,
+		breakpoints: {
+			1024: {
+				slidesPerView: 3,
+			},
+		},
+	});
+</script>
+
 <section class="sectionInstagram">
 	<div class="sectionTitle sectionInstagram-title">
 		<Fragment set:html={instagram} />
 		<h2>Acompanhe o meu trabalho no <span class="gradient">Instagram</span></h2>
 		<p>Conheça mais sobre quem sou eu.</p>
 	</div>
-	<CarouselInstagram client:load />
-</section>
 
-<style lang="scss">
-	@import 'src/styles/_mixins.scss';
-	.sectionInstagram {
-		&-title {
+	<div class="swiper">
+		<div class="swiper-wrapper">
+			{
+				items.map((item) => (
+					<div class="swiper-slide">
+						<img src={item.img} alt={item.alt} />
+					</div>
+				))
+			}
+		</div>
+	</div>
+
+	<style lang="scss">
+		@import 'src/styles/_mixins.scss';
+		.sectionInstagram {
 			padding-left: 32px;
 			padding-right: 32px;
 			max-width: 1480px;
@@ -65,13 +95,46 @@ const items = [
 				padding-right: 32px;
 			}
 
-			h2 {
-				margin-top: 24px;
+			&-title {
+				h2 {
+					margin-top: 24px;
 
-				@include desktop {
-					width: 500px;
+					@include desktop {
+						width: 500px;
+					}
+				}
+			}
+
+			.swiper {
+				padding: 30px 0;
+
+				.swiper-slide {
+					cursor: pointer;
+
+					&-active {
+						transition: all 0.5s;
+						z-index: 1;
+
+						img {
+							outline: 10px solid var(--color-accent);
+						}
+					}
+
+					&:not(.swiper-slide-active) {
+						transform: scale(0.9);
+						filter: brightness(0.2);
+						transition: all 0.5s;
+					}
+
+					img {
+						border-radius: 20px;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						object-position: center;
+					}
 				}
 			}
 		}
-	}
-</style>
+	</style>
+</section>
