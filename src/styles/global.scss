@@ -64,13 +64,12 @@ section:not(.hero) {
 		}
 
 		@include desktop {
-			margin-bottom: 72px;
+			margin-bottom: 56px;
 		}
 
 		h2 {
 			color: var(--color-title);
 			font-size: 2rem;
-			margin-bottom: 16px;
 
 			@media (min-width: 1200px) {
 				font-size: 3rem;

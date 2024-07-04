@@ -4,21 +4,27 @@ const items = [
 		title: 'Evolucao pessoal',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit.',
+		type: '1',
 	},
 	{
 		title: 'Evolucao pessoal',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit.',
+		type: '2',
 	},
 	{
 		title: 'Evolucao pessoal',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit.',
+
+		type: '3',
 	},
 	{
 		title: 'Evolucao pessoal',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra sed mauris eu dignissim. Nunc commodo efficitur hendrerit.',
+
+		type: '4',
 	},
 ];
 
@@ -26,41 +32,70 @@ const images = [
 	{
 		src: 'https://placehold.co/600x600/red/white?text=1',
 		alt: 'Image',
+		type: 'type-1',
 	},
 	{
 		src: 'https://placehold.co/600x600/blue/white?text=2',
 		alt: 'Image',
+		type: 'type-1',
 	},
 	{
 		src: 'https://placehold.co/600x600/green/white?text=3',
 		alt: 'Image',
+		type: 'type-2',
 	},
 	{
 		src: 'https://placehold.co/600x600/purple/white?text=4',
 		alt: 'Image',
+		type: 'type-2',
 	},
 	{
 		src: 'https://placehold.co/600x600/black/white?text=5',
 		alt: 'Image',
+		type: 'type-2',
 	},
 	{
 		src: 'https://placehold.co/600x600/grey/white?text=6',
 		alt: 'Image',
+		type: 'type-3',
 	},
 	{
 		src: 'https://placehold.co/600x600/orange/white?text=7',
 		alt: 'Image',
+		type: 'type-3',
 	},
 	{
 		src: 'https://placehold.co/600x600/brown/white?text=8',
 		alt: 'Image',
+		type: 'type-4',
 	},
 	{
 		src: 'https://placehold.co/600x600/cyan/white?text=9',
 		alt: 'Image',
+		type: 'type-4',
 	},
 ];
 ---
+
+<script>
+	document.querySelectorAll('.sectionClinic-content-list-item').forEach((item) => {
+		item.addEventListener('mouseover', () => {
+			const dataType = item.dataset.type;
+			const classType = `.type-${dataType}`;
+			document.querySelectorAll(classType).forEach((image) => {
+				image.classList.add('highlight');
+			});
+		});
+
+		item.addEventListener('mouseout', () => {
+			const dataType = item.dataset.type;
+			const classType = `.type-${dataType}`;
+			document.querySelectorAll(classType).forEach((image) => {
+				image.classList.remove('highlight');
+			});
+		});
+	});
+</script>
 
 <section class="sectionClinic">
 	<div class="sectionTitle sectionClinic-title">
@@ -77,7 +112,7 @@ const images = [
 		<ul class="sectionClinic-content-list">
 			{
 				items.map((item) => (
-					<li class="sectionClinic-content-list-item">
+					<li class="sectionClinic-content-list-item" data-type={item.type}>
 						<h3>{item.title}</h3>
 						<p>{item.description}</p>
 					</li>
@@ -89,7 +124,7 @@ const images = [
 	<ul class="sectionClinic-gallery">
 		{
 			images.map((image) => (
-				<li>
+				<li class={image.type}>
 					<img src={image.src} alt={image.alt} />
 				</li>
 			))
@@ -114,6 +149,7 @@ const images = [
 			padding-left: 32px;
 			padding-right: 32px;
 			column-gap: 60px;
+			grid-template-rows: 1fr 4fr;
 			grid-template-areas:
 				'title gallery'
 				'content gallery';
@@ -129,15 +165,29 @@ const images = [
 
 			&__description {
 				font-size: 1.25rem;
-				margin: 70px 0;
+				margin: 0 0 70px 0;
+				@include desktop {
+					max-width: 580px;
+				}
 			}
 
 			&-list {
 				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-				grid-gap: 20px;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				grid-gap: 40px;
 
 				&-item {
+					&:hover {
+						h3 {
+							color: var(--color-accent);
+							transition: color 0.5s;
+						}
+					}
+
+					@include desktop {
+						max-width: 300px;
+					}
+
 					h3 {
 						font-size: 1.25rem;
 						font-weight: 700;
@@ -156,10 +206,23 @@ const images = [
 				grid-temlate-rows: repeat(3, 1fr);
 				gap: 1rem;
 
+				.highlight {
+					img {
+						transform: scale(1.1);
+					}
+
+					& ~ :not(.highlight) {
+						img {
+							opacity: 0.5;
+						}
+					}
+				}
+
 				img {
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
+					border-radius: 10px;
 				}
 
 				/*
