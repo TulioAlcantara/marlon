@@ -78,8 +78,9 @@ const images = [
 ---
 
 <script>
-	document.querySelectorAll('.sectionClinic-content-list-item').forEach((item) => {
+	document.querySelectorAll<HTMLElement>('.sectionClinic-content-list-item').forEach((item) => {
 		item.addEventListener('mouseover', () => {
+			document.querySelector<HTMLElement>('.sectionClinic-gallery')!.classList.add('highlight');
 			const dataType = item.dataset.type;
 			const classType = `.type-${dataType}`;
 			document.querySelectorAll(classType).forEach((image) => {
@@ -88,6 +89,7 @@ const images = [
 		});
 
 		item.addEventListener('mouseout', () => {
+			document.querySelector<HTMLElement>('.sectionClinic-gallery')!.classList.remove('highlight');
 			const dataType = item.dataset.type;
 			const classType = `.type-${dataType}`;
 			document.querySelectorAll(classType).forEach((image) => {
@@ -206,14 +208,15 @@ const images = [
 				grid-temlate-rows: repeat(3, 1fr);
 				gap: 1rem;
 
-				.highlight {
-					img {
-						transform: scale(1.1);
-					}
-
-					& ~ :not(.highlight) {
+				&.highlight {
+					li.highlight {
 						img {
-							opacity: 0.5;
+							transform: scale(1.1);
+						}
+					}
+					li:not(.highlight) {
+						img {
+							filter: brightness(0.5);
 						}
 					}
 				}
@@ -223,6 +226,7 @@ const images = [
 					height: 100%;
 					object-fit: cover;
 					border-radius: 10px;
+					transition: all 0.5s;
 				}
 
 				/*
