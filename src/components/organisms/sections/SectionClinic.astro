@@ -99,7 +99,7 @@ const images = [
 	});
 </script>
 
-<section class="sectionClinic">
+<section class="sectionClinic" data-aos="opacity">
 	<div class="sectionTitle sectionClinic-title">
 		<h2>Explore a <span class="gradient">Clínica</span></h2>
 		<p>Ambiente acolhedor e moderno</p>
@@ -188,6 +188,8 @@ const images = [
 				}
 
 				&-item {
+					cursor: pointer;
+
 					&:hover {
 						h3 {
 							color: var(--color-accent);
@@ -247,7 +249,7 @@ const images = [
 			@include desktop {
 				display: grid;
 				grid-template-columns: repeat(3, minmax(0, 1fr));
-				grid-temlate-rows: repeat(3, 1fr);
+				grid-template-rows: repeat(3, 1fr);
 				gap: 1rem;
 
 				&.highlight {

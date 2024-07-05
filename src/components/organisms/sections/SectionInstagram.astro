@@ -97,7 +97,7 @@ const items = [
 		});
 </script>
 
-<section class="sectionInstagram">
+<section class="sectionInstagram" data-aos="opacity">
 	<div class="sectionTitle sectionInstagram-title">
 		<div>
 			<Fragment set:html={instagram} />
@@ -131,9 +131,6 @@ const items = [
 		.sectionInstagram {
 			padding-left: 32px;
 			padding-right: 32px;
-			max-width: 1480px;
-			margin-right: auto;
-			margin-left: auto;
 			text-align: left;
 
 			@include tablet {
@@ -181,7 +178,15 @@ const items = [
 
 			.swiper {
 				padding: 30px 0;
-				height: 400px;
+				height: 340px;
+
+				@include tablet {
+					height: 450px;
+				}
+
+				@include desktop {
+					height: 400px;
+				}
 
 				.swiper-slide {
 					cursor: pointer;

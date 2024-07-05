@@ -13,15 +13,43 @@ const { title } = Astro.props;
 
 <script>
 	import Lenis from 'lenis';
+	import AOS from 'aos';
 
-	const lenis = new Lenis();
+	const initLenis = () => {
+		const lenis = new Lenis();
 
-	function raf(time: number) {
-		lenis.raf(time);
+		function raf(time: number) {
+			lenis.raf(time);
+			requestAnimationFrame(raf);
+		}
+
 		requestAnimationFrame(raf);
-	}
+	};
 
-	requestAnimationFrame(raf);
+	const initAos = () => {
+		AOS.init();
+	};
+
+	const changeTheme = () => {
+		const currentTheme = localStorage.getItem('theme');
+
+		if (currentTheme === 'dark') {
+			localStorage.setItem('theme', 'light');
+			document.documentElement.setAttribute('data-theme', 'light');
+			return;
+		}
+
+		localStorage.setItem('theme', 'dark');
+		document.documentElement.setAttribute('data-theme', 'dark');
+	};
+
+	const themeBtns = document.querySelectorAll('.changeThemeBtn')!;
+	themeBtns.forEach((btn) => {
+		btn.addEventListener('click', changeTheme);
+	});
+
+	initLenis();
+	initAos();
 </script>
 
 <html lang="en">

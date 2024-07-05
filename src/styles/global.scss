@@ -79,12 +79,11 @@ section:not(.hero) {
 		p {
 			color: var(--color-copy);
 			font-size: 1.5rem;
-			//24px to rem
 		}
 	}
 }
 
-section:not(.sectionInstagram),
+section,
 header {
 	max-width: 1480px;
 	margin-right: auto;
@@ -99,7 +98,6 @@ header {
 	color: var(--color-btn-theme);
 }
 
-//LENIS
 html.lenis,
 html.lenis body {
 	height: auto;
@@ -119,4 +117,13 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
 	pointer-events: none;
+}
+
+[data-aos='opacity'] {
+	opacity: 0;
+	transition-property: transform, opacity;
+
+	&.aos-animate {
+		opacity: 1;
+	}
 }

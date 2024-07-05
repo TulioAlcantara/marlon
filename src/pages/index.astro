@@ -15,6 +15,28 @@ import IntroAnimation from '../components/organisms/IntroAnimation.astro';
 ---
 
 <script>
+	import Lenis from 'lenis';
+	import AOS from 'aos';
+	import 'aos/dist/aos.css';
+
+	const initLenis = () => {
+		const lenis = new Lenis();
+
+		function raf(time: number) {
+			lenis.raf(time);
+			requestAnimationFrame(raf);
+		}
+
+		requestAnimationFrame(raf);
+	};
+
+	const initAos = () => {
+		AOS.init({
+			duration: 2000,
+			once: true,
+		});
+	};
+
 	const changeTheme = () => {
 		const currentTheme = localStorage.getItem('theme');
 
@@ -32,6 +54,9 @@ import IntroAnimation from '../components/organisms/IntroAnimation.astro';
 	themeBtns.forEach((btn) => {
 		btn.addEventListener('click', changeTheme);
 	});
+
+	initLenis();
+	initAos();
 </script>
 
 <Layout title="Psicologo Marlon">
