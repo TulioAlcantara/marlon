@@ -3,8 +3,6 @@ import Button from '../atoms/Button.astro';
 import moon from '/icons/moon.svg?raw';
 import star from '/icons/star-gradient.svg?raw';
 
-const subtitle =
-	'Acredito que a terapia é um processo de colaboração, onde eu estou aqui para oferecer orientação, apoio e estratégias, e você é o especialista em sua própria vida.';
 const cta = {
 	text: 'Agende uma consulta',
 	link: '/contato',
@@ -12,78 +10,102 @@ const cta = {
 ---
 
 <section class="hero">
-	<button class="hero__themeBtn changeThemeBtn" aria-label="Mudar tema">
-		<Fragment set:html={moon} />
-	</button>
+	<div class="hero-container">
+		<button class="hero__themeBtn changeThemeBtn" aria-label="Mudar tema">
+			<Fragment set:html={moon} />
+		</button>
 
-	<div class="hero__title">
-		<h1>
-			Psicólogo especializado em
-			<span class="gradient">terapia cognitivo-comportamental </span>
-			para adolescentes e adultos.
-		</h1>
+		<div class="hero__title">
+			<h1>
+				Psicólogo especializado em
+				<span class="gradient">terapia cognitivo-comportamental </span>
+				para adolescentes e adultos.
+			</h1>
+		</div>
+		<div class="hero__cta">
+			<Button text={cta.text} link={cta.link} fullWidth={true} />
+		</div>
+		<ul class="hero-stats">
+			<li>
+				<div>
+					<p class="hero-stats__value">4k+</p>
+					<p class="hero-stats__description">horas atendidas</p>
+				</div>
+			</li>
+
+			<li>
+				<div>
+					<p class="hero-stats__value">200+</p>
+					<p class="hero-stats__description">pacientes satisfeitos</p>
+				</div>
+			</li>
+
+			<li>
+				<div>
+					<p class="hero-stats__value">
+						5.0
+
+						<Fragment set:html={star} />
+					</p>
+					<p class="hero-stats__description">no Google Review</p>
+				</div>
+			</li>
+			<img class="hero__imgMobile" src="https://via.placeholder.com/200x280" />
+		</ul>
+		<img class="hero__img" src="https://via.placeholder.com/560x800" />
+		<!-- <div class="hero__shadow"></div> -->
 	</div>
-	<p class="hero__subtitle">{subtitle}</p>
-	<div class="hero__cta">
-		<Button text={cta.text} link={cta.link} fullWidth={true} />
-	</div>
-	<ul class="hero-stats">
-		<li>
-			<div>
-				<p class="hero-stats__value">4k+</p>
-				<p class="hero-stats__description">horas atendidas</p>
-			</div>
-		</li>
-
-		<li>
-			<div>
-				<p class="hero-stats__value">200+</p>
-				<p class="hero-stats__description">pacientes satisfeitos</p>
-			</div>
-		</li>
-
-		<li>
-			<div>
-				<p class="hero-stats__value">
-					5.0
-
-					<Fragment set:html={star} />
-				</p>
-				<p class="hero-stats__description">no Google Review</p>
-			</div>
-		</li>
-		<img class="hero__imgMobile" src="https://via.placeholder.com/200x280" />
-	</ul>
-	<img class="hero__img" src="https://via.placeholder.com/560x800" />
-	<div class="hero__shadow"></div>
 </section>
 
 <style lang="scss">
 	@import 'src/styles/_mixins.scss';
 
 	.hero {
-		padding-left: 32px;
-		padding-right: 32px;
-		padding-top: 60px;
-		position: relative;
-		overflow-x: hidden;
-		display: grid;
-
-		grid-template-areas: 'title' 'stats' 'subtitle' 'cta';
+		max-width: 1780px;
+		margin-bottom: 80px;
 
 		@include tablet {
-			grid-template-areas: 'theme' 'title' 'subtitle' 'cta' 'stats';
-			padding-top: 32px;
-			margin-top: 8px;
-			padding-left: 70px;
-			padding-right: 70px;
+			margin-bottom: 70px;
 		}
 
 		@include desktop {
-			padding-top: 0px;
-			margin-top: 45px;
+			margin-bottom: 120px;
+		}
+
+		@include desktop {
+			background: var(--color-card-bg);
+		}
+
+		&-container {
+			max-width: 1480px;
 			padding-left: 32px;
 			padding-right: 32px;
+			padding-top: 40px;
+			margin: 0 auto;
+			position: relative;
+			overflow-x: hidden;
+			display: grid;
+
+			grid-template-areas: 'title' 'stats' 'cta';
+
+			@include tablet {
+				grid-template-areas: 'theme' 'title' 'cta' 'stats';
+				padding-top: 32px;
+				margin-top: 8px;
+				padding-left: 70px;
+				padding-right: 70px;
+			}
+
+			@include desktop {
+				padding-top: 100px;
+				padding-bottom: 100px;
+				margin-top: 45px;
+				padding-left: 32px;
+				padding-right: 32px;
+				border-radius: 20px;
+				overflow: visible;
+				margin-bottom: 120px;
+			}
 		}
 
 		&__themeBtn {
@@ -129,30 +151,13 @@ const cta = {
 			}
 		}
 
-		&__subtitle {
-			grid-area: subtitle;
-			color: var(--color-copy);
-			font-size: 1rem;
-			margin-top: 60px;
-			margin-bottom: 40px;
-
-			@include tablet {
-				width: 400px;
-				font-size: 1.25rem;
-				margin-top: 16px;
-				margin-bottom: 40px;
-			}
-
-			@include desktop {
-				width: 646px;
-				font-size: 1.5rem;
-				margin-top: 24px;
-				margin-bottom: 68px;
-			}
-		}
-
 		&__cta {
 			grid-area: cta;
+			margin-top: 32px;
+
+			@include tablet {
+				margin-top: 16px;
+			}
 		}
 
 		&-stats {
@@ -165,13 +170,13 @@ const cta = {
 
 			@include tablet {
 				flex-direction: row;
-				justify-content: center;
+				justify-content: start;
 				gap: 100px;
 				margin: 110px 0 30px;
 			}
 
 			@include desktop {
-				margin: 400px 0 300px;
+				margin: 100px 0 0 0;
 			}
 
 			&__value {
@@ -208,7 +213,7 @@ const cta = {
 				}
 
 				@include desktop {
-					font-size: 2rem;
+					font-size: 1rem;
 				}
 			}
 		}
@@ -218,6 +223,7 @@ const cta = {
 			position: absolute;
 			top: 0;
 			right: 0;
+			border-radius: 20px;
 
 			@include tablet {
 				display: block;
@@ -228,6 +234,7 @@ const cta = {
 			@include desktop {
 				width: 560px;
 				height: 800px;
+				top: 50px;
 			}
 		}
 
