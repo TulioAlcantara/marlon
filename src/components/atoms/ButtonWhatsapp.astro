@@ -2,6 +2,19 @@
 import whatsapp from '/icons/whatsapp.svg?raw';
 ---
 
+<script>
+	window.addEventListener('scroll', () => {
+		const btn = document.querySelector<HTMLElement>('.buttonWhatsapp')!;
+		const helpSection = document.querySelector<HTMLElement>('.sectionHelp')!;
+
+		if (window.scrollY > helpSection.offsetTop - btn.offsetHeight - 20) {
+			btn.style.opacity = '1';
+		} else {
+			btn.style.opacity = '0';
+		}
+	});
+</script>
+
 <a class="buttonWhatsapp" href="#" aria-label="whatsapp">
 	<fragment set:html={whatsapp} />
 </a>
@@ -23,7 +36,8 @@ import whatsapp from '/icons/whatsapp.svg?raw';
 		justify-content: center;
 		align-items: center;
 		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-		transition: background-color 0.3s;
+		transition: all 0.5s;
+		opacity: 0;
 
 		@include tablet {
 			display: none;

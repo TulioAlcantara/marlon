@@ -50,9 +50,9 @@ const cta = {
 					<p class="hero-stats__description">no Google Review</p>
 				</div>
 			</li>
-			<img class="hero__imgMobile" src="https://via.placeholder.com/200x280" />
+			<img class="hero__imgMobile" src="/images/hero.jpg" />
 		</ul>
-		<img class="hero__img" src="https://via.placeholder.com/560x800" />
+		<img class="hero__img" src="/images/hero.jpg" />
 		<!-- <div class="hero__shadow"></div> -->
 	</div>
 </section>
@@ -226,6 +226,8 @@ const cta = {
 			top: 0;
 			right: 0;
 			border-radius: 20px;
+			object-fit: cover;
+			object-position: center;
 
 			@include tablet {
 				display: block;

@@ -1,5 +1,6 @@
 ---
 import CarouselFaq from '../../molecules/CarouselFaq.vue';
+import chevron from '/icons/chevron-down.svg?raw';
 
 const title = {
 	highlight: 'Perguntas Frequentes',
@@ -8,30 +9,48 @@ const title = {
 const subtitle = 'Estou aqui para te dar respostas.';
 const faq = [
 	{
-		title: 'Sobre mim',
-		items: [
-			{
-				summary: 'sobre',
-				text: 'item 1',
-			},
-			{
-				summary: 'sobre',
-				text: 'item 2',
-			},
-		],
+		question: 'Como é o seu atendimento?',
+		answer:
+			'Faço atendimento via online ou presencialmente.<br><br>Meu consultório é em Goiânia-GO.',
 	},
 	{
-		title: 'Processo de terapia',
-		items: [
-			{
-				summary: 'processo',
-				text: 'item 1',
-			},
-			{
-				summary: 'processo',
-				text: 'item 2',
-			},
-		],
+		question: 'Aceita plano de saúde?',
+		answer:
+			'Não, somente particular.<br><br>Porém existe a possibilidade de solicitar reembolso para o plano de saúde.<br><br>Para solicitar reembolso é necessário entrar em contato com o plano de saúde em questão.',
+	},
+	{
+		question: 'Como funciona o seu atendimento online?',
+		answer:
+			'A terapia online é uma forma moderna de receber apoio terapêutico, utilizando a tecnologia para conectar pacientes e terapeutas à distância.<br><br>Essa modalidade permite que você se conecte com um psicólogo de onde estiver, usando um computador, tablet ou smartphone, oferecendo conveniência e acessibilidade adicionais.<br><br>As sessões são conduzidas de forma segura e sigilosa pela plataforma online de vídeo chamadas, como o ZOOM ou Google Meet, garantindo a mesma qualidade e confidencialidade de uma sessão presencial.<br><br>Após a confirmação da sessão, você receberá o link de acesso à videochamada.<br><br>Além disso, compartilharei orientações para otimizar o uso da plataforma e aproveitar ao máximo a sessão.',
+	},
+	{
+		question: 'Como funciona a Primeira Sessão?',
+		answer:
+			'Na primeira sessão de terapia vamos nos conhecer e irei construir um ambiente acolhedor para você se sentir confortável e seguro para falar sobre si mesmo sem se preocupar com julgamentos.<br><br>Durante esse tempo:<br><br>Nós começamos conhecendo um pouco mais sobre você, como sua história, sua saúde mental e qualquer coisa que o levou a buscar terapia. Isso nos ajuda a entender suas necessidades.<br><br>Você aprenderá sobre questões psicológicas que podem estar afetando você e como podemos lidar com elas juntas.<br><br>Estabelecemos objetivos e um plano de ação para ajudá-lo a alcançar o que deseja na terapia.<br><br>É assim que começamos nossa jornada juntos. <br><br>Com um processo onde trabalhamos juntos para te ajudar a entender e cuidar de si mesmo.<br><br>Lembre-se, embora tenhamos uma ideia do que vamos fazer, sempre há espaço para mudanças conforme progredimos juntos.',
+	},
+	{
+		question: 'Quais são os valores das suas sessões?',
+		answer:
+			'O Conselho Federal de Psicologia não me permite divulgar os preços por aqui. <br><br>Mas se tiver qualquer dúvida sobre isso, estou aqui para ajudar. <br><br>Você pode me chamar no WhatsApp, que aparece no  botão de ”ENTRAR EM CONTATO”.',
+	},
+	{
+		question: 'Como agendar uma consulta?',
+		answer:
+			'Basta chamar no WhatsApp que aparece quando você aperta no botão abaixo. <br><br>Podemos combinarmos um horário livre para mim e você.',
+	},
+	{
+		question: 'Qual a frequência e duração das sessões?',
+		answer:
+			'Cada sessão dura cerca de 50 minutos e normalmente acontece uma vez por semana. <br><br>Se precisar, podemos aumentar ou espaçar a frequência dos encontros, mas isso é algo que combinamos juntos antes.',
+	},
+	{
+		question: 'Quanto tempo dura o acompanhamento?',
+		answer:
+			'Depende do que você quer alcançar e dos problemas que quer resolver, além de como você está progredindo. <br><br>Mas é importante saber que esse tipo de atendimento passa por diferentes etapas com o objetivo final de você melhorar e ficar bem.',
+	},
+	{
+		question: 'Qual público atende?',
+		answer: 'Adolescentes e Adultos.',
 	},
 ];
 ---
@@ -42,7 +61,24 @@ const faq = [
 		<p>{subtitle}</p>
 	</div>
 
-	<CarouselFaq faq={faq} client:load />
+	<!-- <CarouselFaq faq={faq} client:load /> -->
+	<ul class="sectionFaq-list">
+		{
+			faq.map((item) => (
+				<li class="sectionFaq-list__item">
+					<details>
+						<summary>
+							{item.question}
+							<span class="chevron">
+								<Fragment set:html={chevron} />
+							</span>
+						</summary>
+						<p set:html={item.answer} />
+					</details>
+				</li>
+			))
+		}
+	</ul>
 </section>
 
 <style lang="scss">
@@ -67,7 +103,50 @@ const faq = [
 				max-width: 550px;
 				text-align: center;
 				margin: auto;
-				margin-bottom: 180px;
+				margin-bottom: 56px;
+			}
+		}
+
+		&-list {
+			list-style: none;
+
+			&__item {
+				padding: 16px 8px;
+				border-bottom: 1px solid var(--color-accent);
+
+				details {
+					&[open] {
+						summary {
+							color: var(--color-accent);
+
+							.chevron {
+								color: var(--color-accent);
+								transform: rotate(180deg);
+							}
+						}
+					}
+
+					summary {
+						list-style: none;
+						cursor: pointer;
+						font-size: 1.5rem;
+						display: flex;
+						justify-content: space-between;
+						color: var(--color-title);
+						transition: all 0.5s;
+
+						&:hover {
+							color: var(--color-accent);
+							transition: all 0.5s;
+						}
+					}
+
+					p {
+						font-size: 1.5rem;
+						color: var(--color-copy);
+						margin-top: 16px;
+					}
+				}
 			}
 		}
 	}
