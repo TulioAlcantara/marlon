@@ -12,24 +12,6 @@ const { title } = Astro.props;
 ---
 
 <script>
-	import Lenis from 'lenis';
-	import AOS from 'aos';
-
-	const initLenis = () => {
-		const lenis = new Lenis();
-
-		function raf(time: number) {
-			lenis.raf(time);
-			requestAnimationFrame(raf);
-		}
-
-		requestAnimationFrame(raf);
-	};
-
-	const initAos = () => {
-		AOS.init();
-	};
-
 	const changeTheme = () => {
 		const currentTheme = localStorage.getItem('theme');
 
@@ -47,9 +29,6 @@ const { title } = Astro.props;
 	themeBtns.forEach((btn) => {
 		btn.addEventListener('click', changeTheme);
 	});
-
-	initLenis();
-	initAos();
 </script>
 
 <html lang="en">

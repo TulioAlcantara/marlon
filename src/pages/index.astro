@@ -37,24 +37,6 @@ import IntroAnimation from '../components/organisms/IntroAnimation.astro';
 		});
 	};
 
-	const changeTheme = () => {
-		const currentTheme = localStorage.getItem('theme');
-
-		if (currentTheme === 'dark') {
-			localStorage.setItem('theme', 'light');
-			document.documentElement.setAttribute('data-theme', 'light');
-			return;
-		}
-
-		localStorage.setItem('theme', 'dark');
-		document.documentElement.setAttribute('data-theme', 'dark');
-	};
-
-	const themeBtns = document.querySelectorAll('.changeThemeBtn')!;
-	themeBtns.forEach((btn) => {
-		btn.addEventListener('click', changeTheme);
-	});
-
 	initLenis();
 	initAos();
 </script>
