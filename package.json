@@ -10,22 +10,22 @@
 		"astro": "astro"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.5.10",
-		"@astrojs/vue": "^4.1.0",
+		"@astrojs/check": "^0.7.0",
+		"@astrojs/vue": "^4.5.0",
 		"@fontsource/archivo": "^5.0.18",
-		"@vue/typescript-plugin": "^2.0.16",
-		"astro": "^4.7.1",
-		"prettier": "^3.2.5",
-		"prettier-plugin-astro": "^0.13.0",
-		"sass": "^1.76.0",
-		"typescript": "^5.4.5",
-		"vue": "^3.4.26"
+		"@vue/typescript-plugin": "^2.0.26",
+		"astro": "^4.11.5",
+		"astro-tunnel": "^0.1.6",
+		"prettier": "^3.3.2",
+		"prettier-plugin-astro": "^0.14.0",
+		"sass": "^1.77.6",
+		"typescript": "^5.5.3",
+		"vue": "^3.4.31"
 	},
 	"dependencies": {
 		"@types/aos": "^3.0.7",
 		"aos": "^2.3.4",
 		"astro-integration-lottie": "^0.3.0",
-		"astro-tunnel": "^0.1.6",
 		"lenis": "^1.1.5",
 		"lottie-web": "^5.12.2",
 		"swiper": "^11.1.4",
