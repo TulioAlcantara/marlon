@@ -53,7 +53,7 @@ const cta = {
 			<img class="hero__imgMobile" src="/images/hero.jpg" />
 		</ul>
 		<img class="hero__img" src="/images/hero.jpg" />
-		<!-- <div class="hero__shadow"></div> -->
+		<div class="hero__shadow"></div>
 	</div>
 </section>
 
@@ -74,7 +74,7 @@ const cta = {
 		}
 
 		@include desktop {
-			background: var(--color-card-bg);
+			background: var(--color-hero-bg);
 		}
 
 		&-container {
@@ -250,6 +250,8 @@ const cta = {
 			top: 0;
 			right: -80px;
 			border-radius: 20px;
+			object-fit: cover;
+			object-position: center;
 
 			@include tablet {
 				right: 0;

@@ -11,7 +11,7 @@ const title = {
 	text: 'com algo que leu?',
 };
 const subtitle =
-	'Vamos resolver suas questões? Entre em contato, pois estarei à sua disposição. Perguntas e problemas não devem ser ignorados, por menores que você acha que sejam.';
+	'Vamos resolver suas questões?<br>Entre em contato, pois estarei à sua disposição.<br>Perguntas e problemas não devem ser ignorados, por menores que você acha que sejam.';
 const cta = {
 	text: 'Entrar em contato',
 	link: '#',
@@ -21,7 +21,7 @@ const cta = {
 <footer>
 	<div class="footer">
 		<h2 class="footer__title"><span class="gradient">{title.highlight}</span>{title.text}</h2>
-		<p class="footer__subtitle">{subtitle}</p>
+		<p class="footer__subtitle" set:html={subtitle} />
 		<Button text={cta.text} link={cta.link} fullWidth={true} />
 		<ul class="footer-links">
 			<li>
