@@ -1,6 +1,8 @@
 ---
 import star from '/icons/star-gradient.svg?raw';
 import quotes from '/icons/quotes-gradient.svg?raw';
+
+const { name, review } = Astro.props;
 ---
 
 <div class="cardReview">
@@ -11,17 +13,11 @@ import quotes from '/icons/quotes-gradient.svg?raw';
 		<Fragment set:html={star} />
 		<Fragment set:html={star} />
 	</p>
-	<p class="cardReview__name">Tulio Alcantara</p>
+	<p class="cardReview__name">{name}</p>
 	<p class="cardReview__icon">
 		<Fragment set:html={quotes} />
 	</p>
-	<p class="cardReview__review">
-		Adoro as sessões com o Marlon, já tem muito tempo que faço e ainda saio com aquela sensação de
-		leveza. Ele tem abordagens muito claras e eficazes, no meu caso cognitivo comportamental é super
-		objetivo, todas as sessões tenho alguma tarefa a se fazer que geram reflexões e uma paz de
-		espírito impagável. De resto nem se fala, sobre o consultório e as sessões online, tem tudo
-		perfeito.
-	</p>
+	<p class="cardReview__review">{review}</p>
 </div>
 
 <style lang="scss">
@@ -35,6 +31,7 @@ import quotes from '/icons/quotes-gradient.svg?raw';
 		flex-direction: column;
 		gap: 12px;
 		width: 280px;
+		height: 350px;
 
 		@include tablet {
 			width: 518px;
@@ -42,6 +39,7 @@ import quotes from '/icons/quotes-gradient.svg?raw';
 
 		@include desktop {
 			gap: 24px;
+			height: 100%;
 			width: initial;
 		}
 

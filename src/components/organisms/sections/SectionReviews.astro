@@ -1,5 +1,45 @@
 ---
 import Card from '../../molecules/CardReview.astro';
+
+const reviews = [
+	{
+		name: 'Guilherme',
+		review:
+			'Recepção acolhedora com um sorriso amigo! Mais que uma sessão de psicoterapia, é um momento para descontrair e explorar as nossas demandas psicológicas. Excelente profissional!! Recomendo 🤜🏻🤛🏻',
+	},
+	{
+		name: 'Lucas P.',
+		review:
+			'Marlon é um psicólogo de muito profissionalismo e ética, sempre pronto a atender às necessidades de seus pacientes. Recomendo muito!',
+	},
+	{
+		name: 'Fábio I.',
+		review:
+			'Encontrei o psicólogo Marlon justamente pela busca do Google e me surpreendi positivamente! Ele é um terapeuta muito habilidoso, tem conhecimento sólido da abordagem e sabe muito bem como aplicar as ferramentas terapêuticas. As sessões são ótimas, agradáveis e ele respeita muito os limites do paciente, além de valorizar aquilo que o cliente já traz consigo de bom. Está sendo uma experiência muito rica a psicoterapia com o psicólogo Marlon.',
+	},
+	{
+		name: 'Débora C.',
+		review:
+			'É muito bom ser atendida pelo Dr. Marlon, ele consegue me fazer entender muitas coisas sobre mim que antes, na minha visão, eram impossíveis. A capacidade dele de criar uma conexão significativa e facilitar a compreensão de aspectos pessoais é uma virtude. Alinhada com a dedicação de auxiliar, ele transmite confiança e destaca a qualidade do seu trabalho. Para quem busca autoconhecimento e crescimento emocional, ele é um profissional valioso que impacta positivamente a vida das pessoas. Obrigada, Dr. Marlon🤗',
+	},
+];
+const reviews2 = [
+	{
+		name: 'Ana M.',
+		review:
+			'Excelente profissional. Ao unir o interesse do paciente e a pontualidade no diagnóstico, o trabalho não poderia ser diferente. Agradeço pelo profissionalismo.',
+	},
+	{
+		name: 'Igor V.',
+		review:
+			'Além do consultório ser um ambiente agradável e aconchegante para as consultas, o psicólogo Marlon é um profissional muito dedicado e confiante no que faz. Ele possui uma linguagem clara e fácil de compreender. Isso facilita para que possamos pôr em prática as "tarefas" que ele nos propõe para que possamos, aos poucos, alcançar nossos objetivos. A abordagem que ele utiliza, a Terapia Cognitivo-Comportamental, ajuda a ter pensamentos mais objetivos e realistas. Dessa forma, pode tratar vários tipos de problemas psicológicos, como no meu caso de Fobia Social, Compulsões e TDAH.',
+	},
+	{
+		name: 'Gabriel C.',
+		review:
+			'Adoro as sessões com o Marlon, já tem muito tempo que faço e ainda saio com aquela sensação de leveza. Ele tem abordagens muito claras e eficazes; no meu caso, a cognitivo-comportamental é super objetiva. Em todas as sessões, tenho alguma tarefa a fazer que gera reflexões e uma paz de espírito impagável. De resto, nem se fala: sobre o consultório e as sessões online, está tudo perfeito.',
+	},
+];
 ---
 
 <script>
@@ -35,48 +75,40 @@ import Card from '../../molecules/CardReview.astro';
 
 	<div class="sectionReviews-container">
 		<ul class="sectionReviews-container__reviews">
-			<li>
-				<Card />
-			</li>
-			<li>
-				<Card />
-			</li>
-			<li>
-				<Card />
-			</li>
-			<li>
-				<Card />
-			</li>
-			<li>
-				<Card />
-			</li>
-			<li>
-				<Card />
-			</li>
+			{
+				reviews.map((review) => (
+					<li>
+						<Card name={review.name} review={review.review} />
+					</li>
+				))
+			}
+			{
+				reviews.map((review) => (
+					<li>
+						<Card name={review.name} review={review.review} />
+					</li>
+				))
+			}
 		</ul>
 		<div class="sectionReviews-container__fade"></div>
 	</div>
 
 	<div class="sectionReviews-container show-desktop">
 		<ul class="sectionReviews-container__reviews sectionReviews-container__reviews--reverse">
-			<li>
-				<Card />
-			</li>
-			<li>
-				<Card />
-			</li>
-			<li>
-				<Card />
-			</li>
-			<li>
-				<Card />
-			</li>
-			<li>
-				<Card />
-			</li>
-			<li>
-				<Card />
-			</li>
+			{
+				reviews2.map((review) => (
+					<li>
+						<Card name={review.name} review={review.review} />
+					</li>
+				))
+			}
+			{
+				reviews2.map((review) => (
+					<li>
+						<Card name={review.name} review={review.review} />
+					</li>
+				))
+			}
 		</ul>
 		<div class="sectionReviews-container__fade"></div>
 	</div>
