@@ -1,5 +1,7 @@
 ---
 import chevron from '/icons/chevron-down.svg?raw';
+import { Image } from 'astro:assets';
+import aboutmeImage from '../../assets/images/aboutme.jpg';
 
 const details = [
 	{
@@ -44,7 +46,8 @@ const details = [
 	</div>
 
 	<div class="sectionAbout-content">
-		<img class="sectionAbout-content__image" src="/images/aboutme.jpg" />
+		<!-- <img class="sectionAbout-content__image" src="/images/aboutme.jpg" /> -->
+		<Image class="sectionAbout-content__image" src={aboutmeImage} alt="" />
 		<ul class="sectionAbout-content-details">
 			{
 				details.map((detail) => (
@@ -92,12 +95,16 @@ const details = [
 			}
 
 			&__image {
+				width: 100%;
+				height: 100%;
+
 				@include tablet {
 					height: 430px;
 					object-fit: cover;
 				}
 
 				@include desktop {
+					width: 430px;
 					height: 530px;
 					border-top-left-radius: 20px;
 					border-bottom-left-radius: 20px;

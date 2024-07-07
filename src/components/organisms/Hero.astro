@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/hero.jpg';
 import Button from '../atoms/Button.astro';
 import moon from '/icons/moon.svg?raw';
 import star from '/icons/star-gradient.svg?raw';
@@ -50,9 +52,8 @@ const cta = {
 					<p class="hero-stats__description">no Google Review</p>
 				</div>
 			</li>
-			<img class="hero__imgMobile" src="/images/hero.jpg" />
 		</ul>
-		<img class="hero__img" src="/images/hero.jpg" />
+		<Image class="hero__img" src={heroImage} alt="" />
 		<div class="hero__shadow"></div>
 	</div>
 </section>
@@ -221,15 +222,18 @@ const cta = {
 		}
 
 		&__img {
-			display: none;
 			position: absolute;
-			top: 0;
-			right: 0;
+			bottom: 100px;
+			right: -35px;
 			border-radius: 20px;
 			object-fit: cover;
 			object-position: center;
+			width: 200px;
+			height: 280px;
 
 			@include tablet {
+				top: 0;
+				right: 0;
 				display: block;
 				width: 240px;
 				height: 340px;
@@ -239,23 +243,6 @@ const cta = {
 				width: 560px;
 				height: 800px;
 				top: 50px;
-			}
-		}
-
-		&__imgMobile {
-			display: block;
-			position: absolute;
-			width: 200px;
-			height: 280px;
-			top: 0;
-			right: -80px;
-			border-radius: 20px;
-			object-fit: cover;
-			object-position: center;
-
-			@include tablet {
-				right: 0;
-				display: none;
 			}
 		}
 
