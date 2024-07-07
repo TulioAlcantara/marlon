@@ -120,6 +120,7 @@ const faq = [
 							.chevron {
 								color: var(--color-accent);
 								transform: rotate(180deg);
+								transition: transform 0.5s;
 							}
 						}
 					}
@@ -136,6 +137,14 @@ const faq = [
 						&:hover {
 							color: var(--color-accent);
 							transition: all 0.5s;
+						}
+
+						.chevron {
+							transition: transform 0.5s;
+						}
+
+						&::-webkit-details-marker {
+							display: none;
 						}
 					}
 

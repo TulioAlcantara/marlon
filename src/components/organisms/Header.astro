@@ -15,7 +15,7 @@ const items = [
 	},
 	{
 		name: 'O que é Terapia',
-		link: '#terapia',
+		link: '#valores',
 	},
 	{
 		name: 'O processo',
@@ -27,19 +27,23 @@ const cta = {
 	text: 'Agendar uma consulta',
 	link: '#cta',
 };
-
-let activeLink = 'Início';
 ---
 
 <script>
 	let isMenuOpen = false;
 	document.querySelector<HTMLElement>('.header__menu')!.addEventListener('click', () => {
 		if (isMenuOpen) {
-			document.querySelector<HTMLElement>('.menu')!.style.display = 'none';
+			document.querySelector<HTMLElement>('.menu')!.style.opacity = '0';
+			setTimeout(() => {
+				document.querySelector<HTMLElement>('.menu')!.style.display = 'none';
+			}, 500);
 			document.querySelector<HTMLElement>('.header__menu__open')!.style.display = 'block';
 			document.querySelector<HTMLElement>('.header__menu__close')!.style.display = 'none';
 		} else {
 			document.querySelector<HTMLElement>('.menu')!.style.display = 'flex';
+			setTimeout(() => {
+				document.querySelector<HTMLElement>('.menu')!.style.opacity = '1';
+			}, 1);
 			document.querySelector<HTMLElement>('.header__menu__open')!.style.display = 'none';
 			document.querySelector<HTMLElement>('.header__menu__close')!.style.display = 'block';
 		}
@@ -77,10 +81,7 @@ let activeLink = 'Início';
 			{
 				items.map((item) => (
 					<li>
-						<a
-							class={`header-links__link ${activeLink == item.name && 'header-links__link--active'}`}
-							href={item.link}
-						>
+						<a class={`header-links__link`} href={item.link}>
 							{item.name}
 						</a>
 					</li>
@@ -156,9 +157,11 @@ let activeLink = 'Início';
 				font-size: 1rem;
 				font-weight: 600;
 				color: var(--color-title);
+				transition: color 0.5s;
 
 				&:hover {
 					color: var(--color-accent);
+					transition: color 0.5s;
 				}
 
 				&--active {

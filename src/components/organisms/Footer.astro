@@ -25,17 +25,25 @@ const cta = {
 		<Button text={cta.text} link={cta.link} fullWidth={true} />
 		<ul class="footer-links">
 			<li>
-				<a href="#" aria-label="Linkedin">
+				<a
+					href="https://br.linkedin.com/in/marlon-andrade-7062021a2"
+					target="_blank"
+					aria-label="Linkedin"
+				>
 					<Fragment set:html={linkedin} />
 				</a>
 			</li>
 			<li>
-				<a href="#" aria-label="Instagram">
+				<a href="https://www.instagram.com/psi.marlon/" target="_blank" aria-label="Instagram">
 					<Fragment set:html={instagram} />
 				</a>
 			</li>
 			<li>
-				<a href="#" aria-label="Whatsapp">
+				<a
+					href="https://api.whatsapp.com/send?phone=5562981261406&text=Ol%C3%A1%2C%20eu%20gostaria%20de%20agendar%20uma%20sess%C3%A3o"
+					target="_blank"
+					aria-label="Whatsapp"
+				>
 					<Fragment set:html={whatsapp} />
 				</a>
 			</li>
@@ -134,10 +142,25 @@ const cta = {
 
 				li {
 					color: var(--color-btn-theme);
+					transition: color 0.5s;
 
 					a {
 						all: unset;
 						cursor: pointer;
+					}
+
+					&:hover {
+						color: var(--color-accent);
+						transition: color 0.5s;
+					}
+
+					button {
+						transition: color 0.5s;
+
+						&:hover {
+							color: var(--color-accent);
+							transition: color 0.5s;
+						}
 					}
 				}
 			}
