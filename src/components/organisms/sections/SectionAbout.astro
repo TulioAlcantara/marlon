@@ -6,15 +6,24 @@ import aboutmeImage from '../../assets/images/aboutme.jpg';
 const details = [
 	{
 		title: 'Sobre mim',
-		text: '',
+		text: `Olá, sou o Marlon Andrade, casado e natural de Goiânia. Desde que me formei em Psicologia pela Puc-Goiás, meu fascínio pelo comportamento humano tem sido uma constante inspiração em minha jornada profissional.<br><br>
+		Com mais de 4 mil sessões de psicoterapia realizadas, estou aqui para oferecer meu conhecimento e experiência em ajudá-lo a compreender e superar os desafios da vida. Minha abordagem visa identificar e modificar padrões de pensamento e comportamento que podem estar afetando seu bem-estar.<br><br> 
+		Ao longo dos anos, tenho estudado cada vez mais sobre o ser humano. Minha paixão por contribuir para o desenvolvimento humano me motiva a buscar constantemente novas maneiras de ajudar meus pacientes a alcançar seu máximo potencial. Se você está enfrentando dificuldades emocionais, comportamentais ou simplesmente deseja melhorar sua qualidade de vida, estou aqui para oferecer apoio e orientação personalizados.CRP 09/17059`,
 	},
 	{
 		title: 'Formação acadêmica',
-		text: '',
+		text: `<b>Graduado em Psicologia pela Pontifícia Universidade Católica de Goiás (PUC GOIÁS)</b>, iniciei minha caminhada na área da saúde mental com uma base sólida e abrangente.<br><br>
+		<b>Especialista em Terapia Cognitivo-Comportamental</b> pelo <b>Instituto de Pós-Graduação e Graduação (IPOG)</b>, me aprofundei em uma das abordagens psicoterapêuticas mais eficazes da atualidade, aprimorando minhas habilidades para auxiliar meus pacientes.<br><br>
+		<b>Especialista em Neurociência, Comportamento e Desempenho</b>, também pelo <b>Instituto de Pós-Graduação e Graduação (IPOG)</b>, expandi meus horizontes sobre o funcionamento do cérebro e do comportamento humano, me tornando um profissional ainda mais completo.<br><br>
+		<b>Com formações em Terapia do Esquema, Psicopatologia e Análise do Comportamento</b>, demonstro meu compromisso com o aprendizado contínuo e a busca por ferramentas multifacetadas para atender às diversas demandas dos meus clientes.`,
 	},
 	{
-		title: 'Abordagem profissional',
-		text: '',
+		title: 'Meus valores e compromissos',
+		text: `<b>Tratamento baseado na ciência:</b> Ofereço tratamentos respaldados por pesquisas científicas, garantindo abordagens eficazes e comprovadas para seu progresso e bem-estar.<br><br>
+		<b>Racionalização e lógica:</b> Abordo seus problemas de forma analítica e lógica, ajudando a identificar padrões de pensamento, emoção e comportamento que atrapalham sua vida.<br><br>
+		<b>Preocupação Genuína com seus problemas:</b> Estou verdadeiramente comprometido em compreender e resolver seus desafios, oferecendo um espaço seguro para expressar suas preocupações.<br><br>
+		<b>Empatia e Humanização:</b> Valorizo sua experiência única e prático a empatia em todas as interações, reconhecendo sua humanidade e respeitando suas emoções.<br><br>
+		<b>Compromisso com a sua evolução:</b> Estou dedicado a guiá-lo em seu processo de crescimento pessoal e emocional, apoiando-o em sua jornada de autoconhecimento e transformação.`,
 	},
 ];
 ---
@@ -59,7 +68,7 @@ const details = [
 									<Fragment set:html={chevron} />
 								</span>
 							</summary>
-							<p>{detail.text}</p>
+							<p set:html={detail.text} />
 						</details>
 					</li>
 				))
@@ -105,7 +114,7 @@ const details = [
 
 				@include desktop {
 					width: 430px;
-					height: 530px;
+					height: 630px;
 					border-top-left-radius: 20px;
 					border-bottom-left-radius: 20px;
 				}

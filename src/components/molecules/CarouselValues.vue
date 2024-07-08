@@ -16,7 +16,7 @@
 			<div>
 				<p class="valuesCarousel-card__subtitle">{{ values[activeIndex].subtitle }}</p>
 				<h3 class="valuesCarousel-card__title">{{ values[activeIndex].title }}</h3>
-				<p class="valuesCarousel-card__description">{{ values[activeIndex].description }}</p>
+				<p class="valuesCarousel-card__description" v-html="values[activeIndex].description"></p>
 			</div>
 			<img :src="values[activeIndex].img" :alt="values[activeIndex].imgAlt" />
 			<div class="valuesCarousel-card__shadow"></div>
@@ -146,7 +146,7 @@ const isItemActive = (index: number) => {
 		}
 
 		&__description {
-			font-size: 1.5rem;
+			font-size: 1.25rem;
 			color: var(--color-copy);
 		}
 
