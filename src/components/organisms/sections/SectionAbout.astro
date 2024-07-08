@@ -43,12 +43,15 @@ const details = [
 		});
 	});
 
-	document
-		.querySelector<HTMLElement>('.sectionAbout-content-details details')!
-		.setAttribute('open', '');
+	//only on desktop
+	if (window.innerWidth >= 768) {
+		document
+			.querySelector<HTMLElement>('.sectionAbout-content-details details')!
+			.setAttribute('open', '');
+	}
 </script>
 
-<section class="sectionAbout" data-aos="opacity">
+<section id="sobre-mim" class="sectionAbout" data-aos="opacity">
 	<div class="sectionTitle">
 		<h2>Quem é <span class="gradient">Marlon Andrade?</span></h2>
 		<p>Apaixonado pelo desenvolvimento humano.</p>
