@@ -1,7 +1,7 @@
 ---
 import chevron from '/icons/chevron-down.svg?raw';
 import { Image } from 'astro:assets';
-import aboutmeImage from '../../assets/images/aboutme.jpg';
+import aboutmeImage from '../../../assets/images/aboutme.jpg';
 
 const details = [
 	{
@@ -100,15 +100,18 @@ const details = [
 		&-content {
 			display: flex;
 			flex-direction: column;
-			gap: 20px;
+			gap: 10px;
 
 			@include desktop {
 				flex-direction: row;
+				gap: 20px;
 			}
 
 			&__image {
 				width: 100%;
 				height: 100%;
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
 
 				@include tablet {
 					height: 430px;
@@ -128,7 +131,11 @@ const details = [
 				margin: 0;
 				display: flex;
 				flex-direction: column;
-				gap: 8px;
+				gap: 4px;
+
+				@include desktop {
+					gap: 8px;
+				}
 
 				li {
 					@include desktop {
@@ -142,17 +149,22 @@ const details = [
 						&:nth-child(3) {
 							details {
 								border-bottom-right-radius: 20px;
+								border-bottom-left-radius: 20px;
+
+								@include desktop {
+									border-bottom-right-radius: 20px;
+								}
 							}
 						}
 					}
 
 					details {
 						cursor: pointer;
-						font-size: 1.25rem;
 						font-weight: 700;
 						color: var(--color-copy);
 						list-style: none;
 						background: var(--color-card-bg);
+						font-size: 1.25rem;
 
 						summary {
 							list-style: none;
@@ -180,11 +192,15 @@ const details = [
 
 						p {
 							color: var(--color-copy);
-							font-size: 1.25rem;
 							font-weight: 400;
-							line-height: 25px;
+							line-height: 20px;
 							text-align: left;
 							padding: 0 36px 29px;
+							font-size: 1rem;
+
+							@include desktop {
+								font-size: 1.25rem;
+							}
 						}
 					}
 				}

@@ -5,5 +5,5 @@ import tunnel from 'astro-tunnel';
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [vue(), lottie(), tunnel()],
+	integrations: [vue({ template: { transformAssetUrls: false } }), lottie(), tunnel()],
 });
