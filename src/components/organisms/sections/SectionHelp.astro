@@ -1,38 +1,86 @@
 ---
 import Card from '../../molecules/CardHelp.astro';
+import icon1 from '/icons/help/icon1-orange.svg?raw';
+import icon1Gradient from '/icons/help/icon1-gradient.svg?raw';
+import icon1White from '/icons/help/icon1-white.svg?raw';
+import icon2 from '/icons/help/icon2-orange.svg?raw';
+import icon2Gradient from '/icons/help/icon2-gradient.svg?raw';
+import icon2White from '/icons/help/icon2-white.svg?raw';
+import icon3 from '/icons/help/icon3-orange.svg?raw';
+import icon3Gradient from '/icons/help/icon3-gradient.svg?raw';
+import icon3White from '/icons/help/icon3-white.svg?raw';
+import icon4 from '/icons/help/icon4-orange.svg?raw';
+import icon4Gradient from '/icons/help/icon4-gradient.svg?raw';
+import icon4White from '/icons/help/icon4-white.svg?raw';
+import icon5 from '/icons/help/icon5-orange.svg?raw';
+import icon5Gradient from '/icons/help/icon5-gradient.svg?raw';
+import icon5White from '/icons/help/icon5-white.svg?raw';
+import icon6 from '/icons/help/icon6-orange.svg?raw';
+import icon6Gradient from '/icons/help/icon6-gradient.svg?raw';
+import icon6White from '/icons/help/icon6-white.svg?raw';
+
 const cards = [
 	{
 		title: 'Ansiedade',
 		description:
-			'Sinta-se sobrecarregado pela ansiedade? Aprenda a desacelerar seus pensamentos, encontrar clareza e viver com calma interior. Descubra como superar a sensação de sufocamento, lidar com o pânico, diminuir preocupações excessivas e recuperar o controle sobre sua vida. Não deixe que a ansiedade te impeça de viver plenamente',
+			'Sentiu ansiedade? Aprenda a acalmar seus pensamentos, encontrar clareza e viver com calma. Supere o sufocamento, lide com o pânico, diminua preocupações e recupere o controle. Não deixe a ansiedade impedir sua vida plena.',
+		icon: icon1,
+		iconWhite: icon1White,
+		iconGradient: icon1Gradient,
 	},
 	{
 		title: 'Relacionamentos',
 		description:
-			'Em busca de relacionamentos mais saudáveis e felizes? Supere a solidão, a insegurança e os conflitos constantes. Aprenda a comunicar-se de forma eficaz, construir confiança e estabelecer limites saudáveis. Liberte-se do medo do abandono, da dependência emocional e da traição. Descubra como nutrir a intimidade e a conexão genuína.',
+			'Quer relacionamentos mais saudáveis e felizes? Supere a solidão, insegurança e conflitos. Aprenda a comunicar-se, construir confiança e estabelecer limites. Liberte-se do medo do abandono, da dependência e da traição. Nutra a intimidade e a conexão genuína.',
+		icon: icon2,
+		iconWhite: icon2White,
+		iconGradient: icon2Gradient,
 	},
 	{
 		title: 'Indecisão',
 		description:
-			'Sentindo-se perdido nas escolhas da vida? Encontre clareza e propósito em meio à confusão. Supere a paralisia mental, a falta de foco e o receio de arrependimento. Aprenda a tomar decisões com confiança, alinhadas com seus valores e objetivos. Não permita que a indecisão atrapalhe seu caminho para o sucesso e a realização pessoal.',
+			'Sentindo-se perdido nas escolhas da vida? Encontre clareza e propósito. Supere a paralisia mental, a falta de foco e o receio de arrependimento. Tome decisões com confiança, alinhadas com seus valores. Não deixe a indecisão atrapalhar seu sucesso e realização pessoal.',
+		icon: icon3,
+		iconWhite: icon3White,
+		iconGradient: icon3Gradient,
 	},
 	{
 		title: 'Impusividade',
 		description:
-			'Cansado dos arrependimentos impulsivos? Recupere o controle sobre suas ações e emoções. Aprenda a agir com consciência, evitar autossabotagem e cultivar relacionamentos saudáveis. Supere a culpa após agir impulsivamente e construa uma vida baseada em escolhas conscientes e positivas.',
+			'Cansado dos arrependimentos impulsivos? Recupere o controle das suas ações e emoções. Aprenda a agir com consciência, evitar autossabotagem e cultivar relacionamentos saudáveis. Supere a culpa e construa uma vida com escolhas positivas.',
+		icon: icon4,
+		iconWhite: icon4White,
+		iconGradient: icon4Gradient,
 	},
 	{
 		title: 'Inteligência Emocional/Autoestima',
 		description:
-			'Pronto para fortalecer sua autoestima e equilibrar suas emoções? Descubra como superar sentimentos de inutilidade, impaciência e autocrítica excessiva. Aprenda a reconhecer, expressar e gerenciar suas emoções de forma saudável. Construa relacionamentos mais significativos e estabeleça limites que promovam seu bem-estar emocional.',
+			'Pronto para fortalecer sua autoestima e equilibrar suas emoções? Supere sentimentos de inutilidade, impaciência e autocrítica. Aprenda a gerenciar suas emoções de forma saudável. Construa relacionamentos significativos e estabeleça limites para seu bem-estar.',
+		icon: icon5,
+		iconWhite: icon5White,
+		iconGradient: icon5Gradient,
 	},
 	{
 		title: 'Depressão',
 		description:
-			'Lutando contra a escuridão da depressão? Encontre luz e esperança novamente. Supere o cansaço, a falta de motivação e os pensamentos negativos persistentes. Aprenda a reconectar-se com a alegria, o prazer e a vitalidade da vida. Busque apoio e orientação para superar a depressão e redescobrir o significado e a felicidade em seu dia a dia.',
+			'Lutando contra a depressão? Encontre luz e esperança. Supere o cansaço, a falta de motivação e pensamentos negativos. Reconecte-se com a alegria e vitalidade da vida. Busque apoio para superar a depressão e redescobrir a felicidade.',
+		icon: icon6,
+		iconWhite: icon6White,
+		iconGradient: icon6Gradient,
 	},
 ];
 ---
+
+<script>
+	import VanillaTilt from 'vanilla-tilt';
+	const cards = Array.from(document.querySelectorAll('.helpCard')!);
+	VanillaTilt.init(cards as HTMLElement[], {
+		max: 12,
+		speed: 300,
+		glare: true,
+		'max-glare': 0.2,
+	});
+</script>
 
 <section id="ajuda" class="sectionHelp" data-aos="opacity">
 	<div class="sectionTitle sectionHelp-title">
@@ -43,7 +91,19 @@ const cards = [
 		{
 			cards.map((card) => (
 				<li>
-					<Card title={card.title} description={card.description} />
+					<div class="helpCard">
+						<span class="helpCard__icon">
+							<Fragment set:html={card.icon} />
+						</span>
+						<span class="helpCard__icon--white">
+							<Fragment set:html={card.iconWhite} />
+						</span>
+						<span class="helpCard__icon--hover">
+							<Fragment set:html={card.iconGradient} />
+						</span>
+						<h2>{card.title}</h2>
+						<p>{card.description}</p>
+					</div>
 				</li>
 			))
 		}
@@ -103,6 +163,84 @@ const cards = [
 
 			@include desktop {
 				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+
+		.helpCard {
+			background: var(--color-card-bg);
+			padding: 24px;
+			border-radius: 20px;
+			cursor: pointer;
+			width: 282px;
+			height: 350px;
+			gap: 8px;
+			flex-shrink: 0;
+			scroll-snap-align: center;
+			cursor: default;
+
+			@include tablet {
+				width: fit-content;
+				height: 220px;
+			}
+
+			@include desktop {
+				height: 200px;
+
+				&:hover {
+					background: var(--color-card-bg-hover);
+					box-shadow: 0px 0px 30px 5px var(--color-accent);
+					transition: all 0.5s ease;
+				}
+			}
+
+			&:hover {
+				.helpCard__icon {
+					display: none;
+				}
+
+				.helpCard__icon--hover {
+					display: block;
+				}
+			}
+
+			&__icon--hover {
+				display: none;
+			}
+
+			&__icon--white {
+				display: none;
+			}
+
+			h2 {
+				font-size: 1.5rem;
+				font-weight: 700;
+				margin-bottom: 12px;
+				color: var(--color-accent);
+			}
+
+			p {
+				font-size: 1rem;
+				color: var(--color-copy);
+			}
+		}
+	}
+
+	html[data-theme='dark'] {
+		.sectionHelp {
+			.helpCard {
+				&__icon {
+					display: none;
+				}
+
+				&__icon--white {
+					display: block;
+				}
+
+				&:hover {
+					.helpCard__icon--white {
+						display: none;
+					}
+				}
 			}
 		}
 	}
