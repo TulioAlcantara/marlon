@@ -73,13 +73,15 @@ const cards = [
 
 <script>
 	import VanillaTilt from 'vanilla-tilt';
-	const cards = Array.from(document.querySelectorAll('.helpCard')!);
-	VanillaTilt.init(cards as HTMLElement[], {
-		max: 12,
-		speed: 300,
-		glare: true,
-		'max-glare': 0.2,
-	});
+	if (window.innerWidth > 1024) {
+		const cards = Array.from(document.querySelectorAll('.helpCard')!);
+		VanillaTilt.init(cards as HTMLElement[], {
+			max: 12,
+			speed: 300,
+			glare: true,
+			'max-glare': 0.2,
+		});
+	}
 </script>
 
 <section id="ajuda" class="sectionHelp" data-aos="opacity">
@@ -172,7 +174,7 @@ const cards = [
 			border-radius: 20px;
 			cursor: pointer;
 			width: 282px;
-			height: 350px;
+			height: 250px;
 			gap: 8px;
 			flex-shrink: 0;
 			scroll-snap-align: center;
@@ -180,7 +182,6 @@ const cards = [
 
 			@include tablet {
 				width: fit-content;
-				height: 220px;
 			}
 
 			@include desktop {

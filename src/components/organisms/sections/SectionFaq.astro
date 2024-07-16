@@ -145,11 +145,15 @@ const faq = [
 					summary {
 						list-style: none;
 						cursor: pointer;
-						font-size: 1.5rem;
+						font-size: 1rem;
 						display: flex;
 						justify-content: space-between;
 						color: var(--color-title);
 						transition: all 0.5s;
+
+						@include desktop {
+							font-size: 1.5rem;
+						}
 
 						&:hover {
 							color: var(--color-accent);
@@ -166,9 +170,13 @@ const faq = [
 					}
 
 					p {
-						font-size: 1.5rem;
+						font-size: 1rem;
 						color: var(--color-copy);
 						margin-top: 16px;
+
+						@include desktop {
+							font-size: 1.5rem;
+						}
 					}
 				}
 			}

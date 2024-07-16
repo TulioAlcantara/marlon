@@ -56,7 +56,7 @@ const cta = {
 	});
 
 	window.addEventListener('scroll', () => {
-		if (window.innerWidth > 1200) {
+		if (window.innerWidth > 1024) {
 			const header = document.querySelector<HTMLElement>('.header')!;
 			const helpSection = document.querySelector<HTMLElement>('.sectionHelp')!;
 			const headerHeight = header.offsetHeight;
@@ -70,7 +70,7 @@ const cta = {
 	});
 
 	window.addEventListener('resize', () => {
-		if (window.innerWidth < 1200) {
+		if (window.innerWidth < 1024) {
 			document.querySelector<HTMLElement>('.header')!.style.opacity = '1';
 		}
 	});

@@ -10,12 +10,28 @@ import image7 from '../../../assets/images/clinic/image7.jpg';
 import image8 from '../../../assets/images/clinic/image8.jpg';
 import image9 from '../../../assets/images/clinic/image9.jpg';
 
+import icon1 from '/icons/clinic/icon1-orange.svg?raw';
+import icon1Gradient from '/icons/clinic/icon1-gradient.svg?raw';
+import icon1White from '/icons/clinic/icon1-white.svg?raw';
+import icon2 from '/icons/clinic/icon2-orange.svg?raw';
+import icon2Gradient from '/icons/clinic/icon2-gradient.svg?raw';
+import icon2White from '/icons/clinic/icon2-white.svg?raw';
+import icon3 from '/icons/clinic/icon3-orange.svg?raw';
+import icon3Gradient from '/icons/clinic/icon3-gradient.svg?raw';
+import icon3White from '/icons/clinic/icon3-white.svg?raw';
+import icon4 from '/icons/clinic/icon4-orange.svg?raw';
+import icon4Gradient from '/icons/clinic/icon4-gradient.svg?raw';
+import icon4White from '/icons/clinic/icon4-white.svg?raw';
+
 const items = [
 	{
 		title: 'Ambiente aconchegante',
 		description:
 			'Relaxe em nosso espaço moderno e aconchegante, projetado para promover o seu bem-estar desde o momento em que você entra.',
 		type: '1',
+		icon: icon1,
+		iconGradient: icon1Gradient,
+		iconWhite: icon1White,
 	},
 	{
 		title: 'Estacionamento fácil',
@@ -23,19 +39,27 @@ const items = [
 			'Chegue sem preocupações com vaga. Oferecemos estacionamento conveniente para sua comodidade.',
 
 		type: '2',
+		icon: icon2,
+		iconGradient: icon2Gradient,
+		iconWhite: icon2White,
 	},
 	{
-		title: 'Café de boas-vindas:',
+		title: 'Café de boas-vindas',
 		description:
 			'Desfrute de um café delicioso antes ou depois da consulta, em nossa área de café relaxante.',
-
 		type: '3',
+		icon: icon3,
+		iconGradient: icon3Gradient,
+		iconWhite: icon3White,
 	},
 	{
 		title: 'Cadeira de massagem',
 		description:
 			'Desfrute de uma massagem relaxante antes ou depois da sua sessão para aliviar o estresse e preparar sua mente para a terapia.',
 		type: '4',
+		icon: icon4,
+		iconGradient: icon4Gradient,
+		iconWhite: icon4White,
 	},
 ];
 
@@ -125,6 +149,15 @@ const images = [
 			{
 				items.map((item) => (
 					<li class="sectionClinic-content-list-item" data-type={item.type}>
+						<span class="sectionClinic-content-list-item__icon">
+							<Fragment set:html={item.icon} />
+						</span>
+						<span class="sectionClinic-content-list-item__icon--white">
+							<Fragment set:html={item.iconWhite} />
+						</span>
+						<span class="sectionClinic-content-list-item__icon--hover">
+							<Fragment set:html={item.iconGradient} />
+						</span>
 						<h3>{item.title}</h3>
 						<p>{item.description}</p>
 					</li>
@@ -219,11 +252,20 @@ const images = [
 						}
 					}
 
+					&__icon--hover {
+						display: none;
+					}
+
+					&__icon--white {
+						display: none;
+					}
+
 					@include desktop {
 						max-width: 300px;
 					}
 
 					h3 {
+						padding-top: 20px;
 						font-size: 1.25rem;
 						font-weight: 700;
 						margin-bottom: 0.5rem;
@@ -255,7 +297,7 @@ const images = [
 
 				@include tablet {
 					width: fit-content;
-					height: 475px;
+					height: 350px;
 				}
 
 				@include desktop {
@@ -346,6 +388,22 @@ const images = [
 				li:nth-child(9) {
 					grid-column: 9 / 13;
 					grid-row: 11 / 15;
+				}
+			}
+		}
+	}
+
+	html[data-theme='dark'] {
+		.sectionClinic {
+			&-content {
+				&-item {
+					&__icon {
+						display: none;
+					}
+
+					&__icon--white {
+						display: block;
+					}
 				}
 			}
 		}
