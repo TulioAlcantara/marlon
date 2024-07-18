@@ -16,7 +16,6 @@ const subtitle = `Vamos cuidar de você?
 `;
 const cta = {
 	text: 'Entrar em contato',
-	link: '#',
 };
 ---
 
@@ -24,7 +23,7 @@ const cta = {
 	<div class="footer">
 		<h2 class="footer__title"><span class="gradient">{title.highlight}</span>{title.text}</h2>
 		<p class="footer__subtitle" set:html={subtitle} />
-		<Button text={cta.text} link={cta.link} fullWidth={true} />
+		<Button text={cta.text} fullWidth={true} />
 		<ul class="footer-links">
 			<li>
 				<a

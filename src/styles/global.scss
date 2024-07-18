@@ -5,11 +5,13 @@ html {
 	font-family: 'Archivo', sans-serif;
 	font-size: 16px;
 	scroll-behavior: smooth;
+	scroll-padding-top: 50px;
 }
 
 body {
 	margin: 0;
 	background: var(--color-bg);
+	transition: 0.5s;
 }
 
 main {

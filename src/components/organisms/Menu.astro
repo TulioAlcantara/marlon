@@ -8,31 +8,38 @@ import whatsapp from '/icons/whatsapp.svg?raw';
 const items = [
 	{
 		title: 'Início',
-		link: '/',
+		link: '#inicio',
 	},
 	{
 		title: 'Sobre mim',
-		link: '/',
+		link: '#sobre-mim',
 	},
 	{
-		title: 'Processo',
-		link: '/',
+		title: 'O processo',
+		link: '#processo',
 	},
 	{
 		title: 'Clínica',
-		link: '/',
+		link: '#clinica',
 	},
 	{
 		title: 'FAQ',
-		link: '/',
+		link: '#faq',
 	},
 ];
 
 const cta = {
 	text: 'Agendar consulta',
-	link: '/',
 };
 ---
+
+<script>
+	document.querySelectorAll('.menu-links__item').forEach((item) => {
+		item.addEventListener('click', () => {
+			document.querySelector<HTMLElement>('.header__menu')!.click();
+		});
+	});
+</script>
 
 <div class="menu">
 	<ul class="menu-links">
@@ -48,7 +55,7 @@ const cta = {
 	</ul>
 
 	<div class="menu__cta">
-		<Button text={cta.text} link={cta.link} isSmall={true} />
+		<Button text={cta.text} isSmall={true} />
 	</div>
 
 	<ul class="menu-socials">

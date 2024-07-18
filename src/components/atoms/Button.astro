@@ -1,14 +1,18 @@
 ---
 interface Props {
 	text: string;
-	link: string;
 	isSmall?: boolean;
 	fullWidth?: boolean;
 }
-const { text, link, isSmall, fullWidth } = Astro.props;
+const { text, isSmall, fullWidth } = Astro.props;
 ---
 
-<a href={link} class={`btn ${isSmall && 'btn--small'} ${fullWidth && 'btn--full'}`}>
+<a
+	aria-label="Entrar em contato pelo WhatsApp"
+	href="https://api.whatsapp.com/send?phone=5562981261406&text=Ol%C3%A1%2C%20eu%20gostaria%20de%20agendar%20uma%20sess%C3%A3o"
+	target="_blank"
+	class={`btn ${isSmall && 'btn--small'} ${fullWidth && 'btn--full'}`}
+>
 	{text}
 </a>
 
