@@ -132,6 +132,26 @@ const images = [
 			});
 		});
 	});
+
+	document.querySelectorAll('.sectionClinic-gallery li').forEach((item) => {
+		item.addEventListener('click', () => {
+			const src = item.querySelector('img')!.src;
+			const lightbox = document.createElement('div');
+			lightbox.classList.add('lightbox');
+			lightbox.innerHTML = `
+				<div class="lightbox-content">
+					<img src="${src}" alt="Image" />
+					<button class="lightbox-close">X</button>
+				</div>
+			`;
+			document.body.appendChild(lightbox);
+
+			const closeButton = lightbox.querySelector('.lightbox-close')!;
+			closeButton.addEventListener('click', () => {
+				lightbox.remove();
+			});
+		});
+	});
 </script>
 
 <section id="clinica" class="sectionClinic" data-aos="opacity">
