@@ -1,5 +1,4 @@
 ---
-import Card from '../../molecules/CardHelp.astro';
 import icon1 from '/icons/help/icon1-orange.svg?raw';
 import icon1Gradient from '/icons/help/icon1-gradient.svg?raw';
 import icon1White from '/icons/help/icon1-white.svg?raw';
@@ -73,6 +72,7 @@ const cards = [
 
 <script>
 	import VanillaTilt from 'vanilla-tilt';
+
 	if (window.innerWidth > 1024) {
 		const cards = Array.from(document.querySelectorAll('.helpCard')!);
 		VanillaTilt.init(cards as HTMLElement[], {
