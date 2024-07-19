@@ -111,10 +111,16 @@ const items = [
 			<p>Conheça mais sobre quem sou eu.</p>
 		</div>
 		<div class="sectionInstagram-title-controls">
-			<button class="sectionInstagram-title-controls__prev">
+			<button
+				class="sectionInstagram-title-controls__prev"
+				aria-label="Mostrar proxímo item no carrosel"
+			>
 				<Fragment set:html={arrow} />
 			</button>
-			<button class="sectionInstagram-title-controls__next">
+			<button
+				class="sectionInstagram-title-controls__next"
+				aria-label="Mostrar item anterior no carrosel"
+			>
 				<Fragment set:html={arrow} />
 			</button>
 		</div>
