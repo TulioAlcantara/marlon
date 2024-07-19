@@ -4,24 +4,26 @@ import image1 from '../../../assets/images/clinic/image1.jpg';
 import image2 from '../../../assets/images/clinic/image2.jpg';
 import image3 from '../../../assets/images/clinic/image3.jpg';
 import image4 from '../../../assets/images/clinic/image4.jpg';
-import image5 from '../../../assets/images/clinic/image5.jpg';
+import image5 from '../../../assets/images/clinic/image5.png';
 import image6 from '../../../assets/images/clinic/image6.jpg';
 import image7 from '../../../assets/images/clinic/image7.jpg';
 import image8 from '../../../assets/images/clinic/image8.jpg';
 import image9 from '../../../assets/images/clinic/image9.jpg';
 
+import image1Thumb from '../../../assets/images/clinic/image1-thumb.png';
+import image2Thumb from '../../../assets/images/clinic/image2-thumb.png';
+import image3Thumb from '../../../assets/images/clinic/image3-thumb.png';
+import image4Thumb from '../../../assets/images/clinic/image4-thumb.png';
+import image5Thumb from '../../../assets/images/clinic/image5-thumb.png';
+import image6Thumb from '../../../assets/images/clinic/image6-thumb.png';
+import image7Thumb from '../../../assets/images/clinic/image7-thumb.png';
+import image8Thumb from '../../../assets/images/clinic/image8-thumb.png';
+import image9Thumb from '../../../assets/images/clinic/image9-thumb.png';
+
 import icon1 from '/icons/clinic/icon1-orange.svg?raw';
-import icon1Gradient from '/icons/clinic/icon1-gradient.svg?raw';
-import icon1White from '/icons/clinic/icon1-white.svg?raw';
 import icon2 from '/icons/clinic/icon2-orange.svg?raw';
-import icon2Gradient from '/icons/clinic/icon2-gradient.svg?raw';
-import icon2White from '/icons/clinic/icon2-white.svg?raw';
 import icon3 from '/icons/clinic/icon3-orange.svg?raw';
-import icon3Gradient from '/icons/clinic/icon3-gradient.svg?raw';
-import icon3White from '/icons/clinic/icon3-white.svg?raw';
 import icon4 from '/icons/clinic/icon4-orange.svg?raw';
-import icon4Gradient from '/icons/clinic/icon4-gradient.svg?raw';
-import icon4White from '/icons/clinic/icon4-white.svg?raw';
 
 const items = [
 	{
@@ -30,8 +32,6 @@ const items = [
 			'Relaxe em nosso espaço moderno e aconchegante, projetado para promover o seu bem-estar desde o momento em que você entra.',
 		type: '1',
 		icon: icon1,
-		iconGradient: icon1Gradient,
-		iconWhite: icon1White,
 	},
 	{
 		title: 'Estacionamento fácil',
@@ -40,8 +40,6 @@ const items = [
 
 		type: '2',
 		icon: icon2,
-		iconGradient: icon2Gradient,
-		iconWhite: icon2White,
 	},
 	{
 		title: 'Café de boas-vindas',
@@ -49,8 +47,6 @@ const items = [
 			'Desfrute de um café delicioso antes ou depois da consulta, em nossa área de café relaxante.',
 		type: '3',
 		icon: icon3,
-		iconGradient: icon3Gradient,
-		iconWhite: icon3White,
 	},
 	{
 		title: 'Cadeira de massagem',
@@ -58,55 +54,62 @@ const items = [
 			'Desfrute de uma massagem relaxante antes ou depois da sua sessão para aliviar o estresse e preparar sua mente para a terapia.',
 		type: '4',
 		icon: icon4,
-		iconGradient: icon4Gradient,
-		iconWhite: icon4White,
 	},
 ];
 
 const images = [
 	{
-		src: image1,
-		alt: 'Image',
+		src: image1Thumb,
+		srcFull: image1,
+		alt: 'Consultório do psicólogo Marlon',
 		type: 'type-1',
 	},
 	{
-		src: image2,
-		alt: 'Image',
+		src: image2Thumb,
+		srcFull: image2,
+		alt: 'Consultório do psicólogo Marlon',
 		type: 'type-1',
 	},
 	{
-		src: image3,
-		alt: 'Image',
+		src: image3Thumb,
+		srcFull: image3,
+		alt: 'Consultório do psicólogo Marlon',
 		type: 'type-1',
 	},
 	{
-		src: image4,
-		alt: 'Image',
+		src: image4Thumb,
+		srcFull: image4,
+		alt: 'Café de boas-vindas',
 		type: 'type-3',
 	},
 	{
-		src: image5,
-		alt: 'Image',
+		src: image5Thumb,
+		srcFull: image5,
+		alt: 'Estacionamento da clínica',
 		type: 'type-2',
 	},
 	{
-		src: image6,
-		alt: 'Image',
+		src: image6Thumb,
+		srcFull: image6,
+		alt: 'Café de boas-vindas',
 		type: 'type-3',
 	},
 	{
-		src: image7,
-		alt: 'Image',
+		src: image7Thumb,
+		srcFull: image7,
+		alt: 'Cadeira de massagem da clínica',
 		type: 'type-4',
 	},
 	{
-		src: image8,
-		alt: 'Image',
+		src: image8Thumb,
+		srcFull: image8,
+		alt: 'Consultório do psicólogo Marlon',
 		type: 'type-1',
 	},
 	{
-		src: image9,
-		alt: 'Image',
+		src: image9Thumb,
+		srcFull: image9,
+		alt: 'Recepção da clínica',
 		type: 'type-1',
 	},
 ];
@@ -133,9 +136,10 @@ const images = [
 		});
 	});
 
-	document.querySelectorAll('.sectionClinic-gallery li').forEach((item) => {
-		item.addEventListener('click', () => {
-			const src = item.querySelector('img')!.src;
+	document.querySelectorAll('.sectionClinic-gallery li a').forEach((item) => {
+		item.addEventListener('click', (e) => {
+			e.preventDefault();
+			const src = item.getAttribute('href')!;
 			const lightbox = document.createElement('div');
 			lightbox.classList.add('lightbox');
 			lightbox.innerHTML = `
@@ -172,12 +176,6 @@ const images = [
 						<span class="sectionClinic-content-list-item__icon">
 							<Fragment set:html={item.icon} />
 						</span>
-						<span class="sectionClinic-content-list-item__icon--white">
-							<Fragment set:html={item.iconWhite} />
-						</span>
-						<span class="sectionClinic-content-list-item__icon--hover">
-							<Fragment set:html={item.iconGradient} />
-						</span>
 						<h3>{item.title}</h3>
 						<p>{item.description}</p>
 					</li>
@@ -190,7 +188,9 @@ const images = [
 		{
 			images.map((image) => (
 				<li class={image.type}>
-					<Image src={image.src} alt={image.alt} />
+					<a href={image.srcFull.src}>
+						<Image src={image.src} alt={image.alt} />
+					</a>
 				</li>
 			))
 		}
@@ -265,6 +265,10 @@ const images = [
 				&-item {
 					cursor: pointer;
 
+					@include desktop {
+						max-width: 300px;
+					}
+
 					&:hover {
 						h3 {
 							color: var(--color-accent);
@@ -272,20 +276,14 @@ const images = [
 						}
 					}
 
-					&__icon--hover {
-						display: none;
-					}
-
-					&__icon--white {
-						display: none;
-					}
-
-					@include desktop {
-						max-width: 300px;
+					&__icon {
+						display: inline-block;
+						width: 40px;
+						height: 40px;
 					}
 
 					h3 {
-						padding-top: 20px;
+						padding-top: 10px;
 						font-size: 1.25rem;
 						font-weight: 700;
 						margin-bottom: 0.5rem;
@@ -408,22 +406,6 @@ const images = [
 				li:nth-child(9) {
 					grid-column: 9 / 13;
 					grid-row: 11 / 15;
-				}
-			}
-		}
-	}
-
-	html[data-theme='dark'] {
-		.sectionClinic {
-			&-content {
-				&-item {
-					&__icon {
-						display: none;
-					}
-
-					&__icon--white {
-						display: block;
-					}
 				}
 			}
 		}

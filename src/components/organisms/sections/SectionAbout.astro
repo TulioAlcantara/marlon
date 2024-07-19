@@ -1,7 +1,7 @@
 ---
 import chevron from '/icons/chevron-down.svg?raw';
 import { Image } from 'astro:assets';
-import aboutmeImage from '../../../assets/images/aboutme.jpg';
+import aboutmeImage from '../../../assets/images/aboutme.png';
 
 const details = [
 	{
@@ -58,8 +58,7 @@ const details = [
 	</div>
 
 	<div class="sectionAbout-content">
-		<!-- <img class="sectionAbout-content__image" src="/images/aboutme.jpg" /> -->
-		<Image class="sectionAbout-content__image" src={aboutmeImage} alt="" />
+		<Image class="sectionAbout-content__image" src={aboutmeImage} alt="Psicologo Marlon" />
 		<ul class="sectionAbout-content-details">
 			{
 				details.map((detail) => (
@@ -123,6 +122,8 @@ const details = [
 					height: 630px;
 					border-top-left-radius: 20px;
 					border-bottom-left-radius: 20px;
+					border-bottom-right-radius: 0;
+					border-top-right-radius: 0;
 				}
 			}
 
@@ -138,22 +139,25 @@ const details = [
 				}
 
 				li {
-					@include desktop {
-						&:nth-child(1) {
-							details {
+					&:first-child {
+						details {
+							border-top-right-radius: 0;
+
+							@include desktop {
 								border-top-right-radius: 20px;
 								border-top: var(--color-accent) 1px solid;
 							}
 						}
+					}
 
-						&:nth-child(3) {
-							details {
+					&:last-child {
+						details {
+							border-bottom-right-radius: 20px;
+							border-bottom-left-radius: 20px;
+
+							@include desktop {
 								border-bottom-right-radius: 20px;
-								border-bottom-left-radius: 20px;
-
-								@include desktop {
-									border-bottom-right-radius: 20px;
-								}
+								border-bottom-left-radius: 0;
 							}
 						}
 					}

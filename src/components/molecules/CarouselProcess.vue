@@ -18,7 +18,7 @@
 				<h3 class="valuesCarousel-card__title">{{ values[activeIndex].title }}</h3>
 				<p class="valuesCarousel-card__description" v-html="values[activeIndex].description"></p>
 			</div>
-			<img :src="values[activeIndex].img" />
+			<img :src="values[activeIndex].img" :alt="values[activeIndex].alt" />
 			<div class="valuesCarousel-card__shadow"></div>
 		</div>
 	</div>
@@ -60,6 +60,7 @@ defineProps<{
 			cta: string;
 			subtitle: string;
 			img: string;
+			alt: string;
 		},
 	];
 }>();

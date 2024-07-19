@@ -66,6 +66,20 @@ const faq = [
 ];
 ---
 
+<script>
+	document.querySelectorAll('.sectionFaq-list details').forEach((details) => {
+		details.addEventListener('toggle', (event) => {
+			if ((event.target as HTMLDetailsElement).open) {
+				document.querySelectorAll('.sectionFaq-list details').forEach((otherDetails) => {
+					if (otherDetails !== details) {
+						otherDetails.removeAttribute('open');
+					}
+				});
+			}
+		});
+	});
+</script>
+
 <section id="faq" class="sectionFaq" data-aos="opacity">
 	<div class="sectionTitle sectionFaq-title">
 		<h2>{title.text} <span class="gradient">{title.highlight}</span></h2>
@@ -175,7 +189,7 @@ const faq = [
 						margin-top: 16px;
 
 						@include desktop {
-							font-size: 1.5rem;
+							font-size: 1.25rem;
 						}
 					}
 				}

@@ -157,7 +157,6 @@ const cards = [
 				display: grid;
 				gap: 36px;
 				margin-top: 20px;
-				grid-template-columns: 1fr;
 				grid-template-columns: repeat(2, 1fr);
 				padding-left: 0;
 				padding-right: 0;
@@ -173,8 +172,7 @@ const cards = [
 			padding: 24px;
 			border-radius: 20px;
 			cursor: pointer;
-			width: 282px;
-			height: 250px;
+			width: 262px;
 			gap: 8px;
 			flex-shrink: 0;
 			scroll-snap-align: center;
@@ -185,8 +183,6 @@ const cards = [
 			}
 
 			@include desktop {
-				height: 200px;
-
 				&:hover {
 					background: var(--color-card-bg-hover);
 					box-shadow: 0px 0px 30px 5px var(--color-accent);
@@ -194,13 +190,15 @@ const cards = [
 				}
 			}
 
-			&:hover {
-				.helpCard__icon {
-					display: none;
-				}
+			@include desktop {
+				&:hover {
+					.helpCard__icon {
+						display: none;
+					}
 
-				.helpCard__icon--hover {
-					display: block;
+					.helpCard__icon--hover {
+						display: block;
+					}
 				}
 			}
 
@@ -237,9 +235,11 @@ const cards = [
 					display: block;
 				}
 
-				&:hover {
-					.helpCard__icon--white {
-						display: none;
+				@include desktop {
+					&:hover {
+						.helpCard__icon--white {
+							display: none;
+						}
 					}
 				}
 			}
