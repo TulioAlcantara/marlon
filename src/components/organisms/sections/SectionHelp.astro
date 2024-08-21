@@ -177,12 +177,14 @@ const cards = [
 			flex-shrink: 0;
 			scroll-snap-align: center;
 			cursor: default;
+			height: 300px;
 
 			@include tablet {
 				width: fit-content;
 			}
 
 			@include desktop {
+				height: auto;
 				&:hover {
 					background: var(--color-card-bg-hover);
 					box-shadow: 0px 0px 30px 5px var(--color-accent);
