@@ -35,8 +35,13 @@ const cta = {
 
 <script>
 	document.querySelectorAll('.menu-links__item').forEach((item) => {
-		item.addEventListener('click', () => {
+		item.addEventListener('click', (e) => {
 			document.querySelector<HTMLElement>('.header__menu')!.click();
+			e.preventDefault();
+			const target = e.target as HTMLElement;
+			const id = target.getAttribute('href')!;
+			const lenis = (window as any).lenis;
+			lenis.scrollTo(id, { offset: -100 });
 		});
 	});
 </script>

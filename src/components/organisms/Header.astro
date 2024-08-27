@@ -34,6 +34,8 @@ const cta = {
 
 <script>
 	let isMenuOpen = false;
+	const lenis = (window as any).lenis;
+
 	document.querySelector<HTMLElement>('.header__menu')!.addEventListener('click', () => {
 		if (isMenuOpen) {
 			document.querySelector<HTMLElement>('.menu')!.style.opacity = '0';
@@ -42,6 +44,7 @@ const cta = {
 			}, 500);
 			document.querySelector<HTMLElement>('.header__menu__open')!.style.display = 'block';
 			document.querySelector<HTMLElement>('.header__menu__close')!.style.display = 'none';
+			lenis.start();
 		} else {
 			document.querySelector<HTMLElement>('.menu')!.style.display = 'flex';
 			setTimeout(() => {
@@ -49,6 +52,7 @@ const cta = {
 			}, 1);
 			document.querySelector<HTMLElement>('.header__menu__open')!.style.display = 'none';
 			document.querySelector<HTMLElement>('.header__menu__close')!.style.display = 'block';
+			lenis.stop();
 		}
 
 		isMenuOpen = !isMenuOpen;
@@ -72,6 +76,15 @@ const cta = {
 		if (window.innerWidth < 1024) {
 			document.querySelector<HTMLElement>('.header')!.style.opacity = '1';
 		}
+	});
+
+	document.querySelectorAll('.header-links__link').forEach((link) => {
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+			const target = e.target as HTMLElement;
+			const id = target.getAttribute('href')!;
+			lenis.scrollTo(id, { offset: -100 });
+		});
 	});
 </script>
 
