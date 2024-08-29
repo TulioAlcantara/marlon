@@ -175,15 +175,19 @@ const details = [
 							padding: 29px 36px;
 							display: flex;
 							justify-content: space-between;
-							transition: all 0.2s linear;
+							transition: all 0.5s linear;
 
 							&:hover {
 								color: var(--color-accent);
-								transition: all 0.2s linear;
+								transition: all 0.5s linear;
 							}
 
 							&::-webkit-details-marker {
 								display: none;
+							}
+
+							.chevron {
+								transition: transform 0.5s;
 							}
 						}
 
@@ -194,6 +198,7 @@ const details = [
 								.chevron {
 									color: var(--color-accent);
 									transform: rotate(180deg);
+									transition: transform 0.5s;
 								}
 							}
 						}

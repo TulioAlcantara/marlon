@@ -5,6 +5,8 @@ import moon from '/icons/moon-filled.svg?raw';
 import linkedin from '/icons/linkedin.svg?raw';
 import instagram from '/icons/instagram.svg?raw';
 import whatsapp from '/icons/whatsapp.svg?raw';
+import pin from '/icons/pin.svg?raw';
+import phone from '/icons/phone.svg?raw';
 
 const title = {
 	highlight: 'Se identificou ',
@@ -52,6 +54,20 @@ const cta = {
 				<button class="changeThemeBtn" aria-label="Mudar tema">
 					<Fragment set:html={moon} />
 				</button>
+			</li>
+		</ul>
+		<ul class="footer__info">
+			<li>
+				<a target="_blank" href="https://maps.app.goo.gl/m6ih8AJR7uRjBG2z9">
+					<Fragment set:html={pin} />
+					<span>Clínica Story<br />R. 1134, 120 - St. Marista,<br /> Goiânia - GO, 74180-130</span>
+				</a>
+			</li>
+			<li>
+				<a href="tel:+5562998653631">
+					<Fragment set:html={phone} />
+					<span>(62) 99865-3631</span>
+				</a>
 			</li>
 		</ul>
 	</div>
@@ -182,6 +198,38 @@ const cta = {
 				@include desktop {
 					left: unset;
 					right: -500px;
+				}
+			}
+
+			&__info {
+				margin-top: 56px;
+
+				@include desktop {
+					margin-top: 0px;
+					position: absolute;
+					right: 50px;
+					bottom: 0;
+				}
+
+				a {
+					padding-bottom: 22px;
+					color: var(--color-copy);
+					font-size: 1rem;
+					font-weight: 400;
+					line-height: 20px;
+					text-align: left;
+					display: flex;
+					gap: 16px;
+					transition: color 0.5s;
+					cursor: pointer;
+					text-decoration: none;
+
+					@include desktop {
+						&:hover {
+							color: var(--color-accent);
+							transition: color 0.5s;
+						}
+					}
 				}
 			}
 		}
